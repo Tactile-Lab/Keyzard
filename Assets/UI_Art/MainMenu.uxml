@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI_Art/MainMenu.uss?fileID=7433441132597879392&amp;guid=21e4f28fde3e95e4284ddbbb93e6bb17&amp;type=3#MainMenu"/>
+    <ui:VisualElement name="Root" style="background-image: url(&quot;project://database/Assets/UI_Art/fondgame.png?fileID=2800000&amp;guid=eb264853dd032a94db93317a239b0454&amp;type=3#fondgame&quot;); -unity-background-scale-mode: scale-and-crop; background-size: 100% 100%; flex-grow: 1;">
+        <ui:VisualElement name="MenuContainer">
+            <ui:Label name="Title" text="KEYZARD" style="-unity-font-definition: url(&quot;project://database/Assets/UI_Art/PlaywriteNZBasic-VariableFont_wght.ttf?fileID=12800000&amp;guid=1db8c5e42cad7ea4b86a47de50313424&amp;type=3#PlaywriteNZBasic-VariableFont_wght&quot;);"/>
+            <ui:VisualElement name="ButtonList">
+                <ui:VisualElement class="menu-row">
+                    <ui:Label text="PLAY" class="main-text"/>
+                    <ui:Label text="[ TYPE &apos;START&apos; ]" class="sub-text"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="menu-row">
+                    <ui:Label text="OPTIONS" class="main-text"/>
+                    <ui:Label text="[ TYPE &apos;SETUP&apos; ]" class="sub-text"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="menu-row">
+                    <ui:Label text="QUIT" class="main-text"/>
+                    <ui:Label text="[ TYPE &apos;EXIT&apos; ]" class="sub-text"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

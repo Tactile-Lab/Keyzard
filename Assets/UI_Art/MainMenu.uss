@@ -1,0 +1,63 @@
+/* --- CODE NUCLÉAIRE POUR LE ROOT --- */
+#Root {
+    /* Ces 5 lignes forcent le plein écran TOTAL */
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    /* Centrage du contenu */
+    align-items: center;
+    justify-content: center;
+    
+    /* Ton image de fond (Vérifie bien que le nom est fondgame) */
+    background-image: url("project:/Assets/UI_Art/fondgame.png"); 
+    -unity-background-scale-mode: scale-and-crop;
+}
+
+/* --- LE TITRE --- */
+#Title {
+    font-size: 120px;
+    -unity-font-style: bold;
+    color: #AEEFFF;
+    margin-bottom: 60px;
+    text-shadow: 0 0 20px rgba(0, 200, 255, 0.8);
+    -unity-text-align: middle-center;
+}
+
+/* --- LIGNE DE MENU --- */
+.menu-row {
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+/* --- TEXTE PRINCIPAL --- */
+.main-text {
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    margin: 0;
+    padding: 0;
+    /* J'ai désactivé la police temporairement pour être sûr que le texte s'affiche */
+    /* -unity-font-definition: url("project:/Assets/UI_Art/PlaywriteNZBasic-VariableFont_wght.ttf"); */
+}
+
+/* --- SOUS-TEXTE --- */
+.sub-text {
+    font-size: 20px;
+    color: #FFD700;
+    opacity: 0.8;
+    margin-top: 5px;
+    -unity-font-style: italic;
+}
+
+/* --- HOVER EFFECT --- */
+.menu-row:hover .main-text {
+    scale: 1.1;
+    color: #FFFFFF;
+}
+.menu-row:hover .sub-text {
+    opacity: 1;
+    color: #FFFFAA;
+}
