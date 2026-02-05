@@ -45,6 +45,8 @@ public class Ennemy : MonoBehaviour
         }
     }
 
+
+
     private void Move()
     {
         transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
