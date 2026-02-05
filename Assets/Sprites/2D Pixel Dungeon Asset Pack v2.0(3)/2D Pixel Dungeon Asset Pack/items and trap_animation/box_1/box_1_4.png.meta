@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: e00f8e9abbe8ae14ba535aaa63b23703
+guid: b16dc63cdaeacda49b190bbfae75d7ce
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7674905013434359771
-    second: Dungeon_Tiles_0
-  - first:
-      213: 4872226300912662604
-    second: Dungeon_Tiles_1
+      213: 7230657292410003235
+    second: box_1_4_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -78,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dungeon_Tiles_0
+      name: box_1_4_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 119
-        width: 369
-        height: 281
+        y: 1
+        width: 16
+        height: 11
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 520616dbd824d7590800000000000000
-      internalID: -7674905013434359771
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tiles_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 47
-        width: 145
-        height: 66
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c48f63ba100ad9340800000000000000
-      internalID: 4872226300912662604
+      spriteID: 32f9fae6f74785460800000000000000
+      internalID: 7230657292410003235
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Dungeon_Tiles_0: -7674905013434359771
-      Dungeon_Tiles_1: 4872226300912662604
+      box_1_4_0: 7230657292410003235
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
