@@ -145,29 +145,29 @@ TextureImporter:
       name: enemies-skeleton2_attack_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 2
-        width: 18
-        height: 17
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape:
-      - - {x: 4, y: -4.5}
-        - {x: 7, y: 1.5}
-        - {x: 8, y: 1.5}
-        - {x: 8, y: 4.5}
-        - {x: 6, y: 6.5}
-        - {x: -6, y: 7.5}
-        - {x: -8, y: 5.5}
-        - {x: -8, y: 1.5}
-        - {x: -7, y: 0.5}
-        - {x: -8, y: -1.5}
-        - {x: -8, y: -4.5}
-        - {x: -7, y: -7.5}
-        - {x: 4, y: -7.5}
+      - - {x: 4, y: -10}
+        - {x: 7, y: -4}
+        - {x: 8, y: -4}
+        - {x: 8, y: -1}
+        - {x: 6, y: 1}
+        - {x: -6, y: 2}
+        - {x: -8, y: 0}
+        - {x: -8, y: -4}
+        - {x: -7, y: -5}
+        - {x: -8, y: -7}
+        - {x: -8, y: -10}
+        - {x: -7, y: -13}
+        - {x: 4, y: -13}
       tessellationDetail: 1
       bones: []
       spriteID: 6c912f2150ada4a60800000000000000
@@ -180,29 +180,29 @@ TextureImporter:
       name: enemies-skeleton2_attack_1
       rect:
         serializedVersion: 2
-        x: 39
-        y: 2
-        width: 17
-        height: 17
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape:
-      - - {x: 1.5, y: -6.5}
-        - {x: 4.5, y: -6.5}
-        - {x: 5.5, y: 1.5}
-        - {x: 7.5, y: 2.5}
-        - {x: 7.5, y: 5.5}
-        - {x: 5.5, y: 7.5}
-        - {x: -5.5, y: 7.5}
-        - {x: -7.5, y: 5.5}
-        - {x: -7.5, y: 1.5}
-        - {x: -6.5, y: -0.5}
-        - {x: -7.5, y: -1.5}
-        - {x: -6.5, y: -7.5}
-        - {x: 0.5, y: -7.5}
+      - - {x: 1, y: -12}
+        - {x: 4, y: -12}
+        - {x: 5, y: -4}
+        - {x: 7, y: -3}
+        - {x: 7, y: 0}
+        - {x: 5, y: 2}
+        - {x: -6, y: 2}
+        - {x: -8, y: 0}
+        - {x: -8, y: -4}
+        - {x: -7, y: -6}
+        - {x: -8, y: -7}
+        - {x: -7, y: -13}
+        - {x: 0, y: -13}
       tessellationDetail: 1
       bones: []
       spriteID: 2d68176364b3ce400800000000000000
@@ -215,31 +215,31 @@ TextureImporter:
       name: enemies-skeleton2_attack_2
       rect:
         serializedVersion: 2
-        x: 68
-        y: 2
-        width: 15
-        height: 17
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape:
-      - - {x: 1.5, y: -5.5}
-        - {x: 2.5, y: -7.5}
-        - {x: 5.5, y: -7.5}
-        - {x: 6.5, y: -3.5}
-        - {x: 4.5, y: -1.5}
-        - {x: 5.5, y: 1.5}
-        - {x: 5.5, y: 6.5}
-        - {x: 3.5, y: 7.5}
-        - {x: -2.5, y: 7.5}
-        - {x: -4.5, y: 5.5}
-        - {x: -6.5, y: 1.5}
-        - {x: -6.5, y: -0.5}
-        - {x: -3.5, y: -2.5}
-        - {x: -2.5, y: -7.5}
-        - {x: 0.5, y: -7.5}
+      - - {x: -3, y: -11}
+        - {x: -2, y: -13}
+        - {x: 1, y: -13}
+        - {x: 2, y: -9}
+        - {x: 0, y: -7}
+        - {x: 1, y: -4}
+        - {x: 1, y: 1}
+        - {x: -1, y: 2}
+        - {x: -7, y: 2}
+        - {x: -9, y: 0}
+        - {x: -11, y: -4}
+        - {x: -11, y: -6}
+        - {x: -8, y: -8}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
       tessellationDetail: 1
       bones: []
       spriteID: 4c5f0aaadea3d5b20800000000000000
@@ -252,37 +252,37 @@ TextureImporter:
       name: enemies-skeleton2_attack_3
       rect:
         serializedVersion: 2
-        x: 98
-        y: 2
-        width: 17
-        height: 17
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape:
-      - - {x: 2.5, y: -5.5}
-        - {x: 4.5, y: -7.5}
-        - {x: 7.5, y: -7.5}
-        - {x: 6.5, y: -5.5}
-        - {x: 6.5, y: -1.5}
-        - {x: 5.5, y: -0.5}
-        - {x: 7.5, y: 1.5}
-        - {x: 7.5, y: 6.5}
-        - {x: 5.5, y: 7.5}
-        - {x: -0.5, y: 7.5}
-        - {x: -2.5, y: 5.5}
-        - {x: -2.5, y: 2.5}
-        - {x: -5.5, y: 1.5}
-        - {x: -7.5, y: -0.5}
-        - {x: -7.5, y: -3.5}
-        - {x: -6.5, y: -4.5}
-        - {x: -1.5, y: -3.5}
-        - {x: -0.5, y: -4.5}
-        - {x: -1.5, y: -5.5}
-        - {x: -1.5, y: -7.5}
-        - {x: 1.5, y: -7.5}
+      - - {x: -3, y: -11}
+        - {x: -1, y: -13}
+        - {x: 2, y: -13}
+        - {x: 1, y: -11}
+        - {x: 1, y: -7}
+        - {x: 0, y: -6}
+        - {x: 2, y: -4}
+        - {x: 2, y: 1}
+        - {x: 0, y: 2}
+        - {x: -6, y: 2}
+        - {x: -8, y: 0}
+        - {x: -8, y: -3}
+        - {x: -11, y: -4}
+        - {x: -13, y: -6}
+        - {x: -13, y: -9}
+        - {x: -12, y: -10}
+        - {x: -7, y: -9}
+        - {x: -6, y: -10}
+        - {x: -7, y: -11}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
       tessellationDetail: 1
       bones: []
       spriteID: f4fab55b6a1142280800000000000000
@@ -295,35 +295,35 @@ TextureImporter:
       name: enemies-skeleton2_attack_4
       rect:
         serializedVersion: 2
-        x: 129
-        y: 2
-        width: 18
-        height: 15
+        x: 128
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape:
-      - - {x: 3, y: -4.5}
-        - {x: 5, y: -6.5}
-        - {x: 8, y: -6.5}
-        - {x: 8, y: -5.5}
-        - {x: 6, y: -3.5}
-        - {x: 6, y: -1.5}
-        - {x: 8, y: 0.5}
-        - {x: 8, y: 5.5}
-        - {x: 6, y: 6.5}
-        - {x: 0, y: 6.5}
-        - {x: -2, y: 4.5}
-        - {x: -2, y: -0.5}
-        - {x: -6, y: -1.5}
-        - {x: -8, y: -3.5}
-        - {x: -8, y: -5.5}
-        - {x: -7, y: -6.5}
-        - {x: -2, y: -5.5}
-        - {x: -1, y: -6.5}
-        - {x: 2, y: -6.5}
+      - - {x: -3, y: -11}
+        - {x: -1, y: -13}
+        - {x: 2, y: -13}
+        - {x: 2, y: -12}
+        - {x: 0, y: -10}
+        - {x: 0, y: -8}
+        - {x: 2, y: -6}
+        - {x: 2, y: -1}
+        - {x: 0, y: 0}
+        - {x: -6, y: 0}
+        - {x: -8, y: -2}
+        - {x: -8, y: -7}
+        - {x: -12, y: -8}
+        - {x: -14, y: -10}
+        - {x: -14, y: -12}
+        - {x: -13, y: -13}
+        - {x: -8, y: -12}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
       tessellationDetail: 1
       bones: []
       spriteID: 61769c50ce9393920800000000000000
@@ -336,41 +336,41 @@ TextureImporter:
       name: enemies-skeleton2_attack_5
       rect:
         serializedVersion: 2
-        x: 161
-        y: 2
-        width: 31
-        height: 15
+        x: 160
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape:
-      - - {x: -2.5, y: -4.5}
-        - {x: -1.5, y: -6.5}
-        - {x: 1.5, y: -6.5}
-        - {x: 2.5, y: -4.5}
-        - {x: 9.5, y: -4.5}
-        - {x: 10.5, y: -3.5}
-        - {x: 12.5, y: -3.5}
-        - {x: 14.5, y: -1.5}
-        - {x: 14.5, y: 2.5}
-        - {x: 13.5, y: 3.5}
-        - {x: 11.5, y: 3.5}
-        - {x: 10.5, y: 4.5}
-        - {x: 5.5, y: 4.5}
-        - {x: 2.5, y: 6.5}
-        - {x: -3.5, y: 6.5}
-        - {x: -5.5, y: 4.5}
-        - {x: -5.5, y: 1.5}
-        - {x: -7.5, y: -1.5}
-        - {x: -13.5, y: -0.5}
-        - {x: -14.5, y: -1.5}
-        - {x: -14.5, y: -3.5}
-        - {x: -12.5, y: -5.5}
-        - {x: -8.5, y: -5.5}
-        - {x: -7.5, y: -6.5}
-        - {x: -4.5, y: -6.5}
+      - - {x: -2, y: -11}
+        - {x: -1, y: -13}
+        - {x: 2, y: -13}
+        - {x: 3, y: -11}
+        - {x: 10, y: -11}
+        - {x: 11, y: -10}
+        - {x: 13, y: -10}
+        - {x: 15, y: -8}
+        - {x: 15, y: -4}
+        - {x: 14, y: -3}
+        - {x: 12, y: -3}
+        - {x: 11, y: -2}
+        - {x: 6, y: -2}
+        - {x: 3, y: 0}
+        - {x: -3, y: 0}
+        - {x: -5, y: -2}
+        - {x: -5, y: -5}
+        - {x: -7, y: -8}
+        - {x: -13, y: -7}
+        - {x: -14, y: -8}
+        - {x: -14, y: -10}
+        - {x: -12, y: -12}
+        - {x: -8, y: -12}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
       tessellationDetail: 1
       bones: []
       spriteID: 1ca6e1cde3643c410800000000000000
@@ -383,38 +383,38 @@ TextureImporter:
       name: enemies-skeleton2_attack_6
       rect:
         serializedVersion: 2
-        x: 193
-        y: 2
-        width: 31
-        height: 15
+        x: 192
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape:
-      - - {x: -2.5, y: -4.5}
-        - {x: -1.5, y: -6.5}
-        - {x: 1.5, y: -6.5}
-        - {x: 1.5, y: -1.5}
-        - {x: 4.5, y: -0.5}
-        - {x: 4.5, y: 5.5}
-        - {x: 3.5, y: 6.5}
-        - {x: -7.5, y: 6.5}
-        - {x: -8.5, y: 5.5}
-        - {x: -10.5, y: 5.5}
-        - {x: -14.5, y: 3.5}
-        - {x: -14.5, y: -0.5}
-        - {x: -12.5, y: -2.5}
-        - {x: -10.5, y: -2.5}
-        - {x: -10.5, y: -0.5}
-        - {x: -9.5, y: 0.5}
-        - {x: -6.5, y: 1.5}
-        - {x: -5.5, y: 0.5}
-        - {x: -5.5, y: -3.5}
-        - {x: -7.5, y: -5.5}
-        - {x: -7.5, y: -6.5}
-        - {x: -4.5, y: -6.5}
+      - - {x: -2, y: -11}
+        - {x: -1, y: -13}
+        - {x: 2, y: -13}
+        - {x: 2, y: -8}
+        - {x: 5, y: -7}
+        - {x: 5, y: -1}
+        - {x: 4, y: 0}
+        - {x: -7, y: 0}
+        - {x: -8, y: -1}
+        - {x: -10, y: -1}
+        - {x: -14, y: -3}
+        - {x: -14, y: -7}
+        - {x: -12, y: -9}
+        - {x: -10, y: -9}
+        - {x: -10, y: -7}
+        - {x: -9, y: -6}
+        - {x: -6, y: -5}
+        - {x: -5, y: -6}
+        - {x: -5, y: -10}
+        - {x: -7, y: -12}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
       tessellationDetail: 1
       bones: []
       spriteID: 516f2030885f675c0800000000000000
@@ -427,40 +427,40 @@ TextureImporter:
       name: enemies-skeleton2_attack_7
       rect:
         serializedVersion: 2
-        x: 225
-        y: 2
-        width: 29
-        height: 15
+        x: 224
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape:
-      - - {x: -1.5, y: -4.5}
-        - {x: -0.5, y: -6.5}
-        - {x: 2.5, y: -6.5}
-        - {x: 2.5, y: -4.5}
-        - {x: 4.5, y: -0.5}
-        - {x: 6.5, y: -0.5}
-        - {x: 6.5, y: 5.5}
-        - {x: 5.5, y: 6.5}
-        - {x: -1.5, y: 6.5}
-        - {x: -3.5, y: 4.5}
-        - {x: -4.5, y: 1.5}
-        - {x: -8.5, y: 3.5}
-        - {x: -8.5, y: 4.5}
-        - {x: -11.5, y: 4.5}
-        - {x: -13.5, y: 2.5}
-        - {x: -13.5, y: -1.5}
-        - {x: -12.5, y: -2.5}
-        - {x: -10.5, y: -2.5}
-        - {x: -9.5, y: -1.5}
-        - {x: -4.5, y: -1.5}
-        - {x: -3.5, y: -2.5}
-        - {x: -6.5, y: -5.5}
-        - {x: -6.5, y: -6.5}
-        - {x: -3.5, y: -6.5}
+      - - {x: -2, y: -11}
+        - {x: -1, y: -13}
+        - {x: 2, y: -13}
+        - {x: 2, y: -11}
+        - {x: 4, y: -7}
+        - {x: 6, y: -7}
+        - {x: 6, y: -1}
+        - {x: 5, y: 0}
+        - {x: -2, y: 0}
+        - {x: -4, y: -2}
+        - {x: -5, y: -5}
+        - {x: -9, y: -3}
+        - {x: -9, y: -2}
+        - {x: -12, y: -2}
+        - {x: -14, y: -4}
+        - {x: -14, y: -8}
+        - {x: -13, y: -9}
+        - {x: -11, y: -9}
+        - {x: -10, y: -8}
+        - {x: -5, y: -8}
+        - {x: -4, y: -9}
+        - {x: -7, y: -12}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
       tessellationDetail: 1
       bones: []
       spriteID: a670f736f97b4a7a0800000000000000
@@ -473,39 +473,39 @@ TextureImporter:
       name: enemies-skeleton2_attack_8
       rect:
         serializedVersion: 2
-        x: 257
-        y: 2
-        width: 23
-        height: 17
+        x: 256
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape:
-      - - {x: 4.5, y: -5.5}
-        - {x: 6.5, y: -3.5}
-        - {x: 7.5, y: -0.5}
-        - {x: 9.5, y: -0.5}
-        - {x: 10.5, y: 5.5}
-        - {x: 9.5, y: 6.5}
-        - {x: 2.5, y: 7.5}
-        - {x: 0.5, y: 5.5}
-        - {x: -0.5, y: 1.5}
-        - {x: -2.5, y: -0.5}
-        - {x: -5.5, y: 1.5}
-        - {x: -8.5, y: 1.5}
-        - {x: -10.5, y: -0.5}
-        - {x: -10.5, y: -4.5}
-        - {x: -9.5, y: -5.5}
-        - {x: -7.5, y: -5.5}
-        - {x: -4.5, y: -3.5}
-        - {x: -2.5, y: -3.5}
-        - {x: -1.5, y: -4.5}
-        - {x: -2.5, y: -6.5}
-        - {x: 0.5, y: -6.5}
-        - {x: 1.5, y: -7.5}
-        - {x: 4.5, y: -7.5}
+      - - {x: 1, y: -11}
+        - {x: 3, y: -9}
+        - {x: 4, y: -6}
+        - {x: 6, y: -6}
+        - {x: 7, y: 0}
+        - {x: 6, y: 1}
+        - {x: -1, y: 2}
+        - {x: -3, y: 0}
+        - {x: -4, y: -4}
+        - {x: -6, y: -6}
+        - {x: -9, y: -4}
+        - {x: -12, y: -4}
+        - {x: -14, y: -6}
+        - {x: -14, y: -10}
+        - {x: -13, y: -11}
+        - {x: -11, y: -11}
+        - {x: -8, y: -9}
+        - {x: -6, y: -9}
+        - {x: -5, y: -10}
+        - {x: -6, y: -12}
+        - {x: -3, y: -12}
+        - {x: -2, y: -13}
+        - {x: 1, y: -13}
       tessellationDetail: 1
       bones: []
       spriteID: 47dabbe0d21786a00800000000000000
@@ -518,39 +518,39 @@ TextureImporter:
       name: enemies-skeleton2_attack_9
       rect:
         serializedVersion: 2
-        x: 289
-        y: 2
-        width: 22
-        height: 18
+        x: 288
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape:
-      - - {x: 3, y: -7}
-        - {x: 6, y: -4}
-        - {x: 6, y: 0}
-        - {x: 10, y: 0}
-        - {x: 10, y: 6}
-        - {x: 9, y: 7}
-        - {x: 7, y: 7}
-        - {x: 6, y: 8}
-        - {x: 2, y: 8}
-        - {x: 0, y: 6}
-        - {x: 0, y: 1}
-        - {x: -2, y: -1}
-        - {x: -5, y: 1}
-        - {x: -8, y: 1}
-        - {x: -10, y: -1}
-        - {x: -10, y: -5}
-        - {x: -9, y: -6}
-        - {x: -7, y: -6}
+      - - {x: -1, y: -12}
+        - {x: 2, y: -9}
+        - {x: 2, y: -5}
+        - {x: 6, y: -5}
+        - {x: 6, y: 1}
+        - {x: 5, y: 2}
+        - {x: 3, y: 2}
+        - {x: 2, y: 3}
+        - {x: -2, y: 3}
+        - {x: -4, y: 1}
         - {x: -4, y: -4}
-        - {x: -1, y: -4}
-        - {x: 0, y: -5}
-        - {x: 0, y: -8}
-        - {x: 3, y: -8}
+        - {x: -6, y: -6}
+        - {x: -9, y: -4}
+        - {x: -12, y: -4}
+        - {x: -14, y: -6}
+        - {x: -14, y: -10}
+        - {x: -13, y: -11}
+        - {x: -11, y: -11}
+        - {x: -8, y: -9}
+        - {x: -5, y: -9}
+        - {x: -4, y: -10}
+        - {x: -4, y: -13}
+        - {x: -1, y: -13}
       tessellationDetail: 1
       bones: []
       spriteID: edc152bc71e4d2c10800000000000000
@@ -563,44 +563,44 @@ TextureImporter:
       name: enemies-skeleton2_attack_10
       rect:
         serializedVersion: 2
-        x: 321
-        y: 2
+        x: 320
+        y: 0
         width: 32
-        height: 18
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape:
-      - - {x: -4, y: -7}
-        - {x: -3, y: -8}
-        - {x: 0, y: -8}
-        - {x: 1, y: -7}
-        - {x: 7, y: -7}
-        - {x: 8, y: -6}
-        - {x: 11, y: -6}
-        - {x: 14, y: -4}
-        - {x: 15, y: -2}
-        - {x: 15, y: 2}
-        - {x: 10, y: 7}
-        - {x: 8, y: 8}
-        - {x: -6, y: 8}
-        - {x: -12, y: 5}
-        - {x: -15, y: 2}
-        - {x: -15, y: 0}
-        - {x: -14, y: 0}
-        - {x: -11, y: 3}
-        - {x: -3, y: 6}
-        - {x: -2, y: 5}
-        - {x: -4, y: 3}
-        - {x: -6, y: -2}
-        - {x: -8, y: -4}
-        - {x: -14, y: -4}
+      - - {x: -3, y: -12}
+        - {x: -2, y: -13}
+        - {x: 1, y: -13}
+        - {x: 2, y: -12}
+        - {x: 8, y: -12}
+        - {x: 9, y: -11}
+        - {x: 12, y: -11}
+        - {x: 15, y: -9}
+        - {x: 16, y: -7}
+        - {x: 16, y: -3}
+        - {x: 11, y: 2}
+        - {x: 9, y: 3}
+        - {x: -5, y: 3}
+        - {x: -11, y: 0}
+        - {x: -14, y: -3}
         - {x: -14, y: -5}
-        - {x: -10, y: -6}
-        - {x: -9, y: -8}
-        - {x: -6, y: -8}
+        - {x: -13, y: -5}
+        - {x: -10, y: -2}
+        - {x: -2, y: 1}
+        - {x: -1, y: 0}
+        - {x: -3, y: -2}
+        - {x: -5, y: -7}
+        - {x: -7, y: -9}
+        - {x: -13, y: -9}
+        - {x: -13, y: -10}
+        - {x: -9, y: -11}
+        - {x: -8, y: -13}
+        - {x: -5, y: -13}
       tessellationDetail: 1
       bones: []
       spriteID: 2d727cf80bf14c5e0800000000000000
@@ -613,41 +613,41 @@ TextureImporter:
       name: enemies-skeleton2_attack_11
       rect:
         serializedVersion: 2
-        x: 354
-        y: 2
-        width: 29
-        height: 16
+        x: 352
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape:
-      - - {x: -2.5, y: -6}
-        - {x: -1.5, y: -7}
-        - {x: 1.5, y: -7}
-        - {x: 2.5, y: -6}
-        - {x: 7.5, y: -6}
-        - {x: 9.5, y: -5}
-        - {x: 11.5, y: -3}
-        - {x: 3.5, y: -4}
-        - {x: 2.5, y: -3}
-        - {x: 2.5, y: -1}
-        - {x: 4.5, y: 1}
-        - {x: 4.5, y: 6}
-        - {x: 2.5, y: 7}
-        - {x: -3.5, y: 7}
-        - {x: -5.5, y: 5}
-        - {x: -5.5, y: 1}
-        - {x: -8.5, y: -1}
-        - {x: -9.5, y: 0}
-        - {x: -9.5, y: 2}
-        - {x: -13.5, y: 1}
-        - {x: -13.5, y: -4}
-        - {x: -12.5, y: -5}
-        - {x: -9.5, y: -5}
-        - {x: -7.5, y: -7}
-        - {x: -4.5, y: -7}
+      - - {x: -2, y: -12}
+        - {x: -1, y: -13}
+        - {x: 2, y: -13}
+        - {x: 3, y: -12}
+        - {x: 8, y: -12}
+        - {x: 10, y: -11}
+        - {x: 12, y: -9}
+        - {x: 4, y: -10}
+        - {x: 3, y: -9}
+        - {x: 3, y: -7}
+        - {x: 5, y: -5}
+        - {x: 5, y: 0}
+        - {x: 3, y: 1}
+        - {x: -3, y: 1}
+        - {x: -5, y: -1}
+        - {x: -5, y: -5}
+        - {x: -8, y: -7}
+        - {x: -9, y: -6}
+        - {x: -9, y: -4}
+        - {x: -13, y: -5}
+        - {x: -13, y: -10}
+        - {x: -12, y: -11}
+        - {x: -9, y: -11}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
       tessellationDetail: 1
       bones: []
       spriteID: e4651b18f2ec029e0800000000000000
@@ -660,40 +660,40 @@ TextureImporter:
       name: enemies-skeleton2_attack_12
       rect:
         serializedVersion: 2
-        x: 386
-        y: 2
-        width: 27
-        height: 16
+        x: 384
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape:
-      - - {x: -1.5, y: -6}
-        - {x: -0.5, y: -7}
-        - {x: 3.5, y: -7}
-        - {x: 3.5, y: -6}
-        - {x: 1.5, y: -5}
-        - {x: 1.5, y: -4}
-        - {x: 3.5, y: -3}
-        - {x: 3.5, y: 0}
-        - {x: 4.5, y: 1}
-        - {x: 4.5, y: 6}
-        - {x: 2.5, y: 7}
-        - {x: -3.5, y: 7}
-        - {x: -5.5, y: 5}
-        - {x: -5.5, y: 2}
-        - {x: -7.5, y: 1}
-        - {x: -8.5, y: 3}
-        - {x: -11.5, y: 3}
-        - {x: -12.5, y: 2}
-        - {x: -12.5, y: -2}
-        - {x: -11.5, y: -3}
-        - {x: -7.5, y: -2}
-        - {x: -6.5, y: -3}
-        - {x: -6.5, y: -7}
-        - {x: -3.5, y: -7}
+      - - {x: -2, y: -12}
+        - {x: -1, y: -13}
+        - {x: 3, y: -13}
+        - {x: 3, y: -12}
+        - {x: 1, y: -11}
+        - {x: 1, y: -10}
+        - {x: 3, y: -9}
+        - {x: 3, y: -6}
+        - {x: 4, y: -5}
+        - {x: 4, y: 0}
+        - {x: 2, y: 1}
+        - {x: -4, y: 1}
+        - {x: -6, y: -1}
+        - {x: -6, y: -4}
+        - {x: -8, y: -5}
+        - {x: -9, y: -3}
+        - {x: -12, y: -3}
+        - {x: -13, y: -4}
+        - {x: -13, y: -8}
+        - {x: -12, y: -9}
+        - {x: -8, y: -8}
+        - {x: -7, y: -9}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
       tessellationDetail: 1
       bones: []
       spriteID: f0808bf71116818d0800000000000000
@@ -706,37 +706,37 @@ TextureImporter:
       name: enemies-skeleton2_attack_13
       rect:
         serializedVersion: 2
-        x: 418
-        y: 1
-        width: 24
-        height: 18
+        x: 416
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape:
-      - - {x: -1, y: -6}
-        - {x: 0, y: -7}
-        - {x: 4, y: -7}
-        - {x: 3, y: -4}
-        - {x: 5, y: -3}
-        - {x: 6, y: 7}
-        - {x: 4, y: 8}
-        - {x: -1, y: 8}
-        - {x: -3, y: 6}
+      - - {x: -3, y: -12}
+        - {x: -2, y: -13}
+        - {x: 2, y: -13}
+        - {x: 1, y: -10}
+        - {x: 3, y: -9}
+        - {x: 4, y: 1}
+        - {x: 2, y: 2}
         - {x: -3, y: 2}
-        - {x: -4, y: 1}
-        - {x: -6, y: 4}
-        - {x: -8, y: 4}
-        - {x: -11, y: 2}
-        - {x: -11, y: -1}
-        - {x: -6, y: -1}
-        - {x: -5, y: -3}
-        - {x: -3, y: -4}
-        - {x: -5, y: -5}
-        - {x: -5, y: -7}
-        - {x: -2, y: -7}
+        - {x: -5, y: 0}
+        - {x: -5, y: -4}
+        - {x: -6, y: -5}
+        - {x: -8, y: -2}
+        - {x: -10, y: -2}
+        - {x: -13, y: -4}
+        - {x: -13, y: -7}
+        - {x: -8, y: -7}
+        - {x: -7, y: -9}
+        - {x: -5, y: -10}
+        - {x: -7, y: -11}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
       tessellationDetail: 1
       bones: []
       spriteID: 81900c6ed21d03620800000000000000
@@ -749,32 +749,32 @@ TextureImporter:
       name: enemies-skeleton2_attack_14
       rect:
         serializedVersion: 2
-        x: 456
-        y: 2
-        width: 14
-        height: 17
+        x: 448
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape:
-      - - {x: 4, y: -5.5}
-        - {x: 3, y: -4.5}
-        - {x: 6, y: -2.5}
-        - {x: 6, y: -1.5}
-        - {x: 4, y: 0.5}
-        - {x: 4, y: 6.5}
-        - {x: 2, y: 7.5}
-        - {x: -3, y: 7.5}
-        - {x: -5, y: 5.5}
-        - {x: -5, y: 0.5}
-        - {x: -6, y: -0.5}
-        - {x: -6, y: -3.5}
-        - {x: -4, y: -4.5}
-        - {x: -6, y: -6.5}
-        - {x: -6, y: -7.5}
-        - {x: 4, y: -7.5}
+      - - {x: 3, y: -11}
+        - {x: 2, y: -10}
+        - {x: 5, y: -8}
+        - {x: 5, y: -7}
+        - {x: 3, y: -5}
+        - {x: 3, y: 1}
+        - {x: 1, y: 2}
+        - {x: -4, y: 2}
+        - {x: -6, y: 0}
+        - {x: -6, y: -5}
+        - {x: -7, y: -6}
+        - {x: -7, y: -9}
+        - {x: -5, y: -10}
+        - {x: -7, y: -12}
+        - {x: -7, y: -13}
+        - {x: 3, y: -13}
       tessellationDetail: 1
       bones: []
       spriteID: a252ff71323dc7d70800000000000000
@@ -795,7 +795,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       enemies-skeleton2_attack_0: 7659173831624497606
       enemies-skeleton2_attack_1: 354723643402585810
