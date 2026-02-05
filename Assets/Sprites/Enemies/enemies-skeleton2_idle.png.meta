@@ -1,37 +1,25 @@
 fileFormatVersion: 2
-guid: 536ed04b5f12dc94f87fdbc5124b61fc
+guid: 36bdf268387ef9d4d8fac73a442e080c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8344996603595648298
-    second: enemies-skeleton1_movement_0
+      213: 7628897034881489312
+    second: enemies-skeleton2_idle_0
   - first:
-      213: -3622375319434387972
-    second: enemies-skeleton1_movement_1
+      213: -8491562820440888638
+    second: enemies-skeleton2_idle_1
   - first:
-      213: 6003855414469629586
-    second: enemies-skeleton1_movement_2
+      213: 2686526470064077805
+    second: enemies-skeleton2_idle_2
   - first:
-      213: -6371975131579091987
-    second: enemies-skeleton1_movement_3
+      213: -2135807368638690799
+    second: enemies-skeleton2_idle_3
   - first:
-      213: 1826128173701959310
-    second: enemies-skeleton1_movement_4
+      213: 2245012447047401249
+    second: enemies-skeleton2_idle_4
   - first:
-      213: 4309256519656259746
-    second: enemies-skeleton1_movement_5
-  - first:
-      213: 7282550495675773793
-    second: enemies-skeleton1_movement_6
-  - first:
-      213: -7446333505391661814
-    second: enemies-skeleton1_movement_7
-  - first:
-      213: -7163712858298438575
-    second: enemies-skeleton1_movement_8
-  - first:
-      213: 9058711910429238280
-    second: enemies-skeleton1_movement_9
+      213: -6896398003092638265
+    second: enemies-skeleton2_idle_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -64,7 +52,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -78,7 +66,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,7 +90,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -127,12 +115,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemies-skeleton1_movement_0
+      name: enemies-skeleton2_idle_0
       rect:
         serializedVersion: 2
-        x: 8
+        x: 7
         y: 2
-        width: 12
+        width: 18
         height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -142,20 +130,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a2de82182326fc370800000000000000
-      internalID: 8344996603595648298
+      spriteID: 0a954200f694fd960800000000000000
+      internalID: 7628897034881489312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-skeleton1_movement_1
+      name: enemies-skeleton2_idle_1
       rect:
         serializedVersion: 2
         x: 39
         y: 2
-        width: 14
-        height: 18
+        width: 18
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,19 +152,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cfd98f1d6dcbabdc0800000000000000
-      internalID: -3622375319434387972
+      spriteID: 2cae4b3ea98e72a80800000000000000
+      internalID: -8491562820440888638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-skeleton1_movement_2
+      name: enemies-skeleton2_idle_2
       rect:
         serializedVersion: 2
         x: 71
         y: 2
-        width: 16
+        width: 18
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -186,19 +174,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 296944e80baf15350800000000000000
-      internalID: 6003855414469629586
+      spriteID: deb7ad73795784520800000000000000
+      internalID: 2686526470064077805
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-skeleton1_movement_3
+      name: enemies-skeleton2_idle_3
       rect:
         serializedVersion: 2
-        x: 102
+        x: 103
         y: 2
-        width: 17
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11a01a3a3861c52e0800000000000000
+      internalID: -2135807368638690799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies-skeleton2_idle_4
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 2
+        width: 18
         height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -208,107 +218,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: de3fa94c0623297a0800000000000000
-      internalID: -6371975131579091987
+      spriteID: 12f379e0de2e72f10800000000000000
+      internalID: 2245012447047401249
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-skeleton1_movement_4
+      name: enemies-skeleton2_idle_5
       rect:
         serializedVersion: 2
-        x: 134
+        x: 167
         y: 2
-        width: 17
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e8e86d316e5b75910800000000000000
-      internalID: 1826128173701959310
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_movement_5
-      rect:
-        serializedVersion: 2
-        x: 166
-        y: 2
-        width: 16
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2a0c52429fd8dcb30800000000000000
-      internalID: 4309256519656259746
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_movement_6
-      rect:
-        serializedVersion: 2
-        x: 200
-        y: 2
-        width: 12
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 16379995711d01560800000000000000
-      internalID: 7282550495675773793
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_movement_7
-      rect:
-        serializedVersion: 2
-        x: 232
-        y: 2
-        width: 12
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a0d6a04112f49a890800000000000000
-      internalID: -7446333505391661814
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_movement_8
-      rect:
-        serializedVersion: 2
-        x: 263
-        y: 2
-        width: 13
+        width: 18
         height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -318,30 +240,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 15c29304c11659c90800000000000000
-      internalID: -7163712858298438575
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_movement_9
-      rect:
-        serializedVersion: 2
-        x: 295
-        y: 2
-        width: 13
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8042cb7cc7207bd70800000000000000
-      internalID: 9058711910429238280
+      spriteID: 7c533fb0e821b40a0800000000000000
+      internalID: -6896398003092638265
       vertices: []
       indices: 
       edges: []
@@ -360,16 +260,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      enemies-skeleton1_movement_0: 8344996603595648298
-      enemies-skeleton1_movement_1: -3622375319434387972
-      enemies-skeleton1_movement_2: 6003855414469629586
-      enemies-skeleton1_movement_3: -6371975131579091987
-      enemies-skeleton1_movement_4: 1826128173701959310
-      enemies-skeleton1_movement_5: 4309256519656259746
-      enemies-skeleton1_movement_6: 7282550495675773793
-      enemies-skeleton1_movement_7: -7446333505391661814
-      enemies-skeleton1_movement_8: -7163712858298438575
-      enemies-skeleton1_movement_9: 9058711910429238280
+      enemies-skeleton2_idle_0: 7628897034881489312
+      enemies-skeleton2_idle_1: -8491562820440888638
+      enemies-skeleton2_idle_2: 2686526470064077805
+      enemies-skeleton2_idle_3: -2135807368638690799
+      enemies-skeleton2_idle_4: 2245012447047401249
+      enemies-skeleton2_idle_5: -6896398003092638265
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
