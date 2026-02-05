@@ -749,6 +749,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TypingSortManager
   sorts:
   - {fileID: 5863181580237299462, guid: 6858f492158423d4cbfeb9d5234fab2f, type: 3}
+  - {fileID: 1639590310501643658, guid: 916d28f59f9497440abcd344ace10fdb, type: 3}
   affichage: {fileID: 7057451}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
