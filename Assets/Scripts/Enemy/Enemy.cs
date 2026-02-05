@@ -8,6 +8,9 @@ public class Ennemy : MonoBehaviour
     private EnemyType type;
     private float damage;
     private float speed;
+    private Animator animator;
+
+    private bool isMoving;
 
     [SerializeField]
     private EnnemyData ennemyData;
@@ -23,12 +26,23 @@ public class Ennemy : MonoBehaviour
             type = ennemyData.type;
             damage = ennemyData.damage;
             speed = ennemyData.speed;
+            animator = GetComponent<Animator>();
+            animator.runtimeAnimatorController = ennemyData.animatorController;
         }
+        isMoving = true;
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if (isMoving)
+        {
+            animator.SetBool("Move", true);
+            Move();
+        }
+        else
+        {
+            animator.SetBool("Move", false);
+        }
     }
 
     private void Move()
@@ -53,6 +67,7 @@ public class Ennemy : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
+        animator.SetTrigger("TrTakeDmg");
         Debug.Log(health + " " + damageAmount + " " + (health - damageAmount));
         health -= damageAmount;
         if (health <= 0)
