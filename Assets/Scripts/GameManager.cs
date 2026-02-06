@@ -3,20 +3,20 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
     [System.Serializable]
     public class EnemyEntry
     {
         public GameObject enemy;
         public string code;
     }
+
     public static GameManager Instance;
 
     public List<EnemyEntry> list_enemies = new List<EnemyEntry>();
 
     void Awake()
     {
-        // If an instance already exists and it's not this one, destroy it
+        // Singleton
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
@@ -24,30 +24,32 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
-
-        // Optional: keep this object between scenes
         DontDestroyOnLoad(gameObject);
+
+        // Initialisation des ennemis dès Awake
+        InitEnemies();
     }
-void Start()
-{
-    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-    list_enemies.Clear();
-
-    HashSet<string> usedCodes = new HashSet<string>();
-
-    foreach (GameObject enemy in enemies)
+    private void InitEnemies()
     {
-        EnemyEntry entry = new EnemyEntry();
-        entry.enemy = enemy;
-        entry.code = GenerateRandomCode(usedCodes);
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        list_enemies.Add(entry);
+        list_enemies.Clear();
+        HashSet<string> usedCodes = new();
+
+        foreach (GameObject enemy in enemies)
+        {
+            EnemyEntry entry = new()
+            {
+                enemy = enemy,
+                code = GenerateRandomCode(usedCodes)
+            };
+
+            list_enemies.Add(entry);
+        }
     }
-}
 
-
-    string GenerateRandomCode(HashSet<string> usedCodes)
+    private string GenerateRandomCode(HashSet<string> usedCodes)
     {
         string code;
 
@@ -64,5 +66,4 @@ void Start()
 
         return code;
     }
-
 }

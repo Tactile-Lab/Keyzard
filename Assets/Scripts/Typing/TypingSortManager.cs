@@ -9,7 +9,7 @@ public class TypingSortManager : MonoBehaviour
     public List<Sort> sorts = new List<Sort>();
 
     [Header("Ennemis")]
-    public List<GameManager.EnemyEntry> listEnemies = new List<GameManager.EnemyEntry>();
+    public List<GameManager.EnemyEntry> listEnemies;
 
     [Header("Affichage")]
     public TextMeshProUGUI affichage;
@@ -31,12 +31,12 @@ public class TypingSortManager : MonoBehaviour
         if (Keyboard.current != null)
             Keyboard.current.onTextInput -= OnTextInput;
     }
-
     private void Start()
     {
-        if (gameManager != null && gameManager.list_enemies != null)
-            listEnemies = new List<GameManager.EnemyEntry>(gameManager.list_enemies);
+        if (gameManager != null)
+            listEnemies = gameManager.list_enemies; // juste la référence
     }
+
 
     private void OnTextInput(char c)
     {
@@ -98,26 +98,38 @@ public class TypingSortManager : MonoBehaviour
     }
 
     private void HandleSpace()
-{
-    if (string.IsNullOrEmpty(currentInput) && selectedEnemy == null)
-        return;
-
-    // Vérifier si currentInput correspond à un sort complet
-    Sort sortToCast = sorts.Find(s => s.nomSort.ToUpper() == currentInput);
-
-    if (sortToCast != null)
     {
-        // Sort complet → lancer
-        if (selectedEnemy != null)
-            Debug.Log($"Lancement du sort '{sortToCast.nomSort}' sur {selectedEnemy.code} !");
-        else
-            Debug.Log($"Lancement du sort '{sortToCast.nomSort}' sans cible !");
+        if (string.IsNullOrEmpty(currentInput) && selectedEnemy == null)
+            return;
+
+        // Cherche le sort correspondant à l'input complet
+        Sort sortToCast = sorts.Find(s => s.nomSort.ToUpper() == currentInput);
+
+        if (sortToCast != null)
+        {
+            // Instancie le prefab du sort
+            GameObject sortInstance = Instantiate(sortToCast.gameObject); // le prefab du sort
+
+            // Si une cible est sélectionnée
+            if (selectedEnemy != null)
+            {
+                // Appelle la méthode pour lancer le sort sur cible
+                var sortScript = sortInstance.GetComponent<Sort>();
+                if (sortScript != null)
+                    sortScript.LancerSortCible(selectedEnemy.enemy);
+            }
+            else
+            {
+                // Appelle la méthode pour lancer le sort libre
+                var sortScript = sortInstance.GetComponent<Sort>();
+                if (sortScript != null)
+                    sortScript.LancerSort();
+            }
+        }
+
+        ResetInput();
     }
 
-
-
-    ResetInput();
-}
 
 
 
