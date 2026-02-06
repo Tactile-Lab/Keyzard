@@ -48,8 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LanceFantom
   nomSort: uraw
-  damage: 10
-  vitesse: 10
+  damage: 15
+  vitesse: 1.5
 --- !u!212 &6770589723762905975
 SpriteRenderer:
   serializedVersion: 2
