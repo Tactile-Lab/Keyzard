@@ -79,6 +79,7 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     { 
+        Debug.Log("collison");
         if (collision.gameObject.CompareTag("Player"))
         {
             //TODO : quelque chose comme collision.gameObject.GetComponent<Player>().TakeDamage(damage);
@@ -87,8 +88,8 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Projectile"))
         {
             //TODO : quelque chose comme
-            //collision.gameObject.GetComponent<Projectile>().DestroyProjectile();
-            //TakeDamage(collision.gameObject.GetComponent<Projectile>().damage);
+            collision.gameObject.GetComponent<Sort>().DestroySort();
+            TakeDamage(collision.gameObject.GetComponent<Sort>().damage);
         }
     }
 
