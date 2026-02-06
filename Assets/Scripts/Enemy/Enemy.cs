@@ -117,7 +117,7 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Projectile"))
         {
             //TODO : quelque chose comme
-            collision.gameObject.GetComponent<Sort>().DestroySort();
+            collision.gameObject.GetComponent<Sort>().DestroySort(gameObject);
             TakeDamage(collision.gameObject.GetComponent<Sort>().damage);
         }
     }
@@ -138,7 +138,7 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
 
-        Destroy(gameObject); // détruira l'objet
+        Destroy(gameObject); // dï¿½truira l'objet
     }
 
 
