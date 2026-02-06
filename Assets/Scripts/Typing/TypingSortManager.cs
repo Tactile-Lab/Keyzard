@@ -56,6 +56,7 @@ public class TypingSortManager : MonoBehaviour
     void TaperLettre(char lettre)
     {
         string tentative = currentInput + lettre;
+        tentative = tentative.ToUpper();
         bool correspond = false;
 
         // Vérifie si au moins un sort commence par la saisie actuelle
