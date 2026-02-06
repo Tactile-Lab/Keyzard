@@ -148,17 +148,31 @@ TextureImporter:
       name: enemies-vampire_attack_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 2
-        width: 14
-        height: 18
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 2, y: -9}
+        - {x: 3, y: -8}
+        - {x: 3, y: -5}
+        - {x: 1, y: -3}
+        - {x: 2, y: -2}
+        - {x: 2, y: 1}
+        - {x: 0, y: 3}
+        - {x: -6, y: 3}
+        - {x: -8, y: 1}
+        - {x: -8, y: -8}
+        - {x: -7, y: -10}
+        - {x: -9, y: -12}
+        - {x: -9, y: -13}
+        - {x: 3, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 0429b8d25627d1be0800000000000000
       internalID: -1504920921590492608
@@ -170,17 +184,28 @@ TextureImporter:
       name: enemies-vampire_attack_1
       rect:
         serializedVersion: 2
-        x: 38
-        y: 2
-        width: 15
-        height: 17
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 3, y: -11}
+        - {x: 2, y: -10}
+        - {x: 4, y: -8}
+        - {x: 4, y: 0}
+        - {x: 2, y: 2}
+        - {x: -4, y: 2}
+        - {x: -6, y: 0}
+        - {x: -7, y: -10}
+        - {x: -9, y: -12}
+        - {x: -9, y: -13}
+        - {x: 3, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 57be7077affd42f50800000000000000
       internalID: 6855850799596563317
@@ -192,17 +217,33 @@ TextureImporter:
       name: enemies-vampire_attack_2
       rect:
         serializedVersion: 2
-        x: 73
-        y: 2
-        width: 14
-        height: 21
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 4, y: -11}
+        - {x: 6, y: -6}
+        - {x: 6, y: -3}
+        - {x: 4, y: -1}
+        - {x: 5, y: 0}
+        - {x: 5, y: 4}
+        - {x: 3, y: 6}
+        - {x: -3, y: 6}
+        - {x: -5, y: 4}
+        - {x: -4, y: -2}
+        - {x: -5, y: -3}
+        - {x: -4, y: -9}
+        - {x: -6, y: -11}
+        - {x: -6, y: -12}
+        - {x: -5, y: -13}
+        - {x: 2, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: ee201c21ffe3b1bf0800000000000000
       internalID: -352618880566230290
@@ -214,17 +255,33 @@ TextureImporter:
       name: enemies-vampire_attack_3
       rect:
         serializedVersion: 2
-        x: 104
-        y: 2
-        width: 14
-        height: 22
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 5, y: -11}
+        - {x: 5, y: -7}
+        - {x: 2, y: -1}
+        - {x: 2, y: 2}
+        - {x: 3, y: 3}
+        - {x: 3, y: 5}
+        - {x: 1, y: 7}
+        - {x: -5, y: 7}
+        - {x: -7, y: 5}
+        - {x: -7, y: -2}
+        - {x: -5, y: -5}
+        - {x: -6, y: -6}
+        - {x: -6, y: -10}
+        - {x: -3, y: -13}
+        - {x: 1, y: -12}
+        - {x: 3, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 4c8734f1b8a4354f0800000000000000
       internalID: -841246744002725692
@@ -236,17 +293,36 @@ TextureImporter:
       name: enemies-vampire_attack_4
       rect:
         serializedVersion: 2
-        x: 132
-        y: 5
-        width: 19
-        height: 20
+        x: 128
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -1, y: -8}
+        - {x: 1, y: -10}
+        - {x: 3, y: -10}
+        - {x: 6, y: -8}
+        - {x: 6, y: -3}
+        - {x: 4, y: -1}
+        - {x: 4, y: 2}
+        - {x: 3, y: 6}
+        - {x: 2, y: 7}
+        - {x: 0, y: 8}
+        - {x: -4, y: 8}
+        - {x: -6, y: 7}
+        - {x: -7, y: 3}
+        - {x: -8, y: 2}
+        - {x: -8, y: 0}
+        - {x: -11, y: -3}
+        - {x: -11, y: -6}
+        - {x: -7, y: -10}
+        - {x: -3, y: -10}
+      tessellationDetail: 1
       bones: []
       spriteID: 6415a28253d639030800000000000000
       internalID: 3500261410471563590
@@ -258,17 +334,40 @@ TextureImporter:
       name: enemies-vampire_attack_5
       rect:
         serializedVersion: 2
-        x: 162
-        y: 5
-        width: 23
-        height: 21
+        x: 160
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 4, y: -9}
+        - {x: 5, y: -7}
+        - {x: 6, y: -8}
+        - {x: 8, y: -7}
+        - {x: 8, y: -3}
+        - {x: 6, y: -1}
+        - {x: 6, y: 0}
+        - {x: 2, y: 4}
+        - {x: 2, y: 7}
+        - {x: 1, y: 8}
+        - {x: -1, y: 9}
+        - {x: -4, y: 9}
+        - {x: -7, y: 7}
+        - {x: -8, y: 3}
+        - {x: -11, y: -2}
+        - {x: -13, y: -3}
+        - {x: -13, y: -6}
+        - {x: -10, y: -8}
+        - {x: -8, y: -8}
+        - {x: -7, y: -7}
+        - {x: -5, y: -8}
+        - {x: -4, y: -10}
+        - {x: 3, y: -10}
+      tessellationDetail: 1
       bones: []
       spriteID: 014658171b4c4d470800000000000000
       internalID: 8418569869855122448
@@ -280,17 +379,42 @@ TextureImporter:
       name: enemies-vampire_attack_6
       rect:
         serializedVersion: 2
-        x: 195
-        y: 5
-        width: 23
-        height: 21
+        x: 192
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 6, y: -8}
+        - {x: 8, y: -6}
+        - {x: 9, y: -6}
+        - {x: 9, y: -2}
+        - {x: 7, y: -1}
+        - {x: 7, y: 1}
+        - {x: 6, y: 2}
+        - {x: 3, y: 2}
+        - {x: 2, y: 3}
+        - {x: 2, y: 7}
+        - {x: 1, y: 8}
+        - {x: -1, y: 9}
+        - {x: -5, y: 9}
+        - {x: -8, y: 6}
+        - {x: -8, y: 3}
+        - {x: -10, y: 1}
+        - {x: -10, y: -1}
+        - {x: -9, y: -2}
+        - {x: -10, y: -3}
+        - {x: -12, y: -3}
+        - {x: -12, y: -5}
+        - {x: -10, y: -7}
+        - {x: -6, y: -8}
+        - {x: -4, y: -10}
+        - {x: 2, y: -10}
+      tessellationDetail: 1
       bones: []
       spriteID: 18c1c794dc86141f0800000000000000
       internalID: -1062452806172271487
@@ -302,17 +426,41 @@ TextureImporter:
       name: enemies-vampire_attack_7
       rect:
         serializedVersion: 2
-        x: 228
-        y: 5
-        width: 21
-        height: 23
+        x: 224
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 7, y: -7}
+        - {x: 7, y: -5}
+        - {x: 5, y: -4}
+        - {x: 8, y: -2}
+        - {x: 8, y: 1}
+        - {x: 7, y: 2}
+        - {x: 3, y: 1}
+        - {x: 0, y: 3}
+        - {x: 1, y: 5}
+        - {x: 1, y: 9}
+        - {x: -2, y: 11}
+        - {x: -6, y: 11}
+        - {x: -9, y: 7}
+        - {x: -9, y: 4}
+        - {x: -8, y: 3}
+        - {x: -10, y: 1}
+        - {x: -10, y: -3}
+        - {x: -9, y: -4}
+        - {x: -11, y: -6}
+        - {x: -11, y: -7}
+        - {x: -8, y: -9}
+        - {x: -5, y: -9}
+        - {x: -4, y: -10}
+        - {x: 1, y: -10}
+      tessellationDetail: 1
       bones: []
       spriteID: 1fd122b19cd372ea0800000000000000
       internalID: -5897677253065433615
@@ -324,17 +472,40 @@ TextureImporter:
       name: enemies-vampire_attack_8
       rect:
         serializedVersion: 2
-        x: 261
-        y: 5
-        width: 19
-        height: 24
+        x: 256
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 4, y: -8}
+        - {x: 4, y: -5}
+        - {x: 7, y: -2}
+        - {x: 7, y: 0}
+        - {x: 6, y: 1}
+        - {x: 4, y: 1}
+        - {x: 0, y: 5}
+        - {x: 1, y: 6}
+        - {x: 1, y: 10}
+        - {x: 0, y: 11}
+        - {x: -2, y: 12}
+        - {x: -6, y: 12}
+        - {x: -9, y: 9}
+        - {x: -9, y: 5}
+        - {x: -8, y: 2}
+        - {x: -10, y: 0}
+        - {x: -10, y: -3}
+        - {x: -8, y: -5}
+        - {x: -9, y: -6}
+        - {x: -8, y: -8}
+        - {x: -5, y: -8}
+        - {x: -3, y: -10}
+        - {x: 2, y: -10}
+      tessellationDetail: 1
       bones: []
       spriteID: a81954cfee812e2a0800000000000000
       internalID: -6709773080114916982
@@ -346,17 +517,36 @@ TextureImporter:
       name: enemies-vampire_attack_9
       rect:
         serializedVersion: 2
-        x: 293
-        y: 4
-        width: 23
-        height: 24
+        x: 288
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -3, y: -10}
+        - {x: 4, y: -10}
+        - {x: 5, y: -11}
+        - {x: 9, y: -11}
+        - {x: 11, y: -9}
+        - {x: 11, y: -6}
+        - {x: 7, y: 1}
+        - {x: 7, y: 7}
+        - {x: 4, y: 10}
+        - {x: 2, y: 11}
+        - {x: -1, y: 11}
+        - {x: -4, y: 9}
+        - {x: -5, y: 5}
+        - {x: -10, y: 1}
+        - {x: -10, y: -3}
+        - {x: -9, y: -4}
+        - {x: -9, y: -7}
+        - {x: -6, y: -11}
+        - {x: -4, y: -11}
+      tessellationDetail: 1
       bones: []
       spriteID: 819ad2617f9e02080800000000000000
       internalID: -9214107590161749736
@@ -368,17 +558,45 @@ TextureImporter:
       name: enemies-vampire_attack_10
       rect:
         serializedVersion: 2
-        x: 325
-        y: 3
-        width: 27
-        height: 20
+        x: 320
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 3, y: -11}
+        - {x: 4, y: -8}
+        - {x: 8, y: -12}
+        - {x: 9, y: -12}
+        - {x: 10, y: -11}
+        - {x: 13, y: -12}
+        - {x: 14, y: -11}
+        - {x: 15, y: -3}
+        - {x: 14, y: -2}
+        - {x: 14, y: 0}
+        - {x: 13, y: 0}
+        - {x: 13, y: -2}
+        - {x: 12, y: -3}
+        - {x: 8, y: 5}
+        - {x: 6, y: 6}
+        - {x: 3, y: 6}
+        - {x: 2, y: 5}
+        - {x: -2, y: 5}
+        - {x: -6, y: 3}
+        - {x: -10, y: -1}
+        - {x: -10, y: -4}
+        - {x: -9, y: -5}
+        - {x: -7, y: -6}
+        - {x: -7, y: -9}
+        - {x: -6, y: -10}
+        - {x: -3, y: -10}
+        - {x: 0, y: -12}
+        - {x: 2, y: -12}
+      tessellationDetail: 1
       bones: []
       spriteID: fb66c830882241340800000000000000
       internalID: 4833526267645814463
@@ -390,17 +608,36 @@ TextureImporter:
       name: enemies-vampire_attack_11
       rect:
         serializedVersion: 2
-        x: 359
-        y: 5
-        width: 23
-        height: 16
+        x: 352
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 10, y: -9}
+        - {x: 12, y: -10}
+        - {x: 11, y: -8}
+        - {x: 13, y: -7}
+        - {x: 13, y: -3}
+        - {x: 11, y: -1}
+        - {x: 7, y: 0}
+        - {x: 4, y: 3}
+        - {x: 2, y: 4}
+        - {x: -7, y: 4}
+        - {x: -8, y: 3}
+        - {x: -8, y: 1}
+        - {x: -7, y: 0}
+        - {x: -4, y: 0}
+        - {x: -2, y: -2}
+        - {x: -5, y: -5}
+        - {x: -5, y: -7}
+        - {x: 0, y: -10}
+        - {x: 9, y: -10}
+      tessellationDetail: 1
       bones: []
       spriteID: 1d3d643edaf558ea0800000000000000
       internalID: -5871181338760522799
@@ -412,17 +649,33 @@ TextureImporter:
       name: enemies-vampire_attack_12
       rect:
         serializedVersion: 2
-        x: 392
-        y: 3
-        width: 20
-        height: 15
+        x: 384
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 9, y: -10}
+        - {x: 9, y: -7}
+        - {x: 11, y: -5}
+        - {x: 11, y: -2}
+        - {x: 7, y: 1}
+        - {x: 4, y: 1}
+        - {x: 2, y: -1}
+        - {x: -1, y: -1}
+        - {x: -4, y: 1}
+        - {x: -6, y: 1}
+        - {x: -7, y: 0}
+        - {x: -7, y: -5}
+        - {x: -4, y: -8}
+        - {x: -4, y: -11}
+        - {x: 0, y: -12}
+        - {x: 6, y: -12}
+      tessellationDetail: 1
       bones: []
       spriteID: b3c8a6eb822ae9160800000000000000
       internalID: 7034237963876338747
@@ -434,17 +687,30 @@ TextureImporter:
       name: enemies-vampire_attack_13
       rect:
         serializedVersion: 2
-        x: 422
-        y: 2
-        width: 19
-        height: 17
+        x: 416
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 5, y: -12}
+        - {x: 8, y: -10}
+        - {x: 6, y: -6}
+        - {x: 7, y: -5}
+        - {x: 7, y: -3}
+        - {x: 3, y: 2}
+        - {x: -3, y: 2}
+        - {x: -5, y: 0}
+        - {x: -5, y: -3}
+        - {x: -9, y: -8}
+        - {x: -9, y: -10}
+        - {x: -5, y: -13}
+        - {x: 5, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 44831830350d1d500800000000000000
       internalID: 419345295281829956
@@ -456,17 +722,36 @@ TextureImporter:
       name: enemies-vampire_attack_14
       rect:
         serializedVersion: 2
-        x: 455
-        y: 2
-        width: 17
-        height: 18
+        x: 448
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 7, y: -11}
+        - {x: 7, y: -9}
+        - {x: 6, y: -8}
+        - {x: 5, y: -8}
+        - {x: 3, y: -5}
+        - {x: 1, y: -4}
+        - {x: 2, y: -1}
+        - {x: 2, y: 1}
+        - {x: 0, y: 3}
+        - {x: -6, y: 3}
+        - {x: -8, y: 1}
+        - {x: -8, y: -2}
+        - {x: -7, y: -4}
+        - {x: -8, y: -5}
+        - {x: -7, y: -9}
+        - {x: -8, y: -10}
+        - {x: -8, y: -12}
+        - {x: -7, y: -13}
+        - {x: 5, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: e1081f042340dd8f0800000000000000
       internalID: -514250168565923810
@@ -478,17 +763,31 @@ TextureImporter:
       name: enemies-vampire_attack_15
       rect:
         serializedVersion: 2
-        x: 486
-        y: 2
-        width: 14
-        height: 18
+        x: 480
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 2, y: -5}
+        - {x: 0, y: -3}
+        - {x: 1, y: -2}
+        - {x: 1, y: 1}
+        - {x: -1, y: 3}
+        - {x: -7, y: 3}
+        - {x: -9, y: 1}
+        - {x: -9, y: -2}
+        - {x: -8, y: -4}
+        - {x: -9, y: -5}
+        - {x: -9, y: -7}
+        - {x: -7, y: -9}
+        - {x: -8, y: -13}
+        - {x: 3, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 6c101f70afc67c3c0800000000000000
       internalID: -4339379894817324602
@@ -500,7 +799,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f9a7f5349ec577741b5ab130d6b79533
     internalID: 0
     vertices: []
     indices: 
@@ -508,7 +807,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       enemies-vampire_attack_0: -1504920921590492608
       enemies-vampire_attack_1: 6855850799596563317
