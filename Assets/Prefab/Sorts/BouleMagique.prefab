@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BouleMagique
   nomSort: tya
-  damage: 20
+  damage: 10
   vitesse: 2
 --- !u!212 &1443223817452262721
 SpriteRenderer:

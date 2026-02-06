@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
 
     private bool isMoving;
     private bool isDying;
-    public TMP_Text name;
+    public TMP_Text nameText;
 
     [SerializeField]
     private EnemyData ennemyData;
@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
             animator = GetComponent<Animator>();
             animator.runtimeAnimatorController = ennemyData.animatorController;
         }
-        name.text = GameManager.Instance.list_enemies.Find(e => e.enemy == gameObject)?.code ?? "Unknown";
+        nameText.text = GameManager.Instance.list_enemies.Find(e => e.enemy == gameObject)?.code ?? "Unknown";
         if (type == EnemyType.Distant) StartCoroutine(Shoot());
         isMoving = true;
         animator.SetBool("Move", true);
@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
         {
             if (isDying) return;
             isDying = true;
-            animator.SetTrigger("Die");
+            animator.SetTrigger("Death");
             gameObject.GetComponent<Collider2D>().enabled = false;
             StartCoroutine(PlayDeath());
             return;
@@ -136,9 +136,9 @@ public class Enemy : MonoBehaviour
 
     private IEnumerator PlayDeath()
     {
-        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
+        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >=1f);
 
-        Destroy(gameObject); // d�truira l'objet
+        Destroy(gameObject); // détruira l'objet
     }
 
 
