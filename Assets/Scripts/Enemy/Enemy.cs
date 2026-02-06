@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 
-public class Ennemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     private float health;
     private EnemyType type;
@@ -13,7 +13,7 @@ public class Ennemy : MonoBehaviour
     private bool isMoving;
 
     [SerializeField]
-    private EnnemyData ennemyData;
+    private EnemyData ennemyData;
 
     private GameObject player;
 

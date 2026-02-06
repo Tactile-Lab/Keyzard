@@ -9,7 +9,7 @@ public enum EnemyType
 }
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Ennemy", order = 1)]
-public class EnnemyData : ScriptableObject
+public class EnemyData : ScriptableObject
 {
     public int health;
     public EnemyType type;
