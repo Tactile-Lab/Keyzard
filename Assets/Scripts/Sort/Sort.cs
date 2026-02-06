@@ -8,6 +8,8 @@ public class Sort : MonoBehaviour
     public int damage;
     public float vitesse;
 
+    protected GameObject cible;
+
     // Méthode qui cherche la cible la plus proche et lance le sort dessus
     public virtual void LancerSort()
     {
@@ -26,6 +28,7 @@ public class Sort : MonoBehaviour
     public virtual void LancerSortCible(GameObject cible)
     {
         if (cible == null) return;
+        this.cible = cible;
         StartCoroutine(DeplacementVersCible(cible));
     }
 
@@ -34,10 +37,23 @@ public class Sort : MonoBehaviour
     {
         while (cible != null)
         {
-            transform.position = Vector2.MoveTowards(transform.position, cible.transform.position, vitesse * Time.deltaTime);
+            // Déplacement
+            transform.position = Vector2.MoveTowards(
+                transform.position,
+                cible.transform.position,
+                vitesse * Time.deltaTime
+            );
+
+            // Rotation instantanée vers la cible
+            Vector2 direction = cible.transform.position - transform.position;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+            transform.rotation = Quaternion.Euler(0, 0, angle);
+
             yield return null;
         }
     }
+
 
     // Méthode pour trouver la cible la plus proche parmi les EnemyEntry
     public GameObject TrouverCibleProche(List<GameManager.EnemyEntry> ennemis)
@@ -60,7 +76,7 @@ public class Sort : MonoBehaviour
         return cibleProche;
     }
 
-    public virtual void DestroySort()
+    public virtual void DestroySort(GameObject cible)
     {
         Destroy(gameObject);
     }

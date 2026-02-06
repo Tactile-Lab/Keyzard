@@ -63,14 +63,14 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Projectile"))
         {
             //TODO : quelque chose comme
-            collision.gameObject.GetComponent<Sort>().DestroySort();
+            collision.gameObject.GetComponent<Sort>().DestroySort(gameObject);
             TakeDamage(collision.gameObject.GetComponent<Sort>().damage);
         }
     }
 
     public void TakeDamage(float damageAmount)
     {
-        animator.SetTrigger("TrTakeDmg");
+        //animator.SetTrigger("TrTakeDmg");
         Debug.Log(health + " " + damageAmount + " " + (health - damageAmount));
         health -= damageAmount;
         if (health <= 0)
