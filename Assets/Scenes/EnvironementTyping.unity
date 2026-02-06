@@ -2736,7 +2736,7 @@ MonoBehaviour:
   - {fileID: 1639590310501643658, guid: 916d28f59f9497440abcd344ace10fdb, type: 3}
   listEnemies: []
   affichage: {fileID: 1476374715}
-  gameManager: {fileID: 0}
+  gameManager: {fileID: 77525615}
 --- !u!1 &994405935
 GameObject:
   m_ObjectHideFlags: 0
@@ -3234,11 +3234,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2251740605756784528, guid: fe868ce24422f94438cd4165f7696dfb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.81
+      value: -6.59
       objectReference: {fileID: 0}
     - target: {fileID: 2251740605756784528, guid: fe868ce24422f94438cd4165f7696dfb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.74
+      value: 3.59
       objectReference: {fileID: 0}
     - target: {fileID: 2251740605756784528, guid: fe868ce24422f94438cd4165f7696dfb, type: 3}
       propertyPath: m_LocalPosition.z
