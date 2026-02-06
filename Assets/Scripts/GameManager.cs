@@ -28,23 +28,23 @@ public class GameManager : MonoBehaviour
         // Optional: keep this object between scenes
         DontDestroyOnLoad(gameObject);
     }
-    void Start()
+void Start()
+{
+    GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+    list_enemies.Clear();
+
+    HashSet<string> usedCodes = new HashSet<string>();
+
+    foreach (GameObject enemy in enemies)
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        EnemyEntry entry = new EnemyEntry();
+        entry.enemy = enemy;
+        entry.code = GenerateRandomCode(usedCodes);
 
-        list_enemies.Clear();
-
-        HashSet<string> usedCodes = new HashSet<string>();
-
-        foreach (GameObject enemy in enemies)
-        {
-            EnemyEntry entry = new EnemyEntry();
-            entry.enemy = enemy;
-            entry.code = GenerateRandomCode(usedCodes);
-
-            list_enemies.Add(entry);
-        }
+        list_enemies.Add(entry);
     }
+}
 
 
     string GenerateRandomCode(HashSet<string> usedCodes)

@@ -1,122 +1,145 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.Controls;
 using TMPro;
+using System.Collections.Generic;
 
 public class TypingSortManager : MonoBehaviour
 {
     [Header("Sorts disponibles")]
     public List<Sort> sorts = new List<Sort>();
 
+    [Header("Ennemis")]
+    public List<GameManager.EnemyEntry> listEnemies = new List<GameManager.EnemyEntry>();
+
     [Header("Affichage")]
     public TextMeshProUGUI affichage;
 
+    public GameManager gameManager;
+
     private string currentInput = "";
-    private Keyboard keyboard;
+    private GameManager.EnemyEntry selectedEnemy = null;
+    private bool sortLibreMode = false; // true si on tape un sort sans cible
 
-    void Start()
+    private void OnEnable()
     {
-        keyboard = Keyboard.current;
+        if (Keyboard.current != null)
+            Keyboard.current.onTextInput += OnTextInput;
     }
 
-    void Update()
+    private void OnDisable()
     {
-        if (keyboard == null) return;
+        if (Keyboard.current != null)
+            Keyboard.current.onTextInput -= OnTextInput;
+    }
 
-        // Vérifie si une touche a été pressée
-        foreach (KeyControl keyControl in keyboard.allKeys)
+    private void Start()
+    {
+        if (gameManager != null && gameManager.list_enemies != null)
+            listEnemies = new List<GameManager.EnemyEntry>(gameManager.list_enemies);
+    }
+
+    private void OnTextInput(char c)
+    {
+        if (char.IsLetter(c))
         {
-            if (keyControl.wasPressedThisFrame)
+            TypeLetter(char.ToUpper(c));
+        }
+        else if (c == ' ')
+        {
+            HandleSpace();
+        }
+    }
+
+    private void TypeLetter(char letter)
+    {
+        string tentative = currentInput + letter;
+        bool matchFound = false;
+
+        // 1️⃣ Vérifier l'ennemi si aucun sélectionné et pas en mode libre
+        if (selectedEnemy == null && !sortLibreMode)
+        {
+            foreach (var entry in listEnemies)
             {
-                TraiterTouche(keyControl);
+                if (entry.code.ToUpper().StartsWith(tentative))
+                {
+                    matchFound = true;
+
+                    // Ennemi complètement tapé
+                    if (entry.code.ToUpper() == tentative)
+                    {
+                        selectedEnemy = entry;
+                        Debug.Log("Ennemi sélectionné : " + selectedEnemy.code);
+                        currentInput = ""; // reset input après sélection
+                    }
+                    else
+                    {
+                        currentInput = tentative; // input partiel correct
+                    }
+                    break;
+                }
             }
         }
 
-        MettreAJourAffichage();
-    }
-
-    void TraiterTouche(KeyControl keyControl)
-    {
-        // Espace : lancer sort ou reset
-        if (keyControl.keyCode == Key.Space)
+        // 2️⃣ Vérifier les sorts
+        if (!matchFound)
         {
-            GestionEspace();
-            return;
-        }
-
-        char lettre = KeyControlToChar(keyControl);
-
-        if (lettre != '\0')
-        {
-            TaperLettre(lettre);
-        }
-    }
-
-    void TaperLettre(char lettre)
-    {
-        string tentative = currentInput + lettre;
-        tentative = tentative.ToUpper();
-        bool correspond = false;
-
-        // Vérifie si au moins un sort commence par la saisie actuelle
-        foreach (Sort sort in sorts)
-        {
-            if (sort.nomSort.StartsWith(tentative))
+            foreach (var sort in sorts)
             {
-                correspond = true;
-                break;
+                if (sort.nomSort.ToUpper().StartsWith(tentative))
+                {
+                    matchFound = true;
+                    currentInput = tentative; // input partiel correct pour un sort
+                    break;
+                }
             }
         }
 
-        if (correspond)
-        {
-            currentInput = tentative;
-        }
-        // Sinon on ignore la lettre (pas d'erreur affichée)
+        // 3️⃣ Si aucune correspondance → ignorer la lettre (currentInput inchangé)
     }
 
-    void GestionEspace()
+    private void HandleSpace()
+{
+    if (string.IsNullOrEmpty(currentInput) && selectedEnemy == null)
+        return;
+
+    // Vérifier si currentInput correspond à un sort complet
+    Sort sortToCast = sorts.Find(s => s.nomSort.ToUpper() == currentInput);
+
+    if (sortToCast != null)
     {
-        foreach (Sort sort in sorts)
-        {
-            if (sort.nomSort == currentInput)
-            {
-                // Lance le sort
-                // sort.Lancer();
-                Debug.Log("Sort " + sort.nomSort + " lancée !!!!");
-                ResetInput();
-                return;
-            }
-        }
-
-        // Si aucun sort ne correspond exactement, on reset juste
-        ResetInput();
+        // Sort complet → lancer
+        if (selectedEnemy != null)
+            Debug.Log($"Lancement du sort '{sortToCast.nomSort}' sur {selectedEnemy.code} !");
+        else
+            Debug.Log($"Lancement du sort '{sortToCast.nomSort}' sans cible !");
     }
 
-    void ResetInput()
+
+
+    ResetInput();
+}
+
+
+
+    private void ResetInput()
     {
         currentInput = "";
+        selectedEnemy = null;
+        sortLibreMode = false;
     }
 
-    void MettreAJourAffichage()
+    private void Update()
     {
-        if (affichage != null)
-        {
+        UpdateDisplay();
+    }
+
+    private void UpdateDisplay()
+    {
+        if (affichage == null) return;
+
+        if (selectedEnemy != null)
+            affichage.text = selectedEnemy.code + " - " + currentInput;
+        else
             affichage.text = currentInput;
-        }
-    }
-
-    char KeyControlToChar(KeyControl keyControl)
-    {
-        string nom = keyControl.displayName;
-
-        // Si c'est une lettre (A-Z)
-        if (nom.Length == 1 && char.IsLetter(nom[0]))
-        {
-            return char.ToLower(nom[0]);
-        }
-
-        return '\0';
     }
 }
