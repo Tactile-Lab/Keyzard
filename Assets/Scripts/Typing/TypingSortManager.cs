@@ -126,7 +126,6 @@ public class TypingSortManager : MonoBehaviour
                     sortScript.LancerSort();
             }
         }
-
         ResetInput();
     }
 
