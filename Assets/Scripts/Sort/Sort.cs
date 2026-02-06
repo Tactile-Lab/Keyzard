@@ -59,4 +59,9 @@ public class Sort : MonoBehaviour
 
         return cibleProche;
     }
+
+    public virtual void DestroySort()
+    {
+        Destroy(gameObject);
+    }
 }
