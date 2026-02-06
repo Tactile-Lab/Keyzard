@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Net;
 using Unity.VisualScripting;
+using TMPro;
 
 public enum EnemyAction
 {
@@ -20,6 +21,7 @@ public class Enemy : MonoBehaviour
     private Animator animator;
 
     private bool isMoving;
+    public TMP_Text name;
 
     [SerializeField]
     private EnemyData ennemyData;
@@ -40,6 +42,7 @@ public class Enemy : MonoBehaviour
         }
         isMoving = true;
         animator.SetBool("Move", true);
+        name.text = GameManager.Instance.list_enemies.Find(e => e.enemy == gameObject)?.code ?? "Unknown";
     }
 
     private void FixedUpdate()
@@ -54,6 +57,15 @@ public class Enemy : MonoBehaviour
         checkAttack();
         if (isMoving)
         {
+            SpriteRenderer spR = GetComponent<SpriteRenderer>();
+            if (player.transform.position.x < transform.position.x)
+            {
+                spR.flipX = true;
+            }
+            else
+            {
+                spR.flipX = false;
+            }
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
         else if (health==0)
@@ -109,7 +121,7 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
 
-        Destroy(gameObject); // détruira l'objet DeathAnimation
+        Destroy(gameObject); // détruira l'objet
     }
 
 
