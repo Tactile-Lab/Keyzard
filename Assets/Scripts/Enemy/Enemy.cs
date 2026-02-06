@@ -1,6 +1,15 @@
 using UnityEngine;
 using System.Collections;
+using System.Net;
+using Unity.VisualScripting;
 
+public enum EnemyAction
+{
+    Move,
+    Attack,
+    TakeDamage,
+    Die
+}
 
 public class Enemy : MonoBehaviour
 {
@@ -30,26 +39,42 @@ public class Enemy : MonoBehaviour
             animator.runtimeAnimatorController = ennemyData.animatorController;
         }
         isMoving = true;
+        animator.SetBool("Move", true);
     }
 
     private void FixedUpdate()
     {
-        if (isMoving)
-        {
-            animator.SetBool("Move", true);
-            Move();
-        }
-        else
-        {
-            animator.SetBool("Move", false);
-        }
+        Move();
     }
 
 
 
     private void Move()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        checkAttack();
+        if (isMoving)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        }
+        else if (health==0)
+        {
+            animator.SetTrigger("Die");
+            gameObject.GetComponent<Collider2D>().enabled = false;
+        }
+        else
+        {
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed/4 * Time.deltaTime);
+        }
+    }
+
+    private void checkAttack()
+    {
+        if (Vector2.Distance(transform.position, player.transform.position) < 1f)
+        {
+            isMoving = false;
+            animator.SetBool("Move", false);
+            animator.SetTrigger("Attack");
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -69,19 +94,21 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float damageAmount)
     {
-        animator.SetTrigger("TrTakeDmg");
+        animator.SetTrigger("TakeDmg");
         Debug.Log(health + " " + damageAmount + " " + (health - damageAmount));
         health -= damageAmount;
-        if (health <= 0)
+        if (health < 0)
         {
-            Die();
+            health = 0;
         }
     }
 
 
-    public void Die()
+    private IEnumerator PlayDeath()
     {
-        Destroy(gameObject);
+        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f);
+
+        Destroy(gameObject); // détruira l'objet DeathAnimation
     }
 
 
