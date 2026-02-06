@@ -1,58 +1,49 @@
 fileFormatVersion: 2
-guid: 0298eeedfcd96104ea4bceabbb0cb1f8
+guid: 297df0c610d86f04886adcefde461174
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7627985756243875392
-    second: enemies-skeleton1_death_0
+      213: -923307111090866757
+    second: enemies-vampire_death_0
   - first:
-      213: 4368146557577409954
-    second: enemies-skeleton1_death_1
+      213: 8913812048917822411
+    second: enemies-vampire_death_1
   - first:
-      213: 5723892189615084877
-    second: enemies-skeleton1_death_2
+      213: 5956196191719413925
+    second: enemies-vampire_death_2
   - first:
-      213: -1086711015690019510
-    second: enemies-skeleton1_death_3
+      213: 794094799421589820
+    second: enemies-vampire_death_3
   - first:
-      213: -5470712259095021327
-    second: enemies-skeleton1_death_4
+      213: -6012288014565241867
+    second: enemies-vampire_death_4
   - first:
-      213: -3666595178319690306
-    second: enemies-skeleton1_death_5
+      213: -9049025914868024525
+    second: enemies-vampire_death_5
   - first:
-      213: 6652462124444896954
-    second: enemies-skeleton1_death_6
+      213: 5806025726046563585
+    second: enemies-vampire_death_6
   - first:
-      213: 2368762246874563339
-    second: enemies-skeleton1_death_7
+      213: 2687168333418352839
+    second: enemies-vampire_death_7
   - first:
-      213: -965710722275540547
-    second: enemies-skeleton1_death_8
+      213: -2088022810532382372
+    second: enemies-vampire_death_8
   - first:
-      213: -6514017665419472180
-    second: enemies-skeleton1_death_9
+      213: -6362477907139459544
+    second: enemies-vampire_death_9
   - first:
-      213: 4057344920434232495
-    second: enemies-skeleton1_death_10
+      213: 4404237878519249409
+    second: enemies-vampire_death_10
   - first:
-      213: 1115374698895197819
-    second: enemies-skeleton1_death_11
+      213: 920658968894446176
+    second: enemies-vampire_death_11
   - first:
-      213: -3833248289456597943
-    second: enemies-skeleton1_death_12
+      213: -7350887874683511925
+    second: enemies-vampire_death_12
   - first:
-      213: 3358074325171907452
-    second: enemies-skeleton1_death_13
-  - first:
-      213: 2591380929627798182
-    second: enemies-skeleton1_death_14
-  - first:
-      213: -261625736227141116
-    second: enemies-skeleton1_death_15
-  - first:
-      213: 3832924719231674493
-    second: enemies-skeleton1_death_16
+      213: -1279182169951451124
+    second: enemies-vampire_death_13
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -85,7 +76,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -99,7 +90,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -123,7 +114,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -148,99 +139,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemies-skeleton1_death_0
+      name: enemies-vampire_death_0
       rect:
         serializedVersion: 2
         x: 6
         y: 2
-        width: 17
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0c928579e53f32690800000000000000
-      internalID: -7627985756243875392
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_death_1
-      rect:
-        serializedVersion: 2
-        x: 36
-        y: 2
-        width: 19
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2a53f339626ce9c30800000000000000
-      internalID: 4368146557577409954
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_death_2
-      rect:
-        serializedVersion: 2
-        x: 67
-        y: 2
-        width: 20
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d45d3a6be995f6f40800000000000000
-      internalID: 5723892189615084877
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_death_3
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 2
-        width: 16
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a4dda40c61a3be0f0800000000000000
-      internalID: -1086711015690019510
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_death_4
-      rect:
-        serializedVersion: 2
-        x: 133
-        y: 2
         width: 14
         height: 18
       alignment: 0
@@ -251,63 +154,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1f834487f202414b0800000000000000
-      internalID: -5470712259095021327
+      spriteID: bb536d80311cf23f0800000000000000
+      internalID: -923307111090866757
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-skeleton1_death_5
+      name: enemies-vampire_death_1
       rect:
         serializedVersion: 2
-        x: 163
+        x: 33
         y: 2
-        width: 17
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eb5481d9c13ad1dc0800000000000000
-      internalID: -3666595178319690306
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_death_6
-      rect:
-        serializedVersion: 2
-        x: 199
-        y: 2
-        width: 13
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: abe47415e0b425c50800000000000000
-      internalID: 6652462124444896954
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_death_7
-      rect:
-        serializedVersion: 2
-        x: 228
-        y: 2
-        width: 17
+        width: 18
         height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -317,19 +176,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b03805a96b88fd020800000000000000
-      internalID: 2368762246874563339
+      spriteID: bcbf752c4d834bb70800000000000000
+      internalID: 8913812048917822411
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-skeleton1_death_8
+      name: enemies-vampire_death_2
       rect:
         serializedVersion: 2
-        x: 260
+        x: 64
         y: 2
-        width: 14
+        width: 17
         height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -339,20 +198,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: db10bf2f63b1992f0800000000000000
-      internalID: -965710722275540547
+      spriteID: 5a858fb01e8a8a250800000000000000
+      internalID: 5956196191719413925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-skeleton1_death_9
+      name: enemies-vampire_death_3
       rect:
         serializedVersion: 2
-        x: 292
+        x: 98
+        y: 2
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3942854301350b00800000000000000
+      internalID: 794094799421589820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies-vampire_death_4
+      rect:
+        serializedVersion: 2
+        x: 131
         y: 2
         width: 13
-        height: 18
+        height: 20
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -361,41 +242,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cc29d00327f8995a0800000000000000
-      internalID: -6514017665419472180
+      spriteID: 5fb008cb7ef009ca0800000000000000
+      internalID: -6012288014565241867
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-skeleton1_death_10
+      name: enemies-vampire_death_5
       rect:
         serializedVersion: 2
-        x: 323
-        y: 2
-        width: 14
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: facc7b955b59e4830800000000000000
-      internalID: 4057344920434232495
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_death_11
-      rect:
-        serializedVersion: 2
-        x: 356
+        x: 162
         y: 2
         width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33bbcfccfd66b6280800000000000000
+      internalID: -9049025914868024525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies-vampire_death_6
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 2
+        width: 16
         height: 19
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -405,20 +286,108 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b764b1f016b9a7f00800000000000000
-      internalID: 1115374698895197819
+      spriteID: 10de8cdd2a5239050800000000000000
+      internalID: 5806025726046563585
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-skeleton1_death_12
+      name: enemies-vampire_death_7
       rect:
         serializedVersion: 2
-        x: 391
+        x: 226
+        y: 2
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c0541dac5dba4520800000000000000
+      internalID: 2687168333418352839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies-vampire_death_8
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 2
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c59fd4f015ad503e0800000000000000
+      internalID: -2088022810532382372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies-vampire_death_9
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 2
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8268ea5ad00f3b7a0800000000000000
+      internalID: -6362477907139459544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies-vampire_death_10
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 2
+        width: 17
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10ab57f040ffe1d30800000000000000
+      internalID: 4404237878519249409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemies-vampire_death_11
+      rect:
+        serializedVersion: 2
+        x: 354
         y: 2
         width: 20
-        height: 16
+        height: 9
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -427,20 +396,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 944d01b7df09dcac0800000000000000
-      internalID: -3833248289456597943
+      spriteID: 06a1b305476d6cc00800000000000000
+      internalID: 920658968894446176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-skeleton1_death_13
+      name: enemies-vampire_death_12
       rect:
         serializedVersion: 2
-        x: 425
+        x: 385
         y: 2
-        width: 22
-        height: 12
+        width: 21
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -449,20 +418,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c7b2b319ec64a9e20800000000000000
-      internalID: 3358074325171907452
+      spriteID: b8b53c5bc666cf990800000000000000
+      internalID: -7350887874683511925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-skeleton1_death_14
+      name: enemies-vampire_death_13
       rect:
         serializedVersion: 2
-        x: 457
+        x: 417
         y: 2
-        width: 23
-        height: 11
+        width: 21
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -471,52 +440,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6aabf2cc93f66f320800000000000000
-      internalID: 2591380929627798182
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_death_15
-      rect:
-        serializedVersion: 2
-        x: 489
-        y: 1
-        width: 24
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 40ac41077c48e5cf0800000000000000
-      internalID: -261625736227141116
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_death_16
-      rect:
-        serializedVersion: 2
-        x: 521
-        y: 2
-        width: 23
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d782e9479b8413530800000000000000
-      internalID: 3832924719231674493
+      spriteID: c08c705089e6f3ee0800000000000000
+      internalID: -1279182169951451124
       vertices: []
       indices: 
       edges: []
@@ -535,23 +460,20 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      enemies-skeleton1_death_0: -7627985756243875392
-      enemies-skeleton1_death_1: 4368146557577409954
-      enemies-skeleton1_death_10: 4057344920434232495
-      enemies-skeleton1_death_11: 1115374698895197819
-      enemies-skeleton1_death_12: -3833248289456597943
-      enemies-skeleton1_death_13: 3358074325171907452
-      enemies-skeleton1_death_14: 2591380929627798182
-      enemies-skeleton1_death_15: -261625736227141116
-      enemies-skeleton1_death_16: 3832924719231674493
-      enemies-skeleton1_death_2: 5723892189615084877
-      enemies-skeleton1_death_3: -1086711015690019510
-      enemies-skeleton1_death_4: -5470712259095021327
-      enemies-skeleton1_death_5: -3666595178319690306
-      enemies-skeleton1_death_6: 6652462124444896954
-      enemies-skeleton1_death_7: 2368762246874563339
-      enemies-skeleton1_death_8: -965710722275540547
-      enemies-skeleton1_death_9: -6514017665419472180
+      enemies-vampire_death_0: -923307111090866757
+      enemies-vampire_death_1: 8913812048917822411
+      enemies-vampire_death_10: 4404237878519249409
+      enemies-vampire_death_11: 920658968894446176
+      enemies-vampire_death_12: -7350887874683511925
+      enemies-vampire_death_13: -1279182169951451124
+      enemies-vampire_death_2: 5956196191719413925
+      enemies-vampire_death_3: 794094799421589820
+      enemies-vampire_death_4: -6012288014565241867
+      enemies-vampire_death_5: -9049025914868024525
+      enemies-vampire_death_6: 5806025726046563585
+      enemies-vampire_death_7: 2687168333418352839
+      enemies-vampire_death_8: -2088022810532382372
+      enemies-vampire_death_9: -6362477907139459544
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

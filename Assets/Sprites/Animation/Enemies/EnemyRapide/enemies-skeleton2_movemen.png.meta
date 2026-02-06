@@ -64,7 +64,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -78,7 +78,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -102,7 +102,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -130,17 +130,29 @@ TextureImporter:
       name: enemies-skeleton2_movemen_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 2
-        width: 16
-        height: 17
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 3, y: -12}
+        - {x: 3, y: -9}
+        - {x: 6, y: -3}
+        - {x: 7, y: -3}
+        - {x: 7, y: 0}
+        - {x: 5, y: 2}
+        - {x: -4, y: 2}
+        - {x: -6, y: 0}
+        - {x: -6, y: -9}
+        - {x: -7, y: -10}
+        - {x: -7, y: -12}
+        - {x: -3, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 20594e6023f5210d0800000000000000
       internalID: -3453593295771101950
@@ -152,17 +164,36 @@ TextureImporter:
       name: enemies-skeleton2_movemen_1
       rect:
         serializedVersion: 2
-        x: 40
-        y: 2
-        width: 17
-        height: 18
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -1, y: -9}
+        - {x: 2, y: -8}
+        - {x: 3, y: -9}
+        - {x: 3, y: -12}
+        - {x: 6, y: -12}
+        - {x: 6, y: -8}
+        - {x: 5, y: -6}
+        - {x: 7, y: -3}
+        - {x: 8, y: -3}
+        - {x: 8, y: 0}
+        - {x: 6, y: 2}
+        - {x: 2, y: 2}
+        - {x: 1, y: 3}
+        - {x: -5, y: 3}
+        - {x: -7, y: 1}
+        - {x: -7, y: -7}
+        - {x: -6, y: -8}
+        - {x: -5, y: -13}
+        - {x: -2, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 8142852e344dd1260800000000000000
       internalID: 7070040378066871320
@@ -174,17 +205,38 @@ TextureImporter:
       name: enemies-skeleton2_movemen_2
       rect:
         serializedVersion: 2
-        x: 71
-        y: 2
-        width: 18
-        height: 18
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 6, y: -9}
+        - {x: 5, y: -7}
+        - {x: 7, y: -4}
+        - {x: 8, y: -4}
+        - {x: 8, y: -1}
+        - {x: 6, y: 1}
+        - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -6, y: 1}
+        - {x: -6, y: -3}
+        - {x: -8, y: -6}
+        - {x: -8, y: -9}
+        - {x: -6, y: -9}
+        - {x: -5, y: -10}
+        - {x: -6, y: -11}
+        - {x: -6, y: -13}
+        - {x: 1, y: -12}
+        - {x: 2, y: -9}
+        - {x: 3, y: -10}
+        - {x: 3, y: -13}
+        - {x: 6, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 98a02ef25aa7b7ba0800000000000000
       internalID: -6090139221196928375
@@ -196,17 +248,35 @@ TextureImporter:
       name: enemies-skeleton2_movemen_3
       rect:
         serializedVersion: 2
-        x: 102
-        y: 2
-        width: 19
-        height: 17
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -2, y: -12}
+        - {x: -1, y: -13}
+        - {x: 5, y: -13}
+        - {x: 5, y: -7}
+        - {x: 7, y: -4}
+        - {x: 8, y: -4}
+        - {x: 8, y: -1}
+        - {x: 6, y: 1}
+        - {x: 3, y: 1}
+        - {x: 2, y: 2}
+        - {x: -4, y: 2}
+        - {x: -6, y: 0}
+        - {x: -6, y: -3}
+        - {x: -9, y: -7}
+        - {x: -9, y: -10}
+        - {x: -6, y: -11}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 0e64abbe80b0f6e50800000000000000
       internalID: 6804669694922606304
@@ -218,17 +288,34 @@ TextureImporter:
       name: enemies-skeleton2_movemen_4
       rect:
         serializedVersion: 2
-        x: 134
-        y: 2
-        width: 18
-        height: 16
+        x: 128
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -2, y: -11}
+        - {x: -1, y: -13}
+        - {x: 3, y: -13}
+        - {x: 3, y: -10}
+        - {x: 6, y: -4}
+        - {x: 7, y: -4}
+        - {x: 7, y: -1}
+        - {x: 5, y: 1}
+        - {x: -4, y: 1}
+        - {x: -6, y: -1}
+        - {x: -6, y: -3}
+        - {x: -9, y: -7}
+        - {x: -9, y: -9}
+        - {x: -5, y: -10}
+        - {x: -7, y: -12}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 29fb174a52b3a67d0800000000000000
       internalID: -2924459975164969070
@@ -240,17 +327,34 @@ TextureImporter:
       name: enemies-skeleton2_movemen_5
       rect:
         serializedVersion: 2
-        x: 166
-        y: 2
-        width: 16
-        height: 18
+        x: 160
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 1, y: -10}
+        - {x: 4, y: -4}
+        - {x: 5, y: -4}
+        - {x: 4, y: 2}
+        - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -6, y: 1}
+        - {x: -6, y: -3}
+        - {x: -8, y: -4}
+        - {x: -9, y: -6}
+        - {x: -9, y: -9}
+        - {x: -7, y: -9}
+        - {x: -6, y: -10}
+        - {x: -7, y: -12}
+        - {x: -5, y: -12}
+        - {x: -4, y: -13}
+        - {x: 1, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 06d13e4164fdbece0800000000000000
       internalID: -1374759769140421280
@@ -262,17 +366,29 @@ TextureImporter:
       name: enemies-skeleton2_movemen_6
       rect:
         serializedVersion: 2
-        x: 200
-        y: 2
-        width: 13
-        height: 18
+        x: 192
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 0, y: -10}
+        - {x: 3, y: -4}
+        - {x: 4, y: -4}
+        - {x: 3, y: 2}
+        - {x: 1, y: 3}
+        - {x: -5, y: 3}
+        - {x: -7, y: 1}
+        - {x: -7, y: -3}
+        - {x: -6, y: -4}
+        - {x: -7, y: -10}
+        - {x: -5, y: -13}
+        - {x: 0, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 75f61626cab6097d0800000000000000
       internalID: -2913710570779611305
@@ -284,17 +400,29 @@ TextureImporter:
       name: enemies-skeleton2_movemen_7
       rect:
         serializedVersion: 2
-        x: 232
-        y: 2
-        width: 12
-        height: 18
+        x: 224
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 1, y: -11}
+        - {x: 0, y: -7}
+        - {x: 3, y: -4}
+        - {x: 3, y: 2}
+        - {x: 2, y: 3}
+        - {x: -4, y: 3}
+        - {x: -6, y: 1}
+        - {x: -6, y: -3}
+        - {x: -5, y: -5}
+        - {x: -6, y: -6}
+        - {x: -7, y: -13}
+        - {x: -1, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 2aa309e5aef660c50800000000000000
       internalID: 6631110553749174946
@@ -306,17 +434,31 @@ TextureImporter:
       name: enemies-skeleton2_movemen_8
       rect:
         serializedVersion: 2
-        x: 264
-        y: 2
-        width: 13
-        height: 17
+        x: 256
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -2, y: -12}
+        - {x: -1, y: -13}
+        - {x: 2, y: -13}
+        - {x: 1, y: -11}
+        - {x: 1, y: -6}
+        - {x: 4, y: -3}
+        - {x: 4, y: 0}
+        - {x: 2, y: 2}
+        - {x: -4, y: 2}
+        - {x: -6, y: 0}
+        - {x: -6, y: -10}
+        - {x: -7, y: -11}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: fc31708ffc9b227d0800000000000000
       internalID: -2944586903476300849
@@ -328,17 +470,32 @@ TextureImporter:
       name: enemies-skeleton2_movemen_9
       rect:
         serializedVersion: 2
-        x: 295
-        y: 2
-        width: 15
-        height: 16
+        x: 288
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -3, y: -11}
+        - {x: -2, y: -13}
+        - {x: 2, y: -13}
+        - {x: 2, y: -11}
+        - {x: 1, y: -10}
+        - {x: 4, y: -4}
+        - {x: 5, y: -4}
+        - {x: 5, y: -1}
+        - {x: 3, y: 1}
+        - {x: -4, y: 1}
+        - {x: -6, y: -1}
+        - {x: -6, y: -9}
+        - {x: -8, y: -11}
+        - {x: -8, y: -13}
+        - {x: -5, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: dade2c52717ef08c0800000000000000
       internalID: -4030749054869508691
@@ -350,7 +507,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3fbe3aba915f1e842b7907bf00559998
     internalID: 0
     vertices: []
     indices: 
@@ -358,7 +515,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       enemies-skeleton2_movemen_0: -3453593295771101950
       enemies-skeleton2_movemen_1: 7070040378066871320
