@@ -142,17 +142,31 @@ TextureImporter:
       name: enemies-vampire_death_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 2
-        width: 14
-        height: 18
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 2, y: -9}
+        - {x: 3, y: -8}
+        - {x: 3, y: -5}
+        - {x: 1, y: -3}
+        - {x: 2, y: -2}
+        - {x: 2, y: 1}
+        - {x: 0, y: 3}
+        - {x: -6, y: 3}
+        - {x: -8, y: 1}
+        - {x: -8, y: -8}
+        - {x: -7, y: -10}
+        - {x: -9, y: -12}
+        - {x: -9, y: -13}
+        - {x: 3, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: bb536d80311cf23f0800000000000000
       internalID: -923307111090866757
@@ -164,17 +178,36 @@ TextureImporter:
       name: enemies-vampire_death_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 2
-        width: 18
-        height: 19
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 2, y: -12}
+        - {x: 2, y: -9}
+        - {x: 0, y: -9}
+        - {x: -1, y: -8}
+        - {x: -1, y: -5}
+        - {x: -4, y: -2}
+        - {x: -4, y: -1}
+        - {x: -2, y: 0}
+        - {x: -2, y: 1}
+        - {x: -3, y: 1}
+        - {x: -7, y: 4}
+        - {x: -11, y: 4}
+        - {x: -13, y: 3}
+        - {x: -14, y: -1}
+        - {x: -12, y: -4}
+        - {x: -12, y: -8}
+        - {x: -10, y: -10}
+        - {x: -11, y: -13}
+        - {x: 1, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: bcbf752c4d834bb70800000000000000
       internalID: 8913812048917822411
@@ -187,16 +220,29 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 2
-        width: 17
-        height: 18
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 0, y: -12}
+        - {x: -2, y: -10}
+        - {x: -2, y: -5}
+        - {x: -3, y: -4}
+        - {x: -5, y: 1}
+        - {x: -6, y: 2}
+        - {x: -8, y: 3}
+        - {x: -12, y: 3}
+        - {x: -15, y: 0}
+        - {x: -15, y: -3}
+        - {x: -13, y: -5}
+        - {x: -12, y: -13}
+        - {x: 0, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 5a858fb01e8a8a250800000000000000
       internalID: 5956196191719413925
@@ -208,17 +254,34 @@ TextureImporter:
       name: enemies-vampire_death_3
       rect:
         serializedVersion: 2
-        x: 98
-        y: 2
-        width: 14
-        height: 20
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -1, y: -11}
+        - {x: -2, y: -10}
+        - {x: -2, y: -5}
+        - {x: -4, y: -3}
+        - {x: -3, y: -1}
+        - {x: -3, y: 3}
+        - {x: -4, y: 4}
+        - {x: -6, y: 5}
+        - {x: -10, y: 5}
+        - {x: -13, y: 1}
+        - {x: -13, y: -2}
+        - {x: -12, y: -3}
+        - {x: -13, y: -5}
+        - {x: -13, y: -8}
+        - {x: -12, y: -9}
+        - {x: -13, y: -13}
+        - {x: -1, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: c3942854301350b00800000000000000
       internalID: 794094799421589820
@@ -230,17 +293,30 @@ TextureImporter:
       name: enemies-vampire_death_4
       rect:
         serializedVersion: 2
-        x: 131
-        y: 2
-        width: 13
-        height: 20
+        x: 128
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -1, y: -8}
+        - {x: -2, y: -2}
+        - {x: -1, y: -1}
+        - {x: -1, y: 1}
+        - {x: -3, y: 4}
+        - {x: -5, y: 5}
+        - {x: -9, y: 5}
+        - {x: -11, y: 2}
+        - {x: -11, y: -2}
+        - {x: -10, y: -3}
+        - {x: -12, y: -5}
+        - {x: -12, y: -13}
+        - {x: -1, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 5fb008cb7ef009ca0800000000000000
       internalID: -6012288014565241867
@@ -252,17 +328,29 @@ TextureImporter:
       name: enemies-vampire_death_5
       rect:
         serializedVersion: 2
-        x: 162
-        y: 2
-        width: 15
-        height: 20
+        x: 160
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -1, y: -2}
+        - {x: 0, y: -1}
+        - {x: 0, y: 1}
+        - {x: -2, y: 4}
+        - {x: -4, y: 5}
+        - {x: -8, y: 5}
+        - {x: -10, y: 2}
+        - {x: -10, y: -3}
+        - {x: -12, y: -5}
+        - {x: -12, y: -8}
+        - {x: -13, y: -13}
+        - {x: -1, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 33bbcfccfd66b6280800000000000000
       internalID: -9049025914868024525
@@ -274,17 +362,31 @@ TextureImporter:
       name: enemies-vampire_death_6
       rect:
         serializedVersion: 2
-        x: 194
-        y: 2
-        width: 16
-        height: 19
+        x: 192
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 0, y: -3}
+        - {x: 1, y: -2}
+        - {x: 1, y: 0}
+        - {x: -1, y: 3}
+        - {x: -3, y: 4}
+        - {x: -7, y: 4}
+        - {x: -9, y: 2}
+        - {x: -9, y: -2}
+        - {x: -8, y: -3}
+        - {x: -11, y: -5}
+        - {x: -11, y: -10}
+        - {x: -13, y: -12}
+        - {x: -13, y: -13}
+        - {x: 0, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 10de8cdd2a5239050800000000000000
       internalID: 5806025726046563585
@@ -296,17 +398,32 @@ TextureImporter:
       name: enemies-vampire_death_7
       rect:
         serializedVersion: 2
-        x: 226
-        y: 2
-        width: 16
-        height: 19
+        x: 224
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -1, y: -11}
+        - {x: 0, y: -10}
+        - {x: 0, y: -7}
+        - {x: 1, y: -6}
+        - {x: 1, y: 0}
+        - {x: -1, y: 3}
+        - {x: -3, y: 4}
+        - {x: -6, y: 4}
+        - {x: -9, y: 2}
+        - {x: -9, y: -5}
+        - {x: -11, y: -7}
+        - {x: -11, y: -11}
+        - {x: -13, y: -12}
+        - {x: -13, y: -13}
+        - {x: 0, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 7c0541dac5dba4520800000000000000
       internalID: 2687168333418352839
@@ -318,17 +435,35 @@ TextureImporter:
       name: enemies-vampire_death_8
       rect:
         serializedVersion: 2
-        x: 258
-        y: 2
-        width: 16
-        height: 19
+        x: 256
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 0, y: -7}
+        - {x: 1, y: -6}
+        - {x: 1, y: -4}
+        - {x: 0, y: -3}
+        - {x: 0, y: 1}
+        - {x: -2, y: 2}
+        - {x: -2, y: 4}
+        - {x: -5, y: 4}
+        - {x: -7, y: 3}
+        - {x: -7, y: 1}
+        - {x: -8, y: -1}
+        - {x: -8, y: -4}
+        - {x: -10, y: -7}
+        - {x: -11, y: -7}
+        - {x: -11, y: -10}
+        - {x: -13, y: -12}
+        - {x: -13, y: -13}
+        - {x: 0, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: c59fd4f015ad503e0800000000000000
       internalID: -2088022810532382372
@@ -340,17 +475,31 @@ TextureImporter:
       name: enemies-vampire_death_9
       rect:
         serializedVersion: 2
-        x: 290
-        y: 2
-        width: 16
-        height: 15
+        x: 288
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 1, y: -11}
+        - {x: 1, y: -8}
+        - {x: 0, y: -7}
+        - {x: 1, y: -3}
+        - {x: 0, y: -3}
+        - {x: -2, y: 0}
+        - {x: -6, y: -1}
+        - {x: -8, y: -3}
+        - {x: -8, y: -5}
+        - {x: -9, y: -6}
+        - {x: -12, y: -7}
+        - {x: -12, y: -11}
+        - {x: -13, y: -13}
+        - {x: 0, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 8268ea5ad00f3b7a0800000000000000
       internalID: -6362477907139459544
@@ -362,17 +511,25 @@ TextureImporter:
       name: enemies-vampire_death_10
       rect:
         serializedVersion: 2
-        x: 322
-        y: 2
-        width: 17
-        height: 11
+        x: 320
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 2, y: -12}
+        - {x: 1, y: -8}
+        - {x: -1, y: -5}
+        - {x: -6, y: -4}
+        - {x: -12, y: -7}
+        - {x: -12, y: -11}
+        - {x: -13, y: -13}
+        - {x: 1, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 10ab57f040ffe1d30800000000000000
       internalID: 4404237878519249409
@@ -384,17 +541,25 @@ TextureImporter:
       name: enemies-vampire_death_11
       rect:
         serializedVersion: 2
-        x: 354
-        y: 2
-        width: 20
-        height: 9
+        x: 352
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 5, y: -12}
+        - {x: 0, y: -8}
+        - {x: -4, y: -8}
+        - {x: -5, y: -7}
+        - {x: -9, y: -6}
+        - {x: -12, y: -8}
+        - {x: -13, y: -13}
+        - {x: 5, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 06a1b305476d6cc00800000000000000
       internalID: 920658968894446176
@@ -406,17 +571,26 @@ TextureImporter:
       name: enemies-vampire_death_12
       rect:
         serializedVersion: 2
-        x: 385
-        y: 2
-        width: 21
-        height: 8
+        x: 384
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 5, y: -12}
+        - {x: 3, y: -10}
+        - {x: -1, y: -8}
+        - {x: -5, y: -7}
+        - {x: -11, y: -7}
+        - {x: -13, y: -11}
+        - {x: -14, y: -11}
+        - {x: -13, y: -13}
+        - {x: 5, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: b8b53c5bc666cf990800000000000000
       internalID: -7350887874683511925
@@ -428,17 +602,24 @@ TextureImporter:
       name: enemies-vampire_death_13
       rect:
         serializedVersion: 2
-        x: 417
-        y: 2
-        width: 21
-        height: 8
+        x: 416
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 5, y: -12}
+        - {x: 3, y: -10}
+        - {x: -1, y: -8}
+        - {x: -5, y: -7}
+        - {x: -11, y: -7}
+        - {x: -14, y: -13}
+        - {x: 5, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: c08c705089e6f3ee0800000000000000
       internalID: -1279182169951451124
@@ -450,7 +631,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 8b683263b73f64b4e961ed30a4c0106c
     internalID: 0
     vertices: []
     indices: 
@@ -458,7 +639,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       enemies-vampire_death_0: -923307111090866757
       enemies-vampire_death_1: 8913812048917822411

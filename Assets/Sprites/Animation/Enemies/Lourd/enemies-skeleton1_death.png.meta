@@ -151,17 +151,30 @@ TextureImporter:
       name: enemies-skeleton1_death_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 2
-        width: 17
-        height: 17
+        x: 0
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 6, y: -7}
+        - {x: 6, y: -4}
+        - {x: 4, y: -4}
+        - {x: 3, y: -5}
+        - {x: 2, y: -4}
+        - {x: 2, y: 1}
+        - {x: 0, y: 2}
+        - {x: -6, y: 2}
+        - {x: -8, y: 0}
+        - {x: -9, y: -8}
+        - {x: -7, y: -11}
+        - {x: -7, y: -13}
+        - {x: 0, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 0c928579e53f32690800000000000000
       internalID: -7627985756243875392
@@ -173,17 +186,34 @@ TextureImporter:
       name: enemies-skeleton1_death_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 2
-        width: 19
-        height: 17
+        x: 32
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 0, y: -11}
+        - {x: 2, y: -10}
+        - {x: 6, y: -6}
+        - {x: 6, y: -3}
+        - {x: 4, y: -3}
+        - {x: 3, y: -4}
+        - {x: 2, y: -3}
+        - {x: 2, y: 1}
+        - {x: 0, y: 2}
+        - {x: -9, y: 2}
+        - {x: -11, y: 0}
+        - {x: -11, y: -8}
+        - {x: -10, y: -10}
+        - {x: -9, y: -10}
+        - {x: -7, y: -12}
+        - {x: -7, y: -13}
+        - {x: 0, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 2a53f339626ce9c30800000000000000
       internalID: 4368146557577409954
@@ -195,17 +225,39 @@ TextureImporter:
       name: enemies-skeleton1_death_2
       rect:
         serializedVersion: 2
-        x: 67
-        y: 2
-        width: 20
-        height: 17
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -2, y: -11}
+        - {x: 0, y: -12}
+        - {x: 0, y: -9}
+        - {x: -1, y: -8}
+        - {x: 0, y: -7}
+        - {x: 2, y: -7}
+        - {x: 6, y: -5}
+        - {x: 6, y: -3}
+        - {x: 1, y: -3}
+        - {x: 0, y: -2}
+        - {x: 0, y: 0}
+        - {x: -2, y: 2}
+        - {x: -8, y: 2}
+        - {x: -10, y: 1}
+        - {x: -10, y: -3}
+        - {x: -12, y: -5}
+        - {x: -12, y: -8}
+        - {x: -11, y: -10}
+        - {x: -9, y: -10}
+        - {x: -7, y: -12}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: d45d3a6be995f6f40800000000000000
       internalID: 5723892189615084877
@@ -217,17 +269,33 @@ TextureImporter:
       name: enemies-skeleton1_death_3
       rect:
         serializedVersion: 2
-        x: 100
-        y: 2
-        width: 16
-        height: 18
+        x: 96
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -3, y: -11}
+        - {x: -1, y: -11}
+        - {x: -1, y: -10}
+        - {x: 3, y: -6}
+        - {x: 3, y: -3}
+        - {x: -1, y: -3}
+        - {x: -1, y: 1}
+        - {x: -3, y: 3}
+        - {x: -7, y: 3}
+        - {x: -11, y: 1}
+        - {x: -11, y: -5}
+        - {x: -9, y: -8}
+        - {x: -9, y: -10}
+        - {x: -7, y: -11}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: a4dda40c61a3be0f0800000000000000
       internalID: -1086711015690019510
@@ -239,17 +307,35 @@ TextureImporter:
       name: enemies-skeleton1_death_4
       rect:
         serializedVersion: 2
-        x: 133
-        y: 2
-        width: 14
-        height: 18
+        x: 128
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -4, y: -12}
+        - {x: -1, y: -9}
+        - {x: 0, y: -10}
+        - {x: 2, y: -10}
+        - {x: 2, y: -8}
+        - {x: 0, y: -6}
+        - {x: 2, y: -5}
+        - {x: 2, y: 2}
+        - {x: 1, y: 3}
+        - {x: -6, y: 3}
+        - {x: -8, y: 1}
+        - {x: -8, y: -3}
+        - {x: -6, y: -4}
+        - {x: -10, y: -6}
+        - {x: -10, y: -11}
+        - {x: -8, y: -11}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 1f834487f202414b0800000000000000
       internalID: -5470712259095021327
@@ -261,17 +347,41 @@ TextureImporter:
       name: enemies-skeleton1_death_5
       rect:
         serializedVersion: 2
-        x: 163
-        y: 2
-        width: 17
-        height: 18
+        x: 160
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -2, y: -10}
+        - {x: 0, y: -10}
+        - {x: 1, y: -11}
+        - {x: 3, y: -11}
+        - {x: 3, y: -9}
+        - {x: 1, y: -7}
+        - {x: 1, y: -4}
+        - {x: 3, y: -3}
+        - {x: 3, y: 1}
+        - {x: 1, y: 3}
+        - {x: -5, y: 3}
+        - {x: -7, y: 2}
+        - {x: -7, y: -1}
+        - {x: -8, y: -2}
+        - {x: -10, y: -2}
+        - {x: -11, y: -3}
+        - {x: -11, y: -4}
+        - {x: -8, y: -6}
+        - {x: -12, y: -8}
+        - {x: -11, y: -10}
+        - {x: -8, y: -10}
+        - {x: -7, y: -11}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: eb5481d9c13ad1dc0800000000000000
       internalID: -3666595178319690306
@@ -283,17 +393,31 @@ TextureImporter:
       name: enemies-skeleton1_death_6
       rect:
         serializedVersion: 2
-        x: 199
-        y: 2
-        width: 13
-        height: 18
+        x: 192
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -3, y: -11}
+        - {x: -1, y: -11}
+        - {x: -1, y: -9}
+        - {x: 2, y: -7}
+        - {x: 3, y: -5}
+        - {x: 2, y: -4}
+        - {x: 2, y: 1}
+        - {x: 0, y: 3}
+        - {x: -6, y: 3}
+        - {x: -8, y: 1}
+        - {x: -8, y: -3}
+        - {x: -7, y: -4}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: abe47415e0b425c50800000000000000
       internalID: 6652462124444896954
@@ -305,17 +429,40 @@ TextureImporter:
       name: enemies-skeleton1_death_7
       rect:
         serializedVersion: 2
-        x: 228
-        y: 2
-        width: 17
-        height: 19
+        x: 224
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -4, y: -12}
+        - {x: -3, y: -10}
+        - {x: -2, y: -11}
+        - {x: 1, y: -11}
+        - {x: 1, y: -9}
+        - {x: 4, y: -6}
+        - {x: 4, y: -3}
+        - {x: 2, y: -3}
+        - {x: 0, y: -5}
+        - {x: -2, y: -4}
+        - {x: 0, y: -2}
+        - {x: 0, y: 2}
+        - {x: -2, y: 4}
+        - {x: -8, y: 4}
+        - {x: -10, y: 2}
+        - {x: -10, y: -2}
+        - {x: -9, y: -4}
+        - {x: -10, y: -5}
+        - {x: -11, y: -10}
+        - {x: -8, y: -10}
+        - {x: -7, y: -11}
+        - {x: -7, y: -13}
+        - {x: -5, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: b03805a96b88fd020800000000000000
       internalID: 2368762246874563339
@@ -327,17 +474,31 @@ TextureImporter:
       name: enemies-skeleton1_death_8
       rect:
         serializedVersion: 2
-        x: 260
-        y: 2
-        width: 14
-        height: 18
+        x: 256
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -3, y: -10}
+        - {x: 1, y: -10}
+        - {x: 0, y: -4}
+        - {x: -1, y: -3}
+        - {x: -1, y: 1}
+        - {x: -3, y: 3}
+        - {x: -9, y: 3}
+        - {x: -11, y: 1}
+        - {x: -11, y: -3}
+        - {x: -10, y: -4}
+        - {x: -9, y: -10}
+        - {x: -7, y: -11}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: db10bf2f63b1992f0800000000000000
       internalID: -965710722275540547
@@ -349,17 +510,33 @@ TextureImporter:
       name: enemies-skeleton1_death_9
       rect:
         serializedVersion: 2
-        x: 292
-        y: 2
-        width: 13
-        height: 18
+        x: 288
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -3, y: -10}
+        - {x: -2, y: -11}
+        - {x: 0, y: -10}
+        - {x: -2, y: -6}
+        - {x: -2, y: -4}
+        - {x: -1, y: -3}
+        - {x: -1, y: 1}
+        - {x: -3, y: 3}
+        - {x: -9, y: 3}
+        - {x: -11, y: 1}
+        - {x: -11, y: -3}
+        - {x: -9, y: -5}
+        - {x: -9, y: -11}
+        - {x: -8, y: -11}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: cc29d00327f8995a0800000000000000
       internalID: -6514017665419472180
@@ -371,17 +548,31 @@ TextureImporter:
       name: enemies-skeleton1_death_10
       rect:
         serializedVersion: 2
-        x: 323
-        y: 2
-        width: 14
-        height: 18
+        x: 320
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -2, y: -11}
+        - {x: -3, y: -9}
+        - {x: 0, y: -3}
+        - {x: 0, y: 1}
+        - {x: -2, y: 3}
+        - {x: -8, y: 3}
+        - {x: -10, y: 1}
+        - {x: -10, y: -2}
+        - {x: -11, y: -3}
+        - {x: -12, y: -9}
+        - {x: -10, y: -11}
+        - {x: -8, y: -11}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: facc7b955b59e4830800000000000000
       internalID: 4057344920434232495
@@ -393,17 +584,35 @@ TextureImporter:
       name: enemies-skeleton1_death_11
       rect:
         serializedVersion: 2
-        x: 356
-        y: 2
-        width: 15
-        height: 19
+        x: 352
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: -3, y: -12}
+        - {x: -1, y: -9}
+        - {x: 0, y: -10}
+        - {x: 2, y: -9}
+        - {x: 2, y: -5}
+        - {x: 1, y: -4}
+        - {x: 2, y: -3}
+        - {x: 1, y: 3}
+        - {x: -1, y: 4}
+        - {x: -5, y: 4}
+        - {x: -8, y: 2}
+        - {x: -9, y: -2}
+        - {x: -10, y: -3}
+        - {x: -10, y: -7}
+        - {x: -11, y: -9}
+        - {x: -7, y: -12}
+        - {x: -7, y: -13}
+        - {x: -4, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: b764b1f016b9a7f00800000000000000
       internalID: 1115374698895197819
@@ -415,17 +624,34 @@ TextureImporter:
       name: enemies-skeleton1_death_12
       rect:
         serializedVersion: 2
-        x: 391
-        y: 2
-        width: 20
-        height: 16
+        x: 384
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 5, y: -10}
+        - {x: 8, y: -8}
+        - {x: 10, y: -6}
+        - {x: 9, y: 0}
+        - {x: 7, y: 1}
+        - {x: 3, y: 1}
+        - {x: -1, y: -1}
+        - {x: -2, y: 0}
+        - {x: -4, y: 0}
+        - {x: -4, y: -3}
+        - {x: -2, y: -5}
+        - {x: -4, y: -7}
+        - {x: -7, y: -7}
+        - {x: -8, y: -8}
+        - {x: -7, y: -12}
+        - {x: -6, y: -13}
+        - {x: 2, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 944d01b7df09dcac0800000000000000
       internalID: -3833248289456597943
@@ -437,17 +663,31 @@ TextureImporter:
       name: enemies-skeleton1_death_13
       rect:
         serializedVersion: 2
-        x: 425
-        y: 2
-        width: 22
-        height: 12
+        x: 416
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 14, y: -12}
+        - {x: 13, y: -7}
+        - {x: 11, y: -6}
+        - {x: 8, y: -6}
+        - {x: 7, y: -3}
+        - {x: 5, y: -3}
+        - {x: 3, y: -5}
+        - {x: 1, y: -5}
+        - {x: 1, y: -7}
+        - {x: 0, y: -8}
+        - {x: -6, y: -9}
+        - {x: -6, y: -12}
+        - {x: -4, y: -13}
+        - {x: 13, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: c7b2b319ec64a9e20800000000000000
       internalID: 3358074325171907452
@@ -459,17 +699,30 @@ TextureImporter:
       name: enemies-skeleton1_death_14
       rect:
         serializedVersion: 2
-        x: 457
-        y: 2
-        width: 23
-        height: 11
+        x: 448
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 6, y: -12}
+        - {x: 13, y: -12}
+        - {x: 15, y: -10}
+        - {x: 14, y: -5}
+        - {x: 12, y: -4}
+        - {x: 8, y: -4}
+        - {x: 5, y: -6}
+        - {x: 3, y: -7}
+        - {x: -6, y: -7}
+        - {x: -6, y: -11}
+        - {x: -4, y: -11}
+        - {x: 0, y: -13}
+        - {x: 5, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: 6aabf2cc93f66f320800000000000000
       internalID: 2591380929627798182
@@ -481,17 +734,28 @@ TextureImporter:
       name: enemies-skeleton1_death_15
       rect:
         serializedVersion: 2
-        x: 489
-        y: 1
-        width: 24
-        height: 11
+        x: 480
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 16, y: -12}
+        - {x: 15, y: -7}
+        - {x: 7, y: -5}
+        - {x: 5, y: -7}
+        - {x: -1, y: -7}
+        - {x: -6, y: -9}
+        - {x: -6, y: -13}
+        - {x: 3, y: -13}
+        - {x: 5, y: -12}
+        - {x: 7, y: -14}
+        - {x: 14, y: -14}
+      tessellationDetail: 1
       bones: []
       spriteID: 40ac41077c48e5cf0800000000000000
       internalID: -261625736227141116
@@ -503,17 +767,26 @@ TextureImporter:
       name: enemies-skeleton1_death_16
       rect:
         serializedVersion: 2
-        x: 521
-        y: 2
-        width: 23
-        height: 10
+        x: 512
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 15, y: -11}
+        - {x: 14, y: -6}
+        - {x: 12, y: -5}
+        - {x: 8, y: -5}
+        - {x: 4, y: -8}
+        - {x: -3, y: -8}
+        - {x: -6, y: -10}
+        - {x: -6, y: -13}
+        - {x: 13, y: -13}
+      tessellationDetail: 1
       bones: []
       spriteID: d782e9479b8413530800000000000000
       internalID: 3832924719231674493
@@ -525,7 +798,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1bbd69668a5d0a947934e8ff6fdb77d9
     internalID: 0
     vertices: []
     indices: 
@@ -533,7 +806,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       enemies-skeleton1_death_0: -7627985756243875392
       enemies-skeleton1_death_1: 4368146557577409954
