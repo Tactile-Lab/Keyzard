@@ -51,51 +51,56 @@ public class TypingSortManager : MonoBehaviour
     }
 
     private void TypeLetter(char letter)
+{
+    // ⚠️ Bloquer si aucun ennemi et pas de sort libre possible
+    if (!sortLibreMode && (listEnemies == null || listEnemies.Count == 0))
+        return;
+
+    string tentative = currentInput + letter;
+    bool matchFound = false;
+
+    // 1️⃣ Vérifier l'ennemi si aucun sélectionné et pas en mode libre
+    if (selectedEnemy == null && !sortLibreMode)
     {
-        string tentative = currentInput + letter;
-        bool matchFound = false;
-
-        // 1️⃣ Vérifier l'ennemi si aucun sélectionné et pas en mode libre
-        if (selectedEnemy == null && !sortLibreMode)
+        foreach (var entry in listEnemies)
         {
-            foreach (var entry in listEnemies)
+            if (entry.code.ToUpper().StartsWith(tentative))
             {
-                if (entry.code.ToUpper().StartsWith(tentative))
-                {
-                    matchFound = true;
+                matchFound = true;
 
-                    // Ennemi complètement tapé
-                    if (entry.code.ToUpper() == tentative)
-                    {
-                        selectedEnemy = entry;
-                        Debug.Log("Ennemi sélectionné : " + selectedEnemy.code);
-                        currentInput = ""; // reset input après sélection
-                    }
-                    else
-                    {
-                        currentInput = tentative; // input partiel correct
-                    }
-                    break;
+                // Ennemi complètement tapé
+                if (entry.code.ToUpper() == tentative)
+                {
+                    selectedEnemy = entry;
+                    Debug.Log("Ennemi sélectionné : " + selectedEnemy.code);
+                    currentInput = ""; // reset input après sélection
                 }
+                else
+                {
+                    currentInput = tentative; // input partiel correct
+                }
+                break;
             }
         }
-
-        // 2️⃣ Vérifier les sorts
-        if (!matchFound)
-        {
-            foreach (var sort in sorts)
-            {
-                if (sort.nomSort.ToUpper().StartsWith(tentative))
-                {
-                    matchFound = true;
-                    currentInput = tentative; // input partiel correct pour un sort
-                    break;
-                }
-            }
-        }
-
-        // 3️⃣ Si aucune correspondance → ignorer la lettre (currentInput inchangé)
     }
+
+    // 2️⃣ Vérifier les sorts
+    if (!matchFound)
+    {
+        foreach (var sort in sorts)
+        {
+            if (sort.nomSort.ToUpper().StartsWith(tentative))
+            {
+                matchFound = true;
+                currentInput = tentative; // input partiel correct pour un sort
+                break;
+            }
+        }
+    }
+
+    // 3️⃣ Si aucune correspondance → ignorer la lettre (currentInput inchangé)
+}
+
 
     private void HandleSpace()
     {
