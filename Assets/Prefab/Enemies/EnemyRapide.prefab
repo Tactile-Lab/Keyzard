@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c58a281ece547404e81277911e58015c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ennemy
+  projectileEnemy: {fileID: 3470575361217590913, guid: 0da73fa6a3b58494b81a24eafd18cc19, type: 3}
   nameText: {fileID: 682867518064026418}
   ennemyData: {fileID: 11400000, guid: 565219e1cc6f5844abae811fa62935b5, type: 2}
 --- !u!212 &7653775034446762932

@@ -20,6 +20,10 @@ public class Enemy : MonoBehaviour
     private float speed;
     private Animator animator;
 
+    [SerializeField]
+    private GameObject projectileEnemy;
+    private GameObject projectileToLaunch;
+
     private bool isMoving;
     private bool isDying;
     public TMP_Text nameText;
@@ -28,6 +32,7 @@ public class Enemy : MonoBehaviour
     private EnemyData ennemyData;
 
     private GameObject player;
+
 
     private void Start()
     {
@@ -42,9 +47,15 @@ public class Enemy : MonoBehaviour
             animator.runtimeAnimatorController = ennemyData.animatorController;
         }
         nameText.text = GameManager.Instance.list_enemies.Find(e => e.enemy == gameObject)?.code ?? "Unknown";
-        if (type == EnemyType.Distant) StartCoroutine(Shoot());
-        isMoving = true;
-        animator.SetBool("Move", true);
+        if (type != EnemyType.Distant)
+        {
+            isMoving = true;
+            animator.SetBool("Move", true);
+        }
+        else
+        {
+            StartCoroutine(Shoot());
+        }
     }
 
     private void FixedUpdate()
@@ -56,10 +67,29 @@ public class Enemy : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(4f);
             if (health == 0) yield break;
             animator.SetTrigger("Attack");
         }
+    }
+
+    public void ShootProjectile() //triggered dans l'animation d'attaque du distant
+    {
+        if (player.transform.position.x < transform.position.x)
+        {
+            projectileToLaunch = Instantiate(projectileEnemy, transform.position + Vector3.left * 0.4f, Quaternion.identity);
+            
+        }
+        else
+        {
+            projectileToLaunch = Instantiate(projectileEnemy, transform.position + Vector3.right * 0.4f, Quaternion.identity);
+        }
+    }
+
+    public void LaunchProjectile()
+    {
+
+        projectileToLaunch.GetComponent<ProjectileDistant>().Launch(player.transform.position);
     }
 
     private void Move()
