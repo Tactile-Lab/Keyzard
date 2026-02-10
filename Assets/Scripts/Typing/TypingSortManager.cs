@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 using System.Collections.Generic;
+using DG.Tweening;
 
 public class TypingSortManager : MonoBehaviour
 {
@@ -12,13 +13,14 @@ public class TypingSortManager : MonoBehaviour
     public List<GameManager.EnemyEntry> listEnemies;
 
     [Header("Affichage")]
-    public TextMeshProUGUI affichage;
+    public TextMeshProUGUI affichage; // TMP principal pour le texte en cours
+    public GameObject wordPrefab;     // TMP prefab pour mot terminé
 
     public GameManager gameManager;
 
-    private string currentInput = "";
+    private string currentInput = "";         // texte que le joueur tape
     private GameManager.EnemyEntry selectedEnemy = null;
-    private bool sortLibreMode = false; // true si on tape un sort sans cible
+    private bool sortLibreMode = false;
 
     private void OnEnable()
     {
@@ -31,117 +33,95 @@ public class TypingSortManager : MonoBehaviour
         if (Keyboard.current != null)
             Keyboard.current.onTextInput -= OnTextInput;
     }
+
     private void Start()
     {
         if (gameManager != null)
-            listEnemies = gameManager.list_enemies; // juste la référence
+            listEnemies = gameManager.list_enemies;
     }
-
 
     private void OnTextInput(char c)
     {
         if (char.IsLetter(c))
-        {
             TypeLetter(char.ToUpper(c));
-        }
         else if (c == ' ')
-        {
             HandleSpace();
-        }
     }
 
     private void TypeLetter(char letter)
-{
-    // ⚠️ Bloquer si aucun ennemi et pas de sort libre possible
-    if (!sortLibreMode && (listEnemies == null || listEnemies.Count == 0))
-        return;
-
-    string tentative = currentInput + letter;
-    bool matchFound = false;
-
-    // 1️⃣ Vérifier l'ennemi si aucun sélectionné et pas en mode libre
-    if (selectedEnemy == null && !sortLibreMode)
     {
-        foreach (var entry in listEnemies)
-        {
-            if (entry.code.ToUpper().StartsWith(tentative))
-            {
-                matchFound = true;
+        if (!sortLibreMode && (listEnemies == null || listEnemies.Count == 0))
+            return;
 
-                // Ennemi complètement tapé
-                if (entry.code.ToUpper() == tentative)
+        string tentative = currentInput + letter;
+        bool matchFound = false;
+
+        // Vérifier ennemis si aucun sélectionné
+        if (selectedEnemy == null && !sortLibreMode)
+        {
+            foreach (var entry in listEnemies)
+            {
+                if (entry.code.ToUpper().StartsWith(tentative))
                 {
-                    selectedEnemy = entry;
-                    Debug.Log("Ennemi sélectionné : " + selectedEnemy.code);
-                    currentInput = ""; // reset input après sélection
+                    matchFound = true;
+                    if (entry.code.ToUpper() == tentative)
+                        selectedEnemy = entry;
+                    currentInput = tentative;
+                    break;
                 }
-                else
-                {
-                    currentInput = tentative; // input partiel correct
-                }
-                break;
             }
         }
-    }
 
-    // 2️⃣ Vérifier les sorts
-    if (!matchFound)
-    {
-        foreach (var sort in sorts)
+        // Vérifier sorts
+        if (!matchFound)
         {
-            if (sort.nomSort.ToUpper().StartsWith(tentative))
+            foreach (var sort in sorts)
             {
-                matchFound = true;
-                currentInput = tentative; // input partiel correct pour un sort
-                break;
+                if (sort.nomSort.ToUpper().StartsWith(tentative))
+                {
+                    matchFound = true;
+                    currentInput = tentative;
+                    break;
+                }
             }
         }
+
+        // Animation lettre
+        if (matchFound)
+            PlayLetterAnimation();
     }
-
-    // 3️⃣ Si aucune correspondance → ignorer la lettre (currentInput inchangé)
-}
-
 
     private void HandleSpace()
     {
         if (string.IsNullOrEmpty(currentInput) && selectedEnemy == null)
             return;
 
-        // Cherche le sort correspondant à l'input complet
         Sort sortToCast = sorts.Find(s => s.nomSort.ToUpper() == currentInput);
 
         if (sortToCast != null)
         {
-            // Instancie le prefab du sort
-            GameObject sortInstance = Instantiate(sortToCast.gameObject); // le prefab du sort
+            GameObject sortInstance = Instantiate(sortToCast.gameObject);
+            var sortScript = sortInstance.GetComponent<Sort>();
 
-            // Si une cible est sélectionnée
             if (selectedEnemy != null)
             {
-                // Appelle la méthode pour lancer le sort sur cible
-                var sortScript = sortInstance.GetComponent<Sort>();
                 if (sortScript != null)
                     sortScript.LancerSortCible(selectedEnemy.enemy);
             }
             else
             {
-                // Appelle la méthode pour lancer le sort libre
-                var sortScript = sortInstance.GetComponent<Sort>();
                 if (sortScript != null)
                     sortScript.LancerSort();
             }
+
+            // Lance animation mot terminé
+            PlayWordAnimation(currentInput);
+
+            // Reset input pour le mot suivant
+            currentInput = "";
+            selectedEnemy = null;
+            sortLibreMode = false;
         }
-        ResetInput();
-    }
-
-
-
-
-    private void ResetInput()
-    {
-        currentInput = "";
-        selectedEnemy = null;
-        sortLibreMode = false;
     }
 
     private void Update()
@@ -157,5 +137,47 @@ public class TypingSortManager : MonoBehaviour
             affichage.text = selectedEnemy.code + " - " + currentInput;
         else
             affichage.text = currentInput;
+    }
+
+    // ----------------- Animations -----------------
+
+    private void PlayLetterAnimation()
+    {
+        affichage.transform.DOKill(true);
+        affichage.DOKill(true);
+
+        affichage.transform.localScale = Vector3.one;
+
+        affichage.transform.DOPunchScale(Vector3.one * 0.25f, 0.15f, 10, 1);
+        affichage.DOColor(Color.cyan, 0.1f)
+                 .OnComplete(() => affichage.DOColor(Color.white, 0.2f));
+        affichage.transform.DOShakePosition(0.1f, 5f, 20);
+    }
+
+    private void PlayWordAnimation(string word)
+    {
+        if (wordPrefab == null)
+        {
+            Debug.LogWarning("WordPrefab non assigné !");
+            return;
+        }
+
+        // Instancie un TMP temporaire pour le mot terminé
+        GameObject wordObj = Instantiate(wordPrefab, affichage.transform.parent);
+        TextMeshProUGUI wordTMP = wordObj.GetComponent<TextMeshProUGUI>();
+        wordTMP.text = word;
+
+        RectTransform rt = wordTMP.GetComponent<RectTransform>();
+        rt.anchoredPosition = ((RectTransform)affichage.transform).anchoredPosition;
+        rt.localScale = Vector3.one;
+        wordTMP.alpha = 1f; // s'assure que le mot est visible
+
+        // Animation : monte + magenta + reste visible + fade out
+        Sequence seq = DOTween.Sequence();
+        seq.Append(rt.DOAnchorPosY(rt.anchoredPosition.y + 40f, 0.6f).SetEase(Ease.OutCubic))
+           .Join(wordTMP.DOColor(Color.magenta, 0.6f))
+           .AppendInterval(0.6f)                 // mot reste visible
+           .Append(wordTMP.DOFade(0f, 0.5f))     // disparaît en fondu
+           .OnComplete(() => Destroy(wordObj));
     }
 }
