@@ -25,7 +25,6 @@ public class Enemy : MonoBehaviour
     private GameObject projectileToLaunch;
 
     private bool isMoving;
-    private bool isDying;
     public TMP_Text nameText;
 
     [SerializeField]
@@ -50,7 +49,7 @@ public class Enemy : MonoBehaviour
         if (type != EnemyType.Distant)
         {
             isMoving = true;
-            animator.SetBool("Move", true);
+            animator.SetTrigger("Move");
         }
         else
         {
@@ -95,14 +94,8 @@ public class Enemy : MonoBehaviour
     private void Move()
     {
         if (health == 0)
-        {
-            if (isDying) return;
-            isDying = true;
-            animator.SetTrigger("Death");
-            gameObject.GetComponent<Collider2D>().enabled = false;
-            StartCoroutine(PlayDeath());
             return;
-        }
+        
 
         SpriteRenderer spR = GetComponent<SpriteRenderer>();
         if (player.transform.position.x < transform.position.x)
@@ -131,9 +124,14 @@ public class Enemy : MonoBehaviour
         if (Vector2.Distance(transform.position, player.transform.position) < 1f)
         {
             isMoving = false;
-            animator.SetBool("Move", false);
             animator.SetTrigger("Attack");
         }
+    }
+
+    public void EndAttack()
+    {
+        isMoving = true;
+        animator.SetTrigger("Move");
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -155,6 +153,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damageAmount)
     {
         animator.SetTrigger("TakeDmg");
+        isMoving = false;
         Debug.Log(health + " " + damageAmount + " " + (health - damageAmount));
         health -= damageAmount;
         if (health < 0)
@@ -163,12 +162,24 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
-    private IEnumerator PlayDeath()
+    public void EndTakeDamage()
     {
-        yield return new WaitUntil(() => animator.GetCurrentAnimatorStateInfo(0).normalizedTime >=1f);
+        if (health == 0)
+        {
+            GameManager.Instance.list_enemies.RemoveAll(e => e.enemy == gameObject);
+            animator.SetTrigger("Death");
+            gameObject.GetComponent<Collider2D>().enabled = false;
+        }
+        else
+        {
+            isMoving = true;
+            animator.SetTrigger("Move");
+        }
+    }
 
-        Destroy(gameObject); // détruira l'objet
+    public void EndDeath()
+    {
+        Destroy(gameObject);
     }
 
 
