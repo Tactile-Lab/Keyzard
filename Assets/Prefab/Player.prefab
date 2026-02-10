@@ -144,6 +144,11 @@ MonoBehaviour:
   animator: {fileID: 3563613844992985669}
   spriteRenderer: {fileID: 467548914061453846}
   moveBoolParameter: Move
+  staffTransform: {fileID: 2285118662014706626}
+  staffAngleOffset: 0
+  staffLocalOffset: {x: 0.25, y: 0}
+  flipStaffSprite: 1
+  staffSpriteRenderer: {fileID: 3579322315322285846}
 --- !u!50 &5400396367967198384
 Rigidbody2D:
   serializedVersion: 5

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6770589723762905975}
   - component: {fileID: -1600348183999881970}
   - component: {fileID: 674501160482275813}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShotGunFieu
   m_TagString: Projectile
   m_Icon: {fileID: 0}
@@ -79,8 +79,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -840883905
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: c9f42e6aeb5cc444085d139ac0e78b22, type: 3}
