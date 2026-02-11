@@ -49,80 +49,96 @@ public class TypingSortManager : MonoBehaviour
     }
 
     private void TypeLetter(char letter)
+{
+    if (!sortLibreMode && (listEnemies == null || listEnemies.Count == 0))
+        return;
+
+    string tentative = currentInput + letter;
+    bool matchFound = false;
+
+    // ---------------- Vérifier les ennemis ----------------
+    if (selectedEnemy == null && !sortLibreMode)
     {
-        if (!sortLibreMode && (listEnemies == null || listEnemies.Count == 0))
-            return;
-
-        string tentative = currentInput + letter;
-        bool matchFound = false;
-
-        // Vérifier ennemis si aucun sélectionné
-        if (selectedEnemy == null && !sortLibreMode)
+        foreach (var entry in listEnemies)
         {
-            foreach (var entry in listEnemies)
+            string enemyCode = entry.code.ToUpper();
+            if (enemyCode.StartsWith(tentative))
             {
-                if (entry.code.ToUpper().StartsWith(tentative))
+                matchFound = true;
+
+                // Si le code est complet, on sélectionne l'ennemi
+                if (enemyCode == tentative)
                 {
-                    matchFound = true;
-                    if (entry.code.ToUpper() == tentative)
-                        selectedEnemy = entry;
-                    currentInput = tentative;
-                    break;
+                    selectedEnemy = entry;
+                    currentInput = ""; // On reset pour taper le sort après
                 }
+                else
+                {
+                    currentInput = tentative; // On continue à taper le code
+                }
+
+                break;
             }
         }
-
-        // Vérifier sorts
-        if (!matchFound)
-        {
-            foreach (var sort in sorts)
-            {
-                if (sort.nomSort.ToUpper().StartsWith(tentative))
-                {
-                    matchFound = true;
-                    currentInput = tentative;
-                    break;
-                }
-            }
-        }
-
-        // Animation lettre
-        if (matchFound)
-            PlayLetterAnimation();
     }
+
+    // ---------------- Vérifier les sorts ----------------
+    if (!matchFound)
+    {
+        foreach (var sort in sorts)
+        {
+            string sortName = sort.nomSort.ToUpper();
+            if (sortName.StartsWith(tentative))
+            {
+                matchFound = true;
+                currentInput = tentative;
+                break;
+            }
+        }
+    }
+
+    // ---------------- Animation lettre ----------------
+    if (matchFound)
+        PlayLetterAnimation();
+}
+
 
     private void HandleSpace()
+{
+    // Si rien n'est tapé et pas d'ennemi sélectionné, on ne fait rien
+    if (string.IsNullOrEmpty(currentInput) && selectedEnemy == null)
+        return;
+
+    // Cherche un sort correspondant au texte actuel
+    Sort sortToCast = sorts.Find(s => s.nomSort.ToUpper() == currentInput);
+
+    if (sortToCast != null)
     {
-        if (string.IsNullOrEmpty(currentInput) && selectedEnemy == null)
-            return;
+        // Instancie le sort
+        GameObject sortInstance = Instantiate(sortToCast.gameObject, transform.position, transform.rotation);
+        var sortScript = sortInstance.GetComponent<Sort>();
 
-        Sort sortToCast = sorts.Find(s => s.nomSort.ToUpper() == currentInput);
-
-        if (sortToCast != null)
+        if (selectedEnemy != null)
         {
-            GameObject sortInstance = Instantiate(sortToCast.gameObject, transform.position, transform.rotation);
-            var sortScript = sortInstance.GetComponent<Sort>();
-
-            if (selectedEnemy != null)
-            {
-                if (sortScript != null)
-                    sortScript.LancerSortCible(selectedEnemy.enemy);
-            }
-            else
-            {
-                if (sortScript != null)
-                    sortScript.LancerSort();
-            }
-
-            // Lance animation mot terminé
-            PlayWordAnimation(currentInput);
-
-            // Reset input pour le mot suivant
-            currentInput = "";
-            selectedEnemy = null;
-            sortLibreMode = false;
+            if (sortScript != null)
+                sortScript.LancerSortCible(selectedEnemy.enemy);
         }
+        else
+        {
+            if (sortScript != null)
+                sortScript.LancerSort();
+        }
+
+        // Animation mot terminé
+        PlayWordAnimation(currentInput);
     }
+
+    // ---------------- Reset complet ----------------
+    currentInput = "";
+    selectedEnemy = null;
+    sortLibreMode = false;
+}
+
 
     private void Update()
     {
