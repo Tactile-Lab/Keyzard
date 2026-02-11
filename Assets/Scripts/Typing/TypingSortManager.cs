@@ -100,7 +100,7 @@ public class TypingSortManager : MonoBehaviour
 
         if (sortToCast != null)
         {
-            GameObject sortInstance = Instantiate(sortToCast.gameObject);
+            GameObject sortInstance = Instantiate(sortToCast.gameObject, transform.position, transform.rotation);
             var sortScript = sortInstance.GetComponent<Sort>();
 
             if (selectedEnemy != null)

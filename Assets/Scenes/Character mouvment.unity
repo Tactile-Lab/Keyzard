@@ -2986,10 +2986,6 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5406810383231741228, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-      propertyPath: staffAngleOffset
-      value: 52
-      objectReference: {fileID: 0}
     - target: {fileID: 6606962051837931564, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
       propertyPath: m_Size.x
       value: 0.53121114
