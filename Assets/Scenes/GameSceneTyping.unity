@@ -301,6 +301,28 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &597163660 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4422941723323925774, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
+  m_PrefabInstance: {fileID: 2024765527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0bbe9c98b39f384e9ccfe24ff9aa7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TypingSortManager
+--- !u!114 &597163664 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5406810383231741228, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
+  m_PrefabInstance: {fileID: 2024765527}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc5cd83e1b31c5b479ac58e6b3d3e164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerControler
 --- !u!1 &678335976
 GameObject:
   m_ObjectHideFlags: 0
@@ -2940,6 +2962,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1417683319 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4654411341381960859, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
+  m_PrefabInstance: {fileID: 2024765527}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1476374714 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7362430964663499439, guid: 5e4bd7566e3033644b0539cc4f065e4f, type: 3}
@@ -3201,6 +3228,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 77525615}
+    - target: {fileID: 4422941723323925774, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 597163664}
     - target: {fileID: 4526009371912272041, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.004421547
@@ -3257,6 +3288,14 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5406810383231741228, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
+      propertyPath: staffTip
+      value: 
+      objectReference: {fileID: 1417683319}
+    - target: {fileID: 5406810383231741228, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
+      propertyPath: typingSortManager
+      value: 
+      objectReference: {fileID: 597163660}
     - target: {fileID: 7450699288470269691, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
       propertyPath: m_Layer
       value: 7

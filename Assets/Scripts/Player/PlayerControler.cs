@@ -13,9 +13,11 @@ public class PlayerControler : MonoBehaviour
 
     [Header("Staff")]
     [SerializeField] private Transform staffTransform;
+    [SerializeField] private Transform staffTip;
     [SerializeField] private float staffSmoothSpeed = 12f;
     [SerializeField] private Vector2 staffOrbitRadii = new Vector2(0.28f, 0.4f);
     [SerializeField] private float diagonalReleaseBuffer = 0.12f;
+    [SerializeField] private TypingSortManager typingSortManager;
 
     private Rigidbody2D rb;
     private Vector2 input;
@@ -26,6 +28,9 @@ public class PlayerControler : MonoBehaviour
     private Vector2 lastMoveDir = Vector2.right;
     private float lastReleaseTime = -999f;
     private float staffCurrentAngle = 0f;
+    private GameObject lockedTarget;
+
+    public Vector3 StaffTipPosition => staffTip != null ? staffTip.position : (staffTransform != null ? staffTransform.position : transform.position);
 
     private void Awake()
     {
@@ -122,14 +127,31 @@ public class PlayerControler : MonoBehaviour
     {
         if (staffTransform == null) return;
 
-        bool lastWasDiagonal = Mathf.Abs(lastMoveDir.x) > 0.01f && Mathf.Abs(lastMoveDir.y) > 0.01f;
-        bool nowAxisOnly = Mathf.Abs(rawInput.x) <= 0.01f || Mathf.Abs(rawInput.y) <= 0.01f;
-        bool withinReleaseBuffer = Time.time - lastReleaseTime <= diagonalReleaseBuffer;
-        bool keepLastDiagonal = withinReleaseBuffer && lastWasDiagonal && nowAxisOnly;
+        // Find closest enemy for targeting
+        GameObject closestEnemy = FindClosestEnemy();
+        
+        float targetAngle;
+        
+        if (closestEnemy != null)
+        {
+            // Lock onto enemy - staff points at enemy regardless of player movement
+            lockedTarget = closestEnemy;
+            Vector2 dirToEnemy = (closestEnemy.transform.position - transform.position);
+            targetAngle = Mathf.Atan2(dirToEnemy.y, dirToEnemy.x) * Mathf.Rad2Deg;
+        }
+        else
+        {
+            // No enemy - use player movement direction
+            lockedTarget = null;
+            
+            bool lastWasDiagonal = Mathf.Abs(lastMoveDir.x) > 0.01f && Mathf.Abs(lastMoveDir.y) > 0.01f;
+            bool nowAxisOnly = Mathf.Abs(rawInput.x) <= 0.01f || Mathf.Abs(rawInput.y) <= 0.01f;
+            bool withinReleaseBuffer = Time.time - lastReleaseTime <= diagonalReleaseBuffer;
+            bool keepLastDiagonal = withinReleaseBuffer && lastWasDiagonal && nowAxisOnly;
 
-        Vector2 dir = (input.sqrMagnitude > 0.0001f && !keepLastDiagonal) ? input : lastMoveDir;
-
-        float targetAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+            Vector2 dir = (input.sqrMagnitude > 0.0001f && !keepLastDiagonal) ? input : lastMoveDir;
+            targetAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        }
 
         // Normalize angle to maintain continuity (avoid jumping between -180 and 180)
         while (targetAngle - staffCurrentAngle > 180f) targetAngle -= 360f;
@@ -149,5 +171,35 @@ public class PlayerControler : MonoBehaviour
         Vector2 orbitDir = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
         Vector2 ellipseOffset = new Vector2(orbitDir.x * staffOrbitRadii.x, orbitDir.y * staffOrbitRadii.y);
         staffTransform.localPosition = (Vector3)ellipseOffset;
+    }
+
+    private GameObject FindClosestEnemy()
+    {
+        // Prioritize typed target from TypingSortManager
+        if (typingSortManager != null && typingSortManager.SelectedEnemy != null)
+        {
+            return typingSortManager.SelectedEnemy.enemy;
+        }
+
+        // Fallback to closest enemy
+        if (GameManager.Instance == null || GameManager.Instance.list_enemies == null)
+            return null;
+
+        GameObject closest = null;
+        float minDistance = Mathf.Infinity;
+
+        foreach (var entry in GameManager.Instance.list_enemies)
+        {
+            if (entry == null || entry.enemy == null) continue;
+
+            float distance = Vector2.Distance(transform.position, entry.enemy.transform.position);
+            if (distance < minDistance)
+            {
+                minDistance = distance;
+                closest = entry.enemy;
+            }
+        }
+
+        return closest;
     }
 }

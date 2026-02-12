@@ -17,10 +17,13 @@ public class TypingSortManager : MonoBehaviour
     public GameObject wordPrefab;     // TMP prefab pour mot terminé
 
     public GameManager gameManager;
+    public PlayerControler playerController;
 
     private string currentInput = "";         // texte que le joueur tape
     private GameManager.EnemyEntry selectedEnemy = null;
     private bool sortLibreMode = false;
+
+    public GameManager.EnemyEntry SelectedEnemy => selectedEnemy;
 
     private void OnEnable()
     {
@@ -114,8 +117,13 @@ public class TypingSortManager : MonoBehaviour
 
     if (sortToCast != null)
     {
-        // Instancie le sort
-        GameObject sortInstance = Instantiate(sortToCast.gameObject, transform.position, transform.rotation);
+        // Get staff tip position from player controller
+        Vector3 spawnPosition = (playerController != null) 
+            ? playerController.StaffTipPosition 
+            : transform.position;
+
+        // Instancie le sort au bout du bâton
+        GameObject sortInstance = Instantiate(sortToCast.gameObject, spawnPosition, transform.rotation);
         var sortScript = sortInstance.GetComponent<Sort>();
 
         if (selectedEnemy != null)
