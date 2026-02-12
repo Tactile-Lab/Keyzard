@@ -134,21 +134,28 @@ public class Enemy : MonoBehaviour
         animator.SetTrigger("Move");
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    { 
-        Debug.Log("collison");
-        if (collision.gameObject.CompareTag("Player"))
+        private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("trigger");
+
+        if (other.CompareTag("Player"))
         {
-            //TODO : quelque chose comme collision.gameObject.GetComponent<Player>().TakeDamage(damage);
+            // TODO : quelque chose comme
+            // other.GetComponent<Player>().TakeDamage(damage);
         }
 
-        if (collision.gameObject.CompareTag("Projectile"))
+        if (other.CompareTag("Projectile"))
         {
-            //TODO : quelque chose comme
-            collision.gameObject.GetComponent<Sort>().DestroySort(gameObject);
-            TakeDamage(collision.gameObject.GetComponent<Sort>().damage);
+            Sort sort = other.GetComponent<Sort>();
+
+            if (sort != null)
+            {
+                sort.DestroySort(gameObject);
+                TakeDamage(sort.damage);
+            }
         }
     }
+
 
     public void TakeDamage(float damageAmount)
     {

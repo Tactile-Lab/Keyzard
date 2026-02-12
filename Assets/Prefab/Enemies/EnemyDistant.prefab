@@ -17,6 +17,10 @@ PrefabInstance:
       value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 1477283070550098551, guid: fe868ce24422f94438cd4165f7696dfb, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1477283070550098551, guid: fe868ce24422f94438cd4165f7696dfb, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
       value: -0.2379313
       objectReference: {fileID: 0}
