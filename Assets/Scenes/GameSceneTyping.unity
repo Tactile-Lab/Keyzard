@@ -3281,10 +3281,6 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5400396367967198384, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-      propertyPath: m_BodyType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5400396367967198384, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
