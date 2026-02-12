@@ -10,6 +10,8 @@ public class Sort : MonoBehaviour
 
     protected GameObject cible;
 
+    public Animator aniamtor;
+
     // Méthode qui cherche la cible la plus proche et lance le sort dessus
     public virtual void LancerSort()
     {
@@ -80,4 +82,6 @@ public class Sort : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    
 }

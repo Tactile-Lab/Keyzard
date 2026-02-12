@@ -32,10 +32,16 @@ public class Enemy : MonoBehaviour
 
     private GameObject player;
 
+    private bool isStunned = false;
+
+    private Rigidbody2D rb;
+
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
+        rb = GetComponent<Rigidbody2D>();
+
         if (ennemyData != null)
         {
             health = ennemyData.health;
@@ -45,6 +51,7 @@ public class Enemy : MonoBehaviour
             animator = GetComponent<Animator>();
             animator.runtimeAnimatorController = ennemyData.animatorController;
         }
+
         nameText.text = GameManager.Instance.list_enemies.Find(e => e.enemy == gameObject)?.code ?? "Unknown";
         if (type != EnemyType.Distant)
         {
@@ -55,12 +62,42 @@ public class Enemy : MonoBehaviour
         {
             StartCoroutine(Shoot());
         }
+
     }
 
     private void FixedUpdate()
     {
+        if (isStunned) return;
+
         Move();
     }
+
+    public void ApplyKnockback(Vector2 direction, float force)
+    {
+        isStunned = true;
+
+        // Stop le mouvement actuel
+        rb.linearVelocity = Vector2.zero;
+
+        // Applique le knockback
+        rb.AddForce(direction * force, ForceMode2D.Impulse);
+
+        // Commence une coroutine pour stopper la velocity après un court instant
+        StartCoroutine(KnockbackDuration(0.3f));
+    }
+
+    private IEnumerator KnockbackDuration(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+
+        // Stop la velocity pour éviter que le mob continue en arrière
+        rb.linearVelocity= Vector2.zero;
+
+        // Fin du stun
+        isStunned = false;
+    }
+
+
 
     private IEnumerator Shoot()
     {

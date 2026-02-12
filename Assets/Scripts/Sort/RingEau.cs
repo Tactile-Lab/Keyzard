@@ -11,26 +11,31 @@ public class RingEau : Sort
         LancerSortCible(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Rigidbody2D rb = collision.gameObject.GetComponent<Rigidbody2D>();
+            Enemy enemy = collision.gameObject.GetComponent<Enemy>();
 
-            if (rb != null)
+            if (enemy != null)
             {
                 Vector2 direction = (collision.transform.position - transform.position).normalized;
 
-                rb.AddForce(direction * forceKnockback, ForceMode2D.Impulse);
+                enemy.ApplyKnockback(direction, forceKnockback);
             }
-
-            DestroySort(collision.gameObject);
         }
     }
+
+
 
     public void OnAnimationFinished()
     {
         Destroy(gameObject);
+    }
+
+    public override void DestroySort(GameObject cible)
+    {
+        return;
     }
 
     

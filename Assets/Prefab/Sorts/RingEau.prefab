@@ -182,7 +182,7 @@ MonoBehaviour:
   nomSort: geda
   damage: 5
   vitesse: 1
-  forceKnockback: 2
+  forceKnockback: 5
 --- !u!95 &5529892410386165558
 Animator:
   serializedVersion: 7
