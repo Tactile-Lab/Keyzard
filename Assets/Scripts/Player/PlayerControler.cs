@@ -14,14 +14,20 @@ public class PlayerControler : MonoBehaviour
     [Header("Staff")]
     [SerializeField] private Transform staffTransform;
     [SerializeField] private float staffAngleOffset = 0f;
-    [SerializeField] private Vector2 staffLocalOffset = new Vector2(0.25f, 0f);
-    [SerializeField] private bool flipStaffSprite = true;
-    [SerializeField] private SpriteRenderer staffSpriteRenderer;
+    [SerializeField] private float staffSmoothSpeed = 12f;
+    [SerializeField] private Vector2 staffOrbitRadii = new Vector2(0.28f, 0.4f);
+    [SerializeField] private Vector2 staffCenterOffset = Vector2.zero;
+    [SerializeField] private float diagonalReleaseBuffer = 0.12f;
 
     private Rigidbody2D rb;
     private Vector2 input;
+    private Vector2 rawInput;
+    private bool anyMoveKeyReleasedThisFrame;
+    private bool anyMoveKeyPressedThisFrame;
     private bool facingRight = true;
     private Vector2 lastMoveDir = Vector2.right;
+    private float lastReleaseTime = -999f;
+    private float staffCurrentAngle = 0f;
 
     private void Awake()
     {
@@ -33,10 +39,6 @@ public class PlayerControler : MonoBehaviour
         if (spriteRenderer == null)
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
-        }
-        if (staffSpriteRenderer == null && staffTransform != null)
-        {
-            staffSpriteRenderer = staffTransform.GetComponent<SpriteRenderer>();
         }
     }
 
@@ -57,7 +59,25 @@ public class PlayerControler : MonoBehaviour
         if (kb.downArrowKey.isPressed) y -= 1f;
         if (kb.upArrowKey.isPressed) y += 1f;
 
-        input = new Vector2(x, y).normalized;
+        anyMoveKeyReleasedThisFrame =
+            kb.leftArrowKey.wasReleasedThisFrame ||
+            kb.rightArrowKey.wasReleasedThisFrame ||
+            kb.downArrowKey.wasReleasedThisFrame ||
+            kb.upArrowKey.wasReleasedThisFrame;
+
+        anyMoveKeyPressedThisFrame =
+            kb.leftArrowKey.wasPressedThisFrame ||
+            kb.rightArrowKey.wasPressedThisFrame ||
+            kb.downArrowKey.wasPressedThisFrame ||
+            kb.upArrowKey.wasPressedThisFrame;
+
+        if (anyMoveKeyReleasedThisFrame)
+        {
+            lastReleaseTime = Time.time;
+        }
+
+        rawInput = new Vector2(x, y);
+        input = rawInput.normalized;
 
         UpdateAnimationAndFacing();
         UpdateStaffRotation();
@@ -91,7 +111,12 @@ public class PlayerControler : MonoBehaviour
 
         if (input.sqrMagnitude > 0.0001f)
         {
-            lastMoveDir = input;
+            bool withinReleaseBuffer = Time.time - lastReleaseTime <= diagonalReleaseBuffer;
+            bool shouldUpdateDirection = anyMoveKeyPressedThisFrame || (!anyMoveKeyReleasedThisFrame && !withinReleaseBuffer);
+            if (shouldUpdateDirection)
+            {
+                lastMoveDir = input;
+            }
         }
     }
 
@@ -99,30 +124,32 @@ public class PlayerControler : MonoBehaviour
     {
         if (staffTransform == null) return;
 
-        Vector2 dir = (input.sqrMagnitude > 0.0001f) ? input : lastMoveDir;
+        bool lastWasDiagonal = Mathf.Abs(lastMoveDir.x) > 0.01f && Mathf.Abs(lastMoveDir.y) > 0.01f;
+        bool nowAxisOnly = Mathf.Abs(rawInput.x) <= 0.01f || Mathf.Abs(rawInput.y) <= 0.01f;
+        bool withinReleaseBuffer = Time.time - lastReleaseTime <= diagonalReleaseBuffer;
+        bool keepLastDiagonal = withinReleaseBuffer && lastWasDiagonal && nowAxisOnly;
 
-        // Skip staff updates when moving mostly up/down
-        if (Mathf.Abs(dir.y) > Mathf.Abs(dir.x))
-        {
-            return;
-        }
+        Vector2 dir = (input.sqrMagnitude > 0.0001f && !keepLastDiagonal) ? input : lastMoveDir;
 
-        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + staffAngleOffset;
+        float targetAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + staffAngleOffset;
 
-        if (!facingRight)
-        {
-            angle = 180f - angle;
-        }
+        // Normalize angle to maintain continuity (avoid jumping between -180 and 180)
+        while (targetAngle - staffCurrentAngle > 180f) targetAngle -= 360f;
+        while (targetAngle - staffCurrentAngle < -180f) targetAngle += 360f;
 
-        staffTransform.localRotation = Quaternion.Euler(0f, 0f, angle);
+        // Smoothly interpolate angle
+        staffCurrentAngle = Mathf.Lerp(
+            staffCurrentAngle,
+            targetAngle,
+            1f - Mathf.Exp(-staffSmoothSpeed * Time.deltaTime)
+        );
 
-        // Keep staff in front based on facing direction
-        float x = Mathf.Abs(staffLocalOffset.x) * (facingRight ? 1f : -1f);
-        staffTransform.localPosition = new Vector3(x, staffLocalOffset.y, staffTransform.localPosition.z);
+        // Apply rotation and position based on the current interpolated angle
+        staffTransform.localRotation = Quaternion.Euler(0f, 0f, staffCurrentAngle);
 
-        if (flipStaffSprite && staffSpriteRenderer != null)
-        {
-            staffSpriteRenderer.flipX = !facingRight;
-        }
+        float radians = staffCurrentAngle * Mathf.Deg2Rad;
+        Vector2 orbitDir = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
+        Vector2 ellipseOffset = new Vector2(orbitDir.x * staffOrbitRadii.x, orbitDir.y * staffOrbitRadii.y);
+        staffTransform.localPosition = (Vector3)(staffCenterOffset + ellipseOffset);
     }
 }
