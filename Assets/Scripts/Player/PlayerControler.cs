@@ -13,10 +13,8 @@ public class PlayerControler : MonoBehaviour
 
     [Header("Staff")]
     [SerializeField] private Transform staffTransform;
-    [SerializeField] private float staffAngleOffset = 0f;
     [SerializeField] private float staffSmoothSpeed = 12f;
     [SerializeField] private Vector2 staffOrbitRadii = new Vector2(0.28f, 0.4f);
-    [SerializeField] private Vector2 staffCenterOffset = Vector2.zero;
     [SerializeField] private float diagonalReleaseBuffer = 0.12f;
 
     private Rigidbody2D rb;
@@ -131,7 +129,7 @@ public class PlayerControler : MonoBehaviour
 
         Vector2 dir = (input.sqrMagnitude > 0.0001f && !keepLastDiagonal) ? input : lastMoveDir;
 
-        float targetAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg + staffAngleOffset;
+        float targetAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
         // Normalize angle to maintain continuity (avoid jumping between -180 and 180)
         while (targetAngle - staffCurrentAngle > 180f) targetAngle -= 360f;
@@ -150,6 +148,6 @@ public class PlayerControler : MonoBehaviour
         float radians = staffCurrentAngle * Mathf.Deg2Rad;
         Vector2 orbitDir = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
         Vector2 ellipseOffset = new Vector2(orbitDir.x * staffOrbitRadii.x, orbitDir.y * staffOrbitRadii.y);
-        staffTransform.localPosition = (Vector3)(staffCenterOffset + ellipseOffset);
+        staffTransform.localPosition = (Vector3)ellipseOffset;
     }
 }

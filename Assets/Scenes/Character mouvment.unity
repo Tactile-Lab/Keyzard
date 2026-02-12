@@ -2936,38 +2936,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2285118662014706626, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2285118662014706626, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2285118662014706626, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2285118662014706626, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.79
-      objectReference: {fileID: 0}
-    - target: {fileID: 2285118662014706626, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2285118662014706626, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2285118662014706626, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2285118662014706626, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-      propertyPath: m_ConstrainProportionsScale
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3893880241317812590, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3010,22 +2978,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4526009371912272041, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5406810383231741228, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-      propertyPath: staffAngleOffset
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5406810383231741228, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-      propertyPath: staffOrbitRadius
-      value: 0.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7450699288470269691, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-      propertyPath: m_Name
-      value: Magic Staff
-      objectReference: {fileID: 0}
-    - target: {fileID: 7450699288470269691, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
