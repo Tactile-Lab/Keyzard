@@ -724,7 +724,7 @@ GameObject:
   - component: {fileID: 5481455790904502988}
   - component: {fileID: 1157308257627885369}
   - component: {fileID: 2628430571217136146}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: DoorsClosed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1885,6 +1885,10 @@ PrefabInstance:
     - target: {fileID: 1563250055536596532, guid: aa42e9efe30a24544bc7fefafc8c0d3b, type: 3}
       propertyPath: m_Tiles.Array.data[50].second.m_TileSpriteIndex
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2873251107312199232, guid: aa42e9efe30a24544bc7fefafc8c0d3b, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4281613207615021204, guid: aa42e9efe30a24544bc7fefafc8c0d3b, type: 3}
       propertyPath: m_SortingLayer
