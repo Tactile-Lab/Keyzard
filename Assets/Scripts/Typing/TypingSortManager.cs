@@ -25,6 +25,8 @@ public class TypingSortManager : MonoBehaviour
 
     public GameManager.EnemyEntry SelectedEnemy => selectedEnemy;
 
+    TMP_Text nameEnemy;
+
     private void OnEnable()
     {
         if (Keyboard.current != null)
@@ -139,13 +141,30 @@ public class TypingSortManager : MonoBehaviour
 
         // Animation mot terminé
         PlayWordAnimation(currentInput);
+        StartCoroutine(FadeColorOnce(Color.yellow, Color.white, 0.5f));
     }
 
     // ---------------- Reset complet ----------------
     currentInput = "";
     selectedEnemy = null;
     sortLibreMode = false;
+    nameEnemy.color = Color.white;
 }
+
+    private System.Collections.IEnumerator FadeColorOnce(Color from, Color to, float time)
+    {
+        float elapsed = 0f;
+
+        while (elapsed < time)
+        {
+            elapsed += Time.deltaTime;
+            nameEnemy.color = Color.Lerp(from, to, elapsed / time);
+            yield return null; // attend la prochaine frame
+        }
+
+        // S'assure que la couleur finale est exactement la couleur de fin
+        nameEnemy.color = to;
+    }
 
 
     private void Update()
@@ -158,9 +177,19 @@ public class TypingSortManager : MonoBehaviour
         if (affichage == null) return;
 
         if (selectedEnemy != null)
-            affichage.text = selectedEnemy.code + " - " + currentInput;
+        {
+            string enemyCode = selectedEnemy.code.ToUpper();
+            string restText = currentInput;
+
+            // Colorier les 2 premières lettres en jaune
+            affichage.text = $"<color=yellow>{enemyCode}</color> - {restText}";
+            nameEnemy = selectedEnemy.enemy.GetComponent<Enemy>().nameText;
+            nameEnemy.color = Color.yellow;
+        }
         else
+        {
             affichage.text = currentInput;
+        }
     }
 
     // ----------------- Animations -----------------
@@ -168,13 +197,18 @@ public class TypingSortManager : MonoBehaviour
     private void PlayLetterAnimation()
     {
         affichage.transform.DOKill(true);
-        affichage.DOKill(true);
-
         affichage.transform.localScale = Vector3.one;
 
         affichage.transform.DOPunchScale(Vector3.one * 0.25f, 0.15f, 10, 1);
         affichage.DOColor(Color.cyan, 0.1f)
-                 .OnComplete(() => affichage.DOColor(Color.white, 0.2f));
+                .OnComplete(() => 
+                {
+                    // Remet le texte avec la couleur des 2 premières lettres
+                    if (selectedEnemy != null)
+                        affichage.text = $"<color=yellow>{selectedEnemy.code.ToUpper()}</color>{currentInput}";
+                    else
+                        affichage.color = Color.white;
+                });
         affichage.transform.DOShakePosition(0.1f, 5f, 20);
     }
 
