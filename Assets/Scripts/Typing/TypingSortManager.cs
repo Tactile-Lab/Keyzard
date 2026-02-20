@@ -26,6 +26,7 @@ public class TypingSortManager : MonoBehaviour
     public GameManager.EnemyEntry SelectedEnemy => selectedEnemy;
 
     TMP_Text nameEnemy;
+    private Tween enemyNameTween; // Tween pour le zoom du nom
 
     private void OnEnable()
     {
@@ -54,118 +55,111 @@ public class TypingSortManager : MonoBehaviour
     }
 
     private void TypeLetter(char letter)
-{
-    if (!sortLibreMode && (listEnemies == null || listEnemies.Count == 0))
-        return;
-
-    string tentative = currentInput + letter;
-    bool matchFound = false;
-
-    // ---------------- Vérifier les ennemis ----------------
-    if (selectedEnemy == null && !sortLibreMode)
     {
-        foreach (var entry in listEnemies)
+        if (!sortLibreMode && (listEnemies == null || listEnemies.Count == 0))
+            return;
+
+        string tentative = currentInput + letter;
+        bool matchFound = false;
+
+        // ---------------- Vérifier les ennemis ----------------
+        if (selectedEnemy == null && !sortLibreMode)
         {
-            string enemyCode = entry.code.ToUpper();
-            if (enemyCode.StartsWith(tentative))
+            foreach (var entry in listEnemies)
             {
-                matchFound = true;
-
-                // Si le code est complet, on sélectionne l'ennemi
-                if (enemyCode == tentative)
+                string enemyCode = entry.code.ToUpper();
+                if (enemyCode.StartsWith(tentative))
                 {
-                    selectedEnemy = entry;
-                    currentInput = ""; // On reset pour taper le sort après
-                }
-                else
-                {
-                    currentInput = tentative; // On continue à taper le code
-                }
+                    matchFound = true;
 
-                break;
+                    // Si le code est complet, on sélectionne l'ennemi
+                    if (enemyCode == tentative)
+                    {
+                        selectedEnemy = entry;
+                        currentInput = ""; // On reset pour taper le sort après
+                    }
+                    else
+                    {
+                        currentInput = tentative; // On continue à taper le code
+                    }
+
+                    break;
+                }
             }
         }
-    }
 
-    // ---------------- Vérifier les sorts ----------------
-    if (!matchFound)
-    {
-        foreach (var sort in sorts)
+        // ---------------- Vérifier les sorts ----------------
+        if (!matchFound)
         {
-            string sortName = sort.nomSort.ToUpper();
-            if (sortName.StartsWith(tentative))
+            foreach (var sort in sorts)
             {
-                matchFound = true;
-                currentInput = tentative;
-                break;
+                string sortName = sort.nomSort.ToUpper();
+                if (sortName.StartsWith(tentative))
+                {
+                    matchFound = true;
+                    currentInput = tentative;
+                    break;
+                }
             }
         }
+
+        // ---------------- Animation lettre ----------------
+        if (matchFound)
+            PlayLetterAnimation();
     }
-
-    // ---------------- Animation lettre ----------------
-    if (matchFound)
-        PlayLetterAnimation();
-}
-
 
     private void HandleSpace()
-{
-    // Si rien n'est tapé et pas d'ennemi sélectionné, on ne fait rien
-    if (string.IsNullOrEmpty(currentInput) && selectedEnemy == null)
-        return;
-
-    // Cherche un sort correspondant au texte actuel
-    Sort sortToCast = sorts.Find(s => s.nomSort.ToUpper() == currentInput);
-
-    if (sortToCast != null)
     {
-        // Get staff tip position from player controller
-        Vector3 spawnPosition = (playerController != null) 
-            ? playerController.StaffTipPosition 
-            : transform.position;
+        // Si rien n'est tapé et pas d'ennemi sélectionné, on ne fait rien
+        if (string.IsNullOrEmpty(currentInput) && selectedEnemy == null)
+            return;
 
-        // Instancie le sort au bout du bâton
-        GameObject sortInstance = Instantiate(sortToCast.gameObject, spawnPosition, transform.rotation);
-        var sortScript = sortInstance.GetComponent<Sort>();
+        // Cherche un sort correspondant au texte actuel
+        Sort sortToCast = sorts.Find(s => s.nomSort.ToUpper() == currentInput);
 
-        if (selectedEnemy != null)
+        if (sortToCast != null)
         {
-            if (sortScript != null)
-                sortScript.LancerSortCible(selectedEnemy.enemy);
-        }
-        else
-        {
-            if (sortScript != null)
-                sortScript.LancerSort();
+            // Get staff tip position from player controller
+            Vector3 spawnPosition = (playerController != null) 
+                ? playerController.StaffTipPosition 
+                : transform.position;
+
+            // Instancie le sort au bout du bâton
+            GameObject sortInstance = Instantiate(sortToCast.gameObject, spawnPosition, transform.rotation);
+            var sortScript = sortInstance.GetComponent<Sort>();
+
+            if (selectedEnemy != null)
+            {
+                if (sortScript != null)
+                    sortScript.LancerSortCible(selectedEnemy.enemy);
+            }
+            else
+            {
+                if (sortScript != null)
+                    sortScript.LancerSort();
+            }
+
+            // Animation mot terminé
+            PlayWordAnimation(currentInput);
         }
 
-        // Animation mot terminé
-        PlayWordAnimation(currentInput);
-        StartCoroutine(FadeColorOnce(Color.yellow, Color.white, 0.5f));
+        // ---------------- Reset complet ----------------
+        currentInput = "";
+        selectedEnemy = null;
+        sortLibreMode = false;
+
+        // Si un nom est sélectionné, on remet taille et couleur progressivement
+        if (nameEnemy != null)
+        {
+            enemyNameTween?.Kill();
+            // Tween de dézoom et couleur en simultané
+            Sequence seq = DOTween.Sequence();
+            seq.Append(nameEnemy.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutCubic));
+            seq.Join(nameEnemy.DOColor(Color.white, 0.5f));
+            enemyNameTween = seq;
+            nameEnemy = null;
+        }
     }
-
-    // ---------------- Reset complet ----------------
-    currentInput = "";
-    selectedEnemy = null;
-    sortLibreMode = false;
-    nameEnemy.color = Color.white;
-}
-
-    private System.Collections.IEnumerator FadeColorOnce(Color from, Color to, float time)
-    {
-        float elapsed = 0f;
-
-        while (elapsed < time)
-        {
-            elapsed += Time.deltaTime;
-            nameEnemy.color = Color.Lerp(from, to, elapsed / time);
-            yield return null; // attend la prochaine frame
-        }
-
-        // S'assure que la couleur finale est exactement la couleur de fin
-        nameEnemy.color = to;
-    }
-
 
     private void Update()
     {
@@ -184,11 +178,28 @@ public class TypingSortManager : MonoBehaviour
             // Colorier les 2 premières lettres en jaune
             affichage.text = $"<color=yellow>{enemyCode}</color> - {restText}";
             nameEnemy = selectedEnemy.enemy.GetComponent<Enemy>().nameText;
+
+            // Couleur
             nameEnemy.color = Color.yellow;
+
+            // ---------------- Zoom plus fort ----------------
+            enemyNameTween?.Kill();
+            enemyNameTween = nameEnemy.transform.DOScale(Vector3.one * 1.5f, 0.3f).SetEase(Ease.OutCubic);
         }
         else
         {
             affichage.text = currentInput;
+
+            // Si un nom existe encore, dézoom + couleur progressive
+            if (nameEnemy != null)
+            {
+                enemyNameTween?.Kill();
+                Sequence seq = DOTween.Sequence();
+                seq.Append(nameEnemy.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutCubic));
+                seq.Join(nameEnemy.DOColor(Color.white, 0.5f));
+                enemyNameTween = seq;
+                nameEnemy = null;
+            }
         }
     }
 
