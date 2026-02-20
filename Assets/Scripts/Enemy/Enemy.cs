@@ -4,6 +4,7 @@ using TMPro;
 
 public class Enemy : MonoBehaviour
 {
+    // Statistiques runtime copiées depuis EnemyData au démarrage
     private float health;
     private EnemyType type;
     private int damage;
@@ -26,22 +27,27 @@ public class Enemy : MonoBehaviour
 
     private bool isStunned = false;
 
+    // Références composants
     private Rigidbody2D rb;
     private Collider2D mainCollider;
     private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
+        // Récupération du joueur et de ses composants utiles
         player = GameObject.FindWithTag("Player");
         if (player != null)
         {
             playerHealth = player.GetComponent<PlayerHealth>();
             playerCollider = player.GetComponent<Collider2D>();
         }
+
+        // Cache des composants de l'ennemi
         rb = GetComponent<Rigidbody2D>();
         mainCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        // Chargement des stats depuis le ScriptableObject
         if (ennemyData != null)
         {
             health = ennemyData.health;
@@ -60,6 +66,7 @@ public class Enemy : MonoBehaviour
         }
         else
         {
+            // Ennemi distant: boucle de tir
             StartCoroutine(Shoot());
         }
     }
@@ -76,6 +83,7 @@ public class Enemy : MonoBehaviour
     {
         if (health == 0 || mainCollider == null || playerCollider == null) return;
 
+        // Détection de chevauchement précis entre colliders
         ColliderDistance2D distanceInfo = mainCollider.Distance(playerCollider);
         if (distanceInfo.isOverlapped)
         {
@@ -87,13 +95,13 @@ public class Enemy : MonoBehaviour
     {
         isStunned = true;
 
-        // Stop le mouvement actuel
+        // Stoppe le mouvement actuel
         rb.linearVelocity = Vector2.zero;
 
-        // Applique le knockback
+        // Applique le knockback du sort
         rb.AddForce(direction * force, ForceMode2D.Impulse);
 
-        // Commence une coroutine pour stopper la velocity après un court instant
+        // Arrête le knockback après une courte durée
         StartCoroutine(KnockbackDuration(0.3f));
     }
 
@@ -101,10 +109,10 @@ public class Enemy : MonoBehaviour
     {
         yield return new WaitForSeconds(duration);
 
-        // Stop la velocity pour éviter que le mob continue en arrière
+        // Évite que l'ennemi continue de glisser
         rb.linearVelocity = Vector2.zero;
 
-        // Fin du stun
+        // Fin de l'état de stun
         isStunned = false;
     }
 
@@ -118,7 +126,8 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void ShootProjectile() //triggered dans l'animation d'attaque du distant
+    // Appelé par l'animation d'attaque de l'ennemi distant
+    public void ShootProjectile()
     {
         if (player == null) return;
 
@@ -143,16 +152,13 @@ public class Enemy : MonoBehaviour
     {
         if (health == 0 || player == null) return;
 
-        if (spriteRenderer == null)
-        {
-            spriteRenderer = GetComponent<SpriteRenderer>();
-        }
-
+        // Orientation visuelle vers le joueur
         if (player.transform.position.x < transform.position.x)
             spriteRenderer.flipX = true;
         else
             spriteRenderer.flipX = false;
 
+        // Les ennemis distants ne se déplacent pas vers le joueur
         if (type == EnemyType.Distant) return;
 
         CheckAttack();
@@ -168,6 +174,7 @@ public class Enemy : MonoBehaviour
 
     private void CheckAttack()
     {
+        // Passe en attaque quand le joueur est dans la portée proche
         if (Vector2.Distance(transform.position, player.transform.position) < 1f)
         {
             isMoving = false;
@@ -188,6 +195,7 @@ public class Enemy : MonoBehaviour
             return;
         }
 
+        // Garde-fou: dégâts seulement si joueur proche
         if (Vector2.Distance(transform.position, player.transform.position) <= 1.2f)
         {
             playerHealth.TakeDamage(damage);
@@ -227,6 +235,7 @@ public class Enemy : MonoBehaviour
             return;
         }
 
+        // Délègue au système de vie du joueur (cooldown géré dans PlayerHealth)
         PlayerHealth targetHealth = playerObject.GetComponent<PlayerHealth>();
         if (targetHealth != null)
         {
@@ -250,6 +259,7 @@ public class Enemy : MonoBehaviour
     {
         if (health == 0)
         {
+            // Nettoyage de l'ennemi dans la liste du GameManager
             GameManager.Instance.list_enemies.RemoveAll(e => e.enemy == gameObject);
             animator.SetTrigger("Death");
             gameObject.GetComponent<Collider2D>().enabled = false;

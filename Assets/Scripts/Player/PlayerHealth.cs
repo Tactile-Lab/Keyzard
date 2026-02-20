@@ -2,8 +2,13 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// Gère la vie du joueur : dégâts, soin, invincibilité temporaire et notification d'état.
+/// </summary>
 public class PlayerHealth : MonoBehaviour
 {
+    private const float NoDamageTakenYet = float.NegativeInfinity;
+
     [Header("Health")]
     [SerializeField] private int startingHealth = 30;
     [SerializeField] private int maxHealth = 30;
@@ -17,7 +22,8 @@ public class PlayerHealth : MonoBehaviour
     [Header("Visual")]
     [SerializeField] private SpriteRenderer targetSpriteRenderer;
 
-    private float lastDamageTime = -999f;
+    // Temps du dernier dégât reçu, utilisé pour gérer la fenêtre d'invincibilité.
+    private float lastDamageTime = NoDamageTakenYet;
     private Coroutine blinkRoutine;
 
     public int MaxHealth => maxHealth;
@@ -29,6 +35,7 @@ public class PlayerHealth : MonoBehaviour
 
     private void Awake()
     {
+        // Fallback automatique si aucun renderer n'a été assigné dans l'inspecteur.
         if (targetSpriteRenderer == null)
         {
             targetSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -36,34 +43,32 @@ public class PlayerHealth : MonoBehaviour
 
         maxHealth = Mathf.Clamp(maxHealth, 1, maxHealthCap);
         currentHealth = Mathf.Clamp(startingHealth, 1, maxHealth);
-        HealthChanged?.Invoke(currentHealth, maxHealth);
+        RaiseHealthChanged();
     }
 
     private void OnDisable()
     {
-        if (blinkRoutine != null)
-        {
-            StopCoroutine(blinkRoutine);
-            blinkRoutine = null;
-        }
-
-        if (targetSpriteRenderer != null)
-        {
-            targetSpriteRenderer.enabled = true;
-        }
+        StopBlinkAndRestoreSprite();
     }
 
+    /// <summary>
+    /// Applique des dégâts si possible (cooldown respecté, joueur vivant).
+    /// </summary>
     public bool TakeDamage(int amount)
     {
         if (amount <= 0 || IsDead)
+        {
             return false;
+        }
 
         if (Time.time - lastDamageTime < damageCooldown)
+        {
             return false;
+        }
 
         lastDamageTime = Time.time;
         currentHealth = Mathf.Max(0, currentHealth - amount);
-        HealthChanged?.Invoke(currentHealth, maxHealth);
+        RaiseHealthChanged();
 
         if (blinkRoutine != null)
         {
@@ -78,23 +83,45 @@ public class PlayerHealth : MonoBehaviour
         return true;
     }
 
+    /// <summary>
+    /// Soigne le joueur sans dépasser sa vie maximale.
+    /// </summary>
     public void Heal(int amount)
     {
         if (amount <= 0 || IsDead)
+        {
             return;
+        }
 
         int previous = currentHealth;
         currentHealth = Mathf.Min(maxHealth, currentHealth + amount);
 
         if (currentHealth != previous)
-            HealthChanged?.Invoke(currentHealth, maxHealth);
+        {
+            RaiseHealthChanged();
+        }
     }
 
+    /// <summary>
+    /// Réinitialise la vie au maximum et annule l'état visuel d'invincibilité.
+    /// </summary>
     public void ResetHealth()
     {
         currentHealth = maxHealth;
-        lastDamageTime = -999f;
+        lastDamageTime = NoDamageTakenYet;
 
+        StopBlinkAndRestoreSprite();
+
+        RaiseHealthChanged();
+    }
+
+    private void RaiseHealthChanged()
+    {
+        HealthChanged?.Invoke(currentHealth, maxHealth);
+    }
+
+    private void StopBlinkAndRestoreSprite()
+    {
         if (blinkRoutine != null)
         {
             StopCoroutine(blinkRoutine);
@@ -105,8 +132,6 @@ public class PlayerHealth : MonoBehaviour
         {
             targetSpriteRenderer.enabled = true;
         }
-
-        HealthChanged?.Invoke(currentHealth, maxHealth);
     }
 
     private IEnumerator BlinkDuringInvincibility()
