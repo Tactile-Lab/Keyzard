@@ -19,14 +19,14 @@ public class TypingSortManager : MonoBehaviour
     public GameManager gameManager;
     public PlayerControler playerController;
 
-    private string currentInput = "";         // texte que le joueur tape
+    private string currentInput = "";         
     private GameManager.EnemyEntry selectedEnemy = null;
     private bool sortLibreMode = false;
 
     public GameManager.EnemyEntry SelectedEnemy => selectedEnemy;
 
     TMP_Text nameEnemy;
-    private Tween enemyNameTween; // Tween pour le zoom du nom
+    private Tween enemyNameTween; 
 
     private void OnEnable()
     {
@@ -71,18 +71,15 @@ public class TypingSortManager : MonoBehaviour
                 if (enemyCode.StartsWith(tentative))
                 {
                     matchFound = true;
-
-                    // Si le code est complet, on sélectionne l'ennemi
                     if (enemyCode == tentative)
                     {
                         selectedEnemy = entry;
-                        currentInput = ""; // On reset pour taper le sort après
+                        currentInput = "";
                     }
                     else
                     {
-                        currentInput = tentative; // On continue à taper le code
+                        currentInput = tentative;
                     }
-
                     break;
                 }
             }
@@ -110,49 +107,42 @@ public class TypingSortManager : MonoBehaviour
 
     private void HandleSpace()
     {
-        // Si rien n'est tapé et pas d'ennemi sélectionné, on ne fait rien
         if (string.IsNullOrEmpty(currentInput) && selectedEnemy == null)
             return;
 
-        // Cherche un sort correspondant au texte actuel
         Sort sortToCast = sorts.Find(s => s.nomSort.ToUpper() == currentInput);
 
         if (sortToCast != null)
         {
-            // Get staff tip position from player controller
-            Vector3 spawnPosition = (playerController != null) 
-                ? playerController.StaffTipPosition 
-                : transform.position;
-
-            // Instancie le sort au bout du bâton
+            Vector3 spawnPosition = (playerController != null) ? playerController.StaffTipPosition : transform.position;
             GameObject sortInstance = Instantiate(sortToCast.gameObject, spawnPosition, transform.rotation);
             var sortScript = sortInstance.GetComponent<Sort>();
 
             if (selectedEnemy != null)
-            {
-                if (sortScript != null)
-                    sortScript.LancerSortCible(selectedEnemy.enemy);
-            }
+                sortScript?.LancerSortCible(selectedEnemy.enemy);
             else
-            {
-                if (sortScript != null)
-                    sortScript.LancerSort();
-            }
+                sortScript?.LancerSort();
 
             // Animation mot terminé
             PlayWordAnimation(currentInput);
+
+            // ---------------- Effet bleu → violet ----------------
+            if (affichage != null)
+            {
+                affichage.color = Color.cyan; // bleu
+                affichage.DOColor(Color.magenta, 0.5f); // puis violet en 0,5s
+            }
         }
 
-        // ---------------- Reset complet ----------------
+        // Reset complet
         currentInput = "";
         selectedEnemy = null;
         sortLibreMode = false;
 
-        // Si un nom est sélectionné, on remet taille et couleur progressivement
+        // Dézoom + couleur progressive du nom
         if (nameEnemy != null)
         {
             enemyNameTween?.Kill();
-            // Tween de dézoom et couleur en simultané
             Sequence seq = DOTween.Sequence();
             seq.Append(nameEnemy.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutCubic));
             seq.Join(nameEnemy.DOColor(Color.white, 0.5f));
@@ -175,22 +165,21 @@ public class TypingSortManager : MonoBehaviour
             string enemyCode = selectedEnemy.code.ToUpper();
             string restText = currentInput;
 
-            // Colorier les 2 premières lettres en jaune
+            // Tiret entre code ennemi et ce qu'on tape
             affichage.text = $"<color=yellow>{enemyCode}</color> - {restText}";
-            nameEnemy = selectedEnemy.enemy.GetComponent<Enemy>().nameText;
+            affichage.color = Color.white;
 
-            // Couleur
+            nameEnemy = selectedEnemy.enemy.GetComponent<Enemy>().nameText;
             nameEnemy.color = Color.yellow;
 
-            // ---------------- Zoom plus fort ----------------
             enemyNameTween?.Kill();
             enemyNameTween = nameEnemy.transform.DOScale(Vector3.one * 1.5f, 0.3f).SetEase(Ease.OutCubic);
         }
         else
         {
             affichage.text = currentInput;
+            affichage.color = Color.white;
 
-            // Si un nom existe encore, dézoom + couleur progressive
             if (nameEnemy != null)
             {
                 enemyNameTween?.Kill();
@@ -214,9 +203,8 @@ public class TypingSortManager : MonoBehaviour
         affichage.DOColor(Color.cyan, 0.1f)
                 .OnComplete(() => 
                 {
-                    // Remet le texte avec la couleur des 2 premières lettres
                     if (selectedEnemy != null)
-                        affichage.text = $"<color=yellow>{selectedEnemy.code.ToUpper()}</color>{currentInput}";
+                        affichage.text = $"<color=yellow>{selectedEnemy.code.ToUpper()}</color> - {currentInput}";
                     else
                         affichage.color = Color.white;
                 });
@@ -231,7 +219,6 @@ public class TypingSortManager : MonoBehaviour
             return;
         }
 
-        // Instancie un TMP temporaire pour le mot terminé
         GameObject wordObj = Instantiate(wordPrefab, affichage.transform.parent);
         TextMeshProUGUI wordTMP = wordObj.GetComponent<TextMeshProUGUI>();
         wordTMP.text = word;
@@ -239,14 +226,13 @@ public class TypingSortManager : MonoBehaviour
         RectTransform rt = wordTMP.GetComponent<RectTransform>();
         rt.anchoredPosition = ((RectTransform)affichage.transform).anchoredPosition;
         rt.localScale = Vector3.one;
-        wordTMP.alpha = 1f; // s'assure que le mot est visible
+        wordTMP.alpha = 1f;
 
-        // Animation : monte + magenta + reste visible + fade out
         Sequence seq = DOTween.Sequence();
         seq.Append(rt.DOAnchorPosY(rt.anchoredPosition.y + 40f, 0.6f).SetEase(Ease.OutCubic))
            .Join(wordTMP.DOColor(Color.magenta, 0.6f))
-           .AppendInterval(0.6f)                 // mot reste visible
-           .Append(wordTMP.DOFade(0f, 0.5f))     // disparaît en fondu
+           .AppendInterval(0.6f)
+           .Append(wordTMP.DOFade(0f, 0.5f))
            .OnComplete(() => Destroy(wordObj));
     }
 }
