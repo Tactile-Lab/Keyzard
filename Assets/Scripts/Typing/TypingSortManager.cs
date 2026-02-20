@@ -16,8 +16,27 @@ public class TypingSortManager : MonoBehaviour
     public TextMeshProUGUI affichage; // TMP principal pour le texte en cours
     public GameObject wordPrefab;     // TMP prefab pour mot terminé
 
+    [Header("Références")]
     public GameManager gameManager;
     public PlayerControler playerController;
+
+    [Header("Animations Lettres")]
+    [SerializeField] private float punchScaleAmount = 0.25f;
+    [SerializeField] private float punchScaleDuration = 0.15f;
+    [SerializeField] private int punchScaleVibrato = 10;
+
+    [SerializeField] private float shakeDuration = 0.25f;
+    [SerializeField] private float shakeStrength = 8f;
+    [SerializeField] private int shakeVibrato = 25;
+    [SerializeField] private float shakeRandomness = 90f;
+
+    [SerializeField] private Color letterColor = Color.cyan;
+
+    [Header("Animations Mot Terminé")]
+    [SerializeField] private float wordRiseDistance = 40f;
+    [SerializeField] private float wordRiseDuration = 0.6f;
+    [SerializeField] private float wordFadeDuration = 0.5f;
+    [SerializeField] private Color wordColor = Color.magenta;
 
     private string currentInput = "";         
     private GameManager.EnemyEntry selectedEnemy = null;
@@ -126,11 +145,11 @@ public class TypingSortManager : MonoBehaviour
             // Animation mot terminé
             PlayWordAnimation(currentInput);
 
-            // ---------------- Effet bleu → violet ----------------
+            // ---------------- Effet couleur ----------------
             if (affichage != null)
             {
-                affichage.color = Color.cyan; // bleu
-                affichage.DOColor(Color.magenta, 0.5f); // puis violet en 0,5s
+                affichage.color = letterColor; 
+                affichage.DOColor(wordColor, 0.5f); 
             }
         }
 
@@ -165,7 +184,6 @@ public class TypingSortManager : MonoBehaviour
             string enemyCode = selectedEnemy.code.ToUpper();
             string restText = currentInput;
 
-            // Tiret entre code ennemi et ce qu'on tape
             affichage.text = $"<color=yellow>{enemyCode}</color> - {restText}";
             affichage.color = Color.white;
 
@@ -192,15 +210,25 @@ public class TypingSortManager : MonoBehaviour
         }
     }
 
-    // ----------------- Animations -----------------
-
     private void PlayLetterAnimation()
     {
         affichage.transform.DOKill(true);
         affichage.transform.localScale = Vector3.one;
 
-        affichage.transform.DOPunchScale(Vector3.one * 0.25f, 0.15f, 10, 1);
-        affichage.DOColor(Color.cyan, 0.1f)
+        // Punch scale configurable
+        affichage.transform.DOPunchScale(Vector3.one * punchScaleAmount, punchScaleDuration, punchScaleVibrato, 1);
+
+        // Shake configurable
+        affichage.transform.DOShakePosition(
+            shakeDuration,
+            shakeStrength,
+            shakeVibrato,
+            shakeRandomness,
+            true
+        );
+
+        // Couleur configurable
+        affichage.DOColor(letterColor, 0.1f)
                 .OnComplete(() => 
                 {
                     if (selectedEnemy != null)
@@ -208,7 +236,6 @@ public class TypingSortManager : MonoBehaviour
                     else
                         affichage.color = Color.white;
                 });
-        affichage.transform.DOShakePosition(0.1f, 5f, 20);
     }
 
     private void PlayWordAnimation(string word)
@@ -229,10 +256,10 @@ public class TypingSortManager : MonoBehaviour
         wordTMP.alpha = 1f;
 
         Sequence seq = DOTween.Sequence();
-        seq.Append(rt.DOAnchorPosY(rt.anchoredPosition.y + 40f, 0.6f).SetEase(Ease.OutCubic))
-           .Join(wordTMP.DOColor(Color.magenta, 0.6f))
-           .AppendInterval(0.6f)
-           .Append(wordTMP.DOFade(0f, 0.5f))
+        seq.Append(rt.DOAnchorPosY(rt.anchoredPosition.y + wordRiseDistance, wordRiseDuration).SetEase(Ease.OutCubic))
+           .Join(wordTMP.DOColor(wordColor, wordRiseDuration))
+           .AppendInterval(wordRiseDuration)
+           .Append(wordTMP.DOFade(0f, wordFadeDuration))
            .OnComplete(() => Destroy(wordObj));
     }
 }
