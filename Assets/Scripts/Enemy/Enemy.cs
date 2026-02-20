@@ -1,22 +1,12 @@
 using UnityEngine;
 using System.Collections;
-using System.Net;
-using Unity.VisualScripting;
 using TMPro;
-
-public enum EnemyAction
-{
-    Move,
-    Attack,
-    TakeDamage,
-    Die
-}
 
 public class Enemy : MonoBehaviour
 {
     private float health;
     private EnemyType type;
-    private float damage;
+    private int damage;
     private float speed;
     private Animator animator;
 
@@ -31,16 +21,26 @@ public class Enemy : MonoBehaviour
     private EnemyData ennemyData;
 
     private GameObject player;
+    private PlayerHealth playerHealth;
+    private Collider2D playerCollider;
 
     private bool isStunned = false;
 
     private Rigidbody2D rb;
-
+    private Collider2D mainCollider;
+    private SpriteRenderer spriteRenderer;
 
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            playerHealth = player.GetComponent<PlayerHealth>();
+            playerCollider = player.GetComponent<Collider2D>();
+        }
         rb = GetComponent<Rigidbody2D>();
+        mainCollider = GetComponent<Collider2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         if (ennemyData != null)
         {
@@ -62,7 +62,6 @@ public class Enemy : MonoBehaviour
         {
             StartCoroutine(Shoot());
         }
-
     }
 
     private void FixedUpdate()
@@ -70,6 +69,18 @@ public class Enemy : MonoBehaviour
         if (isStunned) return;
 
         Move();
+        CheckContactDamage();
+    }
+
+    private void CheckContactDamage()
+    {
+        if (health == 0 || mainCollider == null || playerCollider == null) return;
+
+        ColliderDistance2D distanceInfo = mainCollider.Distance(playerCollider);
+        if (distanceInfo.isOverlapped)
+        {
+            TryDamagePlayer(playerCollider.gameObject);
+        }
     }
 
     public void ApplyKnockback(Vector2 direction, float force)
@@ -91,13 +102,11 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(duration);
 
         // Stop la velocity pour éviter que le mob continue en arrière
-        rb.linearVelocity= Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
 
         // Fin du stun
         isStunned = false;
     }
-
-
 
     private IEnumerator Shoot()
     {
@@ -111,10 +120,11 @@ public class Enemy : MonoBehaviour
 
     public void ShootProjectile() //triggered dans l'animation d'attaque du distant
     {
+        if (player == null) return;
+
         if (player.transform.position.x < transform.position.x)
         {
             projectileToLaunch = Instantiate(projectileEnemy, transform.position + Vector3.left * 0.4f, Quaternion.identity);
-            
         }
         else
         {
@@ -124,39 +134,39 @@ public class Enemy : MonoBehaviour
 
     public void LaunchProjectile()
     {
+        if (projectileToLaunch == null || player == null) return;
 
-        projectileToLaunch.GetComponent<ProjectileDistant>().Launch(player.transform.position);
+        projectileToLaunch.GetComponent<ProjectileDistant>().Launch(player.transform.position, damage);
     }
 
     private void Move()
     {
-        if (health == 0)
-            return;
-        
+        if (health == 0 || player == null) return;
 
-        SpriteRenderer spR = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+        {
+            spriteRenderer = GetComponent<SpriteRenderer>();
+        }
+
         if (player.transform.position.x < transform.position.x)
-            spR.flipX = true;
+            spriteRenderer.flipX = true;
         else
-            spR.flipX = false;
-
+            spriteRenderer.flipX = false;
 
         if (type == EnemyType.Distant) return;
 
-        checkAttack();
+        CheckAttack();
         if (isMoving)
         {
-
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
         else
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed / 4 * Time.deltaTime);
         }
-        
     }
 
-    private void checkAttack()
+    private void CheckAttack()
     {
         if (Vector2.Distance(transform.position, player.transform.position) < 1f)
         {
@@ -171,20 +181,29 @@ public class Enemy : MonoBehaviour
         animator.SetTrigger("Move");
     }
 
-        private void OnTriggerEnter2D(Collider2D other)
+    public void DealDamageToPlayer()
     {
-        Debug.Log("trigger");
+        if (playerHealth == null || health == 0)
+        {
+            return;
+        }
 
+        if (Vector2.Distance(transform.position, player.transform.position) <= 1.2f)
+        {
+            playerHealth.TakeDamage(damage);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
         if (other.CompareTag("Player"))
         {
-            // TODO : quelque chose comme
-            // other.GetComponent<Player>().TakeDamage(damage);
+            TryDamagePlayer(other.gameObject);
         }
 
         if (other.CompareTag("Projectile"))
         {
             Sort sort = other.GetComponent<Sort>();
-
             if (sort != null)
             {
                 sort.DestroySort(gameObject);
@@ -193,6 +212,27 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            TryDamagePlayer(other.gameObject);
+        }
+    }
+
+    private void TryDamagePlayer(GameObject playerObject)
+    {
+        if (health == 0)
+        {
+            return;
+        }
+
+        PlayerHealth targetHealth = playerObject.GetComponent<PlayerHealth>();
+        if (targetHealth != null)
+        {
+            targetHealth.TakeDamage(damage);
+        }
+    }
 
     public void TakeDamage(float damageAmount)
     {
@@ -225,6 +265,4 @@ public class Enemy : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
-
 }

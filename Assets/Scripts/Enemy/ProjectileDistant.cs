@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ProjectileDistant : MonoBehaviour
 {
-    private float damage;
+    private int damage;
     [SerializeField]
     private float speed;
 
@@ -28,10 +28,27 @@ public class ProjectileDistant : MonoBehaviour
         }
     }
 
-    public void Launch(Vector3 playerPos)
+    public void Launch(Vector3 playerPos, int projectileDamage)
     {
         transform.localScale = new Vector3(0.3f, 0.3f, 0.3f);
         directionBase = (playerPos - transform.position).normalized;
+        damage = projectileDamage;
         isMoving = true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player"))
+        {
+            return;
+        }
+
+        PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damage);
+        }
+
+        Destroy(gameObject);
     }
 }
