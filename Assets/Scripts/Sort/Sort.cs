@@ -8,7 +8,11 @@ public class Sort : MonoBehaviour
     public int damage;
     public float vitesse;
 
+    [Header("Audio")]
+    public SpellAudioConfig audioConfig;
+
     protected GameObject cible;
+    protected AudioSource activeLoopSource;
 
     public Animator aniamtor;
 
@@ -31,6 +35,14 @@ public class Sort : MonoBehaviour
     {
         if (cible == null) return;
         this.cible = cible;
+        
+        // Jouer le son de lancement
+        if (audioConfig != null)
+        {
+            audioConfig.PlayLaunchSFX();
+            activeLoopSource = audioConfig.StartActiveLoop();
+        }
+        
         StartCoroutine(DeplacementVersCible(cible));
     }
 
@@ -78,8 +90,30 @@ public class Sort : MonoBehaviour
         return cibleProche;
     }
 
+    protected virtual void OnImpact(GameObject target)
+    {
+        // Jouer le son d'impact
+        if (audioConfig != null)
+        {
+            audioConfig.PlayImpactSFX();
+            
+            // Arrêter la boucle active
+            if (activeLoopSource != null)
+            {
+                AudioManager.Instance.StopLoop(activeLoopSource);
+                activeLoopSource = null;
+            }
+        }
+    }
+
     public virtual void DestroySort(GameObject cible)
     {
+        // Arrêter les sons avant de détruire
+        if (activeLoopSource != null)
+        {
+            AudioManager.Instance.StopLoop(activeLoopSource);
+        }
+        
         Destroy(gameObject);
     }
 
