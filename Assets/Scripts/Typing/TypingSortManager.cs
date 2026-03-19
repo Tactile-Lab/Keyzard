@@ -38,6 +38,7 @@ public class TypingSortManager : MonoBehaviour
     [SerializeField] private float wordFadeDuration = 0.5f;
     [SerializeField] private Color wordColor = Color.magenta;
 
+
     private string currentInput = "";         
     private GameManager.EnemyEntry selectedEnemy = null;
     private bool sortLibreMode = false;
@@ -120,8 +121,14 @@ public class TypingSortManager : MonoBehaviour
         }
 
         // ---------------- Animation lettre ----------------
-        if (matchFound)
+        if (matchFound) {
             PlayLetterAnimation();
+        }
+        else
+        {
+            PlayWrongLetterAnimation(letter);
+        }
+
     }
 
     private void HandleSpace()
@@ -262,4 +269,69 @@ public class TypingSortManager : MonoBehaviour
            .Append(wordTMP.DOFade(0f, wordFadeDuration))
            .OnComplete(() => Destroy(wordObj));
     }
+
+
+
+private void PlayWrongLetterAnimation(char letter)
+{
+    if (wordPrefab == null || affichage == null)
+        return;
+
+    GameObject letterObj = Instantiate(wordPrefab, affichage.transform.parent);
+    TextMeshProUGUI tmp = letterObj.GetComponent<TextMeshProUGUI>();
+
+    tmp.text = letter.ToString();
+    tmp.color = Color.red;
+
+    RectTransform rt = tmp.GetComponent<RectTransform>();
+    RectTransform baseRT = affichage.GetComponent<RectTransform>();
+
+    // 🔥 important
+    affichage.ForceMeshUpdate();
+
+    TMP_TextInfo textInfo = affichage.textInfo;
+
+    Vector2 spawnPos = baseRT.anchoredPosition;
+
+    if (textInfo.characterCount > 0)
+    {
+        int lastIndex = textInfo.characterCount - 1;
+
+        // 🔥 on remonte jusqu'au dernier caractère visible
+        while (lastIndex > 0 && !textInfo.characterInfo[lastIndex].isVisible)
+        {
+            lastIndex--;
+        }
+
+        TMP_CharacterInfo charInfo = textInfo.characterInfo[lastIndex];
+
+        // 👉 position droite du dernier caractère visible
+        Vector3 charPos = charInfo.topRight;
+
+        spawnPos += new Vector2(charPos.x, charPos.y);
+    }
+
+    // 👉 petit offset pour pas coller
+    spawnPos += new Vector2(15f, 0f);
+
+    rt.anchoredPosition = spawnPos;
+    rt.localScale = Vector3.one;
+
+    // ❌ kill tout shake parasite
+    rt.DOKill();
+    tmp.DOKill();
+
+    // 🎬 animation simple
+    Sequence seq = DOTween.Sequence();
+
+    seq.Append(rt.DOAnchorPosY(rt.anchoredPosition.y - 120f, 0.5f)
+        .SetEase(Ease.InQuad));
+
+    rt.DORotate(new Vector3(0, 0, Random.Range(-15f, 15f)), 0.5f);
+
+    seq.Join(tmp.DOFade(0f, 0.5f));
+
+    seq.OnComplete(() => Destroy(letterObj));
+}
+
 }
