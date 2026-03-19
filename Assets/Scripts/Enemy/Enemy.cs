@@ -298,30 +298,50 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    private bool TryTakeDamageFromSort(GameObject source)
+    {
+        if (source == null)
+        {
+            return false;
+        }
+
+        Sort sort = source.GetComponent<Sort>();
+        if (sort == null)
+        {
+            sort = source.GetComponentInParent<Sort>();
+        }
+
+        if (sort == null)
+        {
+            return false;
+        }
+
+        sort.DestroySort(gameObject);
+        TakeDamage(sort.damage);
+        return true;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.GetComponent<PlayerHealth>() != null)
+        if (ResolvePlayerHealth(other.gameObject) != null)
         {
             TryDamagePlayer(other.gameObject);
         }
 
-        if (other.CompareTag("Projectile"))
-        {
-            Sort sort = other.GetComponent<Sort>();
-            if (sort != null)
-            {
-                sort.DestroySort(gameObject);
-                TakeDamage(sort.damage);
-            }
-        }
+        TryTakeDamageFromSort(other.gameObject);
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.GetComponent<PlayerHealth>() != null)
+        if (ResolvePlayerHealth(other.gameObject) != null)
         {
             TryDamagePlayer(other.gameObject);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        TryTakeDamageFromSort(collision.gameObject);
     }
 
     private void TryDamagePlayer(GameObject playerObject)
