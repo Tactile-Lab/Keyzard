@@ -33,109 +33,70 @@ public class Enemy : MonoBehaviour
     private Collider2D mainCollider;
     private SpriteRenderer spriteRenderer;
 
-    private PlayerHealth ResolvePlayerHealth(GameObject playerObject)
+    private bool playerReferencesResolved = false;
+
+    /// <summary>
+    /// Résout les références du joueur une seule fois au Start.
+    /// Utilise plusieurs stratégies: PlayerController -> tag -> PlayerHealth.
+    /// </summary>
+    private void ResolvePlayerReferencesOnce()
     {
-        if (playerObject == null)
+        if (playerReferencesResolved)
         {
-            return null;
+            return;
         }
 
-        PlayerHealth health = playerObject.GetComponent<PlayerHealth>();
-        if (health != null)
-        {
-            return health;
-        }
-
-        health = playerObject.GetComponentInParent<PlayerHealth>();
-        if (health != null)
-        {
-            return health;
-        }
-
-        return playerObject.GetComponentInChildren<PlayerHealth>();
-    }
-
-    private Collider2D ResolvePlayerCollider(GameObject playerObject)
-    {
-        if (playerObject == null)
-        {
-            return null;
-        }
-
-        Collider2D collider = playerObject.GetComponent<Collider2D>();
-        if (collider != null)
-        {
-            return collider;
-        }
-
-        collider = playerObject.GetComponentInParent<Collider2D>();
-        if (collider != null)
-        {
-            return collider;
-        }
-
-        return playerObject.GetComponentInChildren<Collider2D>();
-    }
-
-    private void TryResolvePlayerReferences()
-    {
-        // Priorite au vrai objet joueur qui porte le controle de mouvement.
+        // Stratégie 1: Trouver par PlayerControler
         PlayerControler playerController = FindFirstObjectByType<PlayerControler>();
         if (playerController != null)
         {
             player = playerController.gameObject;
         }
 
+        // Stratégie 2: Fallback au tag
         if (player == null)
         {
-            // Priorite au tag standard.
             try
             {
                 player = GameObject.FindWithTag("Player");
             }
             catch (UnityException)
             {
-                // Le tag peut manquer apres un revert de ProjectSettings.
-            }
-
-            // Fallback robuste si le tag Player n'existe pas ou n'est pas assigne.
-            if (player == null)
-            {
-                PlayerHealth detectedHealth = FindFirstObjectByType<PlayerHealth>();
-                if (detectedHealth != null)
-                {
-                    player = detectedHealth.gameObject;
-                }
+                // Le tag peut manquer après revert
             }
         }
 
+        // Stratégie 3: Fallback à FindFirstObjectByType<PlayerHealth>
+        if (player == null)
+        {
+            PlayerHealth detectedHealth = FindFirstObjectByType<PlayerHealth>();
+            if (detectedHealth != null)
+            {
+                player = detectedHealth.gameObject;
+            }
+        }
+
+        // Une fois le joueur trouvé, récupérer ses composants
         if (player != null)
         {
             playerTargetTransform = player.transform;
-
-            if (playerHealth == null)
-            {
-                playerHealth = ResolvePlayerHealth(player);
-            }
-
-            if (playerCollider == null)
-            {
-                playerCollider = ResolvePlayerCollider(player);
-            }
+            playerHealth = player.GetComponent<PlayerHealth>();
+            playerCollider = player.GetComponent<Collider2D>();
+            playerReferencesResolved = true;
         }
     }
 
     private void Start()
     {
-        // Récupération du joueur et de ses composants utiles
-        TryResolvePlayerReferences();
+        // Récupérer les références au joueur une seule fois
+        ResolvePlayerReferencesOnce();
 
         // Cache des composants de l'ennemi
         rb = GetComponent<Rigidbody2D>();
         mainCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
 
-        // Chargement des stats depuis le ScriptableObject
+        // Charger les stats depuis le ScriptableObject
         if (ennemyData != null)
         {
             health = ennemyData.health;
@@ -146,10 +107,13 @@ public class Enemy : MonoBehaviour
             animator.runtimeAnimatorController = ennemyData.animatorController;
         }
 
+        // Afficher le code de l'ennemi si le UI le permet
         if (nameText != null && GameManager.Instance != null)
         {
             nameText.text = GameManager.Instance.list_enemies.Find(e => e.enemy == gameObject)?.code ?? "Unknown";
         }
+
+        // Initialiser l'état d'animation selon le type
         if (type != EnemyType.Distant)
         {
             isMoving = true;
@@ -157,19 +121,22 @@ public class Enemy : MonoBehaviour
         }
         else
         {
-            // Ennemi distant: boucle de tir
             StartCoroutine(Shoot());
         }
     }
 
     private void FixedUpdate()
     {
-        if (player == null || playerTargetTransform == null || playerHealth == null || playerCollider == null)
+        // Assurer que les références sont résolues une seule fois
+        if (!playerReferencesResolved)
         {
-            TryResolvePlayerReferences();
+            ResolvePlayerReferencesOnce();
         }
 
-        if (isStunned) return;
+        if (isStunned)
+        {
+            return;
+        }
 
         Move();
         CheckContactDamage();
@@ -183,7 +150,7 @@ public class Enemy : MonoBehaviour
         ColliderDistance2D distanceInfo = mainCollider.Distance(playerCollider);
         if (distanceInfo.isOverlapped)
         {
-            TryDamagePlayer(playerCollider.gameObject);
+            TryDamagePlayer();
         }
     }
 
@@ -298,6 +265,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Essaie de recevoir des dégâts d'un sort détecté en collision.
+    /// Cherche le composant Sort sur l'objet ou ses parents.
+    /// </summary>
     private bool TryTakeDamageFromSort(GameObject source)
     {
         if (source == null)
@@ -305,6 +276,7 @@ public class Enemy : MonoBehaviour
             return false;
         }
 
+        // Chercher le composant Sort sur l'objet ou son parent
         Sort sort = source.GetComponent<Sort>();
         if (sort == null)
         {
@@ -323,40 +295,42 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (ResolvePlayerHealth(other.gameObject) != null)
+        // Appliquer des dégâts au joueur si c'est le bon objet
+        if (other.gameObject == player)
         {
-            TryDamagePlayer(other.gameObject);
+            TryDamagePlayer();
         }
 
+        // Recevoir des dégâts d'un sort
         TryTakeDamageFromSort(other.gameObject);
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (ResolvePlayerHealth(other.gameObject) != null)
+        // Continuer à appliquer des dégâts au joueur à chaque frame
+        if (other.gameObject == player)
         {
-            TryDamagePlayer(other.gameObject);
+            TryDamagePlayer();
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Recevoir des dégâts d'un sort en collision (non-trigger)
         TryTakeDamageFromSort(collision.gameObject);
     }
 
-    private void TryDamagePlayer(GameObject playerObject)
+    /// <summary>
+    /// Applique des dégâts au joueur via son système de santé.
+    /// </summary>
+    private void TryDamagePlayer()
     {
-        if (health == 0)
+        if (health == 0 || playerHealth == null)
         {
             return;
         }
 
-        // Délègue au système de vie du joueur (cooldown géré dans PlayerHealth)
-        PlayerHealth targetHealth = ResolvePlayerHealth(playerObject);
-        if (targetHealth != null)
-        {
-            targetHealth.TakeDamage(damage);
-        }
+        playerHealth.TakeDamage(damage);
     }
 
     public void TakeDamage(float damageAmount)

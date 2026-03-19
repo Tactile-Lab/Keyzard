@@ -3,8 +3,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerControler : MonoBehaviour
 {
-    private const float DirectionEpsilon = 0.01f;
-    private const float MovementSqrEpsilon = 0.0001f;
+    private const float DirectionEpsilon = 0.01f;      // Seuil pour détecter le changement de direction
+    private const float MovementSqrEpsilon = 0.0001f; // Seuil pour considérer que le joueur se déplace
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
@@ -74,7 +74,7 @@ public class PlayerControler : MonoBehaviour
 
     private void UpdateAnimationAndFacing()
     {
-        // Le sprite se retourne uniquement selon l'axe X.
+        // Mettre à jour la direction du sprite selon l'input X
         if (input.x > DirectionEpsilon)
         {
             facingRight = true;
@@ -114,35 +114,44 @@ public class PlayerControler : MonoBehaviour
 
     private void UpdateStaffRotation()
     {
-        // Sans pivot de bâton, rien à orienter.
-        if (staffTransform == null) return;
+        // Sans pivot de bâton, rien à orienter
+        if (staffTransform == null)
+        {
+            return;
+        }
 
         GameObject closestEnemy = FindClosestEnemy();
         float targetAngle;
 
         if (closestEnemy != null)
         {
-            // If a target exists, the staff always aims directly at it.
+            // Si une cible existe, le bâton pointe directement vers elle
             Vector2 dirToEnemy = (closestEnemy.transform.position - transform.position);
             targetAngle = Mathf.Atan2(dirToEnemy.y, dirToEnemy.x) * Mathf.Rad2Deg;
         }
         else
         {
+            // Sans cible, suivre la direction du mouvement avec buffer diagonal
             bool lastWasDiagonal = Mathf.Abs(lastMoveDir.x) > DirectionEpsilon && Mathf.Abs(lastMoveDir.y) > DirectionEpsilon;
             bool nowAxisOnly = Mathf.Abs(rawInput.x) <= DirectionEpsilon || Mathf.Abs(rawInput.y) <= DirectionEpsilon;
             bool withinReleaseBuffer = Time.time - lastReleaseTime <= diagonalReleaseBuffer;
             bool keepLastDiagonal = withinReleaseBuffer && lastWasDiagonal && nowAxisOnly;
 
-            // Without target: follow movement direction, with diagonal buffering for smoother feel.
             Vector2 dir = (input.sqrMagnitude > MovementSqrEpsilon && !keepLastDiagonal) ? input : lastMoveDir;
             targetAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         }
 
-        // Évite un saut brutal entre -180° et 180° en gardant la continuité angulaire.
-        while (targetAngle - staffCurrentAngle > 180f) targetAngle -= 360f;
-        while (targetAngle - staffCurrentAngle < -180f) targetAngle += 360f;
+        // Éviter le saut brutal entre -180° et 180° en normalisant l'angle
+        while (targetAngle - staffCurrentAngle > 180f)
+        {
+            targetAngle -= 360f;
+        }
+        while (targetAngle - staffCurrentAngle < -180f)
+        {
+            targetAngle += 360f;
+        }
 
-        // Exponential smoothing gives stable interpolation regardless of frame rate.
+        // Lissage exponentiel pour une interpolation stable indépendamment du frame rate
         staffCurrentAngle = Mathf.Lerp(
             staffCurrentAngle,
             targetAngle,
@@ -151,7 +160,7 @@ public class PlayerControler : MonoBehaviour
 
         staffTransform.localRotation = Quaternion.Euler(0f, 0f, staffCurrentAngle);
 
-        // Le bâton suit une petite orbite elliptique autour du joueur.
+        // Le bâton suit une orbite elliptique autour du joueur
         float radians = staffCurrentAngle * Mathf.Deg2Rad;
         Vector2 orbitDir = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
         Vector2 ellipseOffset = new Vector2(orbitDir.x * staffOrbitRadii.x, orbitDir.y * staffOrbitRadii.y);
