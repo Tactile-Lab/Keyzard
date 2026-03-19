@@ -23,8 +23,15 @@ public class HeartBarUI : MonoBehaviour
     private Image[] heartImages;
     private const int HpPerHeart = 10;
 
+    private void Awake()
+    {
+        TryResolvePlayerHealth();
+    }
+
     private void OnEnable()
     {
+        TryResolvePlayerHealth();
+
         // S'abonner aux changements de vie pour mettre à jour l'affichage.
         if (playerHealth != null)
         {
@@ -48,6 +55,14 @@ public class HeartBarUI : MonoBehaviour
         {
             EnsureHeartSlots(playerHealth.MaxHealth);
             Refresh(playerHealth.CurrentHealth, playerHealth.MaxHealth);
+        }
+    }
+
+    private void TryResolvePlayerHealth()
+    {
+        if (playerHealth == null)
+        {
+            playerHealth = FindFirstObjectByType<PlayerHealth>();
         }
     }
 

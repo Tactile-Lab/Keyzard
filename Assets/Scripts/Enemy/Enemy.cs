@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour
     private EnemyData ennemyData;
 
     private GameObject player;
+    private Transform playerTargetTransform;
     private PlayerHealth playerHealth;
     private Collider2D playerCollider;
 
@@ -32,15 +33,102 @@ public class Enemy : MonoBehaviour
     private Collider2D mainCollider;
     private SpriteRenderer spriteRenderer;
 
+    private PlayerHealth ResolvePlayerHealth(GameObject playerObject)
+    {
+        if (playerObject == null)
+        {
+            return null;
+        }
+
+        PlayerHealth health = playerObject.GetComponent<PlayerHealth>();
+        if (health != null)
+        {
+            return health;
+        }
+
+        health = playerObject.GetComponentInParent<PlayerHealth>();
+        if (health != null)
+        {
+            return health;
+        }
+
+        return playerObject.GetComponentInChildren<PlayerHealth>();
+    }
+
+    private Collider2D ResolvePlayerCollider(GameObject playerObject)
+    {
+        if (playerObject == null)
+        {
+            return null;
+        }
+
+        Collider2D collider = playerObject.GetComponent<Collider2D>();
+        if (collider != null)
+        {
+            return collider;
+        }
+
+        collider = playerObject.GetComponentInParent<Collider2D>();
+        if (collider != null)
+        {
+            return collider;
+        }
+
+        return playerObject.GetComponentInChildren<Collider2D>();
+    }
+
+    private void TryResolvePlayerReferences()
+    {
+        // Priorite au vrai objet joueur qui porte le controle de mouvement.
+        PlayerControler playerController = FindFirstObjectByType<PlayerControler>();
+        if (playerController != null)
+        {
+            player = playerController.gameObject;
+        }
+
+        if (player == null)
+        {
+            // Priorite au tag standard.
+            try
+            {
+                player = GameObject.FindWithTag("Player");
+            }
+            catch (UnityException)
+            {
+                // Le tag peut manquer apres un revert de ProjectSettings.
+            }
+
+            // Fallback robuste si le tag Player n'existe pas ou n'est pas assigne.
+            if (player == null)
+            {
+                PlayerHealth detectedHealth = FindFirstObjectByType<PlayerHealth>();
+                if (detectedHealth != null)
+                {
+                    player = detectedHealth.gameObject;
+                }
+            }
+        }
+
+        if (player != null)
+        {
+            playerTargetTransform = player.transform;
+
+            if (playerHealth == null)
+            {
+                playerHealth = ResolvePlayerHealth(player);
+            }
+
+            if (playerCollider == null)
+            {
+                playerCollider = ResolvePlayerCollider(player);
+            }
+        }
+    }
+
     private void Start()
     {
         // Récupération du joueur et de ses composants utiles
-        player = GameObject.FindWithTag("Player");
-        if (player != null)
-        {
-            playerHealth = player.GetComponent<PlayerHealth>();
-            playerCollider = player.GetComponent<Collider2D>();
-        }
+        TryResolvePlayerReferences();
 
         // Cache des composants de l'ennemi
         rb = GetComponent<Rigidbody2D>();
@@ -58,7 +146,10 @@ public class Enemy : MonoBehaviour
             animator.runtimeAnimatorController = ennemyData.animatorController;
         }
 
-        nameText.text = GameManager.Instance.list_enemies.Find(e => e.enemy == gameObject)?.code ?? "Unknown";
+        if (nameText != null && GameManager.Instance != null)
+        {
+            nameText.text = GameManager.Instance.list_enemies.Find(e => e.enemy == gameObject)?.code ?? "Unknown";
+        }
         if (type != EnemyType.Distant)
         {
             isMoving = true;
@@ -73,6 +164,11 @@ public class Enemy : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (player == null || playerTargetTransform == null || playerHealth == null || playerCollider == null)
+        {
+            TryResolvePlayerReferences();
+        }
+
         if (isStunned) return;
 
         Move();
@@ -129,9 +225,9 @@ public class Enemy : MonoBehaviour
     // Appelé par l'animation d'attaque de l'ennemi distant
     public void ShootProjectile()
     {
-        if (player == null) return;
+        if (playerTargetTransform == null) return;
 
-        if (player.transform.position.x < transform.position.x)
+        if (playerTargetTransform.position.x < transform.position.x)
         {
             projectileToLaunch = Instantiate(projectileEnemy, transform.position + Vector3.left * 0.4f, Quaternion.identity);
         }
@@ -143,17 +239,17 @@ public class Enemy : MonoBehaviour
 
     public void LaunchProjectile()
     {
-        if (projectileToLaunch == null || player == null) return;
+        if (projectileToLaunch == null || playerTargetTransform == null) return;
 
-        projectileToLaunch.GetComponent<ProjectileDistant>().Launch(player.transform.position, damage);
+        projectileToLaunch.GetComponent<ProjectileDistant>().Launch(playerTargetTransform.position, damage);
     }
 
     private void Move()
     {
-        if (health == 0 || player == null) return;
+        if (health == 0 || playerTargetTransform == null) return;
 
         // Orientation visuelle vers le joueur
-        if (player.transform.position.x < transform.position.x)
+        if (playerTargetTransform.position.x < transform.position.x)
             spriteRenderer.flipX = true;
         else
             spriteRenderer.flipX = false;
@@ -164,18 +260,18 @@ public class Enemy : MonoBehaviour
         CheckAttack();
         if (isMoving)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, playerTargetTransform.position, speed * Time.deltaTime);
         }
         else
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed / 4 * Time.deltaTime);
+            transform.position = Vector2.MoveTowards(transform.position, playerTargetTransform.position, speed / 4 * Time.deltaTime);
         }
     }
 
     private void CheckAttack()
     {
         // Passe en attaque quand le joueur est dans la portée proche
-        if (Vector2.Distance(transform.position, player.transform.position) < 1f)
+        if (playerTargetTransform != null && Vector2.Distance(transform.position, playerTargetTransform.position) < 1f)
         {
             isMoving = false;
             animator.SetTrigger("Attack");
@@ -196,7 +292,7 @@ public class Enemy : MonoBehaviour
         }
 
         // Garde-fou: dégâts seulement si joueur proche
-        if (Vector2.Distance(transform.position, player.transform.position) <= 1.2f)
+        if (playerTargetTransform != null && Vector2.Distance(transform.position, playerTargetTransform.position) <= 1.2f)
         {
             playerHealth.TakeDamage(damage);
         }
@@ -204,7 +300,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.GetComponent<PlayerHealth>() != null)
         {
             TryDamagePlayer(other.gameObject);
         }
@@ -222,7 +318,7 @@ public class Enemy : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.GetComponent<PlayerHealth>() != null)
         {
             TryDamagePlayer(other.gameObject);
         }
@@ -236,7 +332,7 @@ public class Enemy : MonoBehaviour
         }
 
         // Délègue au système de vie du joueur (cooldown géré dans PlayerHealth)
-        PlayerHealth targetHealth = playerObject.GetComponent<PlayerHealth>();
+        PlayerHealth targetHealth = ResolvePlayerHealth(playerObject);
         if (targetHealth != null)
         {
             targetHealth.TakeDamage(damage);
