@@ -24,12 +24,10 @@ public class TypingSortManager : MonoBehaviour
     [SerializeField] private float punchScaleAmount = 0.25f;
     [SerializeField] private float punchScaleDuration = 0.15f;
     [SerializeField] private int punchScaleVibrato = 10;
-
     [SerializeField] private float shakeDuration = 0.25f;
     [SerializeField] private float shakeStrength = 8f;
     [SerializeField] private int shakeVibrato = 25;
     [SerializeField] private float shakeRandomness = 90f;
-
     [SerializeField] private Color letterColor = Color.cyan;
 
     [Header("Animations Mot Terminé")]
@@ -38,15 +36,17 @@ public class TypingSortManager : MonoBehaviour
     [SerializeField] private float wordFadeDuration = 0.5f;
     [SerializeField] private Color wordColor = Color.magenta;
 
+    [Header("Particules")]
+    public LetterAndWordParticles particlesManager; // Gestion des particules lettres et mots
 
-    private string currentInput = "";         
+    private string currentInput = "";
     private GameManager.EnemyEntry selectedEnemy = null;
     private bool sortLibreMode = false;
 
     public GameManager.EnemyEntry SelectedEnemy => selectedEnemy;
 
     TMP_Text nameEnemy;
-    private Tween enemyNameTween; 
+    private Tween enemyNameTween;
 
     private void OnEnable()
     {
@@ -91,14 +91,12 @@ public class TypingSortManager : MonoBehaviour
                 if (enemyCode.StartsWith(tentative))
                 {
                     matchFound = true;
+                    currentInput = tentative; // 🔹 corrige la première lettre
+
                     if (enemyCode == tentative)
                     {
                         selectedEnemy = entry;
-                        currentInput = "";
-                    }
-                    else
-                    {
-                        currentInput = tentative;
+                        currentInput = ""; // reset si le mot est complet
                     }
                     break;
                 }
@@ -114,21 +112,17 @@ public class TypingSortManager : MonoBehaviour
                 if (sortName.StartsWith(tentative))
                 {
                     matchFound = true;
-                    currentInput = tentative;
+                    currentInput = tentative; // 🔹 corrige la première lettre
                     break;
                 }
             }
         }
 
         // ---------------- Animation lettre ----------------
-        if (matchFound) {
+        if (matchFound)
             PlayLetterAnimation();
-        }
         else
-        {
             PlayWrongLetterAnimation(letter);
-        }
-
     }
 
     private void HandleSpace()
@@ -136,9 +130,7 @@ public class TypingSortManager : MonoBehaviour
         if (string.IsNullOrEmpty(currentInput) && SelectedEnemy == null)
         {
             FailWordAnimation();
-            currentInput = "";
-            selectedEnemy = null;
-            sortLibreMode = false;
+            ResetInput();
             return;
         }
 
@@ -158,28 +150,30 @@ public class TypingSortManager : MonoBehaviour
             // Animation mot terminé
             PlayWordAnimation(currentInput);
 
-            // ---------------- Effet couleur ----------------
+            // Particule mot entier
+            particlesManager?.SpawnWordParticle();
+
             if (affichage != null)
             {
-                affichage.color = letterColor; 
-                affichage.DOColor(wordColor, 0.5f); 
+                affichage.color = letterColor;
+                affichage.DOColor(wordColor, 0.5f);
             }
         }
         else
         {
-             FailWordAnimation();
+            FailWordAnimation();
         }
-        
-
-        Debug.Log(sortToCast);
-
 
         // Reset complet
+        ResetInput();
+    }
+
+    private void ResetInput()
+    {
         currentInput = "";
         selectedEnemy = null;
         sortLibreMode = false;
 
-        // Dézoom + couleur progressive du nom
         if (nameEnemy != null)
         {
             enemyNameTween?.Kill();
@@ -203,9 +197,7 @@ public class TypingSortManager : MonoBehaviour
         if (selectedEnemy != null)
         {
             string enemyCode = selectedEnemy.code.ToUpper();
-            string restText = currentInput;
-
-            affichage.text = $"<color=yellow>{enemyCode}</color> - {restText}";
+            affichage.text = $"<color=yellow>{enemyCode}</color> - {currentInput}";
             affichage.color = Color.white;
 
             nameEnemy = selectedEnemy.enemy.GetComponent<Enemy>().nameText;
@@ -236,36 +228,24 @@ public class TypingSortManager : MonoBehaviour
         affichage.transform.DOKill(true);
         affichage.transform.localScale = Vector3.one;
 
-        // Punch scale configurable
         affichage.transform.DOPunchScale(Vector3.one * punchScaleAmount, punchScaleDuration, punchScaleVibrato, 1);
+        affichage.transform.DOShakePosition(shakeDuration, shakeStrength, shakeVibrato, shakeRandomness, true);
 
-        // Shake configurable
-        affichage.transform.DOShakePosition(
-            shakeDuration,
-            shakeStrength,
-            shakeVibrato,
-            shakeRandomness,
-            true
-        );
+        affichage.DOColor(letterColor, 0.1f).OnComplete(() =>
+        {
+            if (selectedEnemy != null)
+                affichage.text = $"<color=yellow>{selectedEnemy.code.ToUpper()}</color> - {currentInput}";
+            else
+                affichage.color = Color.white;
+        });
 
-        // Couleur configurable
-        affichage.DOColor(letterColor, 0.1f)
-                .OnComplete(() => 
-                {
-                    if (selectedEnemy != null)
-                        affichage.text = $"<color=yellow>{selectedEnemy.code.ToUpper()}</color> - {currentInput}";
-                    else
-                        affichage.color = Color.white;
-                });
+        // Particule lettre
+        particlesManager?.SpawnLetterParticleSafe();
     }
 
     private void PlayWordAnimation(string word)
     {
-        if (wordPrefab == null)
-        {
-            Debug.LogWarning("WordPrefab non assigné !");
-            return;
-        }
+        if (wordPrefab == null) return;
 
         GameObject wordObj = Instantiate(wordPrefab, affichage.transform.parent);
         TextMeshProUGUI wordTMP = wordObj.GetComponent<TextMeshProUGUI>();
@@ -284,116 +264,81 @@ public class TypingSortManager : MonoBehaviour
            .OnComplete(() => Destroy(wordObj));
     }
 
-
-
-private void PlayWrongLetterAnimation(char letter)
-{
-    if (wordPrefab == null || affichage == null)
-        return;
-
-    GameObject letterObj = Instantiate(wordPrefab, affichage.transform.parent);
-    TextMeshProUGUI tmp = letterObj.GetComponent<TextMeshProUGUI>();
-
-    tmp.text = letter.ToString();
-    tmp.color = Color.red;
-
-    RectTransform rt = tmp.GetComponent<RectTransform>();
-    RectTransform baseRT = affichage.GetComponent<RectTransform>();
-
-    // 🔥 important
-    affichage.ForceMeshUpdate();
-
-    TMP_TextInfo textInfo = affichage.textInfo;
-
-    Vector2 spawnPos = baseRT.anchoredPosition;
-
-    if (textInfo.characterCount > 0)
+    private void PlayWrongLetterAnimation(char letter)
     {
-        int lastIndex = textInfo.characterCount - 1;
+        if (wordPrefab == null || affichage == null) return;
 
-        // 🔥 on remonte jusqu'au dernier caractère visible
-        while (lastIndex > 0 && !textInfo.characterInfo[lastIndex].isVisible)
-        {
-            lastIndex--;
-        }
-
-        TMP_CharacterInfo charInfo = textInfo.characterInfo[lastIndex];
-
-        // 👉 position droite du dernier caractère visible
-        Vector3 charPos = charInfo.topRight;
-
-        spawnPos += new Vector2(charPos.x, charPos.y);
-    }
-
-    // 👉 petit offset pour pas coller
-    spawnPos += new Vector2(15f, 0f);
-
-    rt.anchoredPosition = spawnPos;
-    rt.localScale = Vector3.one;
-
-    // ❌ kill tout shake parasite
-    rt.DOKill();
-    tmp.DOKill();
-
-    // 🎬 animation simple
-    Sequence seq = DOTween.Sequence();
-
-    seq.Append(rt.DOAnchorPosY(rt.anchoredPosition.y - 120f, 0.5f)
-        .SetEase(Ease.InQuad));
-
-    rt.DORotate(new Vector3(0, 0, Random.Range(-15f, 15f)), 0.5f);
-
-    seq.Join(tmp.DOFade(0f, 0.5f));
-
-    seq.OnComplete(() => Destroy(letterObj));
-}
-
-private void FailWordAnimation()
-{
-    if (wordPrefab == null || affichage == null)
-        return;
-
-    affichage.ForceMeshUpdate();
-    TMP_TextInfo textInfo = affichage.textInfo;
-    RectTransform baseRT = affichage.GetComponent<RectTransform>();
-
-    float delayStep = 0.05f; // intervalle entre chaque lettre
-    int letterIndex = 0;      // pour calculer le délai de cascade
-
-    for (int i = 0; i < textInfo.characterCount; i++)
-    {
-        TMP_CharacterInfo charInfo = textInfo.characterInfo[i];
-
-        // Ignorer uniquement les caractères invisibles non espace
-        if (!charInfo.isVisible && !char.IsWhiteSpace(charInfo.character))
-            continue;
-
-        char letter = charInfo.character;
-
-        // Instanciation de la lettre rouge
         GameObject letterObj = Instantiate(wordPrefab, affichage.transform.parent);
         TextMeshProUGUI tmp = letterObj.GetComponent<TextMeshProUGUI>();
         tmp.text = letter.ToString();
         tmp.color = Color.red;
 
         RectTransform rt = tmp.GetComponent<RectTransform>();
+        RectTransform baseRT = affichage.GetComponent<RectTransform>();
+        affichage.ForceMeshUpdate();
+
+        TMP_TextInfo textInfo = affichage.textInfo;
+        Vector2 spawnPos = baseRT.anchoredPosition;
+
+        if (textInfo.characterCount > 0)
+        {
+            int lastIndex = textInfo.characterCount - 1;
+            while (lastIndex > 0 && !textInfo.characterInfo[lastIndex].isVisible) lastIndex--;
+            TMP_CharacterInfo charInfo = textInfo.characterInfo[lastIndex];
+            spawnPos += new Vector2(charInfo.topRight.x, charInfo.topRight.y);
+        }
+
+        spawnPos += new Vector2(15f, 0f);
+        rt.anchoredPosition = spawnPos;
         rt.localScale = Vector3.one;
         rt.DOKill();
         tmp.DOKill();
 
-        // Position exacte : début de la lettre
-        Vector2 spawnPos = baseRT.anchoredPosition + new Vector2(charInfo.origin + 2f, charInfo.baseLine - 2f);
-        rt.anchoredPosition = spawnPos;
-
-        // Animation chute cascade
         Sequence seq = DOTween.Sequence();
-        seq.PrependInterval(letterIndex * delayStep); // chaque lettre tombe un peu après la précédente
-        seq.Append(rt.DOAnchorPosY(rt.anchoredPosition.y - 120f, 0.3f).SetEase(Ease.InQuad));
-        seq.Join(tmp.DOFade(0f, 0.3f));
+        seq.Append(rt.DOAnchorPosY(rt.anchoredPosition.y - 120f, 0.5f).SetEase(Ease.InQuad));
+        rt.DORotate(new Vector3(0, 0, Random.Range(-15f, 15f)), 0.5f);
+        seq.Join(tmp.DOFade(0f, 0.5f));
         seq.OnComplete(() => Destroy(letterObj));
-
-        letterIndex++;
     }
-}
 
+    private void FailWordAnimation()
+    {
+        if (wordPrefab == null || affichage == null) return;
+
+        affichage.ForceMeshUpdate();
+        TMP_TextInfo textInfo = affichage.textInfo;
+        RectTransform baseRT = affichage.GetComponent<RectTransform>();
+
+        float delayStep = 0.05f;
+        int letterIndex = 0;
+
+        for (int i = 0; i < textInfo.characterCount; i++)
+        {
+            TMP_CharacterInfo charInfo = textInfo.characterInfo[i];
+            if (!charInfo.isVisible && !char.IsWhiteSpace(charInfo.character)) continue;
+
+            char letter = charInfo.character;
+
+            GameObject letterObj = Instantiate(wordPrefab, affichage.transform.parent);
+            TextMeshProUGUI tmp = letterObj.GetComponent<TextMeshProUGUI>();
+            tmp.text = letter.ToString();
+            tmp.color = Color.red;
+
+            RectTransform rt = tmp.GetComponent<RectTransform>();
+            rt.localScale = Vector3.one;
+            rt.DOKill();
+            tmp.DOKill();
+
+            Vector2 spawnPos = baseRT.anchoredPosition + new Vector2(charInfo.origin + 2f, charInfo.baseLine - 2f);
+            rt.anchoredPosition = spawnPos;
+
+            Sequence seq = DOTween.Sequence();
+            seq.PrependInterval(letterIndex * delayStep);
+            seq.Append(rt.DOAnchorPosY(rt.anchoredPosition.y - 120f, 0.3f).SetEase(Ease.InQuad));
+            seq.Join(tmp.DOFade(0f, 0.3f));
+            seq.OnComplete(() => Destroy(letterObj));
+
+            letterIndex++;
+        }
+    }
 }
