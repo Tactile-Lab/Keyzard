@@ -54,6 +54,8 @@ public class Sort : MonoBehaviour
 
             yield return null;
         }
+
+        DestroySort(gameObject);
     }
 
 
