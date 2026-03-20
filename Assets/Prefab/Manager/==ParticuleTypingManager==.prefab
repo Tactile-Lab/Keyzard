@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LetterAndWordParticles
   textMeshPro: {fileID: 0}
   letterParticlePrefab: {fileID: 6920336293798815058, guid: 0430d780813f4ab40870a5bbca79672b, type: 3}
-  wordParticlePrefab: {fileID: 6920336293798815058, guid: 0430d780813f4ab40870a5bbca79672b, type: 3}
+  wordParticlePrefab: {fileID: 6920336293798815058, guid: bd605c7145b0e0a4286897784225add1, type: 3}
