@@ -3,6 +3,9 @@ using UnityEngine.InputSystem;
 
 public class PlayerControler : MonoBehaviour
 {
+    private const float DirectionEpsilon = 0.01f;      // Seuil pour détecter le changement de direction
+    private const float MovementSqrEpsilon = 0.0001f; // Seuil pour considérer que le joueur se déplace
+
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
 
@@ -28,12 +31,12 @@ public class PlayerControler : MonoBehaviour
     private Vector2 lastMoveDir = Vector2.right;
     private float lastReleaseTime = -999f;
     private float staffCurrentAngle = 0f;
-    private GameObject lockedTarget;
 
     public Vector3 StaffTipPosition => staffTip != null ? staffTip.position : (staffTransform != null ? staffTransform.position : transform.position);
 
     private void Awake()
     {
+        // Récupère automatiquement les composants si non assignés dans l'inspecteur.
         rb = GetComponent<Rigidbody2D>();
         if (animator == null)
         {
@@ -44,6 +47,8 @@ public class PlayerControler : MonoBehaviour
             spriteRenderer = GetComponent<SpriteRenderer>();
         }
 
+        // Empêche les collisions physiques directes joueur <-> ennemis.
+        // Le gameplay de contact est géré ailleurs.
         int playerLayer = LayerMask.NameToLayer("Player");
         int enemyLayer = LayerMask.NameToLayer("Enemy");
         Physics2D.IgnoreLayerCollision(playerLayer, enemyLayer, true);
@@ -51,57 +56,30 @@ public class PlayerControler : MonoBehaviour
 
     private void Update()
     {
-        var kb = Keyboard.current;
-        if (kb == null)
-        {
-            input = Vector2.zero;
-            return;
-        }
+        // 1) Lit l'input en temps réel
+        ReadMovementInput();
 
-        float x = 0f;
-        float y = 0f;
-
-        if (kb.leftArrowKey.isPressed) x -= 1f;
-        if (kb.rightArrowKey.isPressed) x += 1f;
-        if (kb.downArrowKey.isPressed) y -= 1f;
-        if (kb.upArrowKey.isPressed) y += 1f;
-
-        anyMoveKeyReleasedThisFrame =
-            kb.leftArrowKey.wasReleasedThisFrame ||
-            kb.rightArrowKey.wasReleasedThisFrame ||
-            kb.downArrowKey.wasReleasedThisFrame ||
-            kb.upArrowKey.wasReleasedThisFrame;
-
-        anyMoveKeyPressedThisFrame =
-            kb.leftArrowKey.wasPressedThisFrame ||
-            kb.rightArrowKey.wasPressedThisFrame ||
-            kb.downArrowKey.wasPressedThisFrame ||
-            kb.upArrowKey.wasPressedThisFrame;
-
-        if (anyMoveKeyReleasedThisFrame)
-        {
-            lastReleaseTime = Time.time;
-        }
-
-        rawInput = new Vector2(x, y);
-        input = rawInput.normalized;
-
+        // 2) Met à jour visuel + direction mémorisée
         UpdateAnimationAndFacing();
+
+        // 3) Oriente le bâton selon cible / mouvement
         UpdateStaffRotation();
     }
 
     private void FixedUpdate()
     {
+        // Déplacement physique dans FixedUpdate pour une vitesse stable.
         rb.linearVelocity = input * moveSpeed;
     }
 
     private void UpdateAnimationAndFacing()
     {
-        if (input.x > 0.01f)
+        // Mettre à jour la direction du sprite selon l'input X
+        if (input.x > DirectionEpsilon)
         {
             facingRight = true;
         }
-        else if (input.x < -0.01f)
+        else if (input.x < -DirectionEpsilon)
         {
             facingRight = false;
         }
@@ -113,12 +91,19 @@ public class PlayerControler : MonoBehaviour
 
         if (animator != null && !string.IsNullOrEmpty(moveBoolParameter))
         {
+            // Active l'animation de marche dès qu'il existe un input de mouvement.
             animator.SetBool(moveBoolParameter, input.sqrMagnitude > 0f);
         }
 
-        if (input.sqrMagnitude > 0.0001f)
+        if (input.sqrMagnitude > MovementSqrEpsilon)
         {
+            // Keep the previous diagonal direction briefly when a key is released,
+            // to avoid abrupt direction snapping during diagonal transitions.
             bool withinReleaseBuffer = Time.time - lastReleaseTime <= diagonalReleaseBuffer;
+
+            // On met à jour la direction mémorisée si:
+            // - une nouvelle touche vient d'être pressée, ou
+            // - aucune touche n'a été relâchée ce frame et on est hors buffer.
             bool shouldUpdateDirection = anyMoveKeyPressedThisFrame || (!anyMoveKeyReleasedThisFrame && !withinReleaseBuffer);
             if (shouldUpdateDirection)
             {
@@ -129,63 +114,113 @@ public class PlayerControler : MonoBehaviour
 
     private void UpdateStaffRotation()
     {
-        if (staffTransform == null) return;
+        // Sans pivot de bâton, rien à orienter
+        if (staffTransform == null)
+        {
+            return;
+        }
 
-        // Find closest enemy for targeting
         GameObject closestEnemy = FindClosestEnemy();
-        
         float targetAngle;
-        
+
         if (closestEnemy != null)
         {
-            // Lock onto enemy - staff points at enemy regardless of player movement
-            lockedTarget = closestEnemy;
+            // Si une cible existe, le bâton pointe directement vers elle
             Vector2 dirToEnemy = (closestEnemy.transform.position - transform.position);
             targetAngle = Mathf.Atan2(dirToEnemy.y, dirToEnemy.x) * Mathf.Rad2Deg;
         }
         else
         {
-            // No enemy - use player movement direction
-            lockedTarget = null;
-            
-            bool lastWasDiagonal = Mathf.Abs(lastMoveDir.x) > 0.01f && Mathf.Abs(lastMoveDir.y) > 0.01f;
-            bool nowAxisOnly = Mathf.Abs(rawInput.x) <= 0.01f || Mathf.Abs(rawInput.y) <= 0.01f;
+            // Sans cible, suivre la direction du mouvement avec buffer diagonal
+            bool lastWasDiagonal = Mathf.Abs(lastMoveDir.x) > DirectionEpsilon && Mathf.Abs(lastMoveDir.y) > DirectionEpsilon;
+            bool nowAxisOnly = Mathf.Abs(rawInput.x) <= DirectionEpsilon || Mathf.Abs(rawInput.y) <= DirectionEpsilon;
             bool withinReleaseBuffer = Time.time - lastReleaseTime <= diagonalReleaseBuffer;
             bool keepLastDiagonal = withinReleaseBuffer && lastWasDiagonal && nowAxisOnly;
 
-            Vector2 dir = (input.sqrMagnitude > 0.0001f && !keepLastDiagonal) ? input : lastMoveDir;
+            Vector2 dir = (input.sqrMagnitude > MovementSqrEpsilon && !keepLastDiagonal) ? input : lastMoveDir;
             targetAngle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         }
 
-        // Normalize angle to maintain continuity (avoid jumping between -180 and 180)
-        while (targetAngle - staffCurrentAngle > 180f) targetAngle -= 360f;
-        while (targetAngle - staffCurrentAngle < -180f) targetAngle += 360f;
+        // Éviter le saut brutal entre -180° et 180° en normalisant l'angle
+        while (targetAngle - staffCurrentAngle > 180f)
+        {
+            targetAngle -= 360f;
+        }
+        while (targetAngle - staffCurrentAngle < -180f)
+        {
+            targetAngle += 360f;
+        }
 
-        // Smoothly interpolate angle
+        // Lissage exponentiel pour une interpolation stable indépendamment du frame rate
         staffCurrentAngle = Mathf.Lerp(
             staffCurrentAngle,
             targetAngle,
             1f - Mathf.Exp(-staffSmoothSpeed * Time.deltaTime)
         );
 
-        // Apply rotation and position based on the current interpolated angle
         staffTransform.localRotation = Quaternion.Euler(0f, 0f, staffCurrentAngle);
 
+        // Le bâton suit une orbite elliptique autour du joueur
         float radians = staffCurrentAngle * Mathf.Deg2Rad;
         Vector2 orbitDir = new Vector2(Mathf.Cos(radians), Mathf.Sin(radians));
         Vector2 ellipseOffset = new Vector2(orbitDir.x * staffOrbitRadii.x, orbitDir.y * staffOrbitRadii.y);
         staffTransform.localPosition = (Vector3)ellipseOffset;
     }
 
+    private void ReadMovementInput()
+    {
+        // Lecture directe du clavier via le New Input System.
+        Keyboard keyboard = Keyboard.current;
+        if (keyboard == null)
+        {
+            // Aucun clavier détecté: on neutralise l'état d'entrée.
+            rawInput = Vector2.zero;
+            input = Vector2.zero;
+            anyMoveKeyReleasedThisFrame = false;
+            anyMoveKeyPressedThisFrame = false;
+            return;
+        }
+
+        float x = 0f;
+        float y = 0f;
+
+        if (keyboard.leftArrowKey.isPressed) x -= 1f;
+        if (keyboard.rightArrowKey.isPressed) x += 1f;
+        if (keyboard.downArrowKey.isPressed) y -= 1f;
+        if (keyboard.upArrowKey.isPressed) y += 1f;
+
+        // Flags "événementiels" du frame courant (utile pour la logique de buffer diagonal).
+        anyMoveKeyReleasedThisFrame =
+            keyboard.leftArrowKey.wasReleasedThisFrame ||
+            keyboard.rightArrowKey.wasReleasedThisFrame ||
+            keyboard.downArrowKey.wasReleasedThisFrame ||
+            keyboard.upArrowKey.wasReleasedThisFrame;
+
+        anyMoveKeyPressedThisFrame =
+            keyboard.leftArrowKey.wasPressedThisFrame ||
+            keyboard.rightArrowKey.wasPressedThisFrame ||
+            keyboard.downArrowKey.wasPressedThisFrame ||
+            keyboard.upArrowKey.wasPressedThisFrame;
+
+        if (anyMoveKeyReleasedThisFrame)
+        {
+            // Horodatage du relâchement pour lisser les transitions de direction.
+            lastReleaseTime = Time.time;
+        }
+
+        // rawInput conserve les axes bruts (-1, 0, 1), input est normalisé.
+        rawInput = new Vector2(x, y);
+        input = rawInput.normalized;
+    }
+
     private GameObject FindClosestEnemy()
     {
-        // Prioritize typed target from TypingSortManager
+        // Priority: selected target from typing system.
         if (typingSortManager != null && typingSortManager.SelectedEnemy != null)
         {
             return typingSortManager.SelectedEnemy.enemy;
         }
 
-        // Fallback to closest enemy
         if (GameManager.Instance == null || GameManager.Instance.list_enemies == null)
             return null;
 
