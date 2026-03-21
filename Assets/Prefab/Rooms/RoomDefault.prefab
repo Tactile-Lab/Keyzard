@@ -1648,7 +1648,7 @@ GameObject:
   - component: {fileID: 5807883876776948250}
   - component: {fileID: 1563250055536596532}
   - component: {fileID: 190970967888562105}
-  - component: {fileID: 4971524387841537610}
+  - component: {fileID: 616820755311463499}
   m_Layer: 0
   m_Name: Walls
   m_TagString: Untagged
@@ -2369,7 +2369,7 @@ TilemapRenderer:
   m_SortOrder: 0
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
---- !u!19719996 &4971524387841537610
+--- !u!19719996 &616820755311463499
 TilemapCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2546,6 +2546,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RoomManager
   enemies: []
   door: {fileID: 0}
+  playerInside: 0
+  roomCleared: 0
 --- !u!1 &9219571123990605311
 GameObject:
   m_ObjectHideFlags: 0
