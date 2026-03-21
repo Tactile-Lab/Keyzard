@@ -21,13 +21,14 @@ public class RoomCrawling : MonoBehaviour
         {
             mainCamera = Camera.main;
         }
+
     }
 
     private void OnTriggerEnter2D (Collider2D other)
     {
         Debug.Log("Player entered crawl trigger: " + other.name);
         if (other.CompareTag("Player"))
-        {
+        {            
             Vector3 newPos = transform.position;
             Vector3 cameraOffset = new Vector3(0,0,0);
 

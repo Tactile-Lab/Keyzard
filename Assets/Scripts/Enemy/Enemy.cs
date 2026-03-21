@@ -35,6 +35,9 @@ public class Enemy : MonoBehaviour
 
     private bool playerReferencesResolved = false;
 
+    private RoomManager room;
+
+
     /// <summary>
     /// Résout les références du joueur une seule fois au Start.
     /// Utilise plusieurs stratégies: PlayerController -> tag -> PlayerHealth.
@@ -351,6 +354,7 @@ public class Enemy : MonoBehaviour
         {
             // Nettoyage de l'ennemi dans la liste du GameManager
             GameManager.Instance.list_enemies.RemoveAll(e => e.enemy == gameObject);
+            room.EnemyDied(this);
             animator.SetTrigger("Death");
             gameObject.GetComponent<Collider2D>().enabled = false;
         }
@@ -364,5 +368,10 @@ public class Enemy : MonoBehaviour
     public void EndDeath()
     {
         Destroy(gameObject);
+    }
+
+    public void SetRoom(RoomManager r)
+    {
+        room = r;
     }
 }

@@ -26,20 +26,21 @@ public class GameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        // Initialisation des ennemis dès Awake
-        InitEnemies();
+        // plus d'initialisation automatique
     }
 
-    private void InitEnemies()
+    /// <summary>
+    /// Enregistre une liste d'ennemis dans le GameManager quand la room devient active
+    /// </summary>
+    public void RegisterEnemies(List<GameObject> enemies)
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-
-        list_enemies.Clear();
         HashSet<string> usedCodes = new();
 
         foreach (GameObject enemy in enemies)
         {
-            EnemyEntry entry = new()
+            if (enemy == null) continue;
+
+            EnemyEntry entry = new EnemyEntry
             {
                 enemy = enemy,
                 code = GenerateRandomCode(usedCodes)
