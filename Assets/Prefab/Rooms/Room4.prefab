@@ -3952,7 +3952,8 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[131].second.m_TileSpriteIndex
       value: 27
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7576394319481659945, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
     m_RemovedGameObjects:
     - {fileID: 3243272487410514884, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
     - {fileID: 4419942152727769752, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}

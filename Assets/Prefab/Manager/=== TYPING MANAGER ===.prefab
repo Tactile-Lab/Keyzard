@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2793992817895758854
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8959913135404417066}
+  - component: {fileID: 8285733075280396128}
+  m_Layer: 0
+  m_Name: === TYPING MANAGER ===
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8959913135404417066
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2793992817895758854}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.29795, y: -0.26859, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8285733075280396128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2793992817895758854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e0bbe9c98b39f384e9ccfe24ff9aa7df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TypingSortManager
+  sorts:
+  - {fileID: 5863181580237299462, guid: 6858f492158423d4cbfeb9d5234fab2f, type: 3}
+  - {fileID: 1639590310501643658, guid: 916d28f59f9497440abcd344ace10fdb, type: 3}
+  - {fileID: 4584901935658147971, guid: 587df545a267dec42bdd2b1a6c23f460, type: 3}
+  - {fileID: -1600348183999881970, guid: 41711c3c109dd8d4083a7116509f6d6f, type: 3}
+  listEnemies: []
+  affichage: {fileID: 0}
+  wordPrefab: {fileID: 3387185123503094725, guid: 1600a77eacc954c4bb475b43d9b2d05d, type: 3}
+  gameManager: {fileID: 0}
+  playerController: {fileID: 0}
+  punchScaleAmount: 0.25
+  punchScaleDuration: 0.15
+  punchScaleVibrato: 10
+  shakeDuration: 0.25
+  shakeStrength: 8
+  shakeVibrato: 25
+  shakeRandomness: 90
+  letterColor: {r: 0, g: 1, b: 1, a: 1}
+  wordRiseDistance: 40
+  wordRiseDuration: 0.6
+  wordFadeDuration: 0.5
+  wordColor: {r: 1, g: 0, b: 1, a: 1}
+  particlesManager: {fileID: 0}
