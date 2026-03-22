@@ -116,7 +116,7 @@ public class AudioManager : MonoBehaviour
         if (clip == null) return;
         
         var source = GetAvailableSFXSource();
-        source.volume = volume;
+        source.volume = 1f;
         source.PlayOneShot(clip, volume);
     }
     
