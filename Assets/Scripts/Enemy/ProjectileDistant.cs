@@ -9,7 +9,11 @@ public class ProjectileDistant : MonoBehaviour
     [SerializeField] private float initialScaleValue = 0.3f; // scale au spawn
     [SerializeField] private float growSpeed = 1.5f; // calculé pour frames 4->11 speed 0.25
 
+    [SerializeField] private LayerMask wallLayer; // assigné dans l'inspecteur
+
     private bool isMoving;
+
+    private bool islauch = false;
     private Vector2 directionBase;
 
     void Start()
@@ -19,13 +23,28 @@ public class ProjectileDistant : MonoBehaviour
         StartGrowth();
     }
 
-    void FixedUpdate()
+   void FixedUpdate()
+{
+    if (isMoving)
     {
-        if (isMoving)
+        float moveDistance = speed * Time.fixedDeltaTime;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, directionBase, moveDistance, wallLayer);
+        if (hit.collider != null)
         {
-            transform.position += (Vector3)directionBase * speed * Time.deltaTime;
+            Destroy(gameObject);
+            return;
         }
+
+        transform.position += (Vector3)(directionBase * moveDistance);
     }
+    else
+    {
+        if (islauch)
+            {
+                Destroy(gameObject);
+            }
+    }
+}
 
     // démarre la croissance
     public void StartGrowth()
@@ -46,19 +65,23 @@ public class ProjectileDistant : MonoBehaviour
         transform.localScale = finalScale;
     }
 
-    // lancer le projectile vers le joueur (appelé depuis Enemy)
     public void Launch(Vector3 playerPos, int projectileDamage)
     {
+        Vector2 dir = playerPos - transform.position;
+
+        directionBase = dir.normalized;
         damage = projectileDamage;
-        directionBase = (playerPos - transform.position).normalized;
         isMoving = true;
+        islauch = true;
     }
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // Gestion joueur
         PlayerHealth playerHealth = other.GetComponent<PlayerHealth>() 
-                                 ?? other.GetComponentInParent<PlayerHealth>() 
-                                 ?? other.GetComponentInChildren<PlayerHealth>();
+                                ?? other.GetComponentInParent<PlayerHealth>() 
+                                ?? other.GetComponentInChildren<PlayerHealth>();
 
         if (playerHealth != null)
         {

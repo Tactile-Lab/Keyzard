@@ -51,7 +51,7 @@ public class Sort : MonoBehaviour
     // Déplacement vers la cible et disparition si cible détruite
     protected virtual IEnumerator DeplacementVersCible(GameObject target)
     {
-        while (target != null) // on ne regarde pas si elle bouge, juste si elle existe
+        while (target != null && target.GetComponent<Enemy>() != null) // on ne regarde pas si elle bouge, juste si elle existe
         {
             transform.position = Vector2.MoveTowards(
                 transform.position,
