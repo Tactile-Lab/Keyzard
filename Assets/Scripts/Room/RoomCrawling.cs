@@ -35,19 +35,19 @@ public class RoomCrawling : MonoBehaviour
             switch (crawlDirection)
             {
                 case CrawlDirection.Up:
-                    newPos.y += 1f;
+                    newPos.y += 1.3f;
                     cameraOffset += new Vector3(0, 10f, 0);
                     break;
                 case CrawlDirection.Down:
-                    newPos.y -= 1f;
+                    newPos.y -= 1.3f;
                     cameraOffset -= new Vector3(0, 10f, 0);
                     break;
                 case CrawlDirection.Left:
-                    newPos.x -= 1f; 
+                    newPos.x -= 1.3f; 
                     cameraOffset -= new Vector3(18f, 0, 0);
                     break;
                 case CrawlDirection.Right:
-                    newPos.x += 1f;
+                    newPos.x += 1.3f;
                     cameraOffset += new Vector3(18f, 0, 0);
                     break;
             }
