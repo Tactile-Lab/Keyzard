@@ -1389,6 +1389,55 @@ RectTransform:
   m_AnchoredPosition: {x: 400, y: 0.0000061939063}
   m_SizeDelta: {x: 800, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1622844409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1622844411}
+  - component: {fileID: 1622844410}
+  m_Layer: 0
+  m_Name: ===Audio Manager ====
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1622844410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622844409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64ae2de26db0b334ea19023d536602ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  masterGroup: {fileID: 24300002, guid: cbcc6024c536b9a4c8247e8fd367913c, type: 2}
+  musicGroup: {fileID: -8164020291509129921, guid: cbcc6024c536b9a4c8247e8fd367913c, type: 2}
+  sfxGroup: {fileID: 3186722479702830324, guid: cbcc6024c536b9a4c8247e8fd367913c, type: 2}
+  backgroundMusic: {fileID: 8300000, guid: 2440dd21fc233284185657e4558a0745, type: 3}
+  musicVolume: 0.5
+--- !u!4 &1622844411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622844409}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.5036, y: -0.25199, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1637918977 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7152309571065620917, guid: b090019f3828ef54a9d412a53e446c08, type: 3}
@@ -1576,7 +1625,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 239014468974200822, guid: c07a6812003a4514c935b60c25145690, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 41.88
+      value: 41.880005
       objectReference: {fileID: 0}
     - target: {fileID: 275047737351215343, guid: c07a6812003a4514c935b60c25145690, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1774,3 +1823,4 @@ SceneRoots:
   - {fileID: 548352272}
   - {fileID: 293614319}
   - {fileID: 1388631187}
+  - {fileID: 1622844411}
