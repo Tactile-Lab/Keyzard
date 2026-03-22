@@ -69,7 +69,12 @@ public class PlayerControler : MonoBehaviour
     private void FixedUpdate()
     {
         // Déplacement physique dans FixedUpdate pour une vitesse stable.
-        rb.linearVelocity = input * moveSpeed;
+        Vector2 velocity = rb.linearVelocity;
+
+        velocity.x = input.x * moveSpeed;
+        velocity.y = input.y * moveSpeed;
+
+        rb.linearVelocity = velocity;
     }
 
     private void UpdateAnimationAndFacing()

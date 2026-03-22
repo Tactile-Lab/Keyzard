@@ -536,17 +536,21 @@ PrefabInstance:
       propertyPath: typingSortManager
       value: 
       objectReference: {fileID: 453548379}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6606962051837931564, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5089501067485288850, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1869938190}
   m_SourcePrefab: {fileID: 100100000, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
 --- !u!114 &495252505 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5406810383231741228, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
   m_PrefabInstance: {fileID: 495252504}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 815322854}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc5cd83e1b31c5b479ac58e6b3d3e164, type: 3}
@@ -835,6 +839,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b090019f3828ef54a9d412a53e446c08, type: 3}
+--- !u!1 &815322854 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5089501067485288850, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
+  m_PrefabInstance: {fileID: 495252504}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &956458451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1466,12 +1475,49 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2175114571937620227, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
   m_PrefabInstance: {fileID: 495252504}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 815322854}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6845e16e3df735f4eb21e7ab61668314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+--- !u!70 &1869938190
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815322854}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5625, y: 0.9375}
+  m_Direction: 0
 --- !u!1 &2037074396
 GameObject:
   m_ObjectHideFlags: 0
