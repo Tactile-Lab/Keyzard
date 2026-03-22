@@ -19,20 +19,34 @@ public class Sort : MonoBehaviour
     // Lance le sort sur la cible la plus proche
     public virtual void LancerSort()
     {
+        StartCoroutine(LancerSortDelayed());
+    }
+
+    private IEnumerator LancerSortDelayed()
+    {
+        yield return null; // attend 1 frame
+
         List<GameManager.EnemyEntry> ennemis = GameManager.Instance.list_enemies;
 
-        // On assigne directement à la variable de classe
         cible = TrouverCibleProche(ennemis);
+
         if (cible != null)
         {
             LancerSortCible(cible);
+        }
+        else
+        {
+            Debug.LogWarning("[Sort] Toujours aucune cible après délai !");
         }
     }
 
     // Lance le sort sur une cible spécifique
     public virtual void LancerSortCible(GameObject cibleRef)
     {
-        if (cibleRef == null) return;
+        if (cibleRef == null)
+        {
+            DestroySort(gameObject);
+        }
 
         cible = cibleRef;
 
