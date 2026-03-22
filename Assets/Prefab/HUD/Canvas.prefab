@@ -791,18 +791,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5348200646768876413}
     m_Modifications:
-    - target: {fileID: 1484308034781343848, guid: d8a9465ffc18e864e958927cb880099c, type: 3}
-      propertyPath: m_CellSize.x
-      value: 75
-      objectReference: {fileID: 0}
-    - target: {fileID: 1484308034781343848, guid: d8a9465ffc18e864e958927cb880099c, type: 3}
-      propertyPath: m_CellSize.y
-      value: 55
-      objectReference: {fileID: 0}
-    - target: {fileID: 1484308034781343848, guid: d8a9465ffc18e864e958927cb880099c, type: 3}
-      propertyPath: m_Padding.m_Left
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2780151015587248129, guid: d8a9465ffc18e864e958927cb880099c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -3,23 +3,18 @@ using UnityEngine;
 
 public class RoomManager : MonoBehaviour
 {
+    [SerializeField] private List<Enemy> enemies = new List<Enemy>();
+    [SerializeField] private DoorController door; 
+    [SerializeField] private bool playerInside = false;
+    [SerializeField] private bool roomCleared = false;
 
-    [SerializeField]
-    private List<Enemy> enemies = new List<Enemy>();
-
-    [SerializeField]
-    private DoorController door; // une seule porte par room
-    [SerializeField]
-    private bool playerInside = false;
-    [SerializeField]
-    private bool roomCleared = false;
+    // Liste temporaire des mannequins non bloquants actifs dans la salle
+    private List<Mannequin> nonBlockingMannequins = new List<Mannequin>();
 
     void Awake()
     {
-        // Détecte automatiquement tous les ennemis enfants (actifs et inactifs)
         enemies.AddRange(GetComponentsInChildren<Enemy>(true));
 
-        // Désactive tous les ennemis au départ
         foreach (var enemy in enemies)
         {
             enemy.SetRoom(this);
@@ -30,7 +25,6 @@ public class RoomManager : MonoBehaviour
             if (sr != null) sr.enabled = false;
         }
 
-        // Détecte la porte enfant
         door = GetComponentInChildren<DoorController>();
         if (door == null)
             Debug.LogWarning($"Room {name} : pas de DoorController trouvé !");
@@ -38,19 +32,16 @@ public class RoomManager : MonoBehaviour
 
     void Start()
     {
-        // Salle vide → porte ouverte
         if (enemies.Count == 0)
         {
             roomCleared = true;
-            if (door != null) door.Open();
+            door?.Open();
         }
         else
         {
-            // Salle avec ennemis → porte fermée
-            if (door != null) door.Close();
+            door?.Close();
         }
 
-        // Vérifie si le joueur start déjà dans la room
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
@@ -60,7 +51,6 @@ public class RoomManager : MonoBehaviour
         }
     }
 
-    // Appelé par RoomTrigger quand le joueur entre
     public void OnPlayerEnter()
     {
         if (playerInside) return;
@@ -68,37 +58,55 @@ public class RoomManager : MonoBehaviour
 
         if (roomCleared)
         {
-            if (door != null) door.Open();
-            return;
+            door?.Open();
         }
 
-        if (door != null) door.Close();
+        HandleDoor();
         ActivateEnemies();
+
+        AddTutoMannequinsToGameManager();       // Tuto avant premier coup
+        AddNonBlockingMannequinsToGameManager(); // Tuto tapé + autres non bloquants
     }
 
-    // Appelé si le joueur start déjà dans la room
     public void ForceEnterRoom()
     {
         playerInside = true;
 
         if (roomCleared)
         {
-            if (door != null) door.Open();
+            door?.Open();
         }
         else
         {
-            if (door != null) door.Close();
+            HandleDoor();
             ActivateEnemies();
+
+            AddTutoMannequinsToGameManager();
+            AddNonBlockingMannequinsToGameManager();
         }
     }
 
-    // Appelé par RoomTrigger quand le joueur sort
     public void PlayerExited()
     {
         playerInside = false;
+
+        if (GameManager.Instance != null)
+        {
+            foreach (var m in nonBlockingMannequins)
+            {
+                GameManager.Instance.list_enemies.RemoveAll(e => e.enemy == m.gameObject);
+            }
+
+            foreach (var m in GetComponentsInChildren<Mannequin>(true))
+            {
+                if (!m.countsForRoomLock)
+                    GameManager.Instance.list_enemies.RemoveAll(e => e.enemy == m.gameObject);
+            }
+        }
+
+        nonBlockingMannequins.Clear();
     }
 
-    // Active les ennemis et les enregistre dans le GameManager
     private void ActivateEnemies()
     {
         if (GameManager.Instance == null)
@@ -114,6 +122,7 @@ public class RoomManager : MonoBehaviour
             if (enemy != null)
             {
                 enemy.enabled = true;
+                enemy.SetRoom(this);
                 var col = enemy.GetComponent<Collider2D>();
                 if (col != null) col.enabled = true;
                 var sr = enemy.GetComponent<SpriteRenderer>();
@@ -124,10 +133,8 @@ public class RoomManager : MonoBehaviour
         }
 
         GameManager.Instance.RegisterEnemies(activeEnemies);
-        Debug.Log($"Room {name} : {activeEnemies.Count} ennemis activés et enregistrés");
     }
 
-    // Appelé par chaque Enemy quand il meurt
     public void EnemyDied(Enemy enemy)
     {
         enemies.Remove(enemy);
@@ -135,8 +142,53 @@ public class RoomManager : MonoBehaviour
         if (enemies.Count == 0)
         {
             roomCleared = true;
-            if (door != null) door.Open();
+            door?.Open();
             Debug.Log($"Room {name} cleared, porte ouverte");
+        }
+    }
+
+    // -------------------- Helpers --------------------
+
+    private void HandleDoor()
+    {
+        if (door == null) return;
+
+        bool anyBlocking = enemies.Exists(e => e is Mannequin m ? m.countsForRoomLock : true);
+
+        if (roomCleared || !anyBlocking)
+            door.Open();
+        else
+            door.Close();
+    }
+
+    // Ajouter le tuto avant premier coup
+    private void AddTutoMannequinsToGameManager()
+    {
+        foreach (var m in GetComponentsInChildren<Mannequin>(true))
+        {
+            if (m.unlockRoomOnHit && m.countsForRoomLock)
+            {
+                if (!GameManager.Instance.list_enemies.Exists(e => e.enemy == m.gameObject))
+                    GameManager.Instance.RegisterEnemies(new List<GameObject> { m.gameObject });
+            }
+        }
+    }
+
+    // Ajouter tous les non bloquants (countsForRoomLock == false), y compris tuto tapé
+    private void AddNonBlockingMannequinsToGameManager()
+    {
+        foreach (var m in GetComponentsInChildren<Mannequin>(true))
+        {
+            Debug.Log(m.countsForRoomLock);
+            Debug.Log(m);
+            if (!m.countsForRoomLock && !nonBlockingMannequins.Contains(m))
+            {
+                if (!GameManager.Instance.list_enemies.Exists(e => e.enemy == m.gameObject))
+                {
+                    GameManager.Instance.RegisterEnemies(new List<GameObject> { m.gameObject });
+                    nonBlockingMannequins.Add(m);
+                }
+            }
         }
     }
 }
