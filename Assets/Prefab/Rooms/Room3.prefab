@@ -802,6 +802,10 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[14].second.m_TileObjectToInstantiateIndex
       value: 65535
       objectReference: {fileID: 0}
+    - target: {fileID: 8239986142467329972, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8248501144382510467, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_Name
       value: Room3

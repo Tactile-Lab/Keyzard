@@ -106,6 +106,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileDistant
   speed: 1.5
+  finalScale: {x: 1, y: 1, z: 1}
+  initialScaleValue: 0.3
+  growSpeed: 1.5
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!58 &7780310027474290628
 CircleCollider2D:
   m_ObjectHideFlags: 0
