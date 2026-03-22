@@ -16,26 +16,26 @@ public class Sort : MonoBehaviour
 
     public Animator aniamtor;
 
-    // Méthode qui cherche la cible la plus proche et lance le sort dessus
+    // Lance le sort sur la cible la plus proche
     public virtual void LancerSort()
     {
-        // Récupère la liste d'EnemyEntry depuis le GameManager
         List<GameManager.EnemyEntry> ennemis = GameManager.Instance.list_enemies;
 
-        // Cherche la cible la plus proche
-        GameObject cible = TrouverCibleProche(ennemis);
+        // On assigne directement à la variable de classe
+        cible = TrouverCibleProche(ennemis);
         if (cible != null)
         {
             LancerSortCible(cible);
         }
     }
 
-    // Méthode qui fait suivre le sort vers une cible spécifique
-    public virtual void LancerSortCible(GameObject cible)
+    // Lance le sort sur une cible spécifique
+    public virtual void LancerSortCible(GameObject cibleRef)
     {
-        if (cible == null) return;
-        this.cible = cible;
-        
+        if (cibleRef == null) return;
+
+        cible = cibleRef;
+
         // Jouer le son de lancement
         if (audioConfig != null)
         {
@@ -43,36 +43,34 @@ public class Sort : MonoBehaviour
             audioConfig.PlayLaunchSFX();
             activeLoopSource = audioConfig.StartActiveLoop();
         }
-        
+
+        // Chaque coroutine suit sa propre cible
         StartCoroutine(DeplacementVersCible(cible));
     }
 
-    // Coroutine qui déplace le sort vers la cible en continu
-    protected virtual IEnumerator DeplacementVersCible(GameObject cible)
+    // Déplacement vers la cible et disparition si cible détruite
+    protected virtual IEnumerator DeplacementVersCible(GameObject target)
     {
-        while (cible != null)
+        while (target != null) // on ne regarde pas si elle bouge, juste si elle existe
         {
-            // Déplacement
             transform.position = Vector2.MoveTowards(
                 transform.position,
-                cible.transform.position,
+                target.transform.position,
                 vitesse * Time.deltaTime
             );
 
-            // Rotation instantanée vers la cible
-            Vector2 direction = cible.transform.position - transform.position;
+            Vector2 direction = target.transform.position - transform.position;
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-
             transform.rotation = Quaternion.Euler(0, 0, angle);
 
             yield return null;
         }
 
+        // La cible a disparu → on détruit le sort
         DestroySort(gameObject);
     }
 
-
-    // Méthode pour trouver la cible la plus proche parmi les EnemyEntry
+    // Trouver la cible la plus proche
     public GameObject TrouverCibleProche(List<GameManager.EnemyEntry> ennemis)
     {
         GameObject cibleProche = null;
@@ -80,13 +78,13 @@ public class Sort : MonoBehaviour
 
         foreach (GameManager.EnemyEntry entry in ennemis)
         {
-            if (entry == null || entry.enemy == null) continue; // sécurité
+            if (entry == null || entry.enemy == null) continue;
 
             float distance = Vector2.Distance(transform.position, entry.enemy.transform.position);
             if (distance < distanceMin)
             {
                 distanceMin = distance;
-                cibleProche = entry.enemy; // on ne garde que le GameObject
+                cibleProche = entry.enemy;
             }
         }
 
@@ -95,12 +93,9 @@ public class Sort : MonoBehaviour
 
     protected virtual void OnImpact(GameObject target)
     {
-        // Jouer le son d'impact
         if (audioConfig != null)
         {
             audioConfig.PlayImpactSFX();
-            
-            // Arrêter la boucle active
             if (activeLoopSource != null)
             {
                 AudioManager.Instance.StopLoop(activeLoopSource);
@@ -111,22 +106,18 @@ public class Sort : MonoBehaviour
 
     public virtual void DestroySort(GameObject cible)
     {
-        // Play impact only when destroying due to hitting another object,
-        // not when the spell destroys itself.
+        // Jouer l'impact uniquement si ce n'est pas un auto-destroy
         if (cible != null && cible != gameObject)
         {
             OnImpact(cible);
         }
 
-        // Arrêter les sons avant de détruire
         if (activeLoopSource != null)
         {
             AudioManager.Instance.StopLoop(activeLoopSource);
             activeLoopSource = null;
         }
-        
+
         Destroy(gameObject);
     }
-
-    
 }
