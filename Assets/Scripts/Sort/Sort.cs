@@ -39,6 +39,7 @@ public class Sort : MonoBehaviour
         // Jouer le son de lancement
         if (audioConfig != null)
         {
+            audioConfig.Preload();
             audioConfig.PlayLaunchSFX();
             activeLoopSource = audioConfig.StartActiveLoop();
         }
@@ -110,10 +111,18 @@ public class Sort : MonoBehaviour
 
     public virtual void DestroySort(GameObject cible)
     {
+        // Play impact only when destroying due to hitting another object,
+        // not when the spell destroys itself.
+        if (cible != null && cible != gameObject)
+        {
+            OnImpact(cible);
+        }
+
         // Arrêter les sons avant de détruire
         if (activeLoopSource != null)
         {
             AudioManager.Instance.StopLoop(activeLoopSource);
+            activeLoopSource = null;
         }
         
         Destroy(gameObject);

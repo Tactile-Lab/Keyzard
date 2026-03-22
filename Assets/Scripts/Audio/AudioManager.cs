@@ -61,6 +61,9 @@ public class AudioManager : MonoBehaviour
         var source = gameObject.AddComponent<AudioSource>();
         source.outputAudioMixerGroup = sfxGroup;
         source.playOnAwake = false;
+        source.loop = false;
+        source.spatialBlend = 0f;
+        source.dopplerLevel = 0f;
         sfxPool.Add(source);
         return source;
     }
@@ -71,6 +74,8 @@ public class AudioManager : MonoBehaviour
         source.outputAudioMixerGroup = sfxGroup;
         source.playOnAwake = false;
         source.loop = true;
+        source.spatialBlend = 0f;
+        source.dopplerLevel = 0f;
         loopPool.Add(source);
         return source;
     }
@@ -111,9 +116,8 @@ public class AudioManager : MonoBehaviour
         if (clip == null) return;
         
         var source = GetAvailableSFXSource();
-        source.clip = clip;
         source.volume = volume;
-        source.Play();
+        source.PlayOneShot(clip, volume);
     }
     
     public AudioSource StartLoop(AudioClip clip, float volume = 1f)
