@@ -5,7 +5,6 @@ using UnityEngine.UI;
 using UnityEditor;
 #endif
 
-[ExecuteAlways]
 [RequireComponent(typeof(RectTransform))]
 [RequireComponent(typeof(GridLayoutGroup))]
 public class SlotGenerator : MonoBehaviour
@@ -29,6 +28,12 @@ public class SlotGenerator : MonoBehaviour
     [Header("Auto Resize")]
     public bool addContentSizeFitter = true;
 
+#if UNITY_EDITOR
+    [Header("Editor")]
+    [Tooltip("Regenerer automatiquement les slots en mode editeur quand les valeurs changent.")]
+    public bool autoRegenerateInEditor = false;
+#endif
+
     private GridLayoutGroup grid;
 
     private void Reset()
@@ -39,6 +44,12 @@ public class SlotGenerator : MonoBehaviour
     private void OnEnable()
     {
         EnsureDefaults();
+#if UNITY_EDITOR
+        if (!Application.isPlaying)
+        {
+            return;
+        }
+#endif
         Regenerate();
     }
 
@@ -58,6 +69,10 @@ public class SlotGenerator : MonoBehaviour
         #if UNITY_EDITOR
         if (!EditorApplication.isPlayingOrWillChangePlaymode)
         {
+                    if (!autoRegenerateInEditor)
+                    {
+                        return;
+                    }
             EditorApplication.delayCall -= DelayedRegenerate;
             EditorApplication.delayCall += DelayedRegenerate;
         }
@@ -68,6 +83,14 @@ public class SlotGenerator : MonoBehaviour
     private void DelayedRegenerate()
     {
         if (this == null) return;
+        if (Application.isPlaying) return;
+
+        // Evite de detruire des objets selectionnes dans l'inspecteur pendant le refresh.
+        if (Selection.activeGameObject != null && Selection.activeGameObject.transform.IsChildOf(transform))
+        {
+            return;
+        }
+
         Regenerate();
     }
 #endif

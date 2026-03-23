@@ -45,6 +45,7 @@ public class SpellInventoryManager : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+        lastDebugUnlockAllApplied = debugUnlockAllSpellsOnStart;
 
         if (initializeOnAwake)
         {
@@ -69,6 +70,12 @@ public class SpellInventoryManager : MonoBehaviour
 
     private void UnlockAllSpells()
     {
+        if (allSpells == null || allSpells.Count == 0)
+        {
+            InitializeStartingInventory();
+            return;
+        }
+
         unlockedSpells.Clear();
         unlockedIds.Clear();
 

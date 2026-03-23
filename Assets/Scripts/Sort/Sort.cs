@@ -8,6 +8,12 @@ public class Sort : MonoBehaviour
     public int damage;
     public float vitesse;
 
+    [Header("UI & Display")]
+    [TextArea(2, 4)]
+    public string description;
+    public Sprite icon;
+    public Sprite demonstrationIllustration;
+
     [Header("Audio")]
     public SpellAudioConfig audioConfig;
 
