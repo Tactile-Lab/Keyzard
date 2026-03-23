@@ -8,7 +8,7 @@ public class SpellUnlockTrigger : MonoBehaviour
     [SerializeField] private SpellUnlockVisual visual;
     [SerializeField] private bool triggerOnlyOnce = true;
     [SerializeField] private bool destroyAfterUnlock = true;
-    [SerializeField] private float pickupDelay = 5f; // temps au-dessus de la tête
+    [SerializeField] private float pickupDelay = 10f; // temps au-dessus de la tête
 
     private bool consumed = false;
 
@@ -42,32 +42,32 @@ public class SpellUnlockTrigger : MonoBehaviour
     }
 
     private IEnumerator PickupAboveHead(Transform player)
+{
+    Vector3 offset = new Vector3(0, 1f, 0); // juste au-dessus de la tête
+    visual.transform.position = player.position + offset; // position immédiate
+
+    float timer = 0f;
+    while (timer < pickupDelay)
     {
-        float timer = 0f;
-        Vector3 offset = new Vector3(0, 1.2f, 0); // au-dessus de la tête
-        Vector3 startPos = visual.transform.position;
+        timer += Time.deltaTime;
 
-        while (timer < pickupDelay)
-        {
-            timer += Time.deltaTime;
+        // garder le visuel au-dessus de la tête même si le joueur bouge
+        visual.transform.position = player.position + offset;
 
-            // Faire flotter le sort au-dessus de la tête du joueur
-            visual.transform.position = Vector3.Lerp(startPos, player.position + offset, timer / pickupDelay);
-
-            yield return null;
-        }
-
-        // Débloquer le sort
-        bool unlocked = SpellInventoryManager.Instance.UnlockSpell(spellToUnlock);
-        if (unlocked)
-            Debug.Log($"Sort débloqué : {spellToUnlock.nomSort}");
-
-        // Retirer le visuel
-        if (visual != null)
-            visual.gameObject.SetActive(false);
-
-        // Détruire le trigger si nécessaire
-        if (destroyAfterUnlock)
-            Destroy(gameObject);
+        yield return null;
     }
+
+    // Débloquer le sort après le delay
+    bool unlocked = SpellInventoryManager.Instance.UnlockSpell(spellToUnlock);
+    if (unlocked)
+        Debug.Log($"Sort débloqué : {spellToUnlock.nomSort}");
+
+    // Retirer le visuel
+    if (visual != null)
+        visual.gameObject.SetActive(false);
+
+    // Détruire le trigger si nécessaire
+    if (destroyAfterUnlock)
+        Destroy(gameObject);
+}
 }
