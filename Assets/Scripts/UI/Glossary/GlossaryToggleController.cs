@@ -144,6 +144,8 @@ public class GlossaryToggleController : MonoBehaviour
             return;
         }
 
+        // Closing should immediately unpause gameplay; panel can keep animating in unscaled time.
+        ApplyOpenState(false, true);
         SetBackdropState(false, true);
         AnimatePanel(closedRightX, closeEase, false, true);
     }
