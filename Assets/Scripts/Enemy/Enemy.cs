@@ -161,40 +161,35 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void ApplyKnockback(Vector2 direction, float force)
+        public void ApplyKnockback(Vector2 direction, float force, float duration = 0.3f)
+    {
+        StartCoroutine(KnockbackRoutine(direction.normalized * force, duration));
+    }
+
+    private IEnumerator KnockbackRoutine(Vector2 velocity, float duration)
     {
         isStunned = true;
 
-        // Stoppe le mouvement actuel
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            rb.linearVelocity = velocity; // contrôle direct de la vitesse
+            elapsed += Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate(); // synchronisé avec la physique
+        }
+
         rb.linearVelocity = Vector2.zero;
-
-        // Applique le knockback du sort
-        rb.AddForce(direction * force, ForceMode2D.Impulse);
-
-        // Arrête le knockback après une courte durée
-        StartCoroutine(KnockbackDuration(0.3f));
-    }
-
-    private IEnumerator KnockbackDuration(float duration)
-    {
-        yield return new WaitForSeconds(duration);
-
-        // Évite que l'ennemi continue de glisser
-        rb.linearVelocity = Vector2.zero;
-
-        // Fin de l'état de stun
         isStunned = false;
     }
-
-    protected virtual IEnumerator Shoot()
-    {
-        while (true)
+        protected virtual IEnumerator Shoot()
         {
-            yield return new WaitForSeconds(4f);
-            if (health == 0) yield break;
-            animator.SetTrigger("Attack");
+            while (true)
+            {
+                yield return new WaitForSeconds(4f);
+                if (health == 0) yield break;
+                animator.SetTrigger("Attack");
+            }
         }
-    }
 
     // Appelé par l'animation d'attaque de l'ennemi distant
     public void ShootProjectile()
