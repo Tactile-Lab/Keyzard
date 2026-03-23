@@ -59,7 +59,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GlossaryToggleController
   glossaryRoot: {fileID: 0}
+  glossaryPanel: {fileID: 0}
   toggleKey: 55
   acceptRightCtrl: 1
+  toggleCooldown: 0.2
   muffleMusicWhenOpen: 1
-  musicMuffleTransition: 0.1
+  musicMuffleTransition: 0.25
+  openX: 0
+  closedLeftX: -1600
+  closedRightX: 1600
+  slideDuration: 0.35
+  openEase: 27
+  closeEase: 26
+  enablePop: 1
+  popScaleFrom: 0.96
+  popDuration: 0.5
+  popEase: 27
+  backdropTarget: {fileID: 0}
+  backdropTargetAlpha: 1
+  backdropFadeDuration: 0.2
+  manageBackdropActiveState: 1
