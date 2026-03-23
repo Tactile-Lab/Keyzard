@@ -1800,8 +1800,8 @@ MonoBehaviour:
   m_text: "Une lance fantomatique in\xE9vitable qui touche l\u2019ennemi marqu\xE9,
     bien que lente"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 121cf44e2c91f234c84eb9e04241ee5c, type: 2}
-  m_sharedMaterial: {fileID: 2307772923618218049, guid: 121cf44e2c91f234c84eb9e04241ee5c, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f6d9460b1f5406d4ea09fbad15818083, type: 2}
+  m_sharedMaterial: {fileID: -8254751981930411074, guid: f6d9460b1f5406d4ea09fbad15818083, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
