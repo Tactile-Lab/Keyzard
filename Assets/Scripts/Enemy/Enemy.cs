@@ -210,7 +210,14 @@ public class Enemy : MonoBehaviour
 
     public void LaunchProjectile()
     {
-        if (projectileToLaunch == null || playerTargetTransform == null) return;
+        if (projectileToLaunch == null || playerTargetTransform == null)
+        {
+            if (projectileToLaunch != null)
+            {
+                Destroy(projectileToLaunch.gameObject);
+            }
+            return; // sortir de la fonction pour éviter d’appeler Launch
+        }
 
         projectileToLaunch.GetComponent<ProjectileDistant>().Launch(playerTargetTransform.position, damage);
     }

@@ -19,7 +19,26 @@ public class Sort : MonoBehaviour
     // Lance le sort sur la cible la plus proche
     public virtual void LancerSort()
     {
-        StartCoroutine(LancerSortDelayed());
+        List<GameManager.EnemyEntry> ennemis = GameManager.Instance.list_enemies;
+
+        if (ennemis.Count == 0)
+        {
+            Debug.Log("[Sort] Aucun ennemi dans la liste → destruction du sort");
+            Destroy(gameObject);
+            return;
+        }
+
+        cible = TrouverCibleProche(ennemis);
+
+        if (cible != null)
+        {
+            LancerSortCible(cible);
+        }
+        else
+        {
+            Debug.LogWarning("[Sort] Aucune cible valide trouvée → destruction du sort");
+            Destroy(gameObject);
+        }
     }
 
     private IEnumerator LancerSortDelayed()
