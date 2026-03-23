@@ -68,6 +68,9 @@ public class TypingSortManager : MonoBehaviour
 
     private void OnTextInput(char c)
     {
+        if (GlossaryToggleController.IsGlossaryOpen || Time.timeScale <= 0f)
+            return;
+
         if (char.IsLetter(c))
             TypeLetter(char.ToUpper(c));
         else if (c == ' ')
