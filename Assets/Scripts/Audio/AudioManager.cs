@@ -53,6 +53,7 @@ public class AudioManager : MonoBehaviour
         // Créer la source de musique
         musicSource = gameObject.AddComponent<AudioSource>();
         musicSource.outputAudioMixerGroup = musicGroup;
+        musicSource.playOnAwake = false;
         musicSource.loop = true;
         musicSource.volume = musicVolume;
         // La musique continue même si AudioListener.pause = true.
@@ -75,24 +76,38 @@ public class AudioManager : MonoBehaviour
     
     private AudioSource CreateSFXSource()
     {
-        var source = gameObject.AddComponent<AudioSource>();
+        var sourceObject = new GameObject($"SFXSource_{sfxPool.Count}");
+        sourceObject.transform.SetParent(transform, false);
+        // Disable object so AddComponent doesn't trigger PlayOnAwake before configuration.
+        sourceObject.SetActive(false);
+
+        var source = sourceObject.AddComponent<AudioSource>();
         source.outputAudioMixerGroup = sfxGroup;
         source.playOnAwake = false;
         source.loop = false;
         source.spatialBlend = 0f;
         source.dopplerLevel = 0f;
+
+        sourceObject.SetActive(true);
         sfxPool.Add(source);
         return source;
     }
     
     private AudioSource CreateLoopSource()
     {
-        var source = gameObject.AddComponent<AudioSource>();
+        var sourceObject = new GameObject($"LoopSource_{loopPool.Count}");
+        sourceObject.transform.SetParent(transform, false);
+        // Disable object so AddComponent doesn't trigger PlayOnAwake before configuration.
+        sourceObject.SetActive(false);
+
+        var source = sourceObject.AddComponent<AudioSource>();
         source.outputAudioMixerGroup = sfxGroup;
         source.playOnAwake = false;
         source.loop = true;
         source.spatialBlend = 0f;
         source.dopplerLevel = 0f;
+
+        sourceObject.SetActive(true);
         loopPool.Add(source);
         return source;
     }
