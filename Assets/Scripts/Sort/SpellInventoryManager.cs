@@ -26,6 +26,8 @@ public class SpellInventoryManager : MonoBehaviour
 
     public IReadOnlyList<Sort> UnlockedSpells => unlockedSpells;
 
+    private readonly HashSet<Sort> assignedSpells = new HashSet<Sort>();
+
     public IReadOnlyList<Sort> GetSpellCatalog()
     {
         if (allSpells != null && allSpells.Count > 0)
@@ -221,30 +223,35 @@ public class SpellInventoryManager : MonoBehaviour
     }
 
    public Sort GetRandomLockedSpell()
-{
-    IReadOnlyList<Sort> catalog = GetSpellCatalog();
-
-    List<Sort> lockedSpells = new List<Sort>();
-
-    for (int i = 0; i < catalog.Count; i++)
     {
-        Sort spell = catalog[i];
-        if (spell == null) continue;
+        IReadOnlyList<Sort> catalog = GetSpellCatalog();
+        List<Sort> candidates = new List<Sort>();
 
-        string key = GetSortKey(spell);
-
-        if (!unlockedIds.Contains(key))
+        for (int i = 0; i < catalog.Count; i++)
         {
-            lockedSpells.Add(spell);
+            Sort spell = catalog[i];
+            if (spell == null) continue;
+
+            string key = GetSortKey(spell);
+
+            // exclure les spells déjà débloqués ou déjà assignés
+            if (!unlockedIds.Contains(key) && !assignedSpells.Contains(spell))
+            {
+                candidates.Add(spell);
+            }
         }
+
+        if (candidates.Count == 0) return null;
+
+        int randomIndex = UnityEngine.Random.Range(0, candidates.Count);
+        var chosen = candidates[randomIndex];
+        assignedSpells.Add(chosen); // marque comme assigné
+        return chosen;
     }
 
-    if (lockedSpells.Count == 0)
+    public void ReleaseAssignedSpell(Sort spell)
     {
-        return null;
+        if (assignedSpells.Contains(spell))
+            assignedSpells.Remove(spell);
     }
-
-    int randomIndex = UnityEngine.Random.Range(0, lockedSpells.Count);
-    return lockedSpells[randomIndex];
-}
 }
