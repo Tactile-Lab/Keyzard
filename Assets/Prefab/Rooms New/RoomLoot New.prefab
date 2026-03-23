@@ -1710,8 +1710,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 953597df1c8563f41a0b7323af493616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpellUnlockTrigger
-  spellToUnlock: {fileID: 0}
-  useRandomSpell: 1
   triggerOnlyOnce: 1
   destroyAfterUnlock: 1
 --- !u!70 &5309405757624302532
@@ -5909,6 +5907,18 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[1].second.m_TileMatrixIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5531591443656011896, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
+      propertyPath: roomType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531591443656011896, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
+      propertyPath: rewardGiven
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5531591443656011896, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
+      propertyPath: rewardTrigger
+      value: 
+      objectReference: {fileID: 9077764624083165700}
     - target: {fileID: 7970316359922882131, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_IsActive
       value: 1

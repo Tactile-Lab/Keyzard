@@ -1,18 +1,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum RoomType
+{
+    Combat,
+    Reward,
+    Boss
+}
+
 public class RoomManager : MonoBehaviour
 {
+    [Header("Room Settings")]
+    [SerializeField] private RoomType roomType;
+    [SerializeField] private SpellUnlockTrigger rewardTrigger;
+    [SerializeField] private bool rewardGiven = false;
+
+    [Header("Enemies & Doors")]
     [SerializeField] private List<Enemy> enemies = new List<Enemy>();
     [SerializeField] private DoorController door; 
     [SerializeField] private bool playerInside = false;
     [SerializeField] private bool roomCleared = false;
 
-    // Liste temporaire des mannequins non bloquants actifs dans la salle
     private List<Mannequin> nonBlockingMannequins = new List<Mannequin>();
 
     void Awake()
     {
+        // Récupérer tous les enemies enfants
         enemies.AddRange(GetComponentsInChildren<Enemy>(true));
 
         foreach (var enemy in enemies)
@@ -28,6 +41,10 @@ public class RoomManager : MonoBehaviour
         door = GetComponentInChildren<DoorController>();
         if (door == null)
             Debug.LogWarning($"Room {name} : pas de DoorController trouvé !");
+
+        // Désactiver le trigger au départ
+        if (rewardTrigger != null)
+            rewardTrigger.gameObject.SetActive(false);
     }
 
     void Start()
@@ -57,15 +74,15 @@ public class RoomManager : MonoBehaviour
         playerInside = true;
 
         if (roomCleared)
-        {
             door?.Open();
-        }
 
         HandleDoor();
         ActivateEnemies();
 
-        AddTutoMannequinsToGameManager();       // Tuto avant premier coup
-        AddNonBlockingMannequinsToGameManager(); // Tuto tapé + autres non bloquants
+        PrepareReward(); // <--- prépare le sort pour le trigger
+
+        AddTutoMannequinsToGameManager();
+        AddNonBlockingMannequinsToGameManager();
     }
 
     public void ForceEnterRoom()
@@ -81,6 +98,8 @@ public class RoomManager : MonoBehaviour
             HandleDoor();
             ActivateEnemies();
 
+            PrepareReward();
+
             AddTutoMannequinsToGameManager();
             AddNonBlockingMannequinsToGameManager();
         }
@@ -93,9 +112,7 @@ public class RoomManager : MonoBehaviour
         if (GameManager.Instance != null)
         {
             foreach (var m in nonBlockingMannequins)
-            {
                 GameManager.Instance.list_enemies.RemoveAll(e => e.enemy == m.gameObject);
-            }
 
             foreach (var m in GetComponentsInChildren<Mannequin>(true))
             {
@@ -105,6 +122,28 @@ public class RoomManager : MonoBehaviour
         }
 
         nonBlockingMannequins.Clear();
+    }
+
+    private void PrepareReward()
+    {
+        if (rewardGiven) return;
+        if (roomType != RoomType.Reward) return;
+        if (SpellInventoryManager.Instance == null) return;
+        if (rewardTrigger == null) return;
+
+        Sort spell = SpellInventoryManager.Instance.GetRandomLockedSpell();
+        if (spell == null)
+        {
+            Debug.Log("Tous les sorts sont déjà débloqués.");
+            return;
+        }
+
+        rewardTrigger.SetSpell(spell);
+        rewardTrigger.gameObject.SetActive(true);
+
+        Debug.Log($"Room {name} : sort préparé dans le trigger -> {spell.nomSort}");
+
+        rewardGiven = true;
     }
 
     private void ActivateEnemies()
@@ -147,8 +186,6 @@ public class RoomManager : MonoBehaviour
         }
     }
 
-    // -------------------- Helpers --------------------
-
     private void HandleDoor()
     {
         if (door == null) return;
@@ -161,7 +198,6 @@ public class RoomManager : MonoBehaviour
             door.Close();
     }
 
-    // Ajouter le tuto avant premier coup
     private void AddTutoMannequinsToGameManager()
     {
         foreach (var m in GetComponentsInChildren<Mannequin>(true))
@@ -174,13 +210,10 @@ public class RoomManager : MonoBehaviour
         }
     }
 
-    // Ajouter tous les non bloquants (countsForRoomLock == false), y compris tuto tapé
     private void AddNonBlockingMannequinsToGameManager()
     {
         foreach (var m in GetComponentsInChildren<Mannequin>(true))
         {
-            Debug.Log(m.countsForRoomLock);
-            Debug.Log(m);
             if (!m.countsForRoomLock && !nonBlockingMannequins.Contains(m))
             {
                 if (!GameManager.Instance.list_enemies.Exists(e => e.enemy == m.gameObject))
