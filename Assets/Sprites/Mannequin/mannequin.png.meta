@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 85f812dfe4796bc44a914898c227a0f4
+guid: 504b7fa4bff01ea449b375dabf536a60
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8905752697172932582
-    second: candle-big_0
-  - first:
-      213: -1982455807928336075
-    second: candle-big_1
-  - first:
-      213: 8197845377240178501
-    second: candle-big_2
-  - first:
-      213: -8158730383853620170
-    second: candle-big_3
+      213: 1133102966731450545
+    second: mannequin_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,17 +46,17 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 0.297
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -84,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -109,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: candle-big_0
+      name: mannequin_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
+        x: 53
+        y: 22
+        width: 89
+        height: 123
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,98 +115,63 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a18c78b4b19686480800000000000000
-      internalID: -8905752697172932582
+      spriteID: 1b828f1152799bf00800000000000000
+      internalID: 1133102966731450545
       vertices: []
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: candle-big_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 531858932f6ec74e0800000000000000
-      internalID: -1982455807928336075
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: candle-big_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 54f9af1cfe894c170800000000000000
-      internalID: 8197845377240178501
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: candle-big_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 634f73451fd56ce80800000000000000
-      internalID: -8158730383853620170
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    outline: []
+    outline:
+    - - {x: 14, y: -62}
+      - {x: 13, y: -58}
+      - {x: 9, y: -53}
+      - {x: 13, y: -53}
+      - {x: 18, y: -49}
+      - {x: 28, y: -40}
+      - {x: 29, y: -29}
+      - {x: 43, y: -19}
+      - {x: 47, y: -11}
+      - {x: 47, y: 2}
+      - {x: 45, y: 8}
+      - {x: 38, y: 9}
+      - {x: 27, y: 8}
+      - {x: 31, y: 22}
+      - {x: 18, y: 35}
+      - {x: 21, y: 49}
+      - {x: 20, y: 50}
+      - {x: 4, y: 50}
+      - {x: -8, y: 46}
+      - {x: -14, y: 41}
+      - {x: -12, y: 34}
+      - {x: -23, y: 25}
+      - {x: -26, y: 5}
+      - {x: -38, y: 9}
+      - {x: -44, y: -1}
+      - {x: -44, y: -12}
+      - {x: -40, y: -20}
+      - {x: -30, y: -26}
+      - {x: -27, y: -45}
+      - {x: -15, y: -53}
+      - {x: -11, y: -55}
+      - {x: -8, y: -55}
+      - {x: -10, y: -57}
+      - {x: -11, y: -61}
+      - {x: -4, y: -69}
+      - {x: 8, y: -69}
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9d813e800a1380f46afa649dbe6fbb5d
-    internalID: 0
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      candle-big_0: -8905752697172932582
-      candle-big_1: -1982455807928336075
-      candle-big_2: 8197845377240178501
-      candle-big_3: -8158730383853620170
+      mannequin_0: 1133102966731450545
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

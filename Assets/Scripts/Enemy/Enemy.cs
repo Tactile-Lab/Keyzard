@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
     private EnemyType type;
     private int damage;
     private float speed;
-    private Animator animator;
+    protected Animator animator;
 
     [SerializeField]
     private GameObject projectileEnemy;
@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
 
     private bool playerReferencesResolved = false;
 
-    private RoomManager room;
+    protected RoomManager room;
 
 
     /// <summary>
@@ -89,7 +89,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         // Récupérer les références au joueur une seule fois
         ResolvePlayerReferencesOnce();
@@ -116,6 +116,7 @@ public class Enemy : MonoBehaviour
             nameText.text = GameManager.Instance.list_enemies.Find(e => e.enemy == gameObject)?.code ?? "Unknown";
         }
 
+
         // Initialiser l'état d'animation selon le type
         if (type != EnemyType.Distant)
         {
@@ -128,7 +129,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         // Assurer que les références sont résolues une seule fois
         if (!playerReferencesResolved)
@@ -182,7 +183,7 @@ public class Enemy : MonoBehaviour
         isStunned = false;
     }
 
-    private IEnumerator Shoot()
+    protected virtual IEnumerator Shoot()
     {
         while (true)
         {
@@ -209,12 +210,19 @@ public class Enemy : MonoBehaviour
 
     public void LaunchProjectile()
     {
-        if (projectileToLaunch == null || playerTargetTransform == null) return;
+        if (projectileToLaunch == null || playerTargetTransform == null)
+        {
+            if (projectileToLaunch != null)
+            {
+                Destroy(projectileToLaunch.gameObject);
+            }
+            return; // sortir de la fonction pour éviter d’appeler Launch
+        }
 
         projectileToLaunch.GetComponent<ProjectileDistant>().Launch(playerTargetTransform.position, damage);
     }
 
-    private void Move()
+    protected virtual void Move()
     {
         if (health == 0 || playerTargetTransform == null) return;
 
@@ -238,7 +246,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void CheckAttack()
+    protected virtual void CheckAttack()
     {
         // Passe en attaque quand le joueur est dans la portée proche
         if (playerTargetTransform != null && Vector2.Distance(transform.position, playerTargetTransform.position) < 1f)
@@ -248,7 +256,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void EndAttack()
+    public virtual void EndAttack()
     {
         isMoving = true;
         animator.SetTrigger("Move");
@@ -336,7 +344,7 @@ public class Enemy : MonoBehaviour
         playerHealth.TakeDamage(damage);
     }
 
-    public void TakeDamage(float damageAmount)
+    public virtual void TakeDamage(float damageAmount)
     {
         animator.SetTrigger("TakeDmg");
         isMoving = false;
@@ -348,7 +356,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void EndTakeDamage()
+    public virtual void EndTakeDamage()
     {
         if (health == 0)
         {
