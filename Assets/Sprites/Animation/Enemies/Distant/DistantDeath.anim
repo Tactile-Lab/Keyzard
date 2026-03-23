@@ -109,6 +109,13 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0
+    functionName: BeginAnimationHitOrDeath
+    data: 
+    objectReferenceParameter: {fileID: 2149295445501260339, guid: 616deb266e025ad40a006c120e213d74, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.21666667
     functionName: EndDeath
     data: 
