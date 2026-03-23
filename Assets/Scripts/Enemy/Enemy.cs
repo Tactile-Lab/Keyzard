@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using NUnit.Framework;
 
 public class Enemy : MonoBehaviour
 {
@@ -36,6 +37,8 @@ public class Enemy : MonoBehaviour
     private bool playerReferencesResolved = false;
 
     protected RoomManager room;
+
+    private bool isAttacking = false;
 
 
     /// <summary>
@@ -206,6 +209,15 @@ public class Enemy : MonoBehaviour
         {
             projectileToLaunch = Instantiate(projectileEnemy, transform.position + Vector3.right * 0.4f, Quaternion.identity);
         }
+        isAttacking = true;
+    }
+
+    public void BeginAnimationHitOrDeath()
+    {
+        if (isAttacking)
+        {
+            Destroy(projectileToLaunch.gameObject);
+        }
     }
 
     public void LaunchProjectile()
@@ -220,6 +232,7 @@ public class Enemy : MonoBehaviour
         }
 
         projectileToLaunch.GetComponent<ProjectileDistant>().Launch(playerTargetTransform.position, damage);
+        isAttacking = false;
     }
 
     protected virtual void Move()
