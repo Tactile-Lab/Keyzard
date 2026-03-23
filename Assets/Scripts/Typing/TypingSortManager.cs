@@ -6,8 +6,8 @@ using DG.Tweening;
 
 public class TypingSortManager : MonoBehaviour
 {
-    [Header("Sorts disponibles")]
-    public List<Sort> sorts = new List<Sort>();
+    [Header("Inventaire")]
+    [SerializeField] private SpellInventoryManager spellInventory;
 
     [Header("Ennemis")]
     public List<GameManager.EnemyEntry> listEnemies;
@@ -42,6 +42,8 @@ public class TypingSortManager : MonoBehaviour
     private string currentInput = "";
     private GameManager.EnemyEntry selectedEnemy = null;
     private bool sortLibreMode = false;
+    private readonly List<Sort> activeSorts = new List<Sort>();
+    private bool inventoryMissingWarningLogged;
 
     public GameManager.EnemyEntry SelectedEnemy => selectedEnemy;
 
@@ -52,12 +54,25 @@ public class TypingSortManager : MonoBehaviour
     {
         if (Keyboard.current != null)
             Keyboard.current.onTextInput += OnTextInput;
+
+        ResolveSpellInventory();
+        RefreshAvailableSorts();
+
+        if (spellInventory != null)
+        {
+            spellInventory.InventoryChanged += RefreshAvailableSorts;
+        }
     }
 
     private void OnDisable()
     {
         if (Keyboard.current != null)
             Keyboard.current.onTextInput -= OnTextInput;
+
+        if (spellInventory != null)
+        {
+            spellInventory.InventoryChanged -= RefreshAvailableSorts;
+        }
     }
 
     private void Start()
@@ -109,7 +124,7 @@ public class TypingSortManager : MonoBehaviour
         // ---------------- Vérifier les sorts ----------------
         if (!matchFound)
         {
-            foreach (var sort in sorts)
+            foreach (var sort in activeSorts)
             {
                 string sortName = sort.nomSort.ToUpper();
                 if (sortName.StartsWith(tentative))
@@ -137,7 +152,7 @@ public class TypingSortManager : MonoBehaviour
             return;
         }
 
-        Sort sortToCast = sorts.Find(s => s.nomSort.ToUpper() == currentInput);
+        Sort sortToCast = activeSorts.Find(s => s.nomSort.ToUpper() == currentInput);
 
         if (sortToCast != null)
         {
@@ -342,6 +357,37 @@ public class TypingSortManager : MonoBehaviour
             seq.OnComplete(() => Destroy(letterObj));
 
             letterIndex++;
+        }
+    }
+
+    private void ResolveSpellInventory()
+    {
+        if (spellInventory == null)
+        {
+            spellInventory = SpellInventoryManager.Instance;
+        }
+
+        if (spellInventory == null && !inventoryMissingWarningLogged)
+        {
+            inventoryMissingWarningLogged = true;
+            Debug.LogError("[TypingSortManager] SpellInventoryManager introuvable. Ajoute-le dans la scene de depart.");
+        }
+    }
+
+    private void RefreshAvailableSorts()
+    {
+        activeSorts.Clear();
+
+        if (spellInventory != null)
+        {
+            IReadOnlyList<Sort> unlocked = spellInventory.GetUnlockedSorts();
+            for (int i = 0; i < unlocked.Count; i++)
+            {
+                if (unlocked[i] != null)
+                {
+                    activeSorts.Add(unlocked[i]);
+                }
+            }
         }
     }
 }
