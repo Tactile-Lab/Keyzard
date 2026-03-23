@@ -9,7 +9,7 @@ public class SpellUnlockTrigger : MonoBehaviour
     [SerializeField] private bool triggerOnlyOnce = true;
     [SerializeField] private bool destroyAfterUnlock = true;
     [SerializeField] private float pickupDelay = 3f; // temps au-dessus de la tête
-    [SerializeField] private float acquireAnimDuration = 0.8f; // durée de l'anim AcquireSpell
+    [SerializeField] private float acquireAnimDuration = 0.4f; // durée de l'anim AcquireSpell
 
     private bool consumed = false;
 
@@ -43,6 +43,7 @@ public class SpellUnlockTrigger : MonoBehaviour
         Animator playerAnimator = collision.GetComponent<Animator>();
         if (playerAnimator != null)
            playerAnimator.SetTrigger("acquireSpell");
+           Debug.Log("anim lancée");
 
         bool unlocked = SpellInventoryManager.Instance.UnlockSpell(spellToUnlock);
         if (unlocked)
