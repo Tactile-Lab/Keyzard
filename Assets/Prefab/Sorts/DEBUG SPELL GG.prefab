@@ -48,9 +48,9 @@ MonoBehaviour:
   nomSort: gg
   damage: 0
   vitesse: 0
-  description: 
-  icon: {fileID: 0}
-  demonstrationIllustration: {fileID: 0}
+  description: 'DEBUG SORT ONE SHOT '
+  icon: {fileID: 3598024242438813033, guid: 54025584996690346a4bd984930a7db2, type: 3}
+  demonstrationIllustration: {fileID: -2170677759703501999, guid: 43f46857454e33e44baf40a572d66140, type: 3}
   audioConfig: {fileID: 0}
   aniamtor: {fileID: 0}
 --- !u!212 &7223543082466590589
