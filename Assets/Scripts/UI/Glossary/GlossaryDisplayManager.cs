@@ -31,9 +31,6 @@ public class GlossaryDisplayManager : MonoBehaviour
     [SerializeField] private string lockedDescriptionLabel = "Ce sort n'est pas encore debloque.";
     [SerializeField] private float lockedIconAlpha = 0.25f;
 
-    [Header("Debug")]
-    [SerializeField] private bool verboseDebugLogs = false;
-
     private readonly List<GameObject> slots = new List<GameObject>();
     private int currentSelectedIndex = 0;
     private IReadOnlyList<Sort> spellCatalog;
@@ -99,11 +96,6 @@ public class GlossaryDisplayManager : MonoBehaviour
 
     private void OnInventoryChanged()
     {
-        if (verboseDebugLogs)
-        {
-            Debug.Log("[GlossaryDisplayManager] InventoryChanged recu -> rebuild slots");
-        }
-
         BuildFromInventory();
         SelectSlot(currentSelectedIndex, true);
     }
@@ -133,11 +125,6 @@ public class GlossaryDisplayManager : MonoBehaviour
         {
             columnCount = gridLayout.constraintCount;
         }
-
-        if (verboseDebugLogs)
-        {
-            Debug.Log($"[GlossaryDisplayManager] CacheSlots source={source.name} childCount={source.childCount} slotsFound={slots.Count} columns={columnCount}");
-        }
     }
 
     private void BuildFromInventory()
@@ -146,13 +133,6 @@ public class GlossaryDisplayManager : MonoBehaviour
 
         SpellInventoryManager inventory = boundInventory != null ? boundInventory : SpellInventoryManager.Instance;
         spellCatalog = inventory != null ? inventory.GetSpellCatalog() : null;
-
-        if (verboseDebugLogs)
-        {
-            int catalogCount = spellCatalog != null ? spellCatalog.Count : 0;
-            int unlockedCount = inventory != null ? inventory.GetUnlockedSorts().Count : 0;
-            Debug.Log($"[GlossaryDisplayManager] BuildFromInventory catalog={catalogCount} unlocked={unlockedCount} slots={slots.Count}");
-        }
 
         for (int i = 0; i < slots.Count; i++)
         {
@@ -284,10 +264,6 @@ public class GlossaryDisplayManager : MonoBehaviour
         Image iconTarget = FindIconImage(slot);
         if (iconTarget == null)
         {
-            if (verboseDebugLogs)
-            {
-                Debug.LogWarning($"[GlossaryDisplayManager] Slot '{slot.name}' sans Image cible pour icon sort");
-            }
             return;
         }
 
@@ -299,25 +275,12 @@ public class GlossaryDisplayManager : MonoBehaviour
             iconTarget.enabled = true;
             iconTarget.sprite = sort.icon;
             SetImageAlpha(iconTarget, 1f);
-
-            if (verboseDebugLogs)
-            {
-                Debug.Log($"[GlossaryDisplayManager] Slot '{slot.name}' <- icon '{sort.icon.name}' sort='{GetDisplaySpellName(sort)}' unlocked=TRUE");
-            }
         }
         else
         {
             iconTarget.enabled = false;
             iconTarget.sprite = null;
             SetImageAlpha(iconTarget, lockedIconAlpha);
-
-            if (verboseDebugLogs)
-            {
-                string reason = sort == null ? "sort=NULL"
-                    : (!hasContent ? "sort.icon=NULL" : "sort verrouille");
-                string sortLabel = sort == null ? "NONE" : GetDisplaySpellName(sort);
-                Debug.Log($"[GlossaryDisplayManager] Slot '{slot.name}' icon masquee ({reason}) sort='{sortLabel}'");
-            }
         }
     }
 
@@ -504,24 +467,5 @@ public class GlossaryDisplayManager : MonoBehaviour
         }
     }
 
-    [ContextMenu("Debug: Log Slots")]
-    public void DebugLogSlots()
-    {
-        CacheSlots();
-        Debug.Log($"[GlossaryDisplayManager] {slots.Count} slots trouvés");
-        for (int i = 0; i < slots.Count; i++)
-        {
-            Sort sort = (spellCatalog != null && i < spellCatalog.Count) ? spellCatalog[i] : null;
-            string sortName = sort != null ? (!string.IsNullOrWhiteSpace(sort.nomSort) ? sort.nomSort : sort.name) : "NONE";
-            Debug.Log($"  Slot {i}: {slots[i].name} - Sort: {sortName}");
-        }
-    }
-
-    [ContextMenu("Debug: Force Rebuild")]
-    public void DebugForceRebuild()
-    {
-        BuildFromInventory();
-        SelectSlot(currentSelectedIndex, true);
-        Debug.Log("[GlossaryDisplayManager] Force Rebuild execute");
-    }
 }
+
