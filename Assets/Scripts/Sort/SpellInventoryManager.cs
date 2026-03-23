@@ -218,4 +218,32 @@ public class SpellInventoryManager : MonoBehaviour
     {
         return value.Trim().ToUpperInvariant();
     }
+
+    public Sort GetRandomLockedSpell()
+    {
+        IReadOnlyList<Sort> catalog = GetSpellCatalog();
+
+        List<Sort> lockedSpells = new List<Sort>();
+
+        for (int i = 0; i < catalog.Count; i++)
+        {
+            Sort spell = catalog[i];
+            if (spell == null) continue;
+
+            string key = GetSortKey(spell);
+
+            if (!unlockedIds.Contains(key))
+            {
+                lockedSpells.Add(spell);
+            }
+        }
+
+        if (lockedSpells.Count == 0)
+        {
+            return null; // tout est déjà débloqué
+        }
+
+        int randomIndex = UnityEngine.Random.Range(0, lockedSpells.Count);
+        return lockedSpells[randomIndex];
+    }
 }

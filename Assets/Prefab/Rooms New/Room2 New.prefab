@@ -2830,9 +2830,9 @@ Tilemap:
   - first: {x: -1, y: 4, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
+      m_TileIndex: 2
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 2
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -2840,9 +2840,9 @@ Tilemap:
   - first: {x: 0, y: 4, z: 0}
     second:
       serializedVersion: 2
-      m_TileIndex: 2
-      m_TileSpriteIndex: 1
-      m_TileMatrixIndex: 0
+      m_TileIndex: 0
+      m_TileSpriteIndex: 0
+      m_TileMatrixIndex: 2
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
@@ -2861,7 +2861,7 @@ Tilemap:
   - m_RefCount: 3
     m_Data: {fileID: -2008772259, guid: dfc42ed8ec1551d4ca02c39b3e512840, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 4
+  - m_RefCount: 2
     m_Data:
       e00: 1
       e01: 0
@@ -2887,6 +2887,24 @@ Tilemap:
       e03: 0
       e10: 1
       e11: 0
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+  - m_RefCount: 2
+    m_Data:
+      e00: -1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: -1
       e12: 0
       e13: 0
       e20: 0
@@ -3924,27 +3942,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
-      value: 8.630106
+      value: 7.5665913
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[1].second.m_AnimationSpeed
-      value: 8.796137
+      value: 8.949789
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[2].second.m_AnimationSpeed
-      value: 8.828001
+      value: 8.969292
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[3].second.m_AnimationSpeed
-      value: 7.0064373
+      value: 8.247854
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[4].second.m_AnimationSpeed
-      value: 7.6846256
+      value: 9.40473
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[5].second.m_AnimationSpeed
-      value: 9.737799
+      value: 9.447485
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimatedSprites.Array.size
