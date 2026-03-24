@@ -64,7 +64,6 @@ public class GameOverMenu : MonoBehaviour
 
     void RetourMenu()
     {
-        Debug.Log("Retour au menu principal !");
-        // SceneManager.LoadScene("MenuPrincipal");
+        SceneManager.LoadScene(0);
     }
 }
