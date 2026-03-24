@@ -97,3 +97,7 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+Assets/TextMesh Pro/Customs fonts/SDF/Peaberry-Mono SDF.asset
+Assets/TextMesh Pro/Customs fonts/SDF/BoldPixels SDF 1.asset
+Assets/TextMesh Pro/Customs fonts/SDF/antiquity-print SDF.asset
+Assets/TextMesh Pro/Customs fonts/SDF/antiquity-print SDF 1.asset
