@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameOverMenu : MonoBehaviour
 {
@@ -57,8 +58,8 @@ public class GameOverMenu : MonoBehaviour
 
     void Rejouer()
     {
-        Debug.Log("Rejouer !");
-        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SpellInventoryManager.Instance.ResetInventory();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void RetourMenu()

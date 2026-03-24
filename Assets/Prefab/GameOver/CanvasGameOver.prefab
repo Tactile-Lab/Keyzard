@@ -498,6 +498,7 @@ GameObject:
   - component: {fileID: 3896893375845764595}
   - component: {fileID: 1723821163041778500}
   - component: {fileID: 9024710918463753986}
+  - component: {fileID: 960201722325215994}
   m_Layer: 5
   m_Name: ImageNoir
   m_TagString: Untagged
@@ -556,7 +557,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -9053196554008186725, guid: 44df92352ec70b3428b9c38d9bd4a1ae, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -566,6 +567,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &960201722325215994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6023221893938740267}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc19c80998c37b741a8be790d844983e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameOverMenu
+  imageRejouer: {fileID: 3808604870607766622}
+  imageMenu: {fileID: 7034860046395358617}
+  iconSelection: {fileID: 8574049137588901547}
 --- !u!1 &6999430363653447649
 GameObject:
   m_ObjectHideFlags: 0

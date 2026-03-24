@@ -276,4 +276,28 @@ public class SpellInventoryManager : MonoBehaviour
         hasUnseenUnlockedSpell = hasUnseen;
         BookNotificationChanged?.Invoke(hasUnseenUnlockedSpell);
     }
+
+    public void ResetInventory()
+    {
+        // Réinitialiser la liste des sorts débloqués
+        unlockedSpells.Clear();
+        unlockedIds.Clear();
+
+        // Réinitialiser les sorts assignés
+        assignedSpells.Clear();
+
+        // Réinitialiser la notification de livre
+        SetBookNotificationState(false);
+
+        // Réinitialiser l'état initialisé
+        initialized = false;
+
+        // Réappliquer éventuellement l'inventaire de départ si nécessaire
+        if (initializeOnAwake)
+        {
+            InitializeStartingInventory();
+        }
+
+        Debug.Log("SpellInventoryManager: inventaire réinitialisé.");
+    }
 }
