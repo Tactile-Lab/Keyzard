@@ -727,12 +727,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuManager
   nouvellePartie:
     target: {fileID: 1249403548}
-    outlineBehaviour: {fileID: 0}
-    outlineObject: {fileID: 0}
+    autoOutline: 1
+    outlineColor: {r: 0.94509804, g: 0.5372549, b: 0.050980393, a: 1}
+    outlineDistance: {x: 6, y: 6}
   quitter:
     target: {fileID: 1174147320}
-    outlineBehaviour: {fileID: 0}
-    outlineObject: {fileID: 0}
+    autoOutline: 1
+    outlineColor: {r: 0.94509804, g: 0.5372549, b: 0.050980393, a: 1}
+    outlineDistance: {x: 6, y: 6}
   gameplaySceneName: RoomCrawling New
   selectedScale: 1.08
   unselectedScale: 1
@@ -1961,6 +1963,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3964778990748465486, guid: 6e2c46bbfd5f65e4aa5da87b36dd2401, type: 3}
+      propertyPath: glossaryPrefab
+      value: 
+      objectReference: {fileID: 4487483669627878479, guid: 27d625c986307e44aa3f59875da743c7, type: 3}
+    - target: {fileID: 3964778990748465486, guid: 6e2c46bbfd5f65e4aa5da87b36dd2401, type: 3}
+      propertyPath: typingManagerPrefab
+      value: 
+      objectReference: {fileID: 2793992817895758854, guid: 8730bc478c42bba48927f1b8b30bf2f0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
