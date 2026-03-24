@@ -41,7 +41,7 @@ public class GameOverMenu : MonoBehaviour
         }
 
         // Validation : espace, entrée principale ou pavé numérique
-        if (keyboard.spaceKey.wasPressedThisFrame || keyboard.enterKey.wasPressedThisFrame || keyboard.numpadEnterKey.wasPressedThisFrame)
+        if (keyboard.spaceKey.wasPressedThisFrame)
         {
             if (selectionIndex == 0)
                 Rejouer();
