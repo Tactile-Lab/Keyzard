@@ -4871,6 +4871,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7479939145399708160}
     m_Modifications:
+    - target: {fileID: 3163008634862583173, guid: 27d625c986307e44aa3f59875da743c7, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: e0a00e16a0e1b174f82a299f1647f610, type: 2}
     - target: {fileID: 4487483669627878479, guid: 27d625c986307e44aa3f59875da743c7, type: 3}
       propertyPath: m_Name
       value: Glossaire
