@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -32,9 +33,11 @@ public class MainMenuManager : MonoBehaviour
 
     [Header("Input")]
     [SerializeField] private float inputCooldown = 0.12f;
+    [SerializeField] private bool logSelectionWarnings = true;
 
     private readonly MenuOption[] options = new MenuOption[2];
     private Vector3[] baseScales = new Vector3[2];
+    private readonly HashSet<int> warnedOptionIndices = new HashSet<int>();
     private int selectedIndex;
     private float nextInputTime;
     private bool isLoading;
@@ -183,16 +186,33 @@ public class MainMenuManager : MonoBehaviour
         for (int i = 0; i < options.Length; i++)
         {
             bool isSelected = i == selectedIndex;
+            MenuOption option = options[i];
 
-            if (options[i] != null && options[i].outlineBehaviour != null)
+            if (option != null && option.outlineBehaviour != null)
             {
-                options[i].outlineBehaviour.enabled = isSelected;
+                if (CanToggleOutlineBehaviour(option.outlineBehaviour))
+                {
+                    option.outlineBehaviour.enabled = isSelected;
+                }
+                else if (logSelectionWarnings && warnedOptionIndices.Add(i))
+                {
+                    Debug.LogWarning(
+                        $"[MainMenuManager] outlineBehaviour sur l'option {i} n'est pas un composant d'outline/shadow. " +
+                        "Assigne un component Unity UI Outline (ou utilise outlineObject)."
+                    );
+                }
             }
 
-            if (options[i] != null && options[i].outlineObject != null)
+            if (option != null && option.outlineObject != null)
             {
-                options[i].outlineObject.SetActive(isSelected);
+                option.outlineObject.SetActive(isSelected);
             }
         }
+    }
+
+    private static bool CanToggleOutlineBehaviour(Behaviour behaviour)
+    {
+        string typeName = behaviour.GetType().Name;
+        return typeName.Contains("Outline") || typeName.Contains("Shadow");
     }
 }

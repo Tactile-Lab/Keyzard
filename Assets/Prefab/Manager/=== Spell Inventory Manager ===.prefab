@@ -54,3 +54,5 @@ MonoBehaviour:
   - {fileID: 6111884763938885358, guid: be80c448a4a43424187dfefa442e6c5a, type: 3}
   initializeOnAwake: 1
   debugUnlockAllSpellsOnStart: 0
+  bookNormal: {fileID: 0}
+  bookGlow: {fileID: 0}
