@@ -99,8 +99,7 @@ public class SpellUnlockTrigger : MonoBehaviour
         if (visual != null)
             visual.gameObject.SetActive(false);
 
-        if (destroyAfterUnlock)
-            Destroy(gameObject);
+
     }
 
     private IEnumerator ShowBanner()
@@ -108,9 +107,13 @@ public class SpellUnlockTrigger : MonoBehaviour
         if (banière != null)
             banière.SetActive(true);
 
-        yield return new WaitForSeconds(bannerDuration);
+
+        yield return new WaitForSecondsRealtime(bannerDuration);
 
         if (banière != null)
             banière.SetActive(false);
+
+        if (destroyAfterUnlock)
+            Destroy(gameObject);
     }
 }
