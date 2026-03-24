@@ -63,6 +63,7 @@ public class PlayerDeathEffects : MonoBehaviour
 
         // Activer canvas
         canvas.gameObject.SetActive(true);
+        gameOverText.gameObject.SetActive(false);
 
         // Joueur devant
         SpriteRenderer sr = player.GetComponent<SpriteRenderer>();
