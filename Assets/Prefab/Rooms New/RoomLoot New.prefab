@@ -1713,8 +1713,10 @@ MonoBehaviour:
   visual: {fileID: 8329534384939397848}
   triggerOnlyOnce: 1
   destroyAfterUnlock: 1
-  pickupDelay: 1
+  pickupDelay: 2
   animBeforeEnd: 0.1
+  "bani\xE8re": {fileID: 0}
+  textSortUnlock: {fileID: 0}
 --- !u!70 &5309405757624302532
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
