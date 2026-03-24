@@ -28,6 +28,12 @@ public class SpellInventoryManager : MonoBehaviour
 
     private readonly HashSet<Sort> assignedSpells = new HashSet<Sort>();
 
+    [Header("Book Notification")]
+    [SerializeField] private GameObject bookNormal;   // le book normal existant
+    [SerializeField] private GameObject bookGlow;     // le book avec lueur
+    private bool bookHidden = false;
+
+
     public IReadOnlyList<Sort> GetSpellCatalog()
     {
         if (allSpells != null && allSpells.Count > 0)
@@ -175,6 +181,14 @@ public class SpellInventoryManager : MonoBehaviour
             InventoryChanged?.Invoke();
         }
 
+        // --- Book glow pour nouveau sort ---
+        if (bookGlow != null && bookNormal != null)
+        {
+            bookGlow.SetActive(true);
+            bookNormal.SetActive(false);
+            bookHidden = false;
+        }
+
         return true;
     }
 
@@ -253,5 +267,15 @@ public class SpellInventoryManager : MonoBehaviour
     {
         if (assignedSpells.Contains(spell))
             assignedSpells.Remove(spell);
+    }
+
+    public void OnGlossaryOpened()
+    {
+        if (bookGlow != null && bookNormal != null && !bookHidden)
+        {
+            bookGlow.SetActive(false);
+            bookNormal.SetActive(true);
+            bookHidden = true;
+        }
     }
 }

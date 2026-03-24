@@ -141,6 +141,10 @@ public class GlossaryToggleController : MonoBehaviour
             SetBackdropState(true, true);
             ApplyOpenState(true, true);
             AnimatePanel(openX, openEase, true, false);
+            if (SpellInventoryManager.Instance != null)
+            {
+                SpellInventoryManager.Instance.OnGlossaryOpened();
+            }
             return;
         }
 
