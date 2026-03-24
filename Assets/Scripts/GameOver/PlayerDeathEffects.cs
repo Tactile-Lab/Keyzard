@@ -6,44 +6,49 @@ using UnityEngine.UI;
 public class PlayerDeathEffects : MonoBehaviour
 {
     [Header("UI")]
-    public Canvas canvas;           // Ton Canvas classique
-    public Image noirImage;         // Image noire dans le Canvas
-    public TMP_Text gameOverText;       // GameOver UI dans le même Canvas
+    public Canvas canvas;
+    public Image noirImage;         // fade noir
+    public TMP_Text gameOverText;
     public float fadeDuration = 1f;
 
     [Header("References")]
-    public Animator animator;       // Animator du joueur
-    public GameObject staff;        // Staff à désactiver
-    public Camera mainCamera;       // Caméra pour zoom instantané
-    public Transform player;        // Transform du joueur
+    public Animator animator;
+    public GameObject staff;
+    public Camera mainCamera;
+    public Transform player;
 
     [Header("Camera Zoom")]
-    public float zoomAmount = 2f;   // Zoom instantané
+    public float zoomAmount = 2f;      // zoom final
+    public float zoomDuration = 0.5f;  // durée du zoom
+
+    [Header("Shake (optionnel)")]
+    public float shakeIntensity = 0.2f;
+    public float shakeDuration = 0.3f;
+
+    [Header("Slow Motion")]
+    public float slowMotionFactor = 0f; // 0 = freeze complet
+
+    [Header("Delays")]
+    public float postFadeDelay = 0.3f;  // pause avant Game Over
 
     private void OnEnable()
     {
-        // Récupérer le PlayerHealth (ex : attaché au même GameObject)
         PlayerHealth playerHealth = GetComponent<PlayerHealth>();
         if (playerHealth != null)
-        {
             playerHealth.Died += OnPlayerDied;
-        }
     }
 
     private void OnDisable()
     {
-        // Se désabonner pour éviter les erreurs si l’objet est détruit
         PlayerHealth playerHealth = GetComponent<PlayerHealth>();
         if (playerHealth != null)
-        {
             playerHealth.Died -= OnPlayerDied;
-        }
     }
 
     public void OnPlayerDied()
     {
         // Freeze gameplay
-        Time.timeScale = 0f;
+        Time.timeScale = slowMotionFactor;
 
         // Désactiver le staff
         if (staff != null)
@@ -56,57 +61,83 @@ public class PlayerDeathEffects : MonoBehaviour
             animator.SetTrigger("Die");
         }
 
-        // Zoom caméra instantané sur le joueur
-        if (mainCamera != null && player != null)
-        {
-            mainCamera.transform.position = new Vector3(player.position.x, player.position.y, mainCamera.transform.position.z);
-            mainCamera.orthographicSize /= zoomAmount;
-        }
-
+        // Activer canvas
         canvas.gameObject.SetActive(true);
+        gameOverText.gameObject.SetActive(false);
+
+        // Joueur devant
         SpriteRenderer sr = player.GetComponent<SpriteRenderer>();
-        sr.sortingOrder = 2;
+        if (sr != null)
+            sr.sortingOrder = 2;
 
-        // Lancer fade UI
-        StartCoroutine(DeathSequence());
+        // Lancer la cinématique
+        StartCoroutine(DeathCinematic());
     }
 
-    private IEnumerator DeathSequence()
+    private IEnumerator DeathCinematic()
+{
+    float t = 0f;
+
+    // Zoom et position initiale
+    float startSize = mainCamera.orthographicSize;
+    float targetSize = startSize / zoomAmount;
+
+    Vector3 startPos = mainCamera.transform.position;
+    Vector3 targetPos = new Vector3(player.position.x, player.position.y, startPos.z);
+
+    // Setup noir
+    Color noirColor = noirImage.color;
+    noirColor.a = 0f;
+    noirImage.color = noirColor;
+    noirImage.gameObject.SetActive(true);
+
+    // 🔥 Zoom + recentrage + fade noir en même temps
+    while (t < fadeDuration)
     {
-        // Fade Image noire
-        if (noirImage != null)
-        {
-            Color noirColor = noirImage.color;
-            noirColor.a = 0f;
-            noirImage.color = noirColor;
-            noirImage.gameObject.SetActive(true);
+        t += Time.unscaledDeltaTime;
+        float progress = t / fadeDuration;
 
-            float t = 0f;
-            while (t < fadeDuration)
-            {
-                t += Time.unscaledDeltaTime;
-                noirColor.a = Mathf.Lerp(0f, 1f, t / fadeDuration);
-                noirImage.color = noirColor;
-                yield return null;
-            }
-        }
+        // easing pour fluidité
+        float eased = progress * progress;
 
-        // Fade GameOver Text
-        if (gameOverText != null)
+        // Zoom progressif
+        mainCamera.orthographicSize = Mathf.Lerp(startSize, targetSize, eased);
+
+        // Recentrage progressif sur le joueur
+        mainCamera.transform.position = Vector3.Lerp(startPos, targetPos, eased);
+
+        // Fade noir
+        noirColor.a = Mathf.Lerp(0f, 1f, eased);
+        noirImage.color = noirColor;
+
+        yield return null;
+    }
+
+    // Assurer valeurs finales
+    mainCamera.orthographicSize = targetSize;
+    mainCamera.transform.position = targetPos;
+    noirColor.a = 1f;
+    noirImage.color = noirColor;
+
+    // Pause dramatique
+    yield return new WaitForSecondsRealtime(postFadeDelay);
+
+    // 🔥 Game Over fade
+    if (gameOverText != null)
+    {
+        Color textColor = gameOverText.color;
+        textColor.a = 0f;
+        gameOverText.color = textColor;
+        gameOverText.gameObject.SetActive(true);
+
+        float t2 = 0f;
+        while (t2 < fadeDuration)
         {
-            Color textColor = gameOverText.color;
-            textColor.a = 0f;
+            t2 += Time.unscaledDeltaTime;
+            textColor.a = Mathf.Lerp(0f, 1f, t2 / fadeDuration);
             gameOverText.color = textColor;
-            gameOverText.gameObject.SetActive(true);
-
-            float t = 0f;
-            while (t < fadeDuration)
-            {
-                t += Time.unscaledDeltaTime;
-                textColor.a = Mathf.Lerp(0f, 1f, t / fadeDuration);
-                gameOverText.color = textColor;
-                yield return null;
-            }
+            yield return null;
         }
     }
+}
 }
