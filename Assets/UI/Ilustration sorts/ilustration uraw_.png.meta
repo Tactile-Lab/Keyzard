@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: ffe35a25f288f064f8edd99aa45d0e28
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2420181966198983834
+    second: ilustration uraw__0
+  - first:
+      213: -8960176411448133963
+    second: ilustration uraw__1
+  - first:
+      213: -4179227319897372480
+    second: ilustration uraw__2
+  - first:
+      213: 3628871984443488648
+    second: ilustration uraw__3
+  - first:
+      213: -2433992569692358668
+    second: ilustration uraw__4
+  - first:
+      213: -871558959463839127
+    second: ilustration uraw__5
+  - first:
+      213: 8079050414791968988
+    second: ilustration uraw__6
+  - first:
+      213: -7456207218333400813
+    second: ilustration uraw__7
+  - first:
+      213: -8949009596624075454
+    second: ilustration uraw__8
+  - first:
+      213: -8576060101562183724
+    second: ilustration uraw__9
+  - first:
+      213: 1309468594906502831
+    second: ilustration uraw__10
+  - first:
+      213: 2850412706450403659
+    second: ilustration uraw__11
+  - first:
+      213: 8456592260182942069
+    second: ilustration uraw__12
+  - first:
+      213: -693812163763434204
+    second: ilustration uraw__13
+  - first:
+      213: 4103278501059838059
+    second: ilustration uraw__14
+  - first:
+      213: -2620036954674303230
+    second: ilustration uraw__15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ilustration uraw__0
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 194
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9cc813fca6369120800000000000000
+      internalID: 2420181966198983834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ilustration uraw__1
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 194
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b6bcced60f07a380800000000000000
+      internalID: -8960176411448133963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ilustration uraw__2
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 204
+        width: 24
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c8c8e125e66006c0800000000000000
+      internalID: -4179227319897372480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ilustration uraw__3
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 204
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 889fe10e7d75c5230800000000000000
+      internalID: 3628871984443488648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ilustration uraw__4
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 108
+        width: 96
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f7fb8957a8b83ed0800000000000000
+      internalID: -2433992569692358668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ilustration uraw__5
+      rect:
+        serializedVersion: 2
+        x: 189
+        y: 102
+        width: 84
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96a495c7eb997e3f0800000000000000
+      internalID: -871558959463839127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ilustration uraw__6
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 144
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd8c5203c8d8e1070800000000000000
+      internalID: 8079050414791968988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ilustration uraw__7
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 132
+        width: 46
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 311c8832a0b368890800000000000000
+      internalID: -7456207218333400813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ilustration uraw__8
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 89
+        width: 80
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24509ad8f2bbec380800000000000000
+      internalID: -8949009596624075454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ilustration uraw__9
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 68
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4df4cf986c6bbf880800000000000000
+      internalID: -8576060101562183724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ilustration uraw__10
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 68
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa69eebcfba2c2210800000000000000
+      internalID: 1309468594906502831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ilustration uraw__11
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 78
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b417c3f1143be8720800000000000000
+      internalID: 2850412706450403659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ilustration uraw__12
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 68
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 571a58e0bd9db5570800000000000000
+      internalID: 8456592260182942069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ilustration uraw__13
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 68
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42d090653851f56f0800000000000000
+      internalID: -693812163763434204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ilustration uraw__14
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 68
+        width: 17
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b604b2e7e06c1f830800000000000000
+      internalID: 4103278501059838059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ilustration uraw__15
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 68
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20fed327542c3abd0800000000000000
+      internalID: -2620036954674303230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      ilustration uraw__0: 2420181966198983834
+      ilustration uraw__1: -8960176411448133963
+      ilustration uraw__10: 1309468594906502831
+      ilustration uraw__11: 2850412706450403659
+      ilustration uraw__12: 8456592260182942069
+      ilustration uraw__13: -693812163763434204
+      ilustration uraw__14: 4103278501059838059
+      ilustration uraw__15: -2620036954674303230
+      ilustration uraw__2: -4179227319897372480
+      ilustration uraw__3: 3628871984443488648
+      ilustration uraw__4: -2433992569692358668
+      ilustration uraw__5: -871558959463839127
+      ilustration uraw__6: 8079050414791968988
+      ilustration uraw__7: -7456207218333400813
+      ilustration uraw__8: -8949009596624075454
+      ilustration uraw__9: -8576060101562183724
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
