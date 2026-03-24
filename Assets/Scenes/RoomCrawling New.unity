@@ -4057,6 +4057,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3896893375845764595, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 3896893375845764595, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 450
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016388994132163480, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 461.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016388994132163480, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 5016388994132163480, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 136.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5079272113554551231, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: m_fontSize
+      value: 51.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 5079272113554551231, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: m_TextWrappingMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5079272113554551231, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6690447175553968303, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
       propertyPath: m_Camera
       value: 
@@ -4064,6 +4096,10 @@ PrefabInstance:
     - target: {fileID: 6999430363653447649, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
       propertyPath: m_Name
       value: CanvasGameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 6999430363653447649, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7208841546056828823, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
       propertyPath: m_Pivot.x
