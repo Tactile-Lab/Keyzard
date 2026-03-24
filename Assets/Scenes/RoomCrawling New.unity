@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!224 &18124817 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7034860046395358617, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+  m_PrefabInstance: {fileID: 6327162050714892240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &196875347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -232,6 +237,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8189f796e82fef2498ef69c4de6a9927, type: 3}
+--- !u!1 &198912280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6023221893938740267, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+  m_PrefabInstance: {fileID: 6327162050714892240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!213 &223564388
 Sprite:
   m_ObjectHideFlags: 0
@@ -727,6 +737,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5cd83e1b31c5b479ac58e6b3d3e164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControler
+--- !u!224 &502493075 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8574049137588901547, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+  m_PrefabInstance: {fileID: 6327162050714892240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &523630102 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5079272113554551231, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
@@ -1613,6 +1628,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5089501067485288850, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
   m_PrefabInstance: {fileID: 495252504}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &858252297 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3808604870607766622, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+  m_PrefabInstance: {fileID: 6327162050714892240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1018376867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2352,12 +2372,27 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 9024710918463753986, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
   m_PrefabInstance: {fileID: 6327162050714892240}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 198912280}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &1257525862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198912280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc19c80998c37b741a8be790d844983e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameOverMenu
+  imageRejouer: {fileID: 858252297}
+  imageMenu: {fileID: 18124817}
+  iconSelection: {fileID: 502493075}
 --- !u!114 &1273788900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3720,7 +3755,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6023221893938740267, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1257525862}
   m_SourcePrefab: {fileID: 100100000, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
