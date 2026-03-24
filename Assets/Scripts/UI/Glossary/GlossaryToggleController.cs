@@ -9,8 +9,6 @@ public class GlossaryToggleController : MonoBehaviour
     [Header("Glossary UI")]
     [SerializeField] private GameObject glossaryRoot;
     [SerializeField] private RectTransform glossaryPanel;
-    [SerializeField] private string glossarySearchByTag = "Glossary";
-    [SerializeField] private string glossarySearchByName = "";
 
     [Header("Input")]
     [SerializeField] private Key toggleKey = Key.LeftCtrl;
@@ -47,13 +45,13 @@ public class GlossaryToggleController : MonoBehaviour
     private Tween backdropTween;
     private Vector3 basePanelScale = Vector3.one;
     private CanvasGroup backdropGroup;
-    private bool missingReferencesWarningLogged;
-    private float lastResolveAttemptTime = -999f;
-    private const float ResolveRetryInterval = 1f;
 
     private void Awake()
     {
-        ResolveGlossaryReferences();
+        if (glossaryPanel == null && glossaryRoot != null)
+        {
+            glossaryPanel = glossaryRoot.GetComponent<RectTransform>();
+        }
 
         if (glossaryPanel != null)
         {
@@ -87,12 +85,6 @@ public class GlossaryToggleController : MonoBehaviour
 
     private void Update()
     {
-        ResolveGlossaryReferencesDynamic();
-        if (!HasUsableGlossary())
-        {
-            return;
-        }
-
         Keyboard keyboard = Keyboard.current;
         if (keyboard == null)
         {
@@ -110,11 +102,6 @@ public class GlossaryToggleController : MonoBehaviour
 
     public void ToggleGlossary()
     {
-        if (!HasUsableGlossary())
-        {
-            return;
-        }
-
         if (isTransitioning || Time.unscaledTime < nextToggleAllowedTime)
         {
             return;
@@ -126,11 +113,6 @@ public class GlossaryToggleController : MonoBehaviour
 
     public void SetGlossaryOpen(bool open)
     {
-        if (!HasUsableGlossary())
-        {
-            return;
-        }
-
         if (isOpen == open)
         {
             return;
@@ -356,122 +338,5 @@ public class GlossaryToggleController : MonoBehaviour
         {
             backdropGroup = backdropTarget.AddComponent<CanvasGroup>();
         }
-    }
-
-    private void ResolveGlossaryReferences()
-    {
-        if (glossaryRoot == null && glossaryPanel != null)
-        {
-            glossaryRoot = glossaryPanel.gameObject;
-        }
-
-        if (glossaryPanel == null && glossaryRoot != null)
-        {
-            glossaryPanel = glossaryRoot.GetComponent<RectTransform>();
-            if (glossaryPanel == null)
-            {
-                glossaryPanel = glossaryRoot.GetComponentInChildren<RectTransform>(true);
-            }
-        }
-    }
-
-    private void ResolveGlossaryReferencesDynamic()
-    {
-        // Retry resolution periodically to handle scene changes/prefab instantiation.
-        if (Time.time - lastResolveAttemptTime < ResolveRetryInterval)
-        {
-            return;
-        }
-
-        lastResolveAttemptTime = Time.time;
-
-        // Already found, keep it.
-        if (glossaryRoot != null)
-        {
-            ResolveGlossaryReferences();
-            return;
-        }
-
-        // First: check if glossaryRoot is on this GameObject or a parent/child.
-        if (glossaryRoot == null)
-        {
-            glossaryRoot = gameObject;
-        }
-
-        if (glossaryPanel == null)
-        {
-            glossaryPanel = gameObject.GetComponent<RectTransform>();
-            if (glossaryPanel == null)
-            {
-                glossaryPanel = gameObject.GetComponentInChildren<RectTransform>();
-            }
-        }
-
-        ResolveGlossaryReferences();
-        if (glossaryRoot != null)
-        {
-            return;
-        }
-
-        // Search by tag in current scene.
-        if (!string.IsNullOrEmpty(glossarySearchByTag))
-        {
-            try
-            {
-                GameObject found = GameObject.FindWithTag(glossarySearchByTag);
-                if (found != null)
-                {
-                    glossaryRoot = found;
-                    ResolveGlossaryReferences();
-                    return;
-                }
-            }
-            catch (UnityEngine.UnityException)
-            {
-                // Tag doesn't exist; continue with name search.
-            }
-        }
-
-        // Search by name in current scene.
-        if (!string.IsNullOrEmpty(glossarySearchByName))
-        {
-            GameObject found = GameObject.Find(glossarySearchByName);
-            if (found != null)
-            {
-                glossaryRoot = found;
-                ResolveGlossaryReferences();
-                return;
-            }
-        }
-
-        // Fallback: look for any active Canvas with a glossary-like name.
-        Canvas[] allCanvases = FindObjectsByType<Canvas>(FindObjectsSortMode.None);
-        foreach (Canvas canvas in allCanvases)
-        {
-            if (canvas.gameObject.name.Contains("Glossary") || canvas.gameObject.name.Contains("glossary"))
-            {
-                glossaryRoot = canvas.gameObject;
-                ResolveGlossaryReferences();
-                return;
-            }
-        }
-    }
-
-    private bool HasUsableGlossary()
-    {
-        if (glossaryRoot != null)
-        {
-            return true;
-        }
-
-        if (!missingReferencesWarningLogged)
-        {
-            missingReferencesWarningLogged = true;
-            Debug.LogWarning("[GlossaryToggleController] Glossary references missing. Assign glossaryRoot (or glossaryPanel) in inspector to enable Ctrl toggle.");
-        }
-
-        IsGlossaryOpen = false;
-        Time.timeScale = 1f;
-        return false;
     }
 }

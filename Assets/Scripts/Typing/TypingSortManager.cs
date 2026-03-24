@@ -44,7 +44,6 @@ public class TypingSortManager : MonoBehaviour
     private bool sortLibreMode = false;
     private readonly List<Sort> activeSorts = new List<Sort>();
     private bool inventoryMissingWarningLogged;
-    private bool gameManagerMissingWarningLogged;
 
     public GameManager.EnemyEntry SelectedEnemy => selectedEnemy;
 
@@ -56,8 +55,6 @@ public class TypingSortManager : MonoBehaviour
         if (Keyboard.current != null)
             Keyboard.current.onTextInput += OnTextInput;
 
-        ResolveGameManager();
-        ResolvePlayerController();
         ResolveSpellInventory();
         RefreshAvailableSorts();
 
@@ -80,10 +77,8 @@ public class TypingSortManager : MonoBehaviour
 
     private void Start()
     {
-        ResolveGameManager();
-        ResolvePlayerController();
-        ResolveSpellInventory();
-        RefreshAvailableSorts();
+        if (gameManager != null)
+            listEnemies = gameManager.list_enemies;
     }
 
     private void OnTextInput(char c)
@@ -210,8 +205,6 @@ public class TypingSortManager : MonoBehaviour
 
     private void Update()
     {
-        // Rebuild missing references automatically if prefab links are broken.
-        ResolveRuntimeReferencesIfNeeded();
         UpdateDisplay();
     }
 
@@ -378,61 +371,6 @@ public class TypingSortManager : MonoBehaviour
         {
             inventoryMissingWarningLogged = true;
             Debug.LogError("[TypingSortManager] SpellInventoryManager introuvable. Ajoute-le dans la scene de depart.");
-        }
-    }
-
-    private void ResolveGameManager()
-    {
-        if (gameManager == null)
-        {
-            gameManager = GameManager.Instance;
-        }
-
-        if (gameManager == null)
-        {
-            gameManager = FindFirstObjectByType<GameManager>();
-        }
-
-        if (gameManager != null)
-        {
-            listEnemies = gameManager.list_enemies;
-            return;
-        }
-
-        if (!gameManagerMissingWarningLogged)
-        {
-            gameManagerMissingWarningLogged = true;
-            Debug.LogError("[TypingSortManager] GameManager introuvable. Ajoute-le dans la scene de depart.");
-        }
-    }
-
-    private void ResolvePlayerController()
-    {
-        if (playerController == null)
-        {
-            playerController = FindFirstObjectByType<PlayerControler>();
-        }
-    }
-
-    private void ResolveRuntimeReferencesIfNeeded()
-    {
-        if (gameManager == null || listEnemies == null)
-        {
-            ResolveGameManager();
-        }
-
-        if (spellInventory == null)
-        {
-            ResolveSpellInventory();
-            if (spellInventory != null)
-            {
-                RefreshAvailableSorts();
-            }
-        }
-
-        if (playerController == null)
-        {
-            ResolvePlayerController();
         }
     }
 
