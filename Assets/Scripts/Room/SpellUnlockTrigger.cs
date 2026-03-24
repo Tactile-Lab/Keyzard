@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class SpellUnlockTrigger : MonoBehaviour
 {
@@ -11,7 +12,18 @@ public class SpellUnlockTrigger : MonoBehaviour
     [SerializeField] private float pickupDelay = 1f; // temps au-dessus de la tête
     [SerializeField] private float animBeforeEnd = 0.1f;
 
+    [SerializeField] private GameObject banière;
+    [SerializeField] private TMP_Text textSortUnlock;
+
     private bool consumed = false;
+
+    public void Awake()
+    {
+        if (banière != null )
+        {
+            banière.SetActive(false);
+        }
+    }
 
     public void SetSpell(Sort spell)
     {
@@ -24,6 +36,11 @@ public class SpellUnlockTrigger : MonoBehaviour
         }
 
         gameObject.SetActive(true);
+
+        if(textSortUnlock != null)
+        {
+            textSortUnlock.text = spell.nomSort.ToUpper();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -45,6 +62,7 @@ public class SpellUnlockTrigger : MonoBehaviour
         if (unlocked)
             Debug.Log($"Sort débloqué : {spellToUnlock.nomSort}");
         
+        banière.SetActive(true);
 
         // 🔹 Ensuite lancer la coroutine existante
         StartCoroutine(PickupAboveHead(collision.transform));
@@ -79,6 +97,8 @@ public class SpellUnlockTrigger : MonoBehaviour
         // cacher le visuel
         if (visual != null)
             visual.gameObject.SetActive(false);
+        if (banière != null)
+            banière.SetActive(false);
 
         if (destroyAfterUnlock)
             Destroy(gameObject);
