@@ -30,12 +30,14 @@ public class PlayerDeathEffects : MonoBehaviour
 
     [Header("Delays")]
     public float postFadeDelay = 0.3f;  // pause avant Game Over
+    
 
     private void OnEnable()
     {
         PlayerHealth playerHealth = GetComponent<PlayerHealth>();
         if (playerHealth != null)
             playerHealth.Died += OnPlayerDied;
+        canvas.gameObject.SetActive(false);
     }
 
     private void OnDisable()
@@ -91,7 +93,10 @@ public class PlayerDeathEffects : MonoBehaviour
     noirImage.color = noirColor;
     noirImage.gameObject.SetActive(true);
 
-    // 🔥 Zoom + recentrage + fade noir en même temps
+    // Agrandir le spotlight avant fade
+    noirImage.rectTransform.localScale = Vector3.one * 5f; // taille initiale grande
+
+    // 🔥 Zoom + recentrage + fade noir + rétrécissement spotlight
     while (t < fadeDuration)
     {
         t += Time.unscaledDeltaTime;
@@ -110,6 +115,9 @@ public class PlayerDeathEffects : MonoBehaviour
         noirColor.a = Mathf.Lerp(0f, 1f, eased);
         noirImage.color = noirColor;
 
+        // Spotlight rétrécissant vers scale = 1
+        noirImage.rectTransform.localScale = Vector3.one * Mathf.Lerp(5f, 1f, eased);
+
         yield return null;
     }
 
@@ -118,6 +126,7 @@ public class PlayerDeathEffects : MonoBehaviour
     mainCamera.transform.position = targetPos;
     noirColor.a = 1f;
     noirImage.color = noirColor;
+    noirImage.rectTransform.localScale = Vector3.one; // scale finale = 1
 
     // Pause dramatique
     yield return new WaitForSecondsRealtime(postFadeDelay);
