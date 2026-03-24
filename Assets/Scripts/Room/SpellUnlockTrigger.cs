@@ -13,6 +13,7 @@ public class SpellUnlockTrigger : MonoBehaviour
     [SerializeField] private float animBeforeEnd = 0.1f;
 
     [SerializeField] private GameObject banière;
+    [SerializeField] private float bannerDuration = 4f;
     [SerializeField] private TMP_Text textSortUnlock;
 
     private bool consumed = false;
@@ -62,7 +63,7 @@ public class SpellUnlockTrigger : MonoBehaviour
         if (unlocked)
             Debug.Log($"Sort débloqué : {spellToUnlock.nomSort}");
         
-        banière.SetActive(true);
+        StartCoroutine(ShowBanner());
 
         // 🔹 Ensuite lancer la coroutine existante
         StartCoroutine(PickupAboveHead(collision.transform));
@@ -97,10 +98,19 @@ public class SpellUnlockTrigger : MonoBehaviour
         // cacher le visuel
         if (visual != null)
             visual.gameObject.SetActive(false);
-        if (banière != null)
-            banière.SetActive(false);
 
         if (destroyAfterUnlock)
             Destroy(gameObject);
+    }
+
+    private IEnumerator ShowBanner()
+    {
+        if (banière != null)
+            banière.SetActive(true);
+
+        yield return new WaitForSeconds(bannerDuration);
+
+        if (banière != null)
+            banière.SetActive(false);
     }
 }
