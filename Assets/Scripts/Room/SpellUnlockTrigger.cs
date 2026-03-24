@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class SpellUnlockTrigger : MonoBehaviour
 {
@@ -8,10 +9,22 @@ public class SpellUnlockTrigger : MonoBehaviour
     [SerializeField] private SpellUnlockVisual visual;
     [SerializeField] private bool triggerOnlyOnce = true;
     [SerializeField] private bool destroyAfterUnlock = true;
-    [SerializeField] private float pickupDelay = 3f; // temps au-dessus de la tête
-    [SerializeField] private float acquireAnimDuration = 0.4f; // durée de l'anim AcquireSpell
+    [SerializeField] private float pickupDelay = 1f; // temps au-dessus de la tête
+    [SerializeField] private float animBeforeEnd = 0.1f;
+
+    [SerializeField] private GameObject banière;
+    [SerializeField] private float bannerDuration = 4f;
+    [SerializeField] private TMP_Text textSortUnlock;
 
     private bool consumed = false;
+
+    public void Awake()
+    {
+        if (banière != null )
+        {
+            banière.SetActive(false);
+        }
+    }
 
     public void SetSpell(Sort spell)
     {
@@ -24,6 +37,11 @@ public class SpellUnlockTrigger : MonoBehaviour
         }
 
         gameObject.SetActive(true);
+
+        if(textSortUnlock != null)
+        {
+            textSortUnlock.text = spell.nomSort.ToUpper();
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -37,17 +55,15 @@ public class SpellUnlockTrigger : MonoBehaviour
             return;
         }
 
-        consumed = true;
+        GetComponent<Collider2D>().enabled = false;
 
-        // 🔹 Lancer l'anim avant que le spell aille au-dessus de la tête
-        Animator playerAnimator = collision.GetComponent<Animator>();
-        if (playerAnimator != null)
-           playerAnimator.SetTrigger("acquireSpell");
-           Debug.Log("anim lancée");
+        consumed = true;
 
         bool unlocked = SpellInventoryManager.Instance.UnlockSpell(spellToUnlock);
         if (unlocked)
             Debug.Log($"Sort débloqué : {spellToUnlock.nomSort}");
+        
+        StartCoroutine(ShowBanner());
 
         // 🔹 Ensuite lancer la coroutine existante
         StartCoroutine(PickupAboveHead(collision.transform));
@@ -55,28 +71,48 @@ public class SpellUnlockTrigger : MonoBehaviour
 
     private IEnumerator PickupAboveHead(Transform player)
     {
-        // Attendre la fin de l'animation si nécessaire
-        yield return new WaitForSeconds(acquireAnimDuration);
+        Vector3 offset = new Vector3(0, 1f, 0);
 
-        Vector3 offset = new Vector3(0, 1f, 0); // juste au-dessus de la tête
-        visual.transform.position = player.position + offset; // position immédiate
+        Animator playerAnimator = player.GetComponent<Animator>();
+        bool animTriggered = false;
 
-        float timer = 0f;
-        while (timer < pickupDelay)
+        float startTime = Time.realtimeSinceStartup;
+
+        while (Time.realtimeSinceStartup < startTime + pickupDelay)
         {
-            timer += Time.deltaTime;
-
-            // garder le visuel au-dessus de la tête même si le joueur bouge
             visual.transform.position = player.position + offset;
+
+            if (!animTriggered && Time.realtimeSinceStartup >= startTime + pickupDelay - animBeforeEnd)
+            {
+                if (playerAnimator != null)
+                {
+                    playerAnimator.SetTrigger("acquireSpell");
+                }
+
+                animTriggered = true;
+            }
 
             yield return null;
         }
 
-        // Retirer le visuel
+        // cacher le visuel
         if (visual != null)
             visual.gameObject.SetActive(false);
 
-        // Détruire le trigger si nécessaire
+
+    }
+
+    private IEnumerator ShowBanner()
+    {
+        if (banière != null)
+            banière.SetActive(true);
+
+
+        yield return new WaitForSecondsRealtime(bannerDuration);
+
+        if (banière != null)
+            banière.SetActive(false);
+
         if (destroyAfterUnlock)
             Destroy(gameObject);
     }
