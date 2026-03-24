@@ -21,18 +21,15 @@ public class SpellInventoryManager : MonoBehaviour
     private readonly HashSet<string> unlockedIds = new HashSet<string>();
     private bool initialized;
     private bool lastDebugUnlockAllApplied = false;
+    private bool hasUnseenUnlockedSpell;
 
     public event Action InventoryChanged;
+    public event Action<bool> BookNotificationChanged;
 
     public IReadOnlyList<Sort> UnlockedSpells => unlockedSpells;
+    public bool HasUnseenUnlockedSpell => hasUnseenUnlockedSpell;
 
     private readonly HashSet<Sort> assignedSpells = new HashSet<Sort>();
-
-    [Header("Book Notification")]
-    [SerializeField] private GameObject bookNormal;   // le book normal existant
-    [SerializeField] private GameObject bookGlow;     // le book avec lueur
-    private bool bookHidden = false;
-
 
     public IReadOnlyList<Sort> GetSpellCatalog()
     {
@@ -66,6 +63,7 @@ public class SpellInventoryManager : MonoBehaviour
     {
         unlockedSpells.Clear();
         unlockedIds.Clear();
+        SetBookNotificationState(false);
 
         List<Sort> source = debugUnlockAllSpellsOnStart ? allSpells : startingSpells;
         for (int i = 0; i < source.Count; i++)
@@ -87,6 +85,7 @@ public class SpellInventoryManager : MonoBehaviour
 
         unlockedSpells.Clear();
         unlockedIds.Clear();
+        SetBookNotificationState(false);
 
         for (int i = 0; i < allSpells.Count; i++)
         {
@@ -178,15 +177,8 @@ public class SpellInventoryManager : MonoBehaviour
 
         if (notify)
         {
+            SetBookNotificationState(true);
             InventoryChanged?.Invoke();
-        }
-
-        // --- Book glow pour nouveau sort ---
-        if (bookGlow != null && bookNormal != null)
-        {
-            bookGlow.SetActive(true);
-            bookNormal.SetActive(false);
-            bookHidden = false;
         }
 
         return true;
@@ -271,11 +263,17 @@ public class SpellInventoryManager : MonoBehaviour
 
     public void OnGlossaryOpened()
     {
-        if (bookGlow != null && bookNormal != null && !bookHidden)
+        SetBookNotificationState(false);
+    }
+
+    private void SetBookNotificationState(bool hasUnseen)
+    {
+        if (hasUnseenUnlockedSpell == hasUnseen)
         {
-            bookGlow.SetActive(false);
-            bookNormal.SetActive(true);
-            bookHidden = true;
+            return;
         }
+
+        hasUnseenUnlockedSpell = hasUnseen;
+        BookNotificationChanged?.Invoke(hasUnseenUnlockedSpell);
     }
 }
