@@ -1605,10 +1605,6 @@ PrefabInstance:
       value: ==GAMEMANAGER==
       objectReference: {fileID: 0}
     - target: {fileID: 5673709739097317888, guid: 1ce3e4e3b860a2c48b50117c813ce729, type: 3}
-      propertyPath: popDuration
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5673709739097317888, guid: 1ce3e4e3b860a2c48b50117c813ce729, type: 3}
       propertyPath: glossaryRoot
       value: 
       objectReference: {fileID: 1927137531}
@@ -1620,18 +1616,6 @@ PrefabInstance:
       propertyPath: backdropTarget
       value: 
       objectReference: {fileID: 714684433}
-    - target: {fileID: 5673709739097317888, guid: 1ce3e4e3b860a2c48b50117c813ce729, type: 3}
-      propertyPath: backdropTargetAlpha
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5673709739097317888, guid: 1ce3e4e3b860a2c48b50117c813ce729, type: 3}
-      propertyPath: musicMuffleTransition
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5673709739097317888, guid: 1ce3e4e3b860a2c48b50117c813ce729, type: 3}
-      propertyPath: manageBackdropActiveState
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7846088186882273432, guid: 1ce3e4e3b860a2c48b50117c813ce729, type: 3}
       propertyPath: m_LocalPosition.x
       value: -28.60676
