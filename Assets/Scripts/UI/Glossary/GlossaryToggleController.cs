@@ -46,8 +46,17 @@ public class GlossaryToggleController : MonoBehaviour
     private Vector3 basePanelScale = Vector3.one;
     private CanvasGroup backdropGroup;
 
+    private PlayerHealth playerHealth;
+
     private void Awake()
     {
+        playerHealth = FindFirstObjectByType<PlayerHealth>();
+
+        if (playerHealth == null)
+        {
+            Debug.LogWarning("PlayerHealth introuvable dans la scène !");
+        }
+
         if (glossaryPanel == null && glossaryRoot != null)
         {
             glossaryPanel = glossaryRoot.GetComponent<RectTransform>();
@@ -102,6 +111,13 @@ public class GlossaryToggleController : MonoBehaviour
 
     public void ToggleGlossary()
     {
+
+        if (playerHealth != null && playerHealth.IsDead)
+        {
+            // Empêche l'ouverture si le joueur est mort
+            return;
+        }
+        
         if (isTransitioning || Time.unscaledTime < nextToggleAllowedTime)
         {
             return;
