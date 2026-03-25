@@ -46,15 +46,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuManager
   nouvellePartie:
     target: {fileID: 0}
-    outlineBehaviour: {fileID: 0}
-    outlineObject: {fileID: 0}
   quitter:
     target: {fileID: 0}
-    outlineBehaviour: {fileID: 0}
-    outlineObject: {fileID: 0}
   gameplaySceneName: RoomCrawling New
   selectedScale: 1.08
   unselectedScale: 1
   scaleLerpSpeed: 14
   inputCooldown: 0.12
-  logSelectionWarnings: 1

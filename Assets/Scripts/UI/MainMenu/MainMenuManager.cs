@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -11,12 +10,6 @@ public class MainMenuManager : MonoBehaviour
     {
         [Tooltip("Racine visuelle de l'option (image, texte, groupe).")]
         public RectTransform target;
-
-        [Tooltip("Composant visuel optionnel a activer pour le contour (Outline UI, script custom, etc.).")]
-        public Behaviour outlineBehaviour;
-
-        [Tooltip("Objet optionnel a activer pour afficher un contour sprite/UI.")]
-        public GameObject outlineObject;
     }
 
     [Header("Options")]
@@ -33,11 +26,10 @@ public class MainMenuManager : MonoBehaviour
 
     [Header("Input")]
     [SerializeField] private float inputCooldown = 0.12f;
-    [SerializeField] private bool logSelectionWarnings = true;
 
     private readonly MenuOption[] options = new MenuOption[2];
+    private readonly UIButtonSpriteSwap[] optionSpriteSwaps = new UIButtonSpriteSwap[2];
     private Vector3[] baseScales = new Vector3[2];
-    private readonly HashSet<int> warnedOptionIndices = new HashSet<int>();
     private int selectedIndex;
     private float nextInputTime;
     private bool isLoading;
@@ -52,6 +44,12 @@ public class MainMenuManager : MonoBehaviour
             if (options[i] != null && options[i].target != null)
             {
                 baseScales[i] = options[i].target.localScale;
+                optionSpriteSwaps[i] = options[i].target.GetComponent<UIButtonSpriteSwap>();
+
+                if (optionSpriteSwaps[i] == null)
+                {
+                    Debug.LogWarning($"[MainMenuManager] UIButtonSpriteSwap manquant sur l'option {i} ({options[i].target.name}).");
+                }
             }
             else
             {
@@ -98,12 +96,21 @@ public class MainMenuManager : MonoBehaviour
         int optionCount = options.Length;
         selectedIndex = (selectedIndex + delta + optionCount) % optionCount;
         nextInputTime = Time.unscaledTime + Mathf.Max(0f, inputCooldown);
-        RefreshOutlineState();
+        RefreshVisualState();
     }
 
     private void ConfirmSelection()
     {
         nextInputTime = Time.unscaledTime + Mathf.Max(0f, inputCooldown);
+
+        if (selectedIndex >= 0 && selectedIndex < options.Length)
+        {
+            UIButtonSpriteSwap selectedSpriteSwap = optionSpriteSwaps[selectedIndex];
+            if (selectedSpriteSwap != null)
+            {
+                selectedSpriteSwap.SetPressed(true);
+            }
+        }
 
         if (selectedIndex == 0)
         {
@@ -148,7 +155,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void RefreshSelectionImmediate()
     {
-        RefreshOutlineState();
+        RefreshVisualState();
 
         for (int i = 0; i < options.Length; i++)
         {
@@ -181,38 +188,17 @@ public class MainMenuManager : MonoBehaviour
         }
     }
 
-    private void RefreshOutlineState()
+    private void RefreshVisualState()
     {
         for (int i = 0; i < options.Length; i++)
         {
             bool isSelected = i == selectedIndex;
-            MenuOption option = options[i];
+            UIButtonSpriteSwap spriteSwap = optionSpriteSwaps[i];
 
-            if (option != null && option.outlineBehaviour != null)
+            if (spriteSwap != null)
             {
-                if (CanToggleOutlineBehaviour(option.outlineBehaviour))
-                {
-                    option.outlineBehaviour.enabled = isSelected;
-                }
-                else if (logSelectionWarnings && warnedOptionIndices.Add(i))
-                {
-                    Debug.LogWarning(
-                        $"[MainMenuManager] outlineBehaviour sur l'option {i} n'est pas un composant d'outline/shadow. " +
-                        "Assigne un component Unity UI Outline (ou utilise outlineObject)."
-                    );
-                }
-            }
-
-            if (option != null && option.outlineObject != null)
-            {
-                option.outlineObject.SetActive(isSelected);
+                spriteSwap.SetSelected(isSelected);
             }
         }
-    }
-
-    private static bool CanToggleOutlineBehaviour(Behaviour behaviour)
-    {
-        string typeName = behaviour.GetType().Name;
-        return typeName.Contains("Outline") || typeName.Contains("Shadow");
     }
 }
