@@ -3537,21 +3537,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 644555291132243457, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 25.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 644555291132243457, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 25.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 644555291132243457, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 25.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 644555291132243457, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -108.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 644555291132243457, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -63.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 644555291132243457, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1870261897024595192, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
       propertyPath: m_Name
       value: gameOverText
-      objectReference: {fileID: 0}
-    - target: {fileID: 1935803327147876764, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: e0a00e16a0e1b174f82a299f1647f610, type: 2}
-    - target: {fileID: 1935803327147876764, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -8254751981930411074, guid: e0a00e16a0e1b174f82a299f1647f610, type: 2}
-    - target: {fileID: 1935803327147876764, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2352534332816703138, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
       propertyPath: m_SizeDelta.y
@@ -3605,10 +3617,6 @@ PrefabInstance:
       propertyPath: m_TextWrappingMode
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5079272113554551231, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
-      propertyPath: m_enableAutoSizing
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5253435162240321429, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
       propertyPath: m_SizeDelta.x
       value: 2.25
@@ -3636,10 +3644,6 @@ PrefabInstance:
     - target: {fileID: 6999430363653447649, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
       propertyPath: m_Name
       value: CanvasGameOver
-      objectReference: {fileID: 0}
-    - target: {fileID: 6999430363653447649, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7034860046395358617, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -3761,22 +3765,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -5.61
       objectReference: {fileID: 0}
-    - target: {fileID: 8967635542008842439, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: e0a00e16a0e1b174f82a299f1647f610, type: 2}
-    - target: {fileID: 8967635542008842439, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -8254751981930411074, guid: e0a00e16a0e1b174f82a299f1647f610, type: 2}
-    - target: {fileID: 8967635542008842439, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9024710918463753986, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: -9053196554008186725, guid: 44df92352ec70b3428b9c38d9bd4a1ae, type: 3}
     - target: {fileID: 9205940880481680747, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
       propertyPath: m_SizeDelta.x
       value: 2.25
