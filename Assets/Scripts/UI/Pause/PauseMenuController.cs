@@ -246,6 +246,7 @@ public class PauseMenuController : MonoBehaviour
     {
         ApplyPauseState(false);
         Time.timeScale = 1f;
+        SpellInventoryManager.Instance.ResetInventory();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -253,6 +254,7 @@ public class PauseMenuController : MonoBehaviour
     {
         ApplyPauseState(false);
         Time.timeScale = 1f;
+        SpellInventoryManager.Instance.ResetInventory();
         SceneManager.LoadScene(0);
     }
 
