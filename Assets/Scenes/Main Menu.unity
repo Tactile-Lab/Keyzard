@@ -1069,6 +1069,7 @@ GameObject:
   - component: {fileID: 1174147320}
   - component: {fileID: 1174147322}
   - component: {fileID: 1174147321}
+  - component: {fileID: 1174147323}
   m_Layer: 5
   m_Name: Boutton Quitter
   m_TagString: Untagged
@@ -1134,6 +1135,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174147319}
   m_CullTransparentMesh: 1
+--- !u!114 &1174147323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174147319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559d5824a6c517f4e9e26fec9cfc8a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSpriteSwap
+  targetImage: {fileID: 1174147321}
+  normalSprite: {fileID: 0}
+  selectedSprite: {fileID: 21300000, guid: 3e3d0a45a617d6341a38a507fc98305b, type: 3}
+  pressedSprite: {fileID: 0}
+  disabledSprite: {fileID: 0}
+  autoUseImageSpriteAsNormal: 1
 --- !u!1 &1249403547
 GameObject:
   m_ObjectHideFlags: 0
@@ -1145,6 +1164,7 @@ GameObject:
   - component: {fileID: 1249403548}
   - component: {fileID: 1249403550}
   - component: {fileID: 1249403549}
+  - component: {fileID: 1249403551}
   m_Layer: 5
   m_Name: Boutton nouvelle partie
   m_TagString: Untagged
@@ -1210,6 +1230,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1249403547}
   m_CullTransparentMesh: 1
+--- !u!114 &1249403551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1249403547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 559d5824a6c517f4e9e26fec9cfc8a82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButtonSpriteSwap
+  targetImage: {fileID: 1249403549}
+  normalSprite: {fileID: 0}
+  selectedSprite: {fileID: 21300000, guid: 9fb8df18dad7dc34682bd503b6ec8341, type: 3}
+  pressedSprite: {fileID: 0}
+  disabledSprite: {fileID: 0}
+  autoUseImageSpriteAsNormal: 1
 --- !u!1 &1588492684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1937,10 +1975,6 @@ PrefabInstance:
       propertyPath: nouvellePartie.target
       value: 
       objectReference: {fileID: 1249403548}
-    - target: {fileID: 4455270807817798004, guid: 3cca285eff5999145a13fa5f66172fa6, type: 3}
-      propertyPath: nouvellePartie.outlineBehaviour
-      value: 
-      objectReference: {fileID: 1249403549}
     - target: {fileID: 6266123937185821934, guid: 3cca285eff5999145a13fa5f66172fa6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 837.45416
