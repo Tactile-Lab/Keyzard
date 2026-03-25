@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 14dd8ce9407a67e4fbf97ae794008bd1
+guid: 0f5e4e163ad2e484c806b77eea69fe52
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2310969455658145531
-    second: 64x64_0
+      213: 5256536664489630434
+    second: book 32x32 le meilleur _0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 64x64_0
+      name: book 32x32 le meilleur _0
       rect:
         serializedVersion: 2
         x: 0
-        y: 2
-        width: 63
-        height: 61
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 509e7bc2689cdefd0800000000000000
-      internalID: -2310969455658145531
+      spriteID: 2ea98bbfe38f2f840800000000000000
+      internalID: 5256536664489630434
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      64x64_0: -2310969455658145531
+      book 32x32 le meilleur _0: 5256536664489630434
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -3412,10 +3412,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3651539099599450851, guid: c07a6812003a4514c935b60c25145690, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651539099599450851, guid: c07a6812003a4514c935b60c25145690, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4734550487429609401, guid: c07a6812003a4514c935b60c25145690, type: 3}
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5113615100443988928, guid: c07a6812003a4514c935b60c25145690, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f05d0767ea22f641b7985e0661003c1, type: 3}
     - target: {fileID: 5314476156807707137, guid: c07a6812003a4514c935b60c25145690, type: 3}
       propertyPath: mainCamera
       value: 
@@ -3520,6 +3532,14 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 543566506}
+    - target: {fileID: 8662989286232880218, guid: c07a6812003a4514c935b60c25145690, type: 3}
+      propertyPath: normalSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3f05d0767ea22f641b7985e0661003c1, type: 3}
+    - target: {fileID: 8662989286232880218, guid: c07a6812003a4514c935b60c25145690, type: 3}
+      propertyPath: highlightedSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 10478df1a58e00c4f8978cb38c7f1796, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
