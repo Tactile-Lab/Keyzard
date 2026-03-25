@@ -63,12 +63,12 @@ public class GameOverMenu : MonoBehaviour
     void Rejouer()
     {
         SpellInventoryManager.Instance.ResetInventory();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        TransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void RetourMenu()
     {   
         SpellInventoryManager.Instance.ResetInventory();
-        SceneManager.LoadScene(0);
+        TransitionManager.Instance.LoadScene(0);
     }
 }

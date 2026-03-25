@@ -141,7 +141,8 @@ public class MainMenuManager : MonoBehaviour
         }
 
         Time.timeScale = 1f;
-        SceneManager.LoadScene(gameplaySceneName);
+        //SceneManager.LoadScene(gameplaySceneName);
+        TransitionManager.Instance.LoadScene(gameplaySceneName);
     }
 
     private void QuitGame()
