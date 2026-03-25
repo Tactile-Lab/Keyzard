@@ -995,7 +995,7 @@ GameObject:
   - component: {fileID: 1167367190}
   - component: {fileID: 1167367189}
   m_Layer: 5
-  m_Name: Ref Main Menu splash Screen  (1)
+  m_Name: Ref Menu pause
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1790,7 +1790,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 147.2, y: 69.8}
+  m_AnchoredPosition: {x: 147.2, y: 72}
   m_SizeDelta: {x: 100, y: 53.5791}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2009733446
