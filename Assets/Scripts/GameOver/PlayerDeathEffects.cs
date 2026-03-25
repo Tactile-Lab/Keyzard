@@ -73,12 +73,15 @@ public class PlayerDeathEffects : MonoBehaviour
             sr.sortingOrder = 2;
 
         // Lancer la cinématique
+        
+
         StartCoroutine(DeathCinematic());
     }
 
     private IEnumerator DeathCinematic()
 {
     float t = 0f;
+    Time.timeScale = slowMotionFactor;
 
     // Zoom et position initiale
     float startSize = mainCamera.orthographicSize;
@@ -99,6 +102,7 @@ public class PlayerDeathEffects : MonoBehaviour
     // 🔥 Zoom + recentrage + fade noir + rétrécissement spotlight
     while (t < fadeDuration)
     {
+        Time.timeScale = slowMotionFactor;
         t += Time.unscaledDeltaTime;
         float progress = t / fadeDuration;
 
