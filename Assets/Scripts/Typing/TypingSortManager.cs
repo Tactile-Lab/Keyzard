@@ -210,6 +210,11 @@ public class TypingSortManager : MonoBehaviour
         }
     }
 
+    public void ResetInputRoom()
+    {
+        ResetInput();
+    }
+
     private void Update()
     {
         UpdateDisplay();
