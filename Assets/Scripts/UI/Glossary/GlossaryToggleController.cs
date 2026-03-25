@@ -114,6 +114,11 @@ public class GlossaryToggleController : MonoBehaviour
             return;
         }
 
+        if (PauseMenuController.IsPauseMenuOpen)
+        {
+            return;
+        }
+
         Keyboard keyboard = Keyboard.current;
         if (keyboard == null)
         {
@@ -131,6 +136,10 @@ public class GlossaryToggleController : MonoBehaviour
 
     public void ToggleGlossary()
     {
+        if (PauseMenuController.IsPauseMenuOpen)
+        {
+            return;
+        }
 
         if (playerHealth != null && playerHealth.IsDead)
         {
