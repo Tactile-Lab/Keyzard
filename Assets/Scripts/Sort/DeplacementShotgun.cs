@@ -14,6 +14,8 @@ public class DeplacementShotgun : MonoBehaviour
 
     private float timer = 0f;
     private bool hasImpacted;
+    private bool isInitialized;
+    private bool impactFinished;
 
     private Animator animator;
     private Collider2D projectileCollider;
@@ -28,6 +30,7 @@ public class DeplacementShotgun : MonoBehaviour
         delayVie = delay;
         triggerImpact = triggerImpactAnim;
         fallbackDestroyDelay = impactFallbackDelay;
+        isInitialized = true;
 
         animator = GetComponent<Animator>();
         projectileCollider = GetComponent<Collider2D>();
@@ -35,6 +38,11 @@ public class DeplacementShotgun : MonoBehaviour
 
     void Update()
     {
+        if (!isInitialized)
+        {
+            return;
+        }
+
         if (hasImpacted)
         {
             return;
@@ -75,11 +83,25 @@ public class DeplacementShotgun : MonoBehaviour
         if (animator != null && !string.IsNullOrEmpty(triggerImpact))
         {
             animator.SetTrigger(triggerImpact);
-            Invoke(nameof(OnImpactAnimationFinished), fallbackDestroyDelay);
+
+            // L'event d'animation doit être la voie principale de destruction.
+            // Le fallback est seulement un garde-fou si l'event manque.
+            StartCoroutine(EmergencyDestroyFallback());
             return;
         }
 
         Destroy(gameObject);
+    }
+
+    private System.Collections.IEnumerator EmergencyDestroyFallback()
+    {
+        float wait = Mathf.Max(1f, fallbackDestroyDelay);
+        yield return new WaitForSeconds(wait);
+
+        if (!impactFinished)
+        {
+            Destroy(gameObject);
+        }
     }
 
     /// <summary>
@@ -88,6 +110,7 @@ public class DeplacementShotgun : MonoBehaviour
     /// </summary>
     public void OnImpactAnimationFinished()
     {
+        impactFinished = true;
         Destroy(gameObject);
     }
 }

@@ -10,7 +10,7 @@ public class ShotGunFeu : Sort
 
     [Header("Impact projectile")]
     public string triggerImpact = "Impact";
-    public float fallbackDestroyDelay = 0.12f;
+    public float fallbackDestroyDelay = 1.5f;
 
     public override void LancerSortCible(GameObject cible)
     {
@@ -36,8 +36,12 @@ public class ShotGunFeu : Sort
 
             GameObject proj = Instantiate(gameObject, transform.position, Quaternion.identity);
 
-            // Ici on ajoute un petit composant local qui gère le déplacement
-            DeplacementShotgun mover = proj.AddComponent<DeplacementShotgun>();
+            // Réutilise le composant du prefab s'il existe déjà pour éviter les doublons.
+            DeplacementShotgun mover = proj.GetComponent<DeplacementShotgun>();
+            if (mover == null)
+            {
+                mover = proj.AddComponent<DeplacementShotgun>();
+            }
 
             mover.Initialiser(direction, vitesse, delayVie, triggerImpact, fallbackDestroyDelay);
         }

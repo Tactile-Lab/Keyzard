@@ -60,7 +60,7 @@ MonoBehaviour:
   angleTotal: 60
   delayVie: 0.5
   triggerImpact: Impact
-  fallbackDestroyDelay: 0.12
+  fallbackDestroyDelay: 1.5
 --- !u!212 &6770589723762905975
 SpriteRenderer:
   serializedVersion: 2
