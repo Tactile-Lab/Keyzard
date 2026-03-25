@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlackFadeEffect
   noirImage: {fileID: 2824355145096917249}
-  fadeDuration: 2
+  fadeDuration: 1
   minScale: {x: 1, y: 1, z: 1}
   maxScale: {x: 6, y: 6, z: 6}
 --- !u!1 &3347473775368887037
