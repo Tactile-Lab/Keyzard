@@ -2191,6 +2191,75 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &4749418727872079450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3777794449038426575}
+  - component: {fileID: 3138050675404834604}
+  m_Layer: 0
+  m_Name: "Colisions \xE9boulment"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3777794449038426575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4749418727872079450}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.57, y: 4.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3911474764376637832}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &3138050675404834604
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4749418727872079450}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.5, y: 0}
+  m_Size: {x: 1.5, y: 1.5}
+  m_Direction: 0
 --- !u!1 &6963462194648771314
 GameObject:
   m_ObjectHideFlags: 0
@@ -5237,43 +5306,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimationSpeed
-      value: 9.715577
+      value: 8.929076
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[1].second.m_AnimationSpeed
-      value: 8.427391
+      value: 9.510259
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[2].second.m_AnimationSpeed
-      value: 1.8596256
+      value: 2.5111358
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[3].second.m_AnimationSpeed
-      value: 2.0973437
+      value: 2.0383146
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[4].second.m_AnimationSpeed
-      value: 2.6686893
+      value: 2.3148806
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[5].second.m_AnimationSpeed
-      value: 2.0213082
+      value: 1.13673
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[6].second.m_AnimationSpeed
-      value: 9.062631
+      value: 8.175759
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[7].second.m_AnimationSpeed
-      value: 8.879839
+      value: 7.501383
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[8].second.m_AnimationSpeed
-      value: 8.105858
+      value: 7.050029
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[9].second.m_AnimationSpeed
-      value: 8.165136
+      value: 9.743803
       objectReference: {fileID: 0}
     - target: {fileID: 2508031626218997251, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_AnimatedTiles.Array.data[0].second.m_AnimatedSprites.Array.size
@@ -7055,6 +7124,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8681380303071826877, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       insertIndex: -1
       addedObject: {fileID: 773573542706107077}
+    - targetCorrespondingSourceObject: {fileID: 8681380303071826877, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3777794449038426575}
     - targetCorrespondingSourceObject: {fileID: 3157337050123960134, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       insertIndex: 1
       addedObject: {fileID: 1952740273842832680}
