@@ -1,0 +1,461 @@
+fileFormatVersion: 2
+guid: 09a0cf757cec06e48bf48e0281e9f0af
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 531546057143962348
+    second: spell_geda_no_deep_water_-export_0
+  - first:
+      213: 2466893314017369596
+    second: spell_geda_no_deep_water_-export_1
+  - first:
+      213: -5056525091438621074
+    second: spell_geda_no_deep_water_-export_2
+  - first:
+      213: 3727898588023111937
+    second: spell_geda_no_deep_water_-export_3
+  - first:
+      213: 6933443973151158408
+    second: spell_geda_no_deep_water_-export_4
+  - first:
+      213: 9064685997648226957
+    second: spell_geda_no_deep_water_-export_5
+  - first:
+      213: 6143814430922449717
+    second: spell_geda_no_deep_water_-export_6
+  - first:
+      213: -5248024171038206839
+    second: spell_geda_no_deep_water_-export_7
+  - first:
+      213: -6492660172789289415
+    second: spell_geda_no_deep_water_-export_8
+  - first:
+      213: -8873745437076352358
+    second: spell_geda_no_deep_water_-export_9
+  - first:
+      213: 7514549622264348975
+    second: spell_geda_no_deep_water_-export_10
+  - first:
+      213: 3006213774091849244
+    second: spell_geda_no_deep_water_-export_11
+  - first:
+      213: -4178122893931066589
+    second: spell_geda_no_deep_water_-export_12
+  - first:
+      213: 6905115567948886062
+    second: spell_geda_no_deep_water_-export_13
+  - first:
+      213: 3775568205834790807
+    second: spell_geda_no_deep_water_-export_14
+  - first:
+      213: 8584408865075937134
+    second: spell_geda_no_deep_water_-export_15
+  - first:
+      213: 7365541860332884689
+    second: spell_geda_no_deep_water_-export_16
+  - first:
+      213: -5871305106920203264
+    second: spell_geda_no_deep_water_-export_17
+  - first:
+      213: 6736462342014111077
+    second: spell_geda_no_deep_water_-export_18
+  - first:
+      213: -4738833798983228982
+    second: spell_geda_no_deep_water_-export_19
+  - first:
+      213: -3891141074474256478
+    second: spell_geda_no_deep_water_-export_20
+  - first:
+      213: -5485451125502157142
+    second: spell_geda_no_deep_water_-export_21
+  - first:
+      213: 8325736567824178896
+    second: spell_geda_no_deep_water_-export_22
+  - first:
+      213: 1010697106322813853
+    second: spell_geda_no_deep_water_-export_23
+  - first:
+      213: 2848310909434633739
+    second: spell_geda_no_deep_water_-export_24
+  - first:
+      213: -8797658602207193424
+    second: spell_geda_no_deep_water_-export_25
+  - first:
+      213: -879204866176393490
+    second: spell_geda_no_deep_water_-export_26
+  - first:
+      213: -5596314361122545660
+    second: spell_geda_no_deep_water_-export_27
+  - first:
+      213: -3594103763789046794
+    second: spell_geda_no_deep_water_-export_28
+  - first:
+      213: 9017793951385600306
+    second: spell_geda_no_deep_water_-export_29
+  - first:
+      213: 4823327693719999463
+    second: spell_geda_no_deep_water_-export_30
+  - first:
+      213: -4221762068489101174
+    second: spell_geda_no_deep_water_-export_31
+  - first:
+      213: 4678705776845286660
+    second: spell_geda_no_deep_water_-export_32
+  - first:
+      213: 4701285019215156029
+    second: spell_geda_no_deep_water_-export_33
+  - first:
+      213: -7918801731036229063
+    second: spell_geda_no_deep_water_-export_34
+  - first:
+      213: 1366144944088177161
+    second: spell_geda_no_deep_water_-export_35
+  - first:
+      213: -2688020830003503245
+    second: spell_geda_no_deep_water_-export_36
+  - first:
+      213: -2162413298106306294
+    second: spell_geda_no_deep_water_-export_37
+  - first:
+      213: -5612509864926300821
+    second: spell_geda_no_deep_water_-export_38
+  - first:
+      213: 2382387167558123264
+    second: spell_geda_no_deep_water_-export_39
+  - first:
+      213: 6543207543051339382
+    second: spell_geda_no_deep_water_-export_40
+  - first:
+      213: 3340121185319217058
+    second: spell_geda_no_deep_water_-export_41
+  - first:
+      213: -5997856537858133948
+    second: spell_geda_no_deep_water_-export_42
+  - first:
+      213: 4335848175672177797
+    second: spell_geda_no_deep_water_-export_43
+  - first:
+      213: 2810369032993289165
+    second: spell_geda_no_deep_water_-export_44
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spell_geda_no_deep_water_-export_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cea43dd925e606700800000000000000
+      internalID: 531546057143962348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell_geda_no_deep_water_-export_1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfd9ac0266a2c3220800000000000000
+      internalID: 2466893314017369596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell_geda_no_deep_water_-export_2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6e83fe483d93d9b0800000000000000
+      internalID: -5056525091438621074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell_geda_no_deep_water_-export_3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1014cc9b3082cb330800000000000000
+      internalID: 3727898588023111937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell_geda_no_deep_water_-export_4
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8807fb10f8a883060800000000000000
+      internalID: 6933443973151158408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell_geda_no_deep_water_-export_5
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8aa74a53eb3ccd70800000000000000
+      internalID: 9064685997648226957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell_geda_no_deep_water_-export_6
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5332d017ca6334550800000000000000
+      internalID: 6143814430922449717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell_geda_no_deep_water_-export_7
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9849a9852d54b27b0800000000000000
+      internalID: -5248024171038206839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell_geda_no_deep_water_-export_8
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93e6191f8ff65e5a0800000000000000
+      internalID: -6492660172789289415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d5aa36d776fdec9438745998bcb7510b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":192.0,"y":192.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      spell_geda_no_deep_water_-export_0: 531546057143962348
+      spell_geda_no_deep_water_-export_1: 2466893314017369596
+      spell_geda_no_deep_water_-export_2: -5056525091438621074
+      spell_geda_no_deep_water_-export_3: 3727898588023111937
+      spell_geda_no_deep_water_-export_4: 6933443973151158408
+      spell_geda_no_deep_water_-export_5: 9064685997648226957
+      spell_geda_no_deep_water_-export_6: 6143814430922449717
+      spell_geda_no_deep_water_-export_7: -5248024171038206839
+      spell_geda_no_deep_water_-export_8: -6492660172789289415
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
