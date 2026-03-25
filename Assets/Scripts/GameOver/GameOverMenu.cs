@@ -16,10 +16,12 @@ public class GameOverMenu : MonoBehaviour
 
     void OnEnable()
     {
-        // Calculer le décalage initial
+        // ✅ On reset la sélection AVANT tout
+        selectionIndex = 0;
+
+        // ✅ On calcule le décalage AVEC la bonne position actuelle
         decalage = iconSelection.anchoredPosition - imageRejouer.anchoredPosition;
 
-        // Placer l'icône correctement sur la première image
         UpdateIconPosition();
     }
 
@@ -28,7 +30,6 @@ public class GameOverMenu : MonoBehaviour
         var keyboard = Keyboard.current;
         if (keyboard == null) return;
 
-        // Navigation gauche/droite
         if (keyboard.rightArrowKey.wasPressedThisFrame && selectionIndex == 0)
         {
             selectionIndex = 1;
@@ -40,7 +41,6 @@ public class GameOverMenu : MonoBehaviour
             UpdateIconPosition();
         }
 
-        // Validation : espace, entrée principale ou pavé numérique
         if (keyboard.spaceKey.wasPressedThisFrame)
         {
             if (selectionIndex == 0)
@@ -52,8 +52,8 @@ public class GameOverMenu : MonoBehaviour
 
     void UpdateIconPosition()
     {
-        RectTransform targetImage = (selectionIndex == 0) ? imageRejouer : imageMenu;
-        iconSelection.anchoredPosition = targetImage.anchoredPosition + decalage;
+        RectTransform target = (selectionIndex == 0) ? imageRejouer : imageMenu;
+        iconSelection.anchoredPosition = target.anchoredPosition + decalage;
     }
 
     void Rejouer()
