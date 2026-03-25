@@ -8,6 +8,10 @@ public class ShotGunFeu : Sort
 
     public float delayVie = 0.4f;
 
+    [Header("Impact projectile")]
+    public string triggerImpact = "Impact";
+    public float fallbackDestroyDelay = 0.12f;
+
     public override void LancerSortCible(GameObject cible)
     {
         Vector2 directionBase = (cible.transform.position - transform.position).normalized;
@@ -35,46 +39,26 @@ public class ShotGunFeu : Sort
             // Ici on ajoute un petit composant local qui gère le déplacement
             DeplacementShotgun mover = proj.AddComponent<DeplacementShotgun>();
 
-            mover.Initialiser(direction, vitesse, delayVie);
+            mover.Initialiser(direction, vitesse, delayVie, triggerImpact, fallbackDestroyDelay);
         }
 
         Destroy(gameObject);
     }
 
-    // Petite classe interne uniquement utilisée par le shotgun
-    private class DeplacementShotgun : MonoBehaviour
-{
-    private Vector2 direction;
-    private float vitesse;
-    private float delayVie; // Durée de vie du projectile
-
-    private float timer = 0f;
-
-    // Initialise le projectile avec direction, vitesse et durée de vie
-    public void Initialiser(Vector2 dir, float vit, float delay)
+    public override void DestroySort(GameObject cible)
     {
-        direction = dir.normalized;
-        vitesse = vit;
-        delayVie = delay;
-    }
+        DeplacementShotgun mover = GetComponent<DeplacementShotgun>();
 
-    void Update()
-    {
-        // Déplacement
-        transform.position += (Vector3)(direction * vitesse * Time.deltaTime);
-
-        // Rotation du projectile selon sa direction
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        // Gestion de la durée de vie
-        timer += Time.deltaTime;
-        if (timer >= delayVie)
+        // Les pellets du shotgun jouent une anim d'impact avant destruction.
+        if (mover != null && cible != null && cible != gameObject)
         {
-            Destroy(gameObject);
+            OnImpact(cible);
+            mover.DemarrerImpact();
+            return;
         }
+
+        base.DestroySort(cible);
     }
-}
 
 }
 

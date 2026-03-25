@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: -1600348183999881970}
   - component: {fileID: 6770589723762905975}
   - component: {fileID: 674501160482275813}
+  - component: {fileID: 5112532390082264731}
+  - component: {fileID: 2193770649223554183}
   m_Layer: 9
   m_Name: ShotGunFieu 1
   m_TagString: Projectile
@@ -50,13 +52,15 @@ MonoBehaviour:
   damage: 2
   vitesse: 5
   description: "Un barage de boule de feu a faible port\xE9 mais au d\xE9gats d\xE9vastateur"
-  icon: {fileID: 21300000, guid: c9f42e6aeb5cc444085d139ac0e78b22, type: 3}
+  icon: {fileID: -2666487209024649070, guid: 37b25eb747a0ca94fabcb31635b50607, type: 3}
   demonstrationIllustration: {fileID: 21300000, guid: c1c156fc0bf61e34496385b23ae22fd9, type: 3}
   audioConfig: {fileID: 0}
-  aniamtor: {fileID: 0}
+  aniamtor: {fileID: 5112532390082264731}
   nombreProjectiles: 9
   angleTotal: 60
   delayVie: 0.5
+  triggerImpact: Impact
+  fallbackDestroyDelay: 0.12
 --- !u!212 &6770589723762905975
 SpriteRenderer:
   serializedVersion: 2
@@ -103,10 +107,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -840883905
-  m_SortingLayer: 6
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: c9f42e6aeb5cc444085d139ac0e78b22, type: 3}
+  m_Sprite: {fileID: -2666487209024649070, guid: 37b25eb747a0ca94fabcb31635b50607, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -150,5 +154,39 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.09075221, y: 0.0017282367}
-  m_Radius: 0.098830044
+  m_Offset: {x: 0.005, y: -0.012}
+  m_Radius: 0.09
+--- !u!95 &5112532390082264731
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5292077714965797603}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d7df67feb8e683946b0661b35f147638, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2193770649223554183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5292077714965797603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e5fcf6a7faab0478dbe567c28337dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeplacementShotgun
