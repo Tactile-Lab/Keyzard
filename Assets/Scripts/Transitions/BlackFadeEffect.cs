@@ -55,7 +55,7 @@ public class BlackFadeEffect : MonoBehaviour
         canvas.worldCamera = Camera.main;
     }
 
-    // FADE OUT (avant load) : scale max→min + alpha 0→1
+    // FADE OUT (avant load) : scale max→min, alpha ne change pas
     public IEnumerator PlayExitEffectCoroutine(Action onComplete)
     {
         yield return ReassignCameraCoroutine();
@@ -63,9 +63,6 @@ public class BlackFadeEffect : MonoBehaviour
         if (noirImage == null) { onComplete?.Invoke(); yield break; }
 
         noirImage.gameObject.SetActive(true);
-        Color color = noirImage.color;
-        color.a = 0f;
-        noirImage.color = color;
         noirImage.rectTransform.localScale = maxScale;
 
         float t = 0f;
@@ -74,20 +71,18 @@ public class BlackFadeEffect : MonoBehaviour
             t += Time.unscaledDeltaTime;
             float progress = t / fadeDuration;
 
-            color.a = Mathf.Lerp(0f, 1f, progress);
-            noirImage.color = color;
+            // Scale animation uniquement
             noirImage.rectTransform.localScale = Vector3.Lerp(maxScale, minScale, progress);
+
             yield return null;
         }
 
-        color.a = 1f;
-        noirImage.color = color;
         noirImage.rectTransform.localScale = minScale;
 
         onComplete?.Invoke();
     }
 
-    // FADE IN (après load) : scale min→max + alpha 1→0
+    // FADE IN (après load) : scale min→max, alpha ne change pas
     public void PlayEntranceEffect(Action onComplete = null)
     {
         StartCoroutine(PlayEntranceCoroutine(onComplete));
@@ -100,9 +95,6 @@ public class BlackFadeEffect : MonoBehaviour
         if (noirImage == null) { onComplete?.Invoke(); yield break; }
 
         noirImage.gameObject.SetActive(true);
-        Color color = noirImage.color;
-        color.a = 1f;
-        noirImage.color = color;
         noirImage.rectTransform.localScale = minScale;
 
         float t = 0f;
@@ -111,17 +103,15 @@ public class BlackFadeEffect : MonoBehaviour
             t += Time.unscaledDeltaTime;
             float progress = t / fadeDuration;
 
-            color.a = Mathf.Lerp(1f, 0f, progress);
-            noirImage.color = color;
+            // Scale animation uniquement
             noirImage.rectTransform.localScale = Vector3.Lerp(minScale, maxScale, progress);
+
             yield return null;
         }
 
-        color.a = 0f;
-        noirImage.color = color;
         noirImage.rectTransform.localScale = maxScale;
         noirImage.gameObject.SetActive(false);
 
-        onComplete?.Invoke(); // <-- remet le TimeScale si nécessaire via callback
+        onComplete?.Invoke();
     }
 }
