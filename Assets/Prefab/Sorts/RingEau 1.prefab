@@ -53,7 +53,7 @@ MonoBehaviour:
   vitesse: 1
   description: "Un cercle d'eau couvrant une zone important infligeant peu de d\xE9gats
     mais repousse les enemies"
-  icon: {fileID: -5130603935143729470, guid: 7fbf817275dd06a4292eec343061b52e, type: 3}
+  icon: {fileID: 21300000, guid: aeef7f6fd3cec6a4ba40058b7f3c8437, type: 3}
   demonstrationIllustration: {fileID: 21300000, guid: 8efc611e04b0ba643b9f6c4d0f71a12f, type: 3}
   audioConfig: {fileID: 0}
   aniamtor: {fileID: 0}
