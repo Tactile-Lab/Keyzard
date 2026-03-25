@@ -31,7 +31,6 @@ public class BlackFadeEffect : MonoBehaviour
         if (canvas == null)
             canvas = gameObject.AddComponent<Canvas>();
 
-        // START : Image inactive
         if (noirImage != null)
             noirImage.gameObject.SetActive(false);
 
@@ -89,16 +88,16 @@ public class BlackFadeEffect : MonoBehaviour
     }
 
     // FADE IN (après load) : scale min→max + alpha 1→0
-    public void PlayEntranceEffect()
+    public void PlayEntranceEffect(Action onComplete = null)
     {
-        StartCoroutine(PlayEntranceCoroutine());
+        StartCoroutine(PlayEntranceCoroutine(onComplete));
     }
 
-    private IEnumerator PlayEntranceCoroutine()
+    private IEnumerator PlayEntranceCoroutine(Action onComplete)
     {
         yield return ReassignCameraCoroutine();
 
-        if (noirImage == null) yield break;
+        if (noirImage == null) { onComplete?.Invoke(); yield break; }
 
         noirImage.gameObject.SetActive(true);
         Color color = noirImage.color;
@@ -122,5 +121,7 @@ public class BlackFadeEffect : MonoBehaviour
         noirImage.color = color;
         noirImage.rectTransform.localScale = maxScale;
         noirImage.gameObject.SetActive(false);
+
+        onComplete?.Invoke(); // <-- remet le TimeScale si nécessaire via callback
     }
 }

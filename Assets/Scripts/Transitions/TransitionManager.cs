@@ -12,7 +12,7 @@ public class TransitionManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            SceneManager.sceneLoaded += OnSceneLoaded;  // Pour déclencher PlayEntranceEffect
+            SceneManager.sceneLoaded += OnSceneLoaded;  // Déclenche PlayEntranceEffect après load
         }
         else
         {
@@ -22,7 +22,22 @@ public class TransitionManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        BlackFadeEffect.Instance?.PlayEntranceEffect();  // Fade IN après load
+        // Pause le jeu avant le fade-in
+        Time.timeScale = 0f;
+
+        if (BlackFadeEffect.Instance != null)
+        {
+            BlackFadeEffect.Instance.PlayEntranceEffect(() =>
+            {
+                // Remet le jeu en marche après le fade-in
+                Time.timeScale = 1f;
+            });
+        }
+        else
+        {
+            // Si pas de BlackFadeEffect, on remet le TimeScale directement
+            Time.timeScale = 1f;
+        }
     }
 
     public void LoadScene(int buildIndex)
