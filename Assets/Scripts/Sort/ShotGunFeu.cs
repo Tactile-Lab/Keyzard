@@ -6,6 +6,13 @@ public class ShotGunFeu : Sort
     public int nombreProjectiles = 13;
     public float angleTotal = 60f;
 
+    [Header("Dispersion")]
+    public float angleJitter = 2f;
+
+    [Header("Dommages pellets centraux")]
+    public float centralDamageMultiplier = 1.25f;
+    public int centralProjectileCount = 3;
+
     public float delayVie = 0.4f;
 
     [Header("Impact projectile")]
@@ -14,6 +21,8 @@ public class ShotGunFeu : Sort
 
     public override void LancerSortCible(GameObject cible)
     {
+        int baseDamage = damage;
+
         Vector2 directionBase = (cible.transform.position - transform.position).normalized;
 
         float angleBase = Mathf.Atan2(directionBase.y, directionBase.x) * Mathf.Rad2Deg;
@@ -27,7 +36,8 @@ public class ShotGunFeu : Sort
 
         for (int i = 0; i < nombreProjectiles; i++)
         {
-            float angle = angleDepart + pas * i;
+            float randomSpread = Random.Range(-angleJitter, angleJitter);
+            float angle = angleDepart + pas * i + randomSpread;
 
             Vector2 direction = new Vector2(
                 Mathf.Cos(angle * Mathf.Deg2Rad),
@@ -41,6 +51,13 @@ public class ShotGunFeu : Sort
             if (mover == null)
             {
                 mover = proj.AddComponent<DeplacementShotgun>();
+            }
+
+            ShotGunFeu projSort = proj.GetComponent<ShotGunFeu>();
+            if (projSort != null)
+            {
+                float centerMultiplier = GetCenterDamageMultiplier(i);
+                projSort.damage = Mathf.Max(1, Mathf.RoundToInt(baseDamage * centerMultiplier));
             }
 
             mover.Initialiser(direction, vitesse, delayVie, triggerImpact, fallbackDestroyDelay);
@@ -57,11 +74,26 @@ public class ShotGunFeu : Sort
         if (mover != null && cible != null && cible != gameObject)
         {
             OnImpact(cible);
-            mover.DemarrerImpact();
+            mover.DemarrerImpact(cible);
             return;
         }
 
         base.DestroySort(cible);
+    }
+
+    private float GetCenterDamageMultiplier(int projectileIndex)
+    {
+        if (centralProjectileCount <= 0 || centralDamageMultiplier <= 1f)
+        {
+            return 1f;
+        }
+
+        int centerIndex = (nombreProjectiles - 1) / 2;
+        int halfWindow = Mathf.Max(0, (centralProjectileCount - 1) / 2);
+
+        return Mathf.Abs(projectileIndex - centerIndex) <= halfWindow
+            ? centralDamageMultiplier
+            : 1f;
     }
 
 }
