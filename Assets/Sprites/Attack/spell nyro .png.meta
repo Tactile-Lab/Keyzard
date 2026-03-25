@@ -1,0 +1,1079 @@
+fileFormatVersion: 2
+guid: 934a52d5f8f81de4cbe6564f2bde438b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2854987898189930439
+    second: spell nyro _0
+  - first:
+      213: 2801642199960311072
+    second: spell nyro _1
+  - first:
+      213: 4977094822461575492
+    second: spell nyro _2
+  - first:
+      213: -9136827059965769437
+    second: spell nyro _3
+  - first:
+      213: -631764400027551496
+    second: spell nyro _4
+  - first:
+      213: 3612793686332133699
+    second: spell nyro _5
+  - first:
+      213: -5668721751173862076
+    second: spell nyro _6
+  - first:
+      213: -7474637440744845483
+    second: spell nyro _7
+  - first:
+      213: 5521347323407888874
+    second: spell nyro _8
+  - first:
+      213: 6862647255093713302
+    second: spell nyro _9
+  - first:
+      213: 1093748736393643269
+    second: spell nyro _10
+  - first:
+      213: -3101101118501078026
+    second: spell nyro _11
+  - first:
+      213: 7624156192270602020
+    second: spell nyro _12
+  - first:
+      213: 2658247484870154833
+    second: spell nyro _13
+  - first:
+      213: -9216751147562455656
+    second: spell nyro _14
+  - first:
+      213: 4195604690152571187
+    second: spell nyro _15
+  - first:
+      213: 6113848047565902590
+    second: spell nyro _16
+  - first:
+      213: 3990913836382378675
+    second: spell nyro _17
+  - first:
+      213: 7390192248215679571
+    second: spell nyro _18
+  - first:
+      213: -2403628965706139826
+    second: spell nyro _19
+  - first:
+      213: -5456387576814372111
+    second: spell nyro _20
+  - first:
+      213: -7853449850559326245
+    second: spell nyro _21
+  - first:
+      213: -5954751196152394818
+    second: spell nyro _22
+  - first:
+      213: -3614082246850845972
+    second: spell nyro _23
+  - first:
+      213: 2782315886159518069
+    second: spell nyro _24
+  - first:
+      213: 1800138528571447151
+    second: spell nyro _25
+  - first:
+      213: 2307875047619082361
+    second: spell nyro _26
+  - first:
+      213: 8242407311616434284
+    second: spell nyro _27
+  - first:
+      213: 8202127030427800331
+    second: spell nyro _28
+  - first:
+      213: -6496910704155493089
+    second: spell nyro _29
+  - first:
+      213: 850698423445976101
+    second: spell nyro _30
+  - first:
+      213: -4639901685482923456
+    second: spell nyro _31
+  - first:
+      213: -8874506097426323164
+    second: spell nyro _32
+  - first:
+      213: -4193308556633044376
+    second: spell nyro _33
+  - first:
+      213: -4677345008453639485
+    second: spell nyro _34
+  - first:
+      213: 4097424438325183980
+    second: spell nyro _35
+  - first:
+      213: 2078643313159005986
+    second: spell nyro _36
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spell nyro _0
+      rect:
+        serializedVersion: 2
+        x: 447
+        y: 68
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cf56a5fd54fe9720800000000000000
+      internalID: 2854987898189930439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _1
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 119
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 025d064bcbe61e620800000000000000
+      internalID: 2801642199960311072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _2
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 124
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 441124a0f51321540800000000000000
+      internalID: 4977094822461575492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _3
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 122
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 329409ca238733180800000000000000
+      internalID: -9136827059965769437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _4
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 127
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f8be9a10a58b37f0800000000000000
+      internalID: -631764400027551496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _5
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 75
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 341d99067b8332230800000000000000
+      internalID: 3612793686332133699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _6
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 104
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44d60caf997a451b0800000000000000
+      internalID: -5668721751173862076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _7
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 95
+        width: 30
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55f819799d0c44890800000000000000
+      internalID: -7474637440744845483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _8
+      rect:
+        serializedVersion: 2
+        x: 841
+        y: 106
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae1f7452324cf9c40800000000000000
+      internalID: 5521347323407888874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _9
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 96
+        width: 24
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6999ba291550d3f50800000000000000
+      internalID: 6862647255093713302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _10
+      rect:
+        serializedVersion: 2
+        x: 1034
+        y: 112
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 505864a4ea6cd2f00800000000000000
+      internalID: 1093748736393643269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _11
+      rect:
+        serializedVersion: 2
+        x: 1065
+        y: 108
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fb3d2b86fca6f4d0800000000000000
+      internalID: -3101101118501078026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _12
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 115
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42f426099a17ec960800000000000000
+      internalID: 7624156192270602020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _13
+      rect:
+        serializedVersion: 2
+        x: 1261
+        y: 113
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15ad2c4e00ef3e420800000000000000
+      internalID: 2658247484870154833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _14
+      rect:
+        serializedVersion: 2
+        x: 1410
+        y: 70
+        width: 54
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89dad5ae9a5871080800000000000000
+      internalID: -9216751147562455656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _15
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 119
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 331c1868c38c93a30800000000000000
+      internalID: 4195604690152571187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _16
+      rect:
+        serializedVersion: 2
+        x: 861
+        y: 105
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef291ed1860c8d450800000000000000
+      internalID: 6113848047565902590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _17
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 97
+        width: 14
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ba53ca4df2926730800000000000000
+      internalID: 3990913836382378675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _18
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 99
+        width: 12
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 352bdb0e1bc3f8660800000000000000
+      internalID: 7390192248215679571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _19
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 86
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e47fe3fc03894aed0800000000000000
+      internalID: -2403628965706139826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _20
+      rect:
+        serializedVersion: 2
+        x: 645
+        y: 74
+        width: 27
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1faff1778640744b0800000000000000
+      internalID: -5456387576814372111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _21
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 88
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd7111468f0f20390800000000000000
+      internalID: -7853449850559326245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _22
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 80
+        width: 12
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebb018336597c5da0800000000000000
+      internalID: -5954751196152394818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _23
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 94
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce2e86f385338ddc0800000000000000
+      internalID: -3614082246850845972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _24
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 85
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 579d67f9e85cc9620800000000000000
+      internalID: 2782315886159518069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _25
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 82
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f67def544706bf810800000000000000
+      internalID: 1800138528571447151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _26
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 89
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 978b25fc028370020800000000000000
+      internalID: 2307875047619082361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _27
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 71
+        width: 16
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c60eafe97c9e26270800000000000000
+      internalID: 8242407311616434284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _28
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 91
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b035743d31fc3d170800000000000000
+      internalID: 8202127030427800331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _29
+      rect:
+        serializedVersion: 2
+        x: 638
+        y: 68
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1df06df22656d5a0800000000000000
+      internalID: -6496910704155493089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _30
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 68
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5247b7c75b94ecb00800000000000000
+      internalID: 850698423445976101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _31
+      rect:
+        serializedVersion: 2
+        x: 830
+        y: 68
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04add041002cb9fb0800000000000000
+      internalID: -4639901685482923456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _32
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 72
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 429add939bb67d480800000000000000
+      internalID: -8874506097426323164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _33
+      rect:
+        serializedVersion: 2
+        x: 873
+        y: 67
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86a0848b5106ec5c0800000000000000
+      internalID: -4193308556633044376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _34
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 71
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c2ac271f7bb61fb0800000000000000
+      internalID: -4677345008453639485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _35
+      rect:
+        serializedVersion: 2
+        x: 1069
+        y: 73
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce5806c41d9fcd830800000000000000
+      internalID: 4097424438325183980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell nyro _36
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 73
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22765978413d8dc10800000000000000
+      internalID: 2078643313159005986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      spell nyro _0: 2854987898189930439
+      spell nyro _1: 2801642199960311072
+      spell nyro _10: 1093748736393643269
+      spell nyro _11: -3101101118501078026
+      spell nyro _12: 7624156192270602020
+      spell nyro _13: 2658247484870154833
+      spell nyro _14: -9216751147562455656
+      spell nyro _15: 4195604690152571187
+      spell nyro _16: 6113848047565902590
+      spell nyro _17: 3990913836382378675
+      spell nyro _18: 7390192248215679571
+      spell nyro _19: -2403628965706139826
+      spell nyro _2: 4977094822461575492
+      spell nyro _20: -5456387576814372111
+      spell nyro _21: -7853449850559326245
+      spell nyro _22: -5954751196152394818
+      spell nyro _23: -3614082246850845972
+      spell nyro _24: 2782315886159518069
+      spell nyro _25: 1800138528571447151
+      spell nyro _26: 2307875047619082361
+      spell nyro _27: 8242407311616434284
+      spell nyro _28: 8202127030427800331
+      spell nyro _29: -6496910704155493089
+      spell nyro _3: -9136827059965769437
+      spell nyro _30: 850698423445976101
+      spell nyro _31: -4639901685482923456
+      spell nyro _32: -8874506097426323164
+      spell nyro _33: -4193308556633044376
+      spell nyro _34: -4677345008453639485
+      spell nyro _35: 4097424438325183980
+      spell nyro _36: 2078643313159005986
+      spell nyro _4: -631764400027551496
+      spell nyro _5: 3612793686332133699
+      spell nyro _6: -5668721751173862076
+      spell nyro _7: -7474637440744845483
+      spell nyro _8: 5521347323407888874
+      spell nyro _9: 6862647255093713302
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
