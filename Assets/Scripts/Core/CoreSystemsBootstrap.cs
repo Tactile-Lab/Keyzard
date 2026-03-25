@@ -7,6 +7,11 @@ public class CoreSystemsBootstrap : MonoBehaviour
     [SerializeField] private SpellInventoryManager spellInventoryManagerPrefab;
     [SerializeField] private AudioManager audioManagerPrefab;
 
+    [SerializeField] private TransitionManager transitionManagerPrefab;
+
+    [SerializeField] private GameObject transitionCanvasPrefab;
+
+
     private void Awake()
     {
         EnsureManagers();
@@ -27,6 +32,17 @@ public class CoreSystemsBootstrap : MonoBehaviour
         if (AudioManager.Instance == null && audioManagerPrefab != null)
         {
             Instantiate(audioManagerPrefab);
+        }
+
+        if (TransitionManager.Instance == null && transitionManagerPrefab != null)
+        {
+            Instantiate(transitionManagerPrefab);
+        }
+
+        if (transitionCanvasPrefab != null && FindFirstObjectByType<BlackFadeEffect>() == null)
+        {
+            Instantiate(transitionCanvasPrefab);
+        
         }
     }
 }

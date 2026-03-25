@@ -247,15 +247,15 @@ public class PauseMenuController : MonoBehaviour
         ApplyPauseState(false);
         Time.timeScale = 1f;
         SpellInventoryManager.Instance.ResetInventory();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        TransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void LoadMainMenu()
     {
         ApplyPauseState(false);
         Time.timeScale = 1f;
-        SpellInventoryManager.Instance.ResetInventory();
-        SceneManager.LoadScene(0);
+        SpellInventoryManager.Instance.ResetInventory();;
+        TransitionManager.Instance.LoadScene(0);
     }
 
     private void ApplyPauseState(bool paused)

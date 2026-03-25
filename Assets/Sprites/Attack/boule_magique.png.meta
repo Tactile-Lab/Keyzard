@@ -121,7 +121,21 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    outline: []
+    outline:
+    - - {x: 16, y: -8}
+      - {x: 16, y: 7}
+      - {x: 15, y: 10}
+      - {x: 10, y: 15}
+      - {x: 7, y: 16}
+      - {x: -7, y: 16}
+      - {x: -10, y: 15}
+      - {x: -15, y: 10}
+      - {x: -16, y: 7}
+      - {x: -16, y: -7}
+      - {x: -15, y: -10}
+      - {x: -10, y: -15}
+      - {x: -7, y: -16}
+      - {x: 8, y: -16}
     customData: 
     physicsShape:
     - - {x: 9, y: -14}
