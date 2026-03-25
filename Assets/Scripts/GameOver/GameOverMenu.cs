@@ -67,7 +67,8 @@ public class GameOverMenu : MonoBehaviour
     }
 
     void RetourMenu()
-    {
+    {   
+        SpellInventoryManager.Instance.ResetInventory();
         SceneManager.LoadScene(0);
     }
 }
