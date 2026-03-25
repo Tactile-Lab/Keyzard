@@ -44,11 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0bbe9c98b39f384e9ccfe24ff9aa7df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TypingSortManager
-  sorts:
-  - {fileID: 5863181580237299462, guid: 6858f492158423d4cbfeb9d5234fab2f, type: 3}
-  - {fileID: 1639590310501643658, guid: 916d28f59f9497440abcd344ace10fdb, type: 3}
-  - {fileID: 4584901935658147971, guid: 587df545a267dec42bdd2b1a6c23f460, type: 3}
-  - {fileID: -1600348183999881970, guid: 41711c3c109dd8d4083a7116509f6d6f, type: 3}
+  spellInventory: {fileID: 0}
   listEnemies: []
   affichage: {fileID: 0}
   wordPrefab: {fileID: 3387185123503094725, guid: 1600a77eacc954c4bb475b43d9b2d05d, type: 3}

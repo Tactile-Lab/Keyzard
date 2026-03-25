@@ -1,4 +1,4 @@
-using UnityEditor.Animations;
+
 using UnityEngine;
 
 public enum EnemyType
@@ -15,5 +15,5 @@ public class EnemyData : ScriptableObject
     public EnemyType type;
     public int damage;
     public float speed;
-    public AnimatorController animatorController;
+    public RuntimeAnimatorController animatorController;
 }

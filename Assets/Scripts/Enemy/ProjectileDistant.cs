@@ -23,28 +23,31 @@ public class ProjectileDistant : MonoBehaviour
         StartGrowth();
     }
 
-   void FixedUpdate()
-{
-    if (isMoving)
+    void FixedUpdate()
     {
-        float moveDistance = speed * Time.fixedDeltaTime;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, directionBase, moveDistance, wallLayer);
-        if (hit.collider != null)
+        if (isMoving)
         {
-            Destroy(gameObject);
-            return;
-        }
-
-        transform.position += (Vector3)(directionBase * moveDistance);
-    }
-    else
-    {
-        if (islauch)
+            if (directionBase == Vector2.zero)
             {
                 Destroy(gameObject);
+                return;
             }
+
+            float moveDistance = speed * Time.fixedDeltaTime;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, directionBase, moveDistance, wallLayer);
+            if (hit.collider != null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            transform.position += (Vector3)(directionBase * moveDistance);
+        }
+        else if (islauch)
+        {
+            Destroy(gameObject);
+        }
     }
-}
 
     // démarre la croissance
     public void StartGrowth()
@@ -65,9 +68,16 @@ public class ProjectileDistant : MonoBehaviour
         transform.localScale = finalScale;
     }
 
-    public void Launch(Vector3 playerPos, int projectileDamage)
+    public void Launch(Vector3 targetPosition, int projectileDamage)
     {
-        Vector2 dir = playerPos - transform.position;
+        Vector2 dir = targetPosition - transform.position;
+
+        if (dir == Vector2.zero)
+        {
+            // cible disparue ou trop proche
+            Destroy(gameObject);
+            return;
+        }
 
         directionBase = dir.normalized;
         damage = projectileDamage;

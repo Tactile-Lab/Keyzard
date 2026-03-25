@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using TMPro;
+using NUnit.Framework;
 
 public class Enemy : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class Enemy : MonoBehaviour
     private EnemyType type;
     private int damage;
     private float speed;
-    private Animator animator;
+    protected Animator animator;
 
     [SerializeField]
     private GameObject projectileEnemy;
@@ -35,7 +36,9 @@ public class Enemy : MonoBehaviour
 
     private bool playerReferencesResolved = false;
 
-    private RoomManager room;
+    protected RoomManager room;
+
+    private bool isAttacking = false;
 
 
     /// <summary>
@@ -89,7 +92,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void Start()
+    protected virtual void Start()
     {
         // Récupérer les références au joueur une seule fois
         ResolvePlayerReferencesOnce();
@@ -116,6 +119,7 @@ public class Enemy : MonoBehaviour
             nameText.text = GameManager.Instance.list_enemies.Find(e => e.enemy == gameObject)?.code ?? "Unknown";
         }
 
+
         // Initialiser l'état d'animation selon le type
         if (type != EnemyType.Distant)
         {
@@ -128,7 +132,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         // Assurer que les références sont résolues une seule fois
         if (!playerReferencesResolved)
@@ -157,40 +161,35 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void ApplyKnockback(Vector2 direction, float force)
+        public void ApplyKnockback(Vector2 direction, float force, float duration = 0.3f)
+    {
+        StartCoroutine(KnockbackRoutine(direction.normalized * force, duration));
+    }
+
+    private IEnumerator KnockbackRoutine(Vector2 velocity, float duration)
     {
         isStunned = true;
 
-        // Stoppe le mouvement actuel
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            rb.linearVelocity = velocity; // contrôle direct de la vitesse
+            elapsed += Time.fixedDeltaTime;
+            yield return new WaitForFixedUpdate(); // synchronisé avec la physique
+        }
+
         rb.linearVelocity = Vector2.zero;
-
-        // Applique le knockback du sort
-        rb.AddForce(direction * force, ForceMode2D.Impulse);
-
-        // Arrête le knockback après une courte durée
-        StartCoroutine(KnockbackDuration(0.3f));
-    }
-
-    private IEnumerator KnockbackDuration(float duration)
-    {
-        yield return new WaitForSeconds(duration);
-
-        // Évite que l'ennemi continue de glisser
-        rb.linearVelocity = Vector2.zero;
-
-        // Fin de l'état de stun
         isStunned = false;
     }
-
-    private IEnumerator Shoot()
-    {
-        while (true)
+        protected virtual IEnumerator Shoot()
         {
-            yield return new WaitForSeconds(4f);
-            if (health == 0) yield break;
-            animator.SetTrigger("Attack");
+            while (true)
+            {
+                yield return new WaitForSeconds(4f);
+                if (health == 0) yield break;
+                animator.SetTrigger("Attack");
+            }
         }
-    }
 
     // Appelé par l'animation d'attaque de l'ennemi distant
     public void ShootProjectile()
@@ -205,16 +204,33 @@ public class Enemy : MonoBehaviour
         {
             projectileToLaunch = Instantiate(projectileEnemy, transform.position + Vector3.right * 0.4f, Quaternion.identity);
         }
+        isAttacking = true;
+    }
+
+    public void BeginAnimationHitOrDeath()
+    {
+        if (isAttacking)
+        {
+            Destroy(projectileToLaunch.gameObject);
+        }
     }
 
     public void LaunchProjectile()
     {
-        if (projectileToLaunch == null || playerTargetTransform == null) return;
+        if (projectileToLaunch == null || playerTargetTransform == null)
+        {
+            if (projectileToLaunch != null)
+            {
+                Destroy(projectileToLaunch.gameObject);
+            }
+            return; // sortir de la fonction pour éviter d’appeler Launch
+        }
 
         projectileToLaunch.GetComponent<ProjectileDistant>().Launch(playerTargetTransform.position, damage);
+        isAttacking = false;
     }
 
-    private void Move()
+    protected virtual void Move()
     {
         if (health == 0 || playerTargetTransform == null) return;
 
@@ -238,7 +254,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    private void CheckAttack()
+    protected virtual void CheckAttack()
     {
         // Passe en attaque quand le joueur est dans la portée proche
         if (playerTargetTransform != null && Vector2.Distance(transform.position, playerTargetTransform.position) < 1f)
@@ -248,7 +264,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void EndAttack()
+    public virtual void EndAttack()
     {
         isMoving = true;
         animator.SetTrigger("Move");
@@ -336,7 +352,7 @@ public class Enemy : MonoBehaviour
         playerHealth.TakeDamage(damage);
     }
 
-    public void TakeDamage(float damageAmount)
+    public virtual void TakeDamage(float damageAmount)
     {
         animator.SetTrigger("TakeDmg");
         isMoving = false;
@@ -348,7 +364,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void EndTakeDamage()
+    public virtual void EndTakeDamage()
     {
         if (health == 0)
         {

@@ -10,8 +10,6 @@ public class GameManager : MonoBehaviour
         public string code;
     }
 
-    private TypingSortManager typingManager;
-
     public static GameManager Instance;
 
     public List<EnemyEntry> list_enemies = new List<EnemyEntry>();
@@ -36,24 +34,26 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void RegisterEnemies(List<GameObject> enemies)
     {
-        if (typingManager == null)
-        {
-            typingManager = FindFirstObjectByType<TypingSortManager>();
-            if (typingManager == null)
-            {
-                Debug.LogError("TypingManager introuvable !");
-                return;
-            }
-        }
-
         // Crée un HashSet avec les 2 premières lettres de tous les sorts
         HashSet<string> spellPrefixes = new HashSet<string>();
-        foreach (var sort in typingManager.sorts)
+        SpellInventoryManager inventory = SpellInventoryManager.Instance;
+        if (inventory != null)
         {
-            if (!string.IsNullOrEmpty(sort.nomSort) && sort.nomSort.Length >= 2)
+            IReadOnlyList<Sort> catalog = inventory.GetSpellCatalog();
+            for (int i = 0; i < catalog.Count; i++)
             {
-                spellPrefixes.Add(sort.nomSort.Substring(0, 2).ToUpper());
+                Sort sort = catalog[i];
+                if (sort == null) continue;
+
+                if (!string.IsNullOrEmpty(sort.nomSort) && sort.nomSort.Length >= 2)
+                {
+                    spellPrefixes.Add(sort.nomSort.Substring(0, 2).ToUpper());
+                }
             }
+        }
+        else
+        {
+            Debug.LogWarning("[GameManager] SpellInventoryManager introuvable, aucun prefixe de sort reserve.");
         }
 
         HashSet<string> usedCodes = new HashSet<string>();

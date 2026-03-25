@@ -50,6 +50,12 @@ MonoBehaviour:
   nomSort: uraw
   damage: 15
   vitesse: 1.5
+  description: "Une lance fantomatique in\xE9vitable qui touche l\u2019ennemi marqu\xE9,
+    bien que lente"
+  icon: {fileID: 1204236988781962780, guid: 58630f89e44ba67459de93a1a4b39df5, type: 3}
+  demonstrationIllustration: {fileID: 21300000, guid: ffe35a25f288f064f8edd99aa45d0e28, type: 3}
+  audioConfig: {fileID: 0}
+  aniamtor: {fileID: 0}
 --- !u!212 &6770589723762905975
 SpriteRenderer:
   serializedVersion: 2
@@ -96,7 +102,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -840883905
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4211761467620165101, guid: dd058ac2ed60ce3409ba8c91433cadef, type: 3}

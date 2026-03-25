@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7327621442186800329}
-  - component: {fileID: 6770589723762905975}
   - component: {fileID: -1600348183999881970}
+  - component: {fileID: 6770589723762905975}
   - component: {fileID: 674501160482275813}
   m_Layer: 9
   m_Name: ShotGunFieu
@@ -34,6 +34,29 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1600348183999881970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5292077714965797603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fd13093970693c488ed69422508f523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShotGunFeu
+  nomSort: nyro
+  damage: 2
+  vitesse: 5
+  description: "Un barage de boule de feu a faible port\xE9 mais au d\xE9gats d\xE9vastateur"
+  icon: {fileID: 21300000, guid: c9f42e6aeb5cc444085d139ac0e78b22, type: 3}
+  demonstrationIllustration: {fileID: 21300000, guid: c1c156fc0bf61e34496385b23ae22fd9, type: 3}
+  audioConfig: {fileID: 0}
+  aniamtor: {fileID: 0}
+  nombreProjectiles: 9
+  angleTotal: 60
+  delayVie: 0.5
 --- !u!212 &6770589723762905975
 SpriteRenderer:
   serializedVersion: 2
@@ -80,7 +103,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -840883905
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: c9f42e6aeb5cc444085d139ac0e78b22, type: 3}
@@ -93,24 +116,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &-1600348183999881970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5292077714965797603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fd13093970693c488ed69422508f523, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShotGunFeu
-  nomSort: nyro
-  damage: 2
-  vitesse: 5
-  nombreProjectiles: 9
-  angleTotal: 60
-  delayVie: 0.5
 --- !u!58 &674501160482275813
 CircleCollider2D:
   m_ObjectHideFlags: 0

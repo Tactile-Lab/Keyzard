@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7327621442186800329}
+  - component: {fileID: 4584901935658147971}
+  - component: {fileID: 7794576331350361623}
   - component: {fileID: 6770589723762905975}
   - component: {fileID: 1244127196295335353}
-  - component: {fileID: 7794576331350361623}
-  - component: {fileID: 4584901935658147971}
   - component: {fileID: 5529892410386165558}
   m_Layer: 9
   m_Name: RingEau
@@ -36,6 +36,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4584901935658147971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5292077714965797603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1891db53a8a840c43892cd154070d588, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RingEau
+  nomSort: geda
+  damage: 5
+  vitesse: 1
+  description: "Un cercle d'eau couvrant une zone important infligeant peu de d\xE9gats
+    mais repousse les enemies"
+  icon: {fileID: -5130603935143729470, guid: 7fbf817275dd06a4292eec343061b52e, type: 3}
+  demonstrationIllustration: {fileID: 21300000, guid: 8efc611e04b0ba643b9f6c4d0f71a12f, type: 3}
+  audioConfig: {fileID: 0}
+  aniamtor: {fileID: 0}
+  forceKnockback: 5
+--- !u!114 &7794576331350361623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5292077714965797603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cb65c7e37c99a143ab903e9be16202e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ColliderUpdater
 --- !u!212 &6770589723762905975
 SpriteRenderer:
   serializedVersion: 2
@@ -82,7 +116,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -840883905
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2534214751807186648, guid: 7fbf817275dd06a4292eec343061b52e, type: 3}
@@ -155,34 +189,6 @@ PolygonCollider2D:
       - {x: -0.052999977, y: -0.13022083}
       - {x: 0.07625001, y: -0.13022083}
   m_UseDelaunayMesh: 1
---- !u!114 &7794576331350361623
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5292077714965797603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cb65c7e37c99a143ab903e9be16202e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ColliderUpdater
---- !u!114 &4584901935658147971
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5292077714965797603}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1891db53a8a840c43892cd154070d588, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RingEau
-  nomSort: geda
-  damage: 5
-  vitesse: 1
-  forceKnockback: 5
 --- !u!95 &5529892410386165558
 Animator:
   serializedVersion: 7

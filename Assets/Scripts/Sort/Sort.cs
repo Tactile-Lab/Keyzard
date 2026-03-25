@@ -8,6 +8,12 @@ public class Sort : MonoBehaviour
     public int damage;
     public float vitesse;
 
+    [Header("UI & Display")]
+    [TextArea(2, 4)]
+    public string description;
+    public Sprite icon;
+    public Sprite demonstrationIllustration;
+
     [Header("Audio")]
     public SpellAudioConfig audioConfig;
 
@@ -21,18 +27,51 @@ public class Sort : MonoBehaviour
     {
         List<GameManager.EnemyEntry> ennemis = GameManager.Instance.list_enemies;
 
-        // On assigne directement à la variable de classe
+        if (ennemis.Count == 0)
+        {
+            Debug.Log("[Sort] Aucun ennemi dans la liste → destruction du sort");
+            Destroy(gameObject);
+            return;
+        }
+
         cible = TrouverCibleProche(ennemis);
+
         if (cible != null)
         {
             LancerSortCible(cible);
+        }
+        else
+        {
+            Debug.LogWarning("[Sort] Aucune cible valide trouvée → destruction du sort");
+            Destroy(gameObject);
+        }
+    }
+
+    private IEnumerator LancerSortDelayed()
+    {
+        yield return null; // attend 1 frame
+
+        List<GameManager.EnemyEntry> ennemis = GameManager.Instance.list_enemies;
+
+        cible = TrouverCibleProche(ennemis);
+
+        if (cible != null)
+        {
+            LancerSortCible(cible);
+        }
+        else
+        {
+            Debug.LogWarning("[Sort] Toujours aucune cible après délai !");
         }
     }
 
     // Lance le sort sur une cible spécifique
     public virtual void LancerSortCible(GameObject cibleRef)
     {
-        if (cibleRef == null) return;
+        if (cibleRef == null)
+        {
+            DestroySort(gameObject);
+        }
 
         cible = cibleRef;
 

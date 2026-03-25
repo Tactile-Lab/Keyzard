@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5046523506603059416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3350542496526060459}
+  - component: {fileID: 1050020395638439902}
+  m_Layer: 0
+  m_Name: === Spell Inventory Manager ===
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3350542496526060459
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5046523506603059416}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 689.3343, y: 584.1513, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1050020395638439902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5046523506603059416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a950da50d4bfd54d9c1ae0714249531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpellInventoryManager
+  allSpells:
+  - {fileID: 5863181580237299462, guid: 6858f492158423d4cbfeb9d5234fab2f, type: 3}
+  - {fileID: 1639590310501643658, guid: 916d28f59f9497440abcd344ace10fdb, type: 3}
+  - {fileID: 4584901935658147971, guid: 587df545a267dec42bdd2b1a6c23f460, type: 3}
+  - {fileID: -1600348183999881970, guid: 41711c3c109dd8d4083a7116509f6d6f, type: 3}
+  startingSpells:
+  - {fileID: 5863181580237299462, guid: 6858f492158423d4cbfeb9d5234fab2f, type: 3}
+  - {fileID: 6111884763938885358, guid: be80c448a4a43424187dfefa442e6c5a, type: 3}
+  initializeOnAwake: 1
+  debugUnlockAllSpellsOnStart: 0
+  bookNormal: {fileID: 0}
+  bookGlow: {fileID: 0}

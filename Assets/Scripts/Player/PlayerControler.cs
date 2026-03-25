@@ -56,6 +56,15 @@ public class PlayerControler : MonoBehaviour
 
     private void Update()
     {
+        if (IsMovementBlocked())
+        {
+            // While glossary pause is open, keep player fully idle and avoid buffering movement input.
+            ClearMovementState();
+            UpdateAnimationAndFacing();
+            UpdateStaffRotation();
+            return;
+        }
+
         // 1) Lit l'input en temps réel
         ReadMovementInput();
 
@@ -68,6 +77,12 @@ public class PlayerControler : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (IsMovementBlocked())
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
         // Déplacement physique dans FixedUpdate pour une vitesse stable.
         Vector2 velocity = rb.linearVelocity;
 
@@ -216,6 +231,19 @@ public class PlayerControler : MonoBehaviour
         // rawInput conserve les axes bruts (-1, 0, 1), input est normalisé.
         rawInput = new Vector2(x, y);
         input = rawInput.normalized;
+    }
+
+    private bool IsMovementBlocked()
+    {
+        return GlossaryToggleController.IsGlossaryOpen || Time.timeScale <= 0f;
+    }
+
+    private void ClearMovementState()
+    {
+        rawInput = Vector2.zero;
+        input = Vector2.zero;
+        anyMoveKeyReleasedThisFrame = false;
+        anyMoveKeyPressedThisFrame = false;
     }
 
     private GameObject FindClosestEnemy()
