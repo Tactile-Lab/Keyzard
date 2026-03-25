@@ -58,11 +58,20 @@ public class PauseMenuController : MonoBehaviour
     private int selectedIndex;
     private float nextInputTime;
 
+    private PlayerHealth playerHealth;
+
     private void Awake()
     {
         if (pauseRoot == null && optionTargets != null && optionTargets.Length > 0 && optionTargets[0] != null)
         {
             pauseRoot = optionTargets[0].gameObject;
+        }
+
+        playerHealth = FindFirstObjectByType<PlayerHealth>();
+
+        if (playerHealth == null)
+        {
+            Debug.LogWarning("PlayerHealth introuvable dans la scène !");
         }
 
         CacheBackdropGroup();
@@ -147,6 +156,12 @@ public class PauseMenuController : MonoBehaviour
     {
         if (isOpen || isTransitioning)
         {
+            return;
+        }
+
+        if (playerHealth != null && playerHealth.IsDead)
+        {
+            // Empêche l'ouverture si le joueur est mort
             return;
         }
 
@@ -247,15 +262,15 @@ public class PauseMenuController : MonoBehaviour
         ApplyPauseState(false);
         Time.timeScale = 1f;
         SpellInventoryManager.Instance.ResetInventory();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        TransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void LoadMainMenu()
     {
         ApplyPauseState(false);
         Time.timeScale = 1f;
-        SpellInventoryManager.Instance.ResetInventory();
-        SceneManager.LoadScene(0);
+        SpellInventoryManager.Instance.ResetInventory();;
+        TransitionManager.Instance.LoadScene(0);
     }
 
     private void ApplyPauseState(bool paused)
