@@ -5,6 +5,9 @@ using System.Collections;
 public class TransitionManager : MonoBehaviour
 {
     public static TransitionManager Instance;
+    public static bool IsTransitioning { get; private set; }
+
+    private bool firstLoad = true; // <- ignore le fade d'entrée au lancement
 
     private void Awake()
     {
@@ -12,7 +15,7 @@ public class TransitionManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            SceneManager.sceneLoaded += OnSceneLoaded;  // Déclenche PlayEntranceEffect après load
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
@@ -22,21 +25,23 @@ public class TransitionManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // Pause le jeu avant le fade-in
-        Time.timeScale = 0f;
+        // Ignore le fade d'entrée la première scène
+        if (firstLoad)
+        {
+            firstLoad = false;
+            return;
+        }
 
         if (BlackFadeEffect.Instance != null)
         {
-            BlackFadeEffect.Instance.PlayEntranceEffect(() =>
+            IsTransitioning = true;
+            Time.timeScale = 0f; // bloque tout pendant le fade
+
+            BlackFadeEffect.Instance.PlayFadeIn(() =>
             {
-                // Remet le jeu en marche après le fade-in
                 Time.timeScale = 1f;
+                IsTransitioning = false;
             });
-        }
-        else
-        {
-            // Si pas de BlackFadeEffect, on remet le TimeScale directement
-            Time.timeScale = 1f;
         }
     }
 
@@ -53,18 +58,32 @@ public class TransitionManager : MonoBehaviour
     private IEnumerator LoadSceneCoroutine(int buildIndex)
     {
         if (BlackFadeEffect.Instance != null)
-            yield return StartCoroutine(BlackFadeEffect.Instance.PlayExitEffectCoroutine(null));
+        {
+            IsTransitioning = true;
+            Time.timeScale = 0f;
+            yield return StartCoroutine(FadeOutCoroutine());
+        }
 
-        yield return null;
         SceneManager.LoadScene(buildIndex);
     }
 
     private IEnumerator LoadSceneCoroutine(string sceneName)
     {
         if (BlackFadeEffect.Instance != null)
-            yield return StartCoroutine(BlackFadeEffect.Instance.PlayExitEffectCoroutine(null));
+        {
+            IsTransitioning = true;
+            Time.timeScale = 0f;
+            yield return StartCoroutine(FadeOutCoroutine());
+        }
 
-        yield return null;
         SceneManager.LoadScene(sceneName);
+    }
+
+    private IEnumerator FadeOutCoroutine()
+    {
+        bool finished = false;
+        BlackFadeEffect.Instance.PlayFadeOut(() => finished = true);
+        while (!finished)
+            yield return null;
     }
 }
