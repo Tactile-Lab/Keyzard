@@ -13,7 +13,7 @@ public class PauseMenuController : MonoBehaviour
     [SerializeField] private RectTransform visualIndicatorObject;
 
     [Header("Input")]
-    [SerializeField] private float inputCooldown = 0.08f;
+    [SerializeField] private float inputCooldown = 0.02f;
 
     [Header("Animation")]
     [SerializeField] private float slideDuration = 0.32f;
@@ -26,7 +26,8 @@ public class PauseMenuController : MonoBehaviour
     [Header("Button Effects")]
     [SerializeField] private float buttonScalePop = 1.15f;
     [SerializeField] private float popDuration = 0.15f;
-    [SerializeField] private float punchDownDistance = 30f;
+    [SerializeField] private float punchUpDistance = 30f;
+    [SerializeField] private float punchDownDistance = -30f;
     [SerializeField] private float punchDuration = 0.15f;
 
     [Header("Backdrop")]
@@ -202,9 +203,10 @@ public class PauseMenuController : MonoBehaviour
         buttonPunchTweens[selectedIndex]?.Kill();
 
         Vector2 centerPos = openAnchoredPositions[selectedIndex];
+        float punchDistance = direction > 0 ? punchDownDistance : punchUpDistance;
         
         buttonPunchTweens[selectedIndex] = target
-            .DOAnchorPosY(centerPos.y + punchDownDistance, punchDuration * 0.5f)
+            .DOAnchorPosY(centerPos.y + punchDistance, punchDuration * 0.5f)
             .SetEase(Ease.OutCubic)
             .SetUpdate(true)
             .OnComplete(() =>
@@ -376,22 +378,24 @@ public class PauseMenuController : MonoBehaviour
                 {
                     if (capturedIndex == lastAnimatedIndex)
                     {
-                        PlayVisualIndicatorOpenAnimation();
+                        isTransitioning = false;
                     }
                 });
         }
 
         if (lastAnimatedIndex < 0)
         {
-            PlayVisualIndicatorOpenAnimation();
+            isTransitioning = false;
         }
+
+        // Visual indicator glisse en parallèle avec le bouton 2
+        PlayVisualIndicatorOpenAnimation(optionStagger * 2f);
     }
 
-    private void PlayVisualIndicatorOpenAnimation()
+    private void PlayVisualIndicatorOpenAnimation(float delay)
     {
         if (visualIndicatorObject == null)
         {
-            isTransitioning = false;
             return;
         }
 
@@ -400,16 +404,11 @@ public class PauseMenuController : MonoBehaviour
         visualIndicatorObject.anchoredPosition = visualPos;
 
         visualIndicatorTween?.Kill();
-        float visualIndicatorDelay = optionStagger * 2f;
         visualIndicatorTween = visualIndicatorObject
             .DOAnchorPos(visualIndicatorOpenPos, slideDuration)
-            .SetDelay(visualIndicatorDelay)
+            .SetDelay(delay)
             .SetEase(openEase)
-            .SetUpdate(true)
-            .OnComplete(() =>
-            {
-                isTransitioning = false;
-            });
+            .SetUpdate(true);
     }
 
     private void PlayOptionsCloseAnimation()
@@ -439,27 +438,32 @@ public class PauseMenuController : MonoBehaviour
                 {
                     if (capturedIndex == lastAnimatedIndex)
                     {
-                        PlayVisualIndicatorCloseAnimation();
+                        if (pauseRoot != null)
+                        {
+                            pauseRoot.SetActive(false);
+                        }
+                        isTransitioning = false;
                     }
                 });
         }
 
         if (lastAnimatedIndex < 0)
         {
-            PlayVisualIndicatorCloseAnimation();
-        }
-    }
-
-    private void PlayVisualIndicatorCloseAnimation()
-    {
-        if (visualIndicatorObject == null)
-        {
             if (pauseRoot != null)
             {
                 pauseRoot.SetActive(false);
             }
-
             isTransitioning = false;
+        }
+
+        // Visual indicator glisse en parallèle avec le bouton 0
+        PlayVisualIndicatorCloseAnimation(0f);
+    }
+
+    private void PlayVisualIndicatorCloseAnimation(float delay)
+    {
+        if (visualIndicatorObject == null)
+        {
             return;
         }
 
@@ -467,21 +471,14 @@ public class PauseMenuController : MonoBehaviour
         closePos.x += closedRightOffsetX;
 
         visualIndicatorTween?.Kill();
-        float visualIndicatorDelay = optionStagger * 2f;
         visualIndicatorTween = visualIndicatorObject
             .DOAnchorPos(closePos, slideDuration)
-            .SetDelay(visualIndicatorDelay)
+            .SetDelay(delay)
             .SetEase(closeEase)
             .SetUpdate(true)
             .OnComplete(() =>
             {
-                if (pauseRoot != null)
-                {
-                    pauseRoot.SetActive(false);
-                }
-
                 PlaceOptionsOnLeft();
-                isTransitioning = false;
             });
     }
 
