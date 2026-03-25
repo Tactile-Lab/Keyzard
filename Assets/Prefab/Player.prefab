@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -840883905
-  m_SortingLayer: 6
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 2175114571937620227}
   - component: {fileID: 5400396367967198384}
   - component: {fileID: 6606962051837931564}
+  - component: {fileID: 1046325138536106349}
   - component: {fileID: 3563613844992985669}
   m_Layer: 7
   m_Name: Avatar
@@ -207,7 +208,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1746916159
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 3713219614965599903, guid: 13546d193c710f74f83df5ec2870f471, type: 3}
@@ -333,6 +334,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.53121114, y: 0.9312339}
   m_EdgeRadius: 0
+--- !u!114 &1046325138536106349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5089501067485288850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ea7f4b0b465bfc49822ab4fe6b60cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
+  canvas: {fileID: 0}
+  noirImage: {fileID: 0}
+  gameOverText: {fileID: 0}
+  fadeDuration: 1
+  animator: {fileID: 3563613844992985669}
+  staff: {fileID: 7450699288470269691}
+  mainCamera: {fileID: 0}
+  player: {fileID: 2958709586020034825}
+  zoomAmount: 2
+  zoomDuration: 0.5
+  shakeIntensity: 0.2
+  shakeDuration: 0.3
+  slowMotionFactor: 0
+  postFadeDelay: 0.3
 --- !u!95 &3563613844992985669
 Animator:
   serializedVersion: 7
@@ -434,7 +461,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1641786251
-  m_SortingLayer: 5
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -3671240662380257056, guid: 551dbb3724e52de4f8ee42848f4f3122, type: 3}

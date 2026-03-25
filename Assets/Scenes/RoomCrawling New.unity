@@ -555,11 +555,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 903cb0919dc1be7419c9923fb902bece, type: 3}
---- !u!1 &408336577 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7450699288470269691, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-  m_PrefabInstance: {fileID: 495252504}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &453548378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -652,6 +647,22 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1046325138536106349, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 1323084122}
+    - target: {fileID: 1046325138536106349, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
+      propertyPath: noirImage
+      value: 
+      objectReference: {fileID: 1257525859}
+    - target: {fileID: 1046325138536106349, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
+      propertyPath: mainCamera
+      value: 
+      objectReference: {fileID: 543566506}
+    - target: {fileID: 1046325138536106349, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
+      propertyPath: gameOverText
+      value: 
+      objectReference: {fileID: 523630102}
     - target: {fileID: 2958709586020034825, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.14
@@ -710,11 +721,8 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5089501067485288850, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-      insertIndex: -1
+      insertIndex: 6
       addedObject: {fileID: 1869938190}
-    - targetCorrespondingSourceObject: {fileID: 5089501067485288850, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1869938191}
   m_SourcePrefab: {fileID: 100100000, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
 --- !u!114 &495252505 stripped
 MonoBehaviour:
@@ -3330,42 +3338,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.5625, y: 0.9375}
   m_Direction: 0
---- !u!114 &1869938191
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 815322854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ea7f4b0b465bfc49822ab4fe6b60cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
-  canvas: {fileID: 1323084122}
-  noirImage: {fileID: 1257525859}
-  gameOverText: {fileID: 523630102}
-  fadeDuration: 1
-  animator: {fileID: 1869938192}
-  staff: {fileID: 408336577}
-  mainCamera: {fileID: 543566506}
-  player: {fileID: 1869938195}
-  zoomAmount: 2
-  zoomDuration: 0.5
-  shakeIntensity: 0.2
-  shakeDuration: 0.3
-  slowMotionFactor: 0
-  postFadeDelay: 0.3
---- !u!95 &1869938192 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 3563613844992985669, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-  m_PrefabInstance: {fileID: 495252504}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1869938195 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2958709586020034825, guid: 7cea37b79f13a054b8f9319696a453d5, type: 3}
-  m_PrefabInstance: {fileID: 495252504}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1923619014
 PrefabInstance:
   m_ObjectHideFlags: 0

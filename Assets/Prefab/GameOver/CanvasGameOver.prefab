@@ -599,7 +599,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Retour au Menu Principale
+  m_text: Menu Principale
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: e0a00e16a0e1b174f82a299f1647f610, type: 2}
   m_sharedMaterial: {fileID: -8254751981930411074, guid: e0a00e16a0e1b174f82a299f1647f610, type: 2}
@@ -997,7 +997,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7208841546056828823
 RectTransform:
   m_ObjectHideFlags: 0
