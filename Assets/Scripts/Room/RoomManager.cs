@@ -123,7 +123,10 @@ public class RoomManager : MonoBehaviour
 
         nonBlockingMannequins.Clear();
         TypingSortManager typingSortManager = FindFirstObjectByType<TypingSortManager>();
-        typingSortManager.ResetInputRoom();
+        if (typingSortManager != null)
+        {
+            typingSortManager.ResetInputRoom();
+        }
     }
 
     private void PrepareReward()
