@@ -145,7 +145,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -183,7 +183,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -211,17 +211,25 @@ TextureImporter:
       name: spell_nyro_0
       rect:
         serializedVersion: 2
-        x: 447
-        y: 68
-        width: 64
-        height: 64
+        x: 0
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
-      physicsShape: []
-      tessellationDetail: -1
+      physicsShape:
+      - - {x: 8, y: -5}
+        - {x: 8, y: 3}
+        - {x: 6, y: 6}
+        - {x: -5, y: 6}
+        - {x: -7, y: 3}
+        - {x: -7, y: -5}
+        - {x: -3, y: -9}
+        - {x: 4, y: -9}
+      tessellationDetail: 0.858
       bones: []
       spriteID: 29886f3d20cbefad0800000000000000
       internalID: -2666487209024649070
@@ -233,17 +241,17 @@ TextureImporter:
       name: spell_nyro_1
       rect:
         serializedVersion: 2
-        x: 648
-        y: 119
-        width: 8
-        height: 8
+        x: 192
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 8f40cacd21506b060800000000000000
       internalID: 6968763051972232440
@@ -255,17 +263,17 @@ TextureImporter:
       name: spell_nyro_2
       rect:
         serializedVersion: 2
-        x: 694
-        y: 124
-        width: 10
-        height: 9
+        x: 384
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 5bd4a78f76c6166d0800000000000000
       internalID: -2998996683045843531
@@ -277,17 +285,17 @@ TextureImporter:
       name: spell_nyro_3
       rect:
         serializedVersion: 2
-        x: 839
-        y: 122
-        width: 7
-        height: 6
+        x: 576
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 179fc90846e6b0330800000000000000
       internalID: 3678154898611698033
@@ -299,17 +307,17 @@ TextureImporter:
       name: spell_nyro_4
       rect:
         serializedVersion: 2
-        x: 890
-        y: 127
-        width: 6
-        height: 6
+        x: 768
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: 9fdb00bc7abab0a00800000000000000
       internalID: 723860902276808185
@@ -321,17 +329,17 @@ TextureImporter:
       name: spell_nyro_5
       rect:
         serializedVersion: 2
-        x: 266
-        y: 75
-        width: 44
-        height: 48
+        x: 960
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: cbc3d3014d8dede30800000000000000
       internalID: 4530296680498412732
@@ -343,17 +351,17 @@ TextureImporter:
       name: spell_nyro_6
       rect:
         serializedVersion: 2
-        x: 651
-        y: 104
-        width: 17
-        height: 16
+        x: 1152
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: bb1ca1e5c21b4f8c0800000000000000
       internalID: -3966350567691075141
@@ -365,658 +373,20 @@ TextureImporter:
       name: spell_nyro_7
       rect:
         serializedVersion: 2
-        x: 666
-        y: 95
-        width: 30
-        height: 30
+        x: 1344
+        y: 0
+        width: 192
+        height: 192
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
       spriteID: b6c562d273fb5cd20800000000000000
       internalID: 3298252545820351595
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_8
-      rect:
-        serializedVersion: 2
-        x: 841
-        y: 106
-        width: 16
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 09d4f080936c50380800000000000000
-      internalID: -9005573931606782576
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_9
-      rect:
-        serializedVersion: 2
-        x: 867
-        y: 96
-        width: 24
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c88bd585e5ffe4c00800000000000000
-      internalID: 886926957313112204
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_10
-      rect:
-        serializedVersion: 2
-        x: 1034
-        y: 112
-        width: 10
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 978f14b9916f0e1f0800000000000000
-      internalID: -1017542925946324871
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_11
-      rect:
-        serializedVersion: 2
-        x: 1065
-        y: 108
-        width: 17
-        height: 15
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e271d24876b1588a0800000000000000
-      internalID: -6303601972022012114
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_12
-      rect:
-        serializedVersion: 2
-        x: 1226
-        y: 115
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d15c2dd81bf318cb0800000000000000
-      internalID: -4863536090762263267
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_13
-      rect:
-        serializedVersion: 2
-        x: 1261
-        y: 113
-        width: 14
-        height: 11
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 78bb897b38b62a760800000000000000
-      internalID: 7467649345598831495
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_14
-      rect:
-        serializedVersion: 2
-        x: 1410
-        y: 70
-        width: 54
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 44cefaab39d6208a0800000000000000
-      internalID: -6340384844124525500
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_15
-      rect:
-        serializedVersion: 2
-        x: 1455
-        y: 119
-        width: 8
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9a4cddbd3dc77f410800000000000000
-      internalID: 1510813449374778537
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_16
-      rect:
-        serializedVersion: 2
-        x: 861
-        y: 105
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2eb1fc838d8c94a20800000000000000
-      internalID: 3047187453884439522
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_17
-      rect:
-        serializedVersion: 2
-        x: 1047
-        y: 97
-        width: 14
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 21044e9445fec42a0800000000000000
-      internalID: -6751758596039229422
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_18
-      rect:
-        serializedVersion: 2
-        x: 1240
-        y: 99
-        width: 12
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 97df4c43e2c53b7a0800000000000000
-      internalID: -6362640495020802695
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_19
-      rect:
-        serializedVersion: 2
-        x: 88
-        y: 86
-        width: 17
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7de1e362386b573f0800000000000000
-      internalID: -903615475819340073
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_20
-      rect:
-        serializedVersion: 2
-        x: 645
-        y: 74
-        width: 27
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 868acb3cbf1c3cb70800000000000000
-      internalID: 8918184974188587112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_21
-      rect:
-        serializedVersion: 2
-        x: 663
-        y: 88
-        width: 16
-        height: 14
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0ac00acbbe78ef2b0800000000000000
-      internalID: -5548848244322202464
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_22
-      rect:
-        serializedVersion: 2
-        x: 837
-        y: 80
-        width: 12
-        height: 21
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6b2b9018488b4fad0800000000000000
-      internalID: -2669305799883771210
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_23
-      rect:
-        serializedVersion: 2
-        x: 855
-        y: 94
-        width: 10
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 77a742d161c2fed00800000000000000
-      internalID: 1004069715416742519
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_24
-      rect:
-        serializedVersion: 2
-        x: 870
-        y: 85
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1ec20ac0fcefa49a0800000000000000
-      internalID: -6247901367799632671
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_25
-      rect:
-        serializedVersion: 2
-        x: 1028
-        y: 82
-        width: 8
-        height: 13
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: de69ef637126b98b0800000000000000
-      internalID: -5144410297494235411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_26
-      rect:
-        serializedVersion: 2
-        x: 1063
-        y: 89
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ae04e65a6c3ad8a0800000000000000
-      internalID: -6279640302992748894
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_27
-      rect:
-        serializedVersion: 2
-        x: 1219
-        y: 71
-        width: 16
-        height: 23
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4dd1c2c6a954b0210800000000000000
-      internalID: 1300209446968630740
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_28
-      rect:
-        serializedVersion: 2
-        x: 1256
-        y: 91
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 269420805f91f0100800000000000000
-      internalID: 76308258880637282
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_29
-      rect:
-        serializedVersion: 2
-        x: 638
-        y: 68
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 952a7bbd92ca2d9e0800000000000000
-      internalID: -1598025621983223207
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_30
-      rect:
-        serializedVersion: 2
-        x: 674
-        y: 68
-        width: 20
-        height: 25
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5446f5d4929748f60800000000000000
-      internalID: 8035680853434524741
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_31
-      rect:
-        serializedVersion: 2
-        x: 830
-        y: 68
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 385379d55ece8b360800000000000000
-      internalID: 7185753675331483011
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_32
-      rect:
-        serializedVersion: 2
-        x: 845
-        y: 72
-        width: 17
-        height: 10
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4a311db318cf2fec0800000000000000
-      internalID: -3534485125547879516
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_33
-      rect:
-        serializedVersion: 2
-        x: 873
-        y: 67
-        width: 14
-        height: 18
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 28e3f184dfde6b3e0800000000000000
-      internalID: -2038180109246054782
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_34
-      rect:
-        serializedVersion: 2
-        x: 1036
-        y: 71
-        width: 10
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 07bb27ff88e189370800000000000000
-      internalID: 8329441084571827056
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_35
-      rect:
-        serializedVersion: 2
-        x: 1069
-        y: 73
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 550ad61c6620ed530800000000000000
-      internalID: 3881542569195053141
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spell_nyro_36
-      rect:
-        serializedVersion: 2
-        x: 1264
-        y: 73
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e39a81ac666c04fa0800000000000000
-      internalID: -5818432573783103170
       vertices: []
       indices: 
       edges: []
@@ -1025,7 +395,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 088feb03be2dddf4d962c43727404abd
     internalID: 0
     vertices: []
     indices: 
@@ -1033,45 +403,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":192.0,"y":192.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       spell_nyro_0: -2666487209024649070
       spell_nyro_1: 6968763051972232440
-      spell_nyro_10: -1017542925946324871
-      spell_nyro_11: -6303601972022012114
-      spell_nyro_12: -4863536090762263267
-      spell_nyro_13: 7467649345598831495
-      spell_nyro_14: -6340384844124525500
-      spell_nyro_15: 1510813449374778537
-      spell_nyro_16: 3047187453884439522
-      spell_nyro_17: -6751758596039229422
-      spell_nyro_18: -6362640495020802695
-      spell_nyro_19: -903615475819340073
       spell_nyro_2: -2998996683045843531
-      spell_nyro_20: 8918184974188587112
-      spell_nyro_21: -5548848244322202464
-      spell_nyro_22: -2669305799883771210
-      spell_nyro_23: 1004069715416742519
-      spell_nyro_24: -6247901367799632671
-      spell_nyro_25: -5144410297494235411
-      spell_nyro_26: -6279640302992748894
-      spell_nyro_27: 1300209446968630740
-      spell_nyro_28: 76308258880637282
-      spell_nyro_29: -1598025621983223207
       spell_nyro_3: 3678154898611698033
-      spell_nyro_30: 8035680853434524741
-      spell_nyro_31: 7185753675331483011
-      spell_nyro_32: -3534485125547879516
-      spell_nyro_33: -2038180109246054782
-      spell_nyro_34: 8329441084571827056
-      spell_nyro_35: 3881542569195053141
-      spell_nyro_36: -5818432573783103170
       spell_nyro_4: 723860902276808185
       spell_nyro_5: 4530296680498412732
       spell_nyro_6: -3966350567691075141
       spell_nyro_7: 3298252545820351595
-      spell_nyro_8: -9005573931606782576
-      spell_nyro_9: 886926957313112204
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
