@@ -27,6 +27,10 @@ public class GameOverMenu : MonoBehaviour
 
     void Update()
     {
+
+        if (!PlayerDeathEffects.CanInteract)
+        return;
+
         var keyboard = Keyboard.current;
         if (keyboard == null) return;
 
