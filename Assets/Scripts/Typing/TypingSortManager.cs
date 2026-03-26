@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
 
@@ -45,6 +46,12 @@ public class TypingSortManager : MonoBehaviour
     private readonly List<Sort> activeSorts = new List<Sort>();
     private bool inventoryMissingWarningLogged;
     private bool gameManagerMissingWarningLogged;
+    private bool hasPreparedCast;
+    private int preparedCastToken;
+    private Sort preparedSortPrefab;
+    private GameObject preparedTarget;
+    private bool preparedHasTarget;
+    private Coroutine preparedCastFallbackCoroutine;
 
     public GameManager.EnemyEntry SelectedEnemy => selectedEnemy;
 
@@ -76,6 +83,8 @@ public class TypingSortManager : MonoBehaviour
         {
             spellInventory.InventoryChanged -= RefreshAvailableSorts;
         }
+
+        ClearPreparedCast();
     }
 
     private void Start()
@@ -163,14 +172,9 @@ public class TypingSortManager : MonoBehaviour
 
         if (sortToCast != null)
         {
-            Vector3 spawnPosition = (playerController != null) ? playerController.StaffTipPosition : transform.position;
-            GameObject sortInstance = Instantiate(sortToCast.gameObject, spawnPosition, transform.rotation);
-            var sortScript = sortInstance.GetComponent<Sort>();
-
-            if (selectedEnemy != null)
-                sortScript?.LancerSortCible(selectedEnemy.enemy);
-            else
-                sortScript?.LancerSort();
+            GameObject target = selectedEnemy != null ? selectedEnemy.enemy : null;
+            bool hasExplicitTarget = selectedEnemy != null;
+            RequestCast(sortToCast, target, hasExplicitTarget);
 
             // Animation mot terminé
             PlayWordAnimation(currentInput);
@@ -191,6 +195,129 @@ public class TypingSortManager : MonoBehaviour
 
         // Reset complet
         ResetInput();
+    }
+
+    public void FirePreparedSpellFromAnimationEvent()
+    {
+        FirePreparedSpellInternal(preparedCastToken);
+    }
+
+    private void RequestCast(Sort sortToCast, GameObject target, bool hasExplicitTarget)
+    {
+        if (sortToCast == null)
+        {
+            return;
+        }
+
+        if (hasPreparedCast)
+        {
+            // Evite les doubles cast en vidant l'etat precedent avant un nouveau request.
+            ClearPreparedCast();
+        }
+
+        bool useAnimationSync = sortToCast.LaunchTiming == Sort.LaunchTimingMode.WaitForAnimationEvent && playerController != null;
+        if (!useAnimationSync)
+        {
+            CastNow(sortToCast, target, hasExplicitTarget);
+            return;
+        }
+
+        preparedCastToken++;
+        hasPreparedCast = true;
+        preparedSortPrefab = sortToCast;
+        preparedTarget = target;
+        preparedHasTarget = hasExplicitTarget;
+
+        bool launchAnimationTriggered = playerController.TriggerSpellLaunchAnimation(sortToCast.LaunchAnimationTrigger);
+        if (!launchAnimationTriggered)
+        {
+            FirePreparedSpellInternal(preparedCastToken);
+            return;
+        }
+
+        playerController.PlayStaffLaunchStartVFX(sortToCast);
+
+        if (sortToCast.audioConfig != null)
+        {
+            sortToCast.audioConfig.Preload();
+            sortToCast.audioConfig.PlayLaunchStartSFX();
+        }
+
+        float fallbackDelay = Mathf.Max(0f, sortToCast.LaunchFallbackDelay);
+        if (preparedCastFallbackCoroutine != null)
+        {
+            StopCoroutine(preparedCastFallbackCoroutine);
+        }
+
+        preparedCastFallbackCoroutine = StartCoroutine(FirePreparedSpellFallback(preparedCastToken, fallbackDelay));
+    }
+
+    private void CastNow(Sort sortToCast, GameObject target, bool hasExplicitTarget)
+    {
+        if (sortToCast == null)
+        {
+            return;
+        }
+
+        Vector3 spawnPosition = (playerController != null) ? playerController.StaffTipPosition : transform.position;
+        playerController?.PlayStaffLaunchReleaseVFX(sortToCast);
+
+        GameObject sortInstance = Instantiate(sortToCast.gameObject, spawnPosition, transform.rotation);
+        Sort sortScript = sortInstance.GetComponent<Sort>();
+        if (sortScript == null)
+        {
+            Destroy(sortInstance);
+            return;
+        }
+
+        if (hasExplicitTarget && target != null)
+        {
+            sortScript.LancerSortCible(target);
+        }
+        else
+        {
+            // Si la cible selectionnee disparait pendant le windup, retombe sur le ciblage automatique.
+            sortScript.LancerSort();
+        }
+    }
+
+    private void FirePreparedSpellInternal(int castToken)
+    {
+        if (!hasPreparedCast || castToken != preparedCastToken)
+        {
+            return;
+        }
+
+        Sort sortPrefab = preparedSortPrefab;
+        GameObject target = preparedTarget;
+        bool hasTarget = preparedHasTarget;
+
+        ClearPreparedCast();
+        CastNow(sortPrefab, target, hasTarget);
+    }
+
+    private IEnumerator FirePreparedSpellFallback(int castToken, float delay)
+    {
+        if (delay > 0f)
+        {
+            yield return new WaitForSeconds(delay);
+        }
+
+        FirePreparedSpellInternal(castToken);
+    }
+
+    private void ClearPreparedCast()
+    {
+        hasPreparedCast = false;
+        preparedSortPrefab = null;
+        preparedTarget = null;
+        preparedHasTarget = false;
+
+        if (preparedCastFallbackCoroutine != null)
+        {
+            StopCoroutine(preparedCastFallbackCoroutine);
+            preparedCastFallbackCoroutine = null;
+        }
     }
 
     private void ResetInput()

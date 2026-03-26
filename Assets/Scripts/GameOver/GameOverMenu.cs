@@ -1,73 +1,180 @@
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class GameOverMenu : MonoBehaviour
+public class GameOverMenuController : MonoBehaviour
 {
-    [Header("Images du Game Over")]
+    public static bool IsGameOverMenuOpen { get; private set; }
+
+    [Header("Menu UI")]
+    public GameObject panelRoot; // Panel principal du menu
     public RectTransform imageRejouer;
     public RectTransform imageMenu;
 
-    [Header("Icône de sélection")]
-    public RectTransform iconSelection;
+    [Header("Input / Animation")] 
+    [SerializeField] private float inputCooldown = 0.1f;
+    [SerializeField] private float buttonScalePop = 1.15f;
+    [SerializeField] private float popDuration = 0.15f;
+    [SerializeField] private float punchUpDistance = 20f;
+    [SerializeField] private float punchDownDistance = -20f;
+    [SerializeField] private float punchDuration = 0.15f;
 
-    private int selectionIndex = 0;
-    private Vector2 decalage;
+    private RectTransform[] optionTargets;
+    private UIButtonSpriteSwap[] optionSpriteSwaps;
+    private Tween[] buttonScaleTweens;
+    private Tween[] buttonPunchTweens;
+    private int selectionIndex;
+    private float nextInputTime;
 
-    void OnEnable()
+    private void Awake()
     {
-        // ✅ On reset la sélection AVANT tout
-        selectionIndex = 0;
+        optionTargets = new RectTransform[] { imageRejouer, imageMenu };
+        optionSpriteSwaps = new UIButtonSpriteSwap[optionTargets.Length];
+        buttonScaleTweens = new Tween[optionTargets.Length];
+        buttonPunchTweens = new Tween[optionTargets.Length];
 
-        // ✅ On calcule le décalage AVEC la bonne position actuelle
-        decalage = iconSelection.anchoredPosition - imageRejouer.anchoredPosition;
+        for (int i = 0; i < optionTargets.Length; i++)
+        {
+            if (optionTargets[i] != null)
+                optionSpriteSwaps[i] = optionTargets[i].GetComponent<UIButtonSpriteSwap>();
+        }
 
-        UpdateIconPosition();
+        if (panelRoot != null)
+            panelRoot.SetActive(false);
+
+        IsGameOverMenuOpen = false;
     }
 
-    void Update()
+    private void Update()
     {
-
-        if (!PlayerDeathEffects.CanInteract)
-        return;
+        if (!IsGameOverMenuOpen || Time.unscaledTime < nextInputTime)
+            return;
 
         var keyboard = Keyboard.current;
         if (keyboard == null) return;
 
-        if (keyboard.rightArrowKey.wasPressedThisFrame && selectionIndex == 0)
-        {
-            selectionIndex = 1;
-            UpdateIconPosition();
-        }
-        else if (keyboard.leftArrowKey.wasPressedThisFrame && selectionIndex == 1)
-        {
-            selectionIndex = 0;
-            UpdateIconPosition();
-        }
-
-        if (keyboard.spaceKey.wasPressedThisFrame)
-        {
-            if (selectionIndex == 0)
-                Rejouer();
-            else
-                RetourMenu();
-        }
+        if (keyboard.leftArrowKey.wasPressedThisFrame && selectionIndex == 1)
+            ChangeSelection(-1);
+        else if (keyboard.rightArrowKey.wasPressedThisFrame && selectionIndex == 0)
+            ChangeSelection(1);
+        else if (keyboard.spaceKey.wasPressedThisFrame)
+            ConfirmSelection();
     }
 
-    void UpdateIconPosition()
+    public void ShowGameOverMenu()
     {
-        RectTransform target = (selectionIndex == 0) ? imageRejouer : imageMenu;
-        iconSelection.anchoredPosition = target.anchoredPosition + decalage;
+        if (panelRoot != null)
+            panelRoot.SetActive(true);
+
+        selectionIndex = 0;
+        ResetAllButtons();
+        RefreshOptionVisualState();
+
+        IsGameOverMenuOpen = true;
+        nextInputTime = Time.unscaledTime + inputCooldown;
     }
 
-    void Rejouer()
+    public void HideGameOverMenu()
+    {
+        IsGameOverMenuOpen = false;
+
+        for (int i = 0; i < buttonScaleTweens.Length; i++)
+        {
+            buttonScaleTweens[i]?.Kill();
+            buttonPunchTweens[i]?.Kill();
+        }
+
+        if (panelRoot != null)
+            panelRoot.SetActive(false);
+    }
+
+    private void ResetAllButtons()
+    {
+        for (int i = 0; i < optionSpriteSwaps.Length; i++)
+        {
+            if (optionSpriteSwaps[i] != null)
+            {
+                optionSpriteSwaps[i].SetPressed(false);
+                optionSpriteSwaps[i].SetSelected(false);
+            }
+        }
+    }
+
+    private void ChangeSelection(int delta)
+    {
+        selectionIndex = (selectionIndex + delta + optionTargets.Length) % optionTargets.Length;
+        nextInputTime = Time.unscaledTime + inputCooldown;
+        RefreshOptionVisualState();
+        PlayPunchEffect(delta);
+    }
+
+    private void PlayPunchEffect(int direction)
+    {
+        RectTransform target = optionTargets[selectionIndex];
+        if (target == null) return;
+
+        buttonPunchTweens[selectionIndex]?.Kill();
+
+        Vector2 originalPos = target.anchoredPosition;
+        float punchDistance = direction > 0 ? punchDownDistance : punchUpDistance;
+
+        buttonPunchTweens[selectionIndex] = target
+            .DOAnchorPosY(originalPos.y + punchDistance, punchDuration * 0.5f)
+            .SetEase(Ease.OutCubic)
+            .SetUpdate(true)
+            .OnComplete(() =>
+            {
+                buttonPunchTweens[selectionIndex] = target
+                    .DOAnchorPosY(originalPos.y, punchDuration * 0.5f)
+                    .SetEase(Ease.InCubic)
+                    .SetUpdate(true);
+            });
+    }
+
+    private void ConfirmSelection()
+    {
+        nextInputTime = Time.unscaledTime + inputCooldown;
+
+        UIButtonSpriteSwap swap = optionSpriteSwaps[selectionIndex];
+        if (swap != null) swap.SetPressed(true);
+
+        switch (selectionIndex)
+        {
+            case 0: Rejouer(); break;
+            case 1: RetourMenu(); break;
+        }
+    }
+
+    private void RefreshOptionVisualState()
+    {
+        for (int i = 0; i < optionTargets.Length; i++)
+        {
+            bool isSelected = (i == selectionIndex);
+
+            UIButtonSpriteSwap swap = optionSpriteSwaps[i];
+            if (swap != null) swap.SetSelected(isSelected);
+
+            RectTransform target = optionTargets[i];
+            if (target == null) continue;
+
+            buttonScaleTweens[i]?.Kill();
+            float targetScale = isSelected ? buttonScalePop : 1f;
+            buttonScaleTweens[i] = target
+                .DOScale(targetScale, popDuration)
+                .SetEase(Ease.OutCubic)
+                .SetUpdate(true);
+        }
+    }
+
+    private void Rejouer()
     {
         SpellInventoryManager.Instance.ResetInventory();
         TransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    void RetourMenu()
-    {   
+    private void RetourMenu()
+    {
         SpellInventoryManager.Instance.ResetInventory();
         TransitionManager.Instance.LoadScene(0);
     }

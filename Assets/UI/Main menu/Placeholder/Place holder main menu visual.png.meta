@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 0596e24578e115846a64df8560b050a8
+guid: 5a76b9e25b1fef144ae8a2b346e8d597
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -387280272042939094
-    second: UI Gameplay_0
+      213: -8438546195894600314
+    second: 2603_2(1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI Gameplay_0
+      name: 2603_2(1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 512
+        height: 288
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a2d2d5cf4aa10aaf0800000000000000
-      internalID: -387280272042939094
+      spriteID: 68d7af4b1f244ea80800000000000000
+      internalID: -8438546195894600314
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      UI Gameplay_0: -387280272042939094
+      2603_2(1)_0: -8438546195894600314
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
