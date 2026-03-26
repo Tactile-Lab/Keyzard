@@ -5821,6 +5821,10 @@ PrefabInstance:
       propertyPath: m_Tiles.Array.data[5].second.m_TileSpriteIndex
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5531591443656011896, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
+      propertyPath: roomType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7970316359922882131, guid: 88b1b6e64900708488ed00c2dd5c6239, type: 3}
       propertyPath: m_IsActive
       value: 1
