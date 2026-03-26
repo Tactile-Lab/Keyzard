@@ -911,11 +911,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 175
+        y: 192
         width: 16
-        height: 32
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -932,12 +932,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_1
       rect:
         serializedVersion: 2
-        x: 18
-        y: 175
-        width: 13
-        height: 33
+        x: 16
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -954,12 +954,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_2
       rect:
         serializedVersion: 2
-        x: 33
-        y: 191
-        width: 13
-        height: 17
+        x: 32
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -976,12 +976,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_3
       rect:
         serializedVersion: 2
-        x: 50
-        y: 175
-        width: 12
-        height: 32
+        x: 48
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -998,12 +998,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_4
       rect:
         serializedVersion: 2
-        x: 66
-        y: 175
-        width: 12
-        height: 30
+        x: 64
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1020,12 +1020,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_5
       rect:
         serializedVersion: 2
-        x: 81
-        y: 175
-        width: 12
-        height: 33
+        x: 80
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1042,12 +1042,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_6
       rect:
         serializedVersion: 2
-        x: 111
-        y: 175
-        width: 34
-        height: 30
+        x: 112
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1064,12 +1064,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_7
       rect:
         serializedVersion: 2
-        x: 159
-        y: 191
-        width: 21
-        height: 17
+        x: 128
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1086,12 +1086,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_8
       rect:
         serializedVersion: 2
-        x: 176
-        y: 195
-        width: 8
-        height: 8
+        x: 160
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1108,12 +1108,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_9
       rect:
         serializedVersion: 2
-        x: 177
-        y: 186
-        width: 32
-        height: 22
+        x: 176
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1130,12 +1130,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_10
       rect:
         serializedVersion: 2
-        x: 227
-        y: 191
-        width: 10
-        height: 17
+        x: 192
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1152,12 +1152,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_11
       rect:
         serializedVersion: 2
-        x: 239
-        y: 175
-        width: 18
-        height: 33
+        x: 224
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1174,12 +1174,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_12
       rect:
         serializedVersion: 2
-        x: 256
-        y: 191
+        x: 240
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1196,12 +1196,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_13
       rect:
         serializedVersion: 2
-        x: 272
-        y: 182
+        x: 256
+        y: 192
         width: 16
-        height: 26
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1218,12 +1218,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_14
       rect:
         serializedVersion: 2
-        x: 303
-        y: 191
-        width: 66
-        height: 17
+        x: 272
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1240,12 +1240,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_15
       rect:
         serializedVersion: 2
-        x: 385
-        y: 194
-        width: 14
-        height: 10
+        x: 304
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1262,12 +1262,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_16
       rect:
         serializedVersion: 2
-        x: 401
-        y: 195
-        width: 14
-        height: 9
+        x: 320
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1284,12 +1284,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_17
       rect:
         serializedVersion: 2
-        x: 417
-        y: 195
-        width: 14
-        height: 9
+        x: 336
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1306,12 +1306,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_18
       rect:
         serializedVersion: 2
-        x: 433
-        y: 195
-        width: 14
-        height: 9
+        x: 352
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1328,12 +1328,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_19
       rect:
         serializedVersion: 2
-        x: 449
-        y: 195
-        width: 14
-        height: 10
+        x: 384
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1350,12 +1350,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_20
       rect:
         serializedVersion: 2
-        x: 481
+        x: 400
         y: 192
-        width: 15
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1372,12 +1372,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_21
       rect:
         serializedVersion: 2
-        x: 496
+        x: 416
         y: 192
-        width: 15
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1394,12 +1394,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_22
       rect:
         serializedVersion: 2
-        x: 513
+        x: 432
         y: 192
-        width: 15
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1416,12 +1416,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_23
       rect:
         serializedVersion: 2
-        x: 528
-        y: 191
-        width: 17
-        height: 17
+        x: 448
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1438,12 +1438,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_24
       rect:
         serializedVersion: 2
-        x: 543
-        y: 164
-        width: 33
-        height: 44
+        x: 480
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1460,12 +1460,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_25
       rect:
         serializedVersion: 2
-        x: 34
-        y: 175
-        width: 13
+        x: 496
+        y: 192
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1482,12 +1482,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_26
       rect:
         serializedVersion: 2
-        x: 159
-        y: 177
-        width: 21
-        height: 14
+        x: 512
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1504,12 +1504,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_27
       rect:
         serializedVersion: 2
-        x: 179
-        y: 177
-        width: 18
-        height: 14
+        x: 528
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1526,12 +1526,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_28
       rect:
         serializedVersion: 2
-        x: 196
-        y: 177
-        width: 13
-        height: 14
+        x: 544
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1548,12 +1548,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_29
       rect:
         serializedVersion: 2
-        x: 227
-        y: 179
-        width: 10
-        height: 10
+        x: 560
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1570,12 +1570,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_30
       rect:
         serializedVersion: 2
-        x: 256
+        x: 0
         y: 176
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1592,12 +1592,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_31
       rect:
         serializedVersion: 2
-        x: 304
-        y: 178
-        width: 15
-        height: 12
+        x: 16
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1614,12 +1614,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_32
       rect:
         serializedVersion: 2
-        x: 323
-        y: 179
-        width: 11
-        height: 10
+        x: 32
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1636,12 +1636,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_33
       rect:
         serializedVersion: 2
-        x: 340
-        y: 181
-        width: 8
-        height: 8
+        x: 48
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1658,12 +1658,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_34
       rect:
         serializedVersion: 2
-        x: 356
-        y: 183
-        width: 6
-        height: 6
+        x: 64
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1680,12 +1680,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_35
       rect:
         serializedVersion: 2
-        x: 389
-        y: 180
-        width: 7
-        height: 7
+        x: 80
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1702,12 +1702,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_36
       rect:
         serializedVersion: 2
-        x: 404
-        y: 179
-        width: 9
-        height: 9
+        x: 112
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1724,12 +1724,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_37
       rect:
         serializedVersion: 2
-        x: 417
+        x: 128
         y: 176
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1746,12 +1746,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_38
       rect:
         serializedVersion: 2
-        x: 432
-        y: 175
-        width: 17
-        height: 17
+        x: 160
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1768,12 +1768,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_39
       rect:
         serializedVersion: 2
-        x: 450
-        y: 175
-        width: 13
-        height: 17
+        x: 176
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1790,12 +1790,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_40
       rect:
         serializedVersion: 2
-        x: 479
+        x: 192
         y: 176
-        width: 17
-        height: 17
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1812,12 +1812,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_41
       rect:
         serializedVersion: 2
-        x: 495
-        y: 175
-        width: 17
-        height: 18
+        x: 224
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1834,12 +1834,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_42
       rect:
         serializedVersion: 2
-        x: 511
+        x: 240
         y: 176
-        width: 18
-        height: 17
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1856,12 +1856,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_43
       rect:
         serializedVersion: 2
-        x: 528
-        y: 185
-        width: 9
-        height: 7
+        x: 256
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1878,12 +1878,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_44
       rect:
         serializedVersion: 2
-        x: 529
+        x: 272
         y: 176
-        width: 6
-        height: 9
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1900,12 +1900,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_45
       rect:
         serializedVersion: 2
-        x: 533
-        y: 175
-        width: 10
-        height: 10
+        x: 304
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1922,12 +1922,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_46
       rect:
         serializedVersion: 2
-        x: 536
-        y: 184
-        width: 8
-        height: 9
+        x: 320
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1944,12 +1944,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_47
       rect:
         serializedVersion: 2
-        x: 4
-        y: 164
-        width: 7
-        height: 7
+        x: 336
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1966,12 +1966,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_48
       rect:
         serializedVersion: 2
-        x: 18
-        y: 161
-        width: 13
-        height: 13
+        x: 352
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1988,12 +1988,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_49
       rect:
         serializedVersion: 2
-        x: 31
-        y: 159
-        width: 18
-        height: 15
+        x: 384
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2010,12 +2010,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_50
       rect:
         serializedVersion: 2
-        x: 47
-        y: 111
-        width: 34
-        height: 57
+        x: 400
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2032,12 +2032,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_51
       rect:
         serializedVersion: 2
-        x: 83
-        y: 143
-        width: 12
-        height: 26
+        x: 416
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2054,12 +2054,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_52
       rect:
         serializedVersion: 2
-        x: 111
-        y: 160
-        width: 18
+        x: 432
+        y: 176
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2076,12 +2076,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_53
       rect:
         serializedVersion: 2
-        x: 131
-        y: 162
-        width: 14
-        height: 13
+        x: 448
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2098,12 +2098,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_54
       rect:
         serializedVersion: 2
-        x: 162
-        y: 159
-        width: 12
-        height: 15
+        x: 480
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2120,12 +2120,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_55
       rect:
         serializedVersion: 2
-        x: 179
-        y: 159
-        width: 9
-        height: 12
+        x: 496
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2142,12 +2142,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_56
       rect:
         serializedVersion: 2
-        x: 197
-        y: 159
-        width: 6
-        height: 9
+        x: 512
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2164,12 +2164,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_57
       rect:
         serializedVersion: 2
-        x: 224
-        y: 144
-        width: 17
-        height: 33
+        x: 528
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2186,12 +2186,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_58
       rect:
         serializedVersion: 2
-        x: 240
-        y: 145
+        x: 544
+        y: 176
         width: 16
-        height: 32
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2208,12 +2208,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_59
       rect:
         serializedVersion: 2
-        x: 256
-        y: 159
+        x: 560
+        y: 176
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2230,12 +2230,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_60
       rect:
         serializedVersion: 2
-        x: 272
-        y: 159
+        x: 0
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2252,12 +2252,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_61
       rect:
         serializedVersion: 2
-        x: 303
-        y: 159
-        width: 66
-        height: 18
+        x: 16
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2274,12 +2274,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_62
       rect:
         serializedVersion: 2
-        x: 388
-        y: 164
-        width: 7
-        height: 7
+        x: 32
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2296,12 +2296,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_63
       rect:
         serializedVersion: 2
-        x: 403
-        y: 163
-        width: 9
-        height: 9
+        x: 48
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2318,12 +2318,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_64
       rect:
         serializedVersion: 2
-        x: 417
-        y: 161
-        width: 13
-        height: 13
+        x: 64
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2340,12 +2340,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_65
       rect:
         serializedVersion: 2
-        x: 432
-        y: 156
+        x: 80
+        y: 160
         width: 16
-        height: 19
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2362,12 +2362,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_66
       rect:
         serializedVersion: 2
-        x: 447
-        y: 133
-        width: 18
-        height: 44
+        x: 112
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2384,12 +2384,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_67
       rect:
         serializedVersion: 2
-        x: 485
-        y: 159
-        width: 6
-        height: 9
+        x: 128
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2406,12 +2406,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_68
       rect:
         serializedVersion: 2
-        x: 500
-        y: 159
-        width: 6
-        height: 11
+        x: 160
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2428,12 +2428,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_69
       rect:
         serializedVersion: 2
-        x: 512
-        y: 144
-        width: 17
-        height: 28
+        x: 176
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2450,12 +2450,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_70
       rect:
         serializedVersion: 2
-        x: 532
+        x: 192
         y: 160
-        width: 8
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2472,12 +2472,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_71
       rect:
         serializedVersion: 2
-        x: 4
-        y: 148
-        width: 8
-        height: 8
+        x: 224
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2494,12 +2494,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_72
       rect:
         serializedVersion: 2
-        x: 20
-        y: 147
-        width: 9
-        height: 9
+        x: 240
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2516,12 +2516,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_73
       rect:
         serializedVersion: 2
-        x: 31
-        y: 143
-        width: 18
+        x: 256
+        y: 160
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2538,12 +2538,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_74
       rect:
         serializedVersion: 2
-        x: 116
-        y: 149
-        width: 9
-        height: 7
+        x: 272
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2560,12 +2560,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_75
       rect:
         serializedVersion: 2
-        x: 128
-        y: 146
-        width: 15
-        height: 13
+        x: 304
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2582,12 +2582,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_76
       rect:
         serializedVersion: 2
-        x: 164
-        y: 136
-        width: 8
+        x: 320
+        y: 160
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2604,12 +2604,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_77
       rect:
         serializedVersion: 2
-        x: 178
-        y: 135
-        width: 11
-        height: 18
+        x: 336
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2626,12 +2626,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_78
       rect:
         serializedVersion: 2
-        x: 192
-        y: 95
-        width: 17
-        height: 64
+        x: 352
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2648,12 +2648,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_79
       rect:
         serializedVersion: 2
-        x: 258
-        y: 145
-        width: 11
-        height: 13
+        x: 384
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2670,12 +2670,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_80
       rect:
         serializedVersion: 2
-        x: 266
-        y: 151
-        width: 7
-        height: 7
+        x: 400
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2692,12 +2692,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_81
       rect:
         serializedVersion: 2
-        x: 276
-        y: 146
-        width: 11
-        height: 10
+        x: 416
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2714,12 +2714,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_82
       rect:
         serializedVersion: 2
-        x: 307
-        y: 146
-        width: 10
-        height: 11
+        x: 432
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2736,12 +2736,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_83
       rect:
         serializedVersion: 2
-        x: 323
-        y: 147
-        width: 11
-        height: 10
+        x: 448
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2758,12 +2758,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_84
       rect:
         serializedVersion: 2
-        x: 339
-        y: 146
-        width: 10
-        height: 11
+        x: 480
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2780,12 +2780,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_85
       rect:
         serializedVersion: 2
-        x: 354
-        y: 147
-        width: 11
-        height: 10
+        x: 496
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2802,12 +2802,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_86
       rect:
         serializedVersion: 2
-        x: 388
-        y: 148
-        width: 7
-        height: 7
+        x: 512
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2824,12 +2824,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_87
       rect:
         serializedVersion: 2
-        x: 402
-        y: 146
-        width: 11
-        height: 11
+        x: 528
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2846,12 +2846,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_88
       rect:
         serializedVersion: 2
-        x: 417
-        y: 145
-        width: 13
-        height: 13
+        x: 544
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2868,12 +2868,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_89
       rect:
         serializedVersion: 2
-        x: 431
-        y: 143
-        width: 17
-        height: 15
+        x: 560
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2890,12 +2890,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_90
       rect:
         serializedVersion: 2
-        x: 485
-        y: 148
-        width: 6
-        height: 7
+        x: 0
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2912,12 +2912,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_91
       rect:
         serializedVersion: 2
-        x: 499
-        y: 146
-        width: 11
-        height: 12
+        x: 16
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2934,12 +2934,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_92
       rect:
         serializedVersion: 2
-        x: 528
+        x: 32
         y: 144
-        width: 17
-        height: 17
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2956,12 +2956,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_93
       rect:
         serializedVersion: 2
-        x: 544
-        y: 134
-        width: 26
-        height: 27
+        x: 48
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2978,12 +2978,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_94
       rect:
         serializedVersion: 2
-        x: 561
-        y: 147
-        width: 15
-        height: 11
+        x: 64
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3000,12 +3000,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_95
       rect:
         serializedVersion: 2
-        x: 111
-        y: 127
-        width: 18
-        height: 18
+        x: 80
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3022,12 +3022,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_96
       rect:
         serializedVersion: 2
-        x: 127
-        y: 129
-        width: 18
-        height: 14
+        x: 112
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3044,12 +3044,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_97
       rect:
         serializedVersion: 2
-        x: 223
-        y: 79
-        width: 66
-        height: 69
+        x: 128
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3066,12 +3066,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_98
       rect:
         serializedVersion: 2
-        x: 234
-        y: 143
-        width: 7
-        height: 7
+        x: 160
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3088,12 +3088,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_99
       rect:
         serializedVersion: 2
-        x: 320
-        y: 128
+        x: 176
+        y: 144
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3110,12 +3110,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_100
       rect:
         serializedVersion: 2
-        x: 335
-        y: 127
-        width: 18
-        height: 18
+        x: 192
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3132,12 +3132,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_101
       rect:
         serializedVersion: 2
-        x: 351
-        y: 118
-        width: 18
-        height: 27
+        x: 224
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3154,12 +3154,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_102
       rect:
         serializedVersion: 2
-        x: 400
-        y: 127
-        width: 17
-        height: 17
+        x: 240
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3176,12 +3176,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_103
       rect:
         serializedVersion: 2
-        x: 3
-        y: 130
-        width: 11
-        height: 11
+        x: 256
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3198,12 +3198,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_104
       rect:
         serializedVersion: 2
-        x: 17
-        y: 130
-        width: 13
-        height: 12
+        x: 272
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3220,12 +3220,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_105
       rect:
         serializedVersion: 2
-        x: 31
-        y: 130
-        width: 18
-        height: 11
+        x: 304
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3242,12 +3242,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_106
       rect:
         serializedVersion: 2
-        x: 82
-        y: 111
-        width: 13
-        height: 26
+        x: 320
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3264,12 +3264,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_107
       rect:
         serializedVersion: 2
-        x: 306
-        y: 130
-        width: 12
-        height: 12
+        x: 336
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3286,12 +3286,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_108
       rect:
         serializedVersion: 2
-        x: 386
-        y: 129
-        width: 13
-        height: 13
+        x: 352
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3308,12 +3308,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_109
       rect:
         serializedVersion: 2
-        x: 420
-        y: 131
-        width: 9
-        height: 9
+        x: 384
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3330,12 +3330,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_110
       rect:
         serializedVersion: 2
-        x: 437
-        y: 132
-        width: 7
-        height: 7
+        x: 400
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3352,12 +3352,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_111
       rect:
         serializedVersion: 2
-        x: 480
-        y: 112
+        x: 416
+        y: 144
         width: 16
-        height: 26
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3374,12 +3374,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_112
       rect:
         serializedVersion: 2
-        x: 501
-        y: 132
-        width: 7
-        height: 7
+        x: 432
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3396,12 +3396,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_113
       rect:
         serializedVersion: 2
-        x: 515
-        y: 131
-        width: 10
-        height: 10
+        x: 448
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3418,12 +3418,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_114
       rect:
         serializedVersion: 2
-        x: 532
-        y: 131
-        width: 9
-        height: 9
+        x: 480
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3440,12 +3440,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_115
       rect:
         serializedVersion: 2
-        x: 547
-        y: 131
-        width: 9
-        height: 9
+        x: 496
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3462,12 +3462,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_116
       rect:
         serializedVersion: 2
-        x: 3
-        y: 115
-        width: 11
-        height: 11
+        x: 512
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3484,12 +3484,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_117
       rect:
         serializedVersion: 2
-        x: 17
-        y: 114
-        width: 13
-        height: 12
+        x: 528
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3506,12 +3506,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_118
       rect:
         serializedVersion: 2
-        x: 32
-        y: 113
-        width: 15
-        height: 15
+        x: 544
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3528,12 +3528,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_119
       rect:
         serializedVersion: 2
-        x: 114
-        y: 113
-        width: 13
-        height: 14
+        x: 560
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3550,12 +3550,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_120
       rect:
         serializedVersion: 2
-        x: 127
-        y: 111
-        width: 18
-        height: 18
+        x: 0
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3572,12 +3572,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_121
       rect:
         serializedVersion: 2
-        x: 163
-        y: 114
-        width: 11
-        height: 11
+        x: 16
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3594,12 +3594,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_122
       rect:
         serializedVersion: 2
-        x: 175
-        y: 97
-        width: 18
-        height: 31
+        x: 32
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3616,12 +3616,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_123
       rect:
         serializedVersion: 2
-        x: 308
-        y: 116
-        width: 8
-        height: 8
+        x: 48
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3638,12 +3638,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_124
       rect:
         serializedVersion: 2
-        x: 324
-        y: 116
-        width: 8
-        height: 8
+        x: 64
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3660,12 +3660,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_125
       rect:
         serializedVersion: 2
-        x: 341
-        y: 117
-        width: 6
-        height: 6
+        x: 80
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3682,12 +3682,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_126
       rect:
         serializedVersion: 2
-        x: 385
-        y: 112
-        width: 15
-        height: 15
+        x: 112
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3704,12 +3704,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_127
       rect:
         serializedVersion: 2
-        x: 402
-        y: 113
-        width: 14
-        height: 14
+        x: 128
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3726,12 +3726,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_128
       rect:
         serializedVersion: 2
-        x: 419
-        y: 114
-        width: 11
-        height: 11
+        x: 160
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3748,12 +3748,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_129
       rect:
         serializedVersion: 2
-        x: 436
-        y: 115
-        width: 23
-        height: 9
+        x: 176
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3770,12 +3770,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_130
       rect:
         serializedVersion: 2
-        x: 496
-        y: 101
+        x: 192
+        y: 128
         width: 16
-        height: 27
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3792,12 +3792,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_131
       rect:
         serializedVersion: 2
-        x: 512
-        y: 112
+        x: 224
+        y: 128
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3814,12 +3814,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_132
       rect:
         serializedVersion: 2
-        x: 528
-        y: 112
+        x: 240
+        y: 128
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3836,12 +3836,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_133
       rect:
         serializedVersion: 2
-        x: 544
-        y: 112
+        x: 256
+        y: 128
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3858,12 +3858,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_134
       rect:
         serializedVersion: 2
-        x: 559
-        y: 112
-        width: 17
+        x: 272
+        y: 128
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3880,12 +3880,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_135
       rect:
         serializedVersion: 2
-        x: 2
-        y: 97
-        width: 13
-        height: 13
+        x: 304
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3902,12 +3902,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_136
       rect:
         serializedVersion: 2
-        x: 17
-        y: 98
-        width: 14
-        height: 13
+        x: 320
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3924,12 +3924,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_137
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
+        x: 336
+        y: 128
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3946,12 +3946,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_138
       rect:
         serializedVersion: 2
-        x: 53
-        y: 97
-        width: 7
-        height: 13
+        x: 352
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3968,12 +3968,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_139
       rect:
         serializedVersion: 2
-        x: 68
-        y: 98
-        width: 9
-        height: 12
+        x: 384
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3990,12 +3990,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_140
       rect:
         serializedVersion: 2
-        x: 84
-        y: 95
-        width: 9
-        height: 17
+        x: 400
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4012,12 +4012,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_141
       rect:
         serializedVersion: 2
-        x: 115
-        y: 98
-        width: 9
-        height: 12
+        x: 416
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4034,12 +4034,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_142
       rect:
         serializedVersion: 2
-        x: 129
-        y: 98
-        width: 13
-        height: 13
+        x: 432
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4056,12 +4056,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_143
       rect:
         serializedVersion: 2
-        x: 165
-        y: 100
-        width: 7
-        height: 7
+        x: 448
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4078,12 +4078,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_144
       rect:
         serializedVersion: 2
-        x: 308
-        y: 99
-        width: 12
-        height: 10
+        x: 480
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4100,12 +4100,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_145
       rect:
         serializedVersion: 2
-        x: 321
-        y: 100
-        width: 14
-        height: 8
+        x: 496
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4122,12 +4122,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_146
       rect:
         serializedVersion: 2
-        x: 340
-        y: 99
-        width: 11
-        height: 10
+        x: 512
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4144,12 +4144,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_147
       rect:
         serializedVersion: 2
-        x: 357
-        y: 98
-        width: 10
-        height: 12
+        x: 528
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4166,12 +4166,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_148
       rect:
         serializedVersion: 2
-        x: 400
-        y: 79
-        width: 15
-        height: 21
+        x: 544
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4188,12 +4188,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_149
       rect:
         serializedVersion: 2
-        x: 422
-        y: 95
-        width: 10
-        height: 6
+        x: 560
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4210,12 +4210,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_150
       rect:
         serializedVersion: 2
-        x: 431
-        y: 95
-        width: 18
-        height: 10
+        x: 0
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4232,12 +4232,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_151
       rect:
         serializedVersion: 2
-        x: 450
-        y: 95
-        width: 14
-        height: 9
+        x: 16
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4254,12 +4254,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_152
       rect:
         serializedVersion: 2
-        x: 481
-        y: 81
-        width: 14
-        height: 24
+        x: 32
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4276,12 +4276,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_153
       rect:
         serializedVersion: 2
-        x: 511
-        y: 79
-        width: 18
-        height: 21
+        x: 48
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4298,12 +4298,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_154
       rect:
         serializedVersion: 2
-        x: 516
-        y: 100
-        width: 11
-        height: 8
+        x: 64
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4320,12 +4320,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_155
       rect:
         serializedVersion: 2
-        x: 530
-        y: 97
-        width: 13
-        height: 13
+        x: 80
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4342,12 +4342,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_156
       rect:
         serializedVersion: 2
-        x: 546
-        y: 97
-        width: 10
-        height: 13
+        x: 112
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4364,12 +4364,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_157
       rect:
         serializedVersion: 2
-        x: 562
-        y: 99
-        width: 10
-        height: 11
+        x: 128
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4386,12 +4386,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_158
       rect:
         serializedVersion: 2
-        x: 2
-        y: 82
-        width: 13
-        height: 13
+        x: 160
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4408,12 +4408,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_159
       rect:
         serializedVersion: 2
-        x: 17
-        y: 81
-        width: 14
-        height: 14
+        x: 176
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4430,12 +4430,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_160
       rect:
         serializedVersion: 2
-        x: 31
-        y: 63
-        width: 18
-        height: 33
+        x: 192
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4452,12 +4452,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_161
       rect:
         serializedVersion: 2
-        x: 52
-        y: 83
-        width: 9
-        height: 10
+        x: 224
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4474,12 +4474,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_162
       rect:
         serializedVersion: 2
-        x: 68
-        y: 81
-        width: 9
-        height: 13
+        x: 240
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4496,12 +4496,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_163
       rect:
         serializedVersion: 2
-        x: 84
-        y: 83
-        width: 9
-        height: 9
+        x: 256
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4518,12 +4518,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_164
       rect:
         serializedVersion: 2
-        x: 111
-        y: 79
-        width: 18
-        height: 18
+        x: 272
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4540,12 +4540,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_165
       rect:
         serializedVersion: 2
-        x: 131
-        y: 83
-        width: 10
-        height: 11
+        x: 304
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4562,12 +4562,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_166
       rect:
         serializedVersion: 2
-        x: 162
-        y: 82
-        width: 12
-        height: 12
+        x: 320
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4584,12 +4584,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_167
       rect:
         serializedVersion: 2
-        x: 177
-        y: 81
-        width: 14
-        height: 14
+        x: 336
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4606,12 +4606,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_168
       rect:
         serializedVersion: 2
-        x: 192
-        y: 80
+        x: 352
+        y: 112
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4628,12 +4628,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_169
       rect:
         serializedVersion: 2
-        x: 304
-        y: 79
-        width: 17
-        height: 17
+        x: 384
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4650,12 +4650,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_170
       rect:
         serializedVersion: 2
-        x: 320
-        y: 79
-        width: 17
-        height: 17
+        x: 400
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4672,12 +4672,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_171
       rect:
         serializedVersion: 2
-        x: 337
-        y: 80
-        width: 15
-        height: 15
+        x: 416
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4694,12 +4694,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_172
       rect:
         serializedVersion: 2
-        x: 352
-        y: 70
-        width: 17
-        height: 26
+        x: 432
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4716,12 +4716,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_173
       rect:
         serializedVersion: 2
-        x: 383
-        y: 47
-        width: 18
-        height: 52
+        x: 448
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4738,12 +4738,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_174
       rect:
         serializedVersion: 2
-        x: 417
-        y: 79
-        width: 13
-        height: 15
+        x: 480
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4760,12 +4760,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_175
       rect:
         serializedVersion: 2
-        x: 434
-        y: 79
-        width: 11
-        height: 13
+        x: 496
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4782,12 +4782,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_176
       rect:
         serializedVersion: 2
-        x: 451
-        y: 79
-        width: 9
-        height: 11
+        x: 512
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4804,12 +4804,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_177
       rect:
         serializedVersion: 2
-        x: 496
-        y: 80
+        x: 528
+        y: 112
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4826,12 +4826,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_178
       rect:
         serializedVersion: 2
-        x: 529
-        y: 81
-        width: 14
-        height: 14
+        x: 544
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4848,12 +4848,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_179
       rect:
         serializedVersion: 2
-        x: 543
-        y: 79
-        width: 18
-        height: 18
+        x: 560
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4870,12 +4870,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_180
       rect:
         serializedVersion: 2
-        x: 560
-        y: 69
+        x: 0
+        y: 96
         width: 16
-        height: 27
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4892,12 +4892,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_181
       rect:
         serializedVersion: 2
-        x: 1
-        y: 65
-        width: 14
-        height: 14
+        x: 16
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4914,12 +4914,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_182
       rect:
         serializedVersion: 2
-        x: 16
-        y: 64
+        x: 32
+        y: 96
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4936,12 +4936,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_183
       rect:
         serializedVersion: 2
-        x: 49
-        y: 66
-        width: 13
-        height: 11
+        x: 48
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4959,11 +4959,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 47
-        width: 33
-        height: 34
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4980,12 +4980,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_185
       rect:
         serializedVersion: 2
-        x: 111
-        y: 64
-        width: 10
-        height: 15
+        x: 80
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5002,12 +5002,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_186
       rect:
         serializedVersion: 2
-        x: 119
-        y: 65
-        width: 10
-        height: 15
+        x: 112
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5025,11 +5025,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 71
-        width: 15
-        height: 10
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5046,12 +5046,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_188
       rect:
         serializedVersion: 2
-        x: 129
-        y: 63
-        width: 15
-        height: 10
+        x: 160
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5068,12 +5068,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_189
       rect:
         serializedVersion: 2
-        x: 159
-        y: 63
-        width: 34
-        height: 18
+        x: 176
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5090,12 +5090,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_190
       rect:
         serializedVersion: 2
-        x: 193
-        y: 65
-        width: 14
-        height: 14
+        x: 192
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5112,12 +5112,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_191
       rect:
         serializedVersion: 2
-        x: 223
-        y: 47
-        width: 17
-        height: 34
+        x: 224
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5134,12 +5134,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_192
       rect:
         serializedVersion: 2
-        x: 242
-        y: 63
-        width: 10
-        height: 18
+        x: 240
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5157,11 +5157,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
-        y: 63
+        y: 96
         width: 16
-        height: 18
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5179,11 +5179,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 272
-        y: 63
+        y: 96
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5201,11 +5201,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 304
-        y: 63
-        width: 17
-        height: 17
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5222,12 +5222,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_196
       rect:
         serializedVersion: 2
-        x: 321
-        y: 63
-        width: 15
+        x: 320
+        y: 96
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5244,12 +5244,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_197
       rect:
         serializedVersion: 2
-        x: 337
-        y: 68
-        width: 12
-        height: 11
+        x: 336
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5266,12 +5266,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_198
       rect:
         serializedVersion: 2
-        x: 343
-        y: 73
-        width: 6
-        height: 6
+        x: 352
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5288,12 +5288,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_199
       rect:
         serializedVersion: 2
-        x: 400
-        y: 64
+        x: 384
+        y: 96
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5310,12 +5310,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_200
       rect:
         serializedVersion: 2
-        x: 417
-        y: 65
-        width: 14
-        height: 14
+        x: 400
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5332,12 +5332,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_201
       rect:
         serializedVersion: 2
-        x: 434
-        y: 66
-        width: 12
-        height: 12
+        x: 416
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5354,12 +5354,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_202
       rect:
         serializedVersion: 2
-        x: 451
-        y: 67
-        width: 10
-        height: 10
+        x: 432
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5376,12 +5376,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_203
       rect:
         serializedVersion: 2
-        x: 480
-        y: 64
-        width: 17
-        height: 15
+        x: 448
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5398,12 +5398,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_204
       rect:
         serializedVersion: 2
-        x: 497
-        y: 64
-        width: 15
-        height: 15
+        x: 480
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5420,12 +5420,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_205
       rect:
         serializedVersion: 2
-        x: 515
-        y: 66
-        width: 11
-        height: 11
+        x: 496
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5442,12 +5442,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_206
       rect:
         serializedVersion: 2
-        x: 531
-        y: 66
-        width: 11
-        height: 11
+        x: 512
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5464,12 +5464,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_207
       rect:
         serializedVersion: 2
-        x: 549
-        y: 68
-        width: 7
-        height: 7
+        x: 528
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5486,12 +5486,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_208
       rect:
         serializedVersion: 2
-        x: 2
-        y: 51
-        width: 11
-        height: 9
+        x: 544
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5508,12 +5508,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_209
       rect:
         serializedVersion: 2
-        x: 15
-        y: 47
-        width: 18
-        height: 18
+        x: 560
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5530,12 +5530,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_210
       rect:
         serializedVersion: 2
-        x: 33
-        y: 49
-        width: 14
-        height: 14
+        x: 0
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5552,12 +5552,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_211
       rect:
         serializedVersion: 2
-        x: 48
-        y: 47
-        width: 18
-        height: 18
+        x: 16
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5574,12 +5574,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_212
       rect:
         serializedVersion: 2
-        x: 114
-        y: 48
-        width: 11
-        height: 17
+        x: 32
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5596,12 +5596,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_213
       rect:
         serializedVersion: 2
-        x: 128
-        y: 49
-        width: 17
-        height: 11
+        x: 48
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5618,12 +5618,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_214
       rect:
         serializedVersion: 2
-        x: 165
-        y: 53
-        width: 6
-        height: 6
+        x: 64
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5640,12 +5640,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_215
       rect:
         serializedVersion: 2
-        x: 179
-        y: 51
-        width: 10
-        height: 10
+        x: 80
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5662,12 +5662,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_216
       rect:
         serializedVersion: 2
-        x: 194
-        y: 50
-        width: 12
-        height: 12
+        x: 112
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5684,12 +5684,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_217
       rect:
         serializedVersion: 2
-        x: 240
-        y: 47
+        x: 128
+        y: 80
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5706,12 +5706,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_218
       rect:
         serializedVersion: 2
-        x: 257
-        y: 47
-        width: 14
-        height: 14
+        x: 160
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5728,12 +5728,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_219
       rect:
         serializedVersion: 2
-        x: 274
-        y: 47
-        width: 12
-        height: 13
+        x: 176
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5750,12 +5750,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_220
       rect:
         serializedVersion: 2
-        x: 305
-        y: 49
-        width: 14
-        height: 14
+        x: 192
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5772,12 +5772,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_221
       rect:
         serializedVersion: 2
-        x: 321
-        y: 49
-        width: 14
-        height: 14
+        x: 224
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5794,12 +5794,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_222
       rect:
         serializedVersion: 2
-        x: 337
-        y: 49
-        width: 14
-        height: 14
+        x: 240
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5816,12 +5816,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_223
       rect:
         serializedVersion: 2
-        x: 353
-        y: 49
-        width: 14
-        height: 14
+        x: 256
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5838,12 +5838,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_224
       rect:
         serializedVersion: 2
-        x: 400
-        y: 48
+        x: 272
+        y: 80
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5860,12 +5860,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_225
       rect:
         serializedVersion: 2
-        x: 417
-        y: 49
-        width: 14
-        height: 14
+        x: 304
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5882,12 +5882,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_226
       rect:
         serializedVersion: 2
-        x: 434
-        y: 50
-        width: 12
-        height: 12
+        x: 320
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5904,12 +5904,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_227
       rect:
         serializedVersion: 2
-        x: 435
-        y: 5
-        width: 30
-        height: 56
+        x: 336
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5926,12 +5926,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_228
       rect:
         serializedVersion: 2
-        x: 480
-        y: 33
-        width: 29
-        height: 23
+        x: 352
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5948,12 +5948,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_229
       rect:
         serializedVersion: 2
-        x: 534
-        y: 35
+        x: 384
+        y: 80
         width: 16
-        height: 19
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5970,12 +5970,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_230
       rect:
         serializedVersion: 2
-        x: 550
-        y: 37
-        width: 26
-        height: 19
+        x: 400
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -5992,12 +5992,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_231
       rect:
         serializedVersion: 2
-        x: 3
-        y: 35
-        width: 10
-        height: 10
+        x: 416
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6014,12 +6014,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_232
       rect:
         serializedVersion: 2
-        x: 15
-        y: 31
-        width: 18
-        height: 18
+        x: 432
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6036,12 +6036,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_233
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 448
+        y: 80
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6058,12 +6058,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_234
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
+        x: 480
+        y: 80
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6080,12 +6080,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_235
       rect:
         serializedVersion: 2
-        x: 64
-        y: 15
+        x: 496
+        y: 80
         width: 16
-        height: 26
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6102,12 +6102,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_236
       rect:
         serializedVersion: 2
-        x: 79
-        y: 15
-        width: 17
-        height: 26
+        x: 512
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6124,12 +6124,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_237
       rect:
         serializedVersion: 2
-        x: 114
-        y: 35
-        width: 14
-        height: 9
+        x: 528
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6146,12 +6146,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_238
       rect:
         serializedVersion: 2
-        x: 129
-        y: 35
-        width: 15
-        height: 8
+        x: 544
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6168,12 +6168,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_239
       rect:
         serializedVersion: 2
-        x: 159
-        y: 15
-        width: 18
-        height: 33
+        x: 560
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6190,12 +6190,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_240
       rect:
         serializedVersion: 2
-        x: 177
-        y: 15
+        x: 0
+        y: 64
         width: 16
-        height: 34
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6212,12 +6212,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_241
       rect:
         serializedVersion: 2
-        x: 192
-        y: 15
+        x: 16
+        y: 64
         width: 16
-        height: 34
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6234,12 +6234,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_242
       rect:
         serializedVersion: 2
-        x: 223
-        y: 33
-        width: 18
-        height: 8
+        x: 32
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6256,12 +6256,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_243
       rect:
         serializedVersion: 2
-        x: 240
-        y: 33
+        x: 48
+        y: 64
         width: 16
-        height: 8
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6278,12 +6278,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_244
       rect:
         serializedVersion: 2
-        x: 255
-        y: 33
-        width: 18
-        height: 8
+        x: 64
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6300,12 +6300,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_245
       rect:
         serializedVersion: 2
-        x: 272
-        y: 33
+        x: 80
+        y: 64
         width: 16
-        height: 8
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6322,12 +6322,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_246
       rect:
         serializedVersion: 2
-        x: 303
-        y: 32
-        width: 17
-        height: 17
+        x: 112
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6344,12 +6344,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_247
       rect:
         serializedVersion: 2
-        x: 319
-        y: 32
-        width: 17
-        height: 17
+        x: 128
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6366,12 +6366,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_248
       rect:
         serializedVersion: 2
-        x: 335
-        y: 32
-        width: 17
-        height: 17
+        x: 160
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6388,12 +6388,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_249
       rect:
         serializedVersion: 2
-        x: 351
-        y: 27
-        width: 17
-        height: 22
+        x: 176
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6410,12 +6410,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_250
       rect:
         serializedVersion: 2
-        x: 389
-        y: 8
-        width: 23
-        height: 28
+        x: 192
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6432,12 +6432,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_251
       rect:
         serializedVersion: 2
-        x: 484
-        y: 34
-        width: 6
-        height: 6
+        x: 224
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6454,12 +6454,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_252
       rect:
         serializedVersion: 2
-        x: 505
-        y: 35
-        width: 14
+        x: 240
+        y: 64
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6476,12 +6476,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_253
       rect:
         serializedVersion: 2
-        x: 519
-        y: 34
+        x: 256
+        y: 64
         width: 16
-        height: 18
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6498,12 +6498,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_254
       rect:
         serializedVersion: 2
-        x: 544
-        y: 0
-        width: 32
-        height: 37
+        x: 272
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6520,12 +6520,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_255
       rect:
         serializedVersion: 2
-        x: 551
-        y: 36
-        width: 6
-        height: 6
+        x: 304
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6542,12 +6542,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_256
       rect:
         serializedVersion: 2
-        x: 111
-        y: 17
-        width: 18
-        height: 14
+        x: 320
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6564,12 +6564,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_257
       rect:
         serializedVersion: 2
-        x: 128
-        y: 15
-        width: 17
-        height: 17
+        x: 336
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6586,12 +6586,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_258
       rect:
         serializedVersion: 2
-        x: 223
-        y: 0
-        width: 66
-        height: 32
+        x: 352
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6608,12 +6608,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_259
       rect:
         serializedVersion: 2
-        x: 306
-        y: 17
-        width: 10
-        height: 12
+        x: 384
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6630,12 +6630,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_260
       rect:
         serializedVersion: 2
-        x: 308
-        y: 3
-        width: 25
-        height: 9
+        x: 400
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6652,12 +6652,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_261
       rect:
         serializedVersion: 2
-        x: 323
-        y: 17
-        width: 10
-        height: 14
+        x: 416
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6674,12 +6674,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_262
       rect:
         serializedVersion: 2
-        x: 336
-        y: 1
-        width: 15
-        height: 30
+        x: 432
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6696,12 +6696,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_263
       rect:
         serializedVersion: 2
-        x: 351
-        y: 0
-        width: 17
-        height: 28
+        x: 448
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6718,12 +6718,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_264
       rect:
         serializedVersion: 2
-        x: 417
-        y: 0
-        width: 17
-        height: 30
+        x: 480
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6740,12 +6740,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_265
       rect:
         serializedVersion: 2
-        x: 433
-        y: 0
-        width: 13
-        height: 18
+        x: 496
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6762,12 +6762,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_266
       rect:
         serializedVersion: 2
-        x: 453
-        y: 0
-        width: 7
-        height: 6
+        x: 512
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6784,12 +6784,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_267
       rect:
         serializedVersion: 2
-        x: 484
-        y: 0
-        width: 23
-        height: 14
+        x: 528
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6806,12 +6806,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_268
       rect:
         serializedVersion: 2
-        x: 517
-        y: 0
-        width: 7
-        height: 24
+        x: 544
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6828,12 +6828,12 @@ TextureImporter:
       name: Purple Effect and Bullet 16x16_269
       rect:
         serializedVersion: 2
-        x: 532
-        y: 0
-        width: 9
-        height: 29
+        x: 560
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -6846,11 +6846,2211 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_270
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 597e9efafc6f25b46b92ea4df03c52fa
+      internalID: 1827431999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_271
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c5da1452e916d04eb809317c875fe86
+      internalID: -449978391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_272
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d993c5d8fb22add46bb4cd12718a904d
+      internalID: -1917265073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_273
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5096bfe4ec324614880fdc4b4aee6213
+      internalID: 1114473067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_274
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b3f18e1e2d5c804398d848653944471
+      internalID: -825046680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_275
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8aa08c3e086fe8448b90a53c4c071ad
+      internalID: 1563588153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_276
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3109daeecdbe8e4dabc0f92baabf31c
+      internalID: -1449856965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_277
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e13cacb0cf919d48a1e32666b5e27df
+      internalID: 265135780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_278
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb6b94ead48726143b680ead6800ff30
+      internalID: 1041111978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_279
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffa6fe25d22c8d148bf1d6f0446e7a49
+      internalID: 1001215010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_280
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8e43d315163af0409fcc63eeb8fadcd
+      internalID: -2052634158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_281
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b86eeccd8339e0f41af3eb105ebb99d4
+      internalID: -992851577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_282
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f975d657ad9c6854295e29c691701fe1
+      internalID: 463071714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_283
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ebfc2ce84239a040a287c66ab5951e9
+      internalID: 1882573850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_284
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41cbd2de1428ce3428cb98098c82994d
+      internalID: -2143256593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_285
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6014008c494551949941551058d9466a
+      internalID: 1255141898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_286
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc88634aafe3e094cb14ac040a99d836
+      internalID: -1904948625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_287
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1e7c7202ef6f444a6ec3e32edf0dec
+      internalID: 430120263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_288
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40c4124ff525cd042bfe58438406a9a4
+      internalID: 496870001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_289
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5575f0819b9acf144a112b9d471d0fbb
+      internalID: 669312904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_290
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c1ea9bfab51a0b4e81df7ea9c074f0b
+      internalID: -1946835899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_291
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d39ab3cee8ab8c54faee418599506129
+      internalID: 1046593965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_292
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 374cb1b6fb4cd374d88bdc58199088b2
+      internalID: -1477510768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_293
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6734da01392d0640b542055c14a31d5
+      internalID: 621257625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_294
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b5929116c166fd4596c943842c0ae7a
+      internalID: 2038439819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_295
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b51930b7692045c4cbbb3167b71b5343
+      internalID: -1836547122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_296
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 025ebdb7952c57749847e5c5d077ff91
+      internalID: -1765011535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_297
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1421616e76f3284478ed876fed5fb97a
+      internalID: 1426390719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_298
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7dbccbfff284214fae5f6d48c5e65ec
+      internalID: 15369477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_299
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b28b31636e6702844b79eb217c14ffc6
+      internalID: 390020042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_300
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be5f3c286bfb5de4e9cf7cec8a57cb69
+      internalID: -2012310921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_301
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a2b158701f212e44b241867d148d015
+      internalID: -472411006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_302
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2928197777c1e7b4d894cee27f80fea6
+      internalID: -1660503021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_303
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1394f8e1da56e904399bf92ee9d42d9c
+      internalID: 1809371833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_304
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6680d4eb04fb4b145a83ca61ce7dcf04
+      internalID: -955134469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_305
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd03202b1aa16da4a93f53c66da21122
+      internalID: 1557949274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_306
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73759d816678274d8711aa9d7f292a2
+      internalID: -1059959517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_307
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0615c55facba7b642beed015260c74c2
+      internalID: 2037250098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_308
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc99cca6d07852f419c87f055bfefde5
+      internalID: -721882118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_309
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23b74c87979d34b4c8a8012ab5134585
+      internalID: 335758660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_310
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c7d5862c87dfd43bdd2a157a6a47cd
+      internalID: 30057668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_311
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e87fc3670783143b41ebc5dbdb65c1
+      internalID: 1380819179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_312
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc4bbc93b8eb4644a9877a91b55ff0b0
+      internalID: -351958085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_313
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20e2736290ec3504d83cd4a923a499c3
+      internalID: -812492672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_314
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b35f0a7c9aecb44fa8557bc1c227b57
+      internalID: 381716379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_315
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19a039bf017c3994da0d3515d4846463
+      internalID: 609982265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_316
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c1e8bd89a0ef394a89280b3b1b06c9a
+      internalID: -715642443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_317
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b40cf47aa5b87f94aa782948ff2f341b
+      internalID: -1894584960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_318
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ade5342fb74bcfe4ca2b8c583341d787
+      internalID: -1732861034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_319
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acd5bb67aed66b94d88d820276b0d6ae
+      internalID: 752943526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_320
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 308d9695c4b17e9479031d211cc0e9b6
+      internalID: -1770805415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_321
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dd269d860128cb46b8a54653f6f0485
+      internalID: 483584483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_322
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d54c3e7fc0e4614d954b92954fa825d
+      internalID: 1627976218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_323
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c39f011696dabaf4a82a5973ec6e7a68
+      internalID: 2033327457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_324
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96e5ee8dc4da64947bcff949f3bac140
+      internalID: 408046197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_325
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a79db4993393784e87251fdbce1c914
+      internalID: 1365779529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_326
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707ce9ed62f817049a96b147f0bf7cd2
+      internalID: -688512961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_327
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f369c7c1e01bbe84f9b4be04073369cf
+      internalID: -58921794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_328
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad5649d2cd381104bb5390c03d2d2d27
+      internalID: -332620486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_329
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c556ec617a24fe4294353baa8d9d1b7
+      internalID: -1020877428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_330
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d32a399feefaad04b91f10ecd79ba770
+      internalID: -1431250003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_331
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 325d0add8daa108459220e9ca1456ef4
+      internalID: 1738724948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_332
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 740d6590e4866944fb38346c6673eb1f
+      internalID: 1580323824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_333
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 929ef410e81a9b244b5b810c52976306
+      internalID: 1254371786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_334
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7bfd8d11140c9b4d8da772480aa816c
+      internalID: -1450037015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_335
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d657c2d43098894195d2ad5104a6aba
+      internalID: -59107393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_336
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b483b6890db9c438a7965758bd9f00
+      internalID: -920799811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_337
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 289af0f4bd57152439356ed25db82496
+      internalID: -1150821869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_338
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f13a8e9f6e83664ca775d0b692ee647
+      internalID: 1556556517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_339
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ace1962b4b65a254082924763da9e831
+      internalID: 1198543669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_340
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d0c854cb1ffc294a88a20b1936751c8
+      internalID: -1108030984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_341
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acdf8de23a8362440b7ad5068da2da74
+      internalID: 1610465249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_342
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f4b2ec359b0a33449d3a1e5e4523ea3
+      internalID: 1718033371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_343
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f3586e0cbfaeff498ed3139c332395a
+      internalID: -1334124489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_344
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcbd4a197d97299458514c9f7374c604
+      internalID: -239111634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_345
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ef1b0f9dd869e0438729b8252a5bdfc
+      internalID: 1576048865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_346
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34838ad643658c34f898bc72679af58c
+      internalID: -1362917586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_347
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f2bd68b504ec0a49a9dbfcdbcbe6f3d
+      internalID: 160047320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_348
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed22b992b14bf742bee984ac034ba52
+      internalID: 1579521539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_349
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1716bb1ce8d2e2e4f9680fd31b90fcbe
+      internalID: -461792807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_350
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1566c6351175c149a89cc7a96be7181
+      internalID: -742837917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_351
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5c4b1ef0cef1e469fa95ce35f6bfd1
+      internalID: 1389569719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_352
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9862219c4eabc141869445ce41b981c
+      internalID: -2142064450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_353
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c3aca4a262b4e449ade063eb655e2f
+      internalID: 1050880835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_354
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a34baa6d9510c4dba6f80bfbedb657
+      internalID: 1452118776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_355
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eea8416481ea48046aac2eabad1a457f
+      internalID: -1744704246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_356
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4611cd1d9f0282f45976b74918895b70
+      internalID: -2066959379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_357
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b235f43bc95991e4f87e78d80b04c4b7
+      internalID: -1276680440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_358
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd35b56838d47634e814785dd1d72569
+      internalID: 1477583899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_359
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3466005799aaf0c439d044617a2fa8b7
+      internalID: 1089849430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_360
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8779c9e7e3e294e45b238955a7a363f8
+      internalID: 1250702949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_361
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e161c7dc3c38de45b46cdf9b5b8e32a
+      internalID: -1618539582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_362
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 650d12394d26f5742875cdcfcde78d5d
+      internalID: 491584092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_363
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d742560bfc03694f8438158bf6604c8
+      internalID: 7753134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_364
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf1dae07bab2a794bbeb5a9a77425889
+      internalID: 1091948996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_365
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f82d967ec9dc94fa7c4cef46b08ea7
+      internalID: 1245473471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_366
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7953c8d9ca067f442a11802606d4517b
+      internalID: -1163279803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_367
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78404851f09b6364382d724450e6dbc0
+      internalID: 1585778334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_368
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdf5435fab0086140aa7a4e7d8d1f668
+      internalID: -1984260868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Purple Effect and Bullet 16x16_369
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea9eeedf8d90b884d9780b95bcc032b2
+      internalID: 1588553060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: f5551a08762d7b44dacbcb2b0d17f798
     internalID: 0
     vertices: []
     indices: 
@@ -6858,7 +9058,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Purple Effect and Bullet 16x16_0: -330686504290200089
       Purple Effect and Bullet 16x16_1: -8752039300726188132
@@ -7051,16 +9253,116 @@ TextureImporter:
       Purple Effect and Bullet 16x16_268: -9213899458468593166
       Purple Effect and Bullet 16x16_269: 6877897871810375962
       Purple Effect and Bullet 16x16_27: -6725343640514118739
+      Purple Effect and Bullet 16x16_270: 1827431999
+      Purple Effect and Bullet 16x16_271: -449978391
+      Purple Effect and Bullet 16x16_272: -1917265073
+      Purple Effect and Bullet 16x16_273: 1114473067
+      Purple Effect and Bullet 16x16_274: -825046680
+      Purple Effect and Bullet 16x16_275: 1563588153
+      Purple Effect and Bullet 16x16_276: -1449856965
+      Purple Effect and Bullet 16x16_277: 265135780
+      Purple Effect and Bullet 16x16_278: 1041111978
+      Purple Effect and Bullet 16x16_279: 1001215010
       Purple Effect and Bullet 16x16_28: -1275497248615169248
+      Purple Effect and Bullet 16x16_280: -2052634158
+      Purple Effect and Bullet 16x16_281: -992851577
+      Purple Effect and Bullet 16x16_282: 463071714
+      Purple Effect and Bullet 16x16_283: 1882573850
+      Purple Effect and Bullet 16x16_284: -2143256593
+      Purple Effect and Bullet 16x16_285: 1255141898
+      Purple Effect and Bullet 16x16_286: -1904948625
+      Purple Effect and Bullet 16x16_287: 430120263
+      Purple Effect and Bullet 16x16_288: 496870001
+      Purple Effect and Bullet 16x16_289: 669312904
       Purple Effect and Bullet 16x16_29: 4802386783151110902
+      Purple Effect and Bullet 16x16_290: -1946835899
+      Purple Effect and Bullet 16x16_291: 1046593965
+      Purple Effect and Bullet 16x16_292: -1477510768
+      Purple Effect and Bullet 16x16_293: 621257625
+      Purple Effect and Bullet 16x16_294: 2038439819
+      Purple Effect and Bullet 16x16_295: -1836547122
+      Purple Effect and Bullet 16x16_296: -1765011535
+      Purple Effect and Bullet 16x16_297: 1426390719
+      Purple Effect and Bullet 16x16_298: 15369477
+      Purple Effect and Bullet 16x16_299: 390020042
       Purple Effect and Bullet 16x16_3: 6982429890961090207
       Purple Effect and Bullet 16x16_30: -1045368112953636834
+      Purple Effect and Bullet 16x16_300: -2012310921
+      Purple Effect and Bullet 16x16_301: -472411006
+      Purple Effect and Bullet 16x16_302: -1660503021
+      Purple Effect and Bullet 16x16_303: 1809371833
+      Purple Effect and Bullet 16x16_304: -955134469
+      Purple Effect and Bullet 16x16_305: 1557949274
+      Purple Effect and Bullet 16x16_306: -1059959517
+      Purple Effect and Bullet 16x16_307: 2037250098
+      Purple Effect and Bullet 16x16_308: -721882118
+      Purple Effect and Bullet 16x16_309: 335758660
       Purple Effect and Bullet 16x16_31: -713577500108892262
+      Purple Effect and Bullet 16x16_310: 30057668
+      Purple Effect and Bullet 16x16_311: 1380819179
+      Purple Effect and Bullet 16x16_312: -351958085
+      Purple Effect and Bullet 16x16_313: -812492672
+      Purple Effect and Bullet 16x16_314: 381716379
+      Purple Effect and Bullet 16x16_315: 609982265
+      Purple Effect and Bullet 16x16_316: -715642443
+      Purple Effect and Bullet 16x16_317: -1894584960
+      Purple Effect and Bullet 16x16_318: -1732861034
+      Purple Effect and Bullet 16x16_319: 752943526
       Purple Effect and Bullet 16x16_32: -5508285717184739725
+      Purple Effect and Bullet 16x16_320: -1770805415
+      Purple Effect and Bullet 16x16_321: 483584483
+      Purple Effect and Bullet 16x16_322: 1627976218
+      Purple Effect and Bullet 16x16_323: 2033327457
+      Purple Effect and Bullet 16x16_324: 408046197
+      Purple Effect and Bullet 16x16_325: 1365779529
+      Purple Effect and Bullet 16x16_326: -688512961
+      Purple Effect and Bullet 16x16_327: -58921794
+      Purple Effect and Bullet 16x16_328: -332620486
+      Purple Effect and Bullet 16x16_329: -1020877428
       Purple Effect and Bullet 16x16_33: 731651877628321187
+      Purple Effect and Bullet 16x16_330: -1431250003
+      Purple Effect and Bullet 16x16_331: 1738724948
+      Purple Effect and Bullet 16x16_332: 1580323824
+      Purple Effect and Bullet 16x16_333: 1254371786
+      Purple Effect and Bullet 16x16_334: -1450037015
+      Purple Effect and Bullet 16x16_335: -59107393
+      Purple Effect and Bullet 16x16_336: -920799811
+      Purple Effect and Bullet 16x16_337: -1150821869
+      Purple Effect and Bullet 16x16_338: 1556556517
+      Purple Effect and Bullet 16x16_339: 1198543669
       Purple Effect and Bullet 16x16_34: -8574278997625940976
+      Purple Effect and Bullet 16x16_340: -1108030984
+      Purple Effect and Bullet 16x16_341: 1610465249
+      Purple Effect and Bullet 16x16_342: 1718033371
+      Purple Effect and Bullet 16x16_343: -1334124489
+      Purple Effect and Bullet 16x16_344: -239111634
+      Purple Effect and Bullet 16x16_345: 1576048865
+      Purple Effect and Bullet 16x16_346: -1362917586
+      Purple Effect and Bullet 16x16_347: 160047320
+      Purple Effect and Bullet 16x16_348: 1579521539
+      Purple Effect and Bullet 16x16_349: -461792807
       Purple Effect and Bullet 16x16_35: -3063032946011566187
+      Purple Effect and Bullet 16x16_350: -742837917
+      Purple Effect and Bullet 16x16_351: 1389569719
+      Purple Effect and Bullet 16x16_352: -2142064450
+      Purple Effect and Bullet 16x16_353: 1050880835
+      Purple Effect and Bullet 16x16_354: 1452118776
+      Purple Effect and Bullet 16x16_355: -1744704246
+      Purple Effect and Bullet 16x16_356: -2066959379
+      Purple Effect and Bullet 16x16_357: -1276680440
+      Purple Effect and Bullet 16x16_358: 1477583899
+      Purple Effect and Bullet 16x16_359: 1089849430
       Purple Effect and Bullet 16x16_36: -2551490722092762563
+      Purple Effect and Bullet 16x16_360: 1250702949
+      Purple Effect and Bullet 16x16_361: -1618539582
+      Purple Effect and Bullet 16x16_362: 491584092
+      Purple Effect and Bullet 16x16_363: 7753134
+      Purple Effect and Bullet 16x16_364: 1091948996
+      Purple Effect and Bullet 16x16_365: 1245473471
+      Purple Effect and Bullet 16x16_366: -1163279803
+      Purple Effect and Bullet 16x16_367: 1585778334
+      Purple Effect and Bullet 16x16_368: -1984260868
+      Purple Effect and Bullet 16x16_369: 1588553060
       Purple Effect and Bullet 16x16_37: -2886276588234504289
       Purple Effect and Bullet 16x16_38: -5178580489646258133
       Purple Effect and Bullet 16x16_39: 7383711884930542308
