@@ -442,7 +442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5016388994132163480
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1073,9 +1073,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc19c80998c37b741a8be790d844983e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverMenu
+  panelRoot: {fileID: 0}
   imageRejouer: {fileID: 3808604870607766622}
   imageMenu: {fileID: 7034860046395358617}
-  iconSelection: {fileID: 8574049137588901547}
+  inputCooldown: 0.1
+  buttonScalePop: 1.15
+  popDuration: 0.15
+  punchUpDistance: 20
+  punchDownDistance: -20
+  punchDuration: 0.15
 --- !u!1 &6214511406897084156
 GameObject:
   m_ObjectHideFlags: 0
