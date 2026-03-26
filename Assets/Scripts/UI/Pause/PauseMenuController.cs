@@ -141,6 +141,11 @@ public class PauseMenuController : MonoBehaviour
             return;
         }
 
+        if (GameOverMenuController.IsGameOverMenuOpen)
+        {
+            return;
+        }
+
         if (!isOpen && GlossaryToggleController.IsGlossaryOpen)
         {
             return;
