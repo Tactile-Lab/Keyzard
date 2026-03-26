@@ -80,6 +80,18 @@ PrefabInstance:
       propertyPath: ennemyData
       value: 
       objectReference: {fileID: 11400000, guid: 0af25fa87bc325243a521fcf2bab46ab, type: 2}
+    - target: {fileID: 8577874776329270144, guid: fe868ce24422f94438cd4165f7696dfb, type: 3}
+      propertyPath: hitBlinkColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577874776329270144, guid: fe868ce24422f94438cd4165f7696dfb, type: 3}
+      propertyPath: hitBlinkColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8577874776329270144, guid: fe868ce24422f94438cd4165f7696dfb, type: 3}
+      propertyPath: hitBlinkColor.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

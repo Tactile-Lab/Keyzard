@@ -3,6 +3,7 @@ using UnityEngine;
 
 public enum RoomType
 {
+    Tuto,
     Combat,
     Reward,
     Boss
@@ -20,6 +21,8 @@ public class RoomManager : MonoBehaviour
     [SerializeField] private DoorController door; 
     [SerializeField] private bool playerInside = false;
     [SerializeField] private bool roomCleared = false;
+
+    private LevelManager levelManager;
 
     private List<Mannequin> nonBlockingMannequins = new List<Mannequin>();
 
@@ -66,6 +69,7 @@ public class RoomManager : MonoBehaviour
             if (col != null && col.OverlapPoint(player.transform.position))
                 ForceEnterRoom();
         }
+        levelManager =  FindFirstObjectByType<LevelManager>();
     }
 
     public void OnPlayerEnter()
@@ -122,6 +126,11 @@ public class RoomManager : MonoBehaviour
         }
 
         nonBlockingMannequins.Clear();
+        TypingSortManager typingSortManager = FindFirstObjectByType<TypingSortManager>();
+        if (typingSortManager != null)
+        {
+            typingSortManager.ResetInputRoom();
+        }
     }
 
     private void PrepareReward()
@@ -183,6 +192,10 @@ public class RoomManager : MonoBehaviour
             roomCleared = true;
             door?.Open();
             Debug.Log($"Room {name} cleared, porte ouverte");
+
+            if (levelManager != null) {
+                levelManager.CheckAllRoomsCleared();
+            }
         }
     }
 
@@ -223,5 +236,10 @@ public class RoomManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool IsCombatRoomNotCleared()
+    {
+        return roomType == RoomType.Combat && !roomCleared;
     }
 }

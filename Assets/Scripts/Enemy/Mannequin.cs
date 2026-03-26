@@ -26,7 +26,7 @@ public class Mannequin : Enemy
 
         if (animator != null)
         {
-            // animator.SetTrigger("TakeDmg");
+            animator.SetTrigger("TakeDmg");
         }
 
         if (unlockRoomOnHit && countsForRoomLock && room != null)

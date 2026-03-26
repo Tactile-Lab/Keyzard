@@ -1,0 +1,1049 @@
+fileFormatVersion: 2
+guid: 7221c63014c661744949faf381b2577e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1383195823569789515
+    second: spell geda no deep water__0
+  - first:
+      213: -4814398887911717359
+    second: spell geda no deep water__1
+  - first:
+      213: 7940324089313159437
+    second: spell geda no deep water__2
+  - first:
+      213: -7286631278606130590
+    second: spell geda no deep water__3
+  - first:
+      213: -1145715753853790366
+    second: spell geda no deep water__4
+  - first:
+      213: -2730683491265866827
+    second: spell geda no deep water__5
+  - first:
+      213: -404665241484141246
+    second: spell geda no deep water__6
+  - first:
+      213: 5544411179239165836
+    second: spell geda no deep water__7
+  - first:
+      213: -4792741033702821128
+    second: spell geda no deep water__8
+  - first:
+      213: -810516148423974053
+    second: spell geda no deep water__9
+  - first:
+      213: -4934213692151432310
+    second: spell geda no deep water__10
+  - first:
+      213: -9026957148864299831
+    second: spell geda no deep water__11
+  - first:
+      213: 8809593286567672486
+    second: spell geda no deep water__12
+  - first:
+      213: -3162688865500281225
+    second: spell geda no deep water__13
+  - first:
+      213: 8144678425450591613
+    second: spell geda no deep water__14
+  - first:
+      213: 8864187576288529167
+    second: spell geda no deep water__15
+  - first:
+      213: -2319671013280322291
+    second: spell geda no deep water__16
+  - first:
+      213: -2208153649566966697
+    second: spell geda no deep water__17
+  - first:
+      213: 7950269831089823510
+    second: spell geda no deep water__18
+  - first:
+      213: -4234796214656133678
+    second: spell geda no deep water__19
+  - first:
+      213: 9048873022445302376
+    second: spell geda no deep water__20
+  - first:
+      213: 7675875163767558927
+    second: spell geda no deep water__21
+  - first:
+      213: 8488290624288434179
+    second: spell geda no deep water__22
+  - first:
+      213: -4052789023624319081
+    second: spell geda no deep water__23
+  - first:
+      213: 6242894365105484898
+    second: spell geda no deep water__24
+  - first:
+      213: -8669599433446121275
+    second: spell geda no deep water__25
+  - first:
+      213: -1883880691008677093
+    second: spell geda no deep water__26
+  - first:
+      213: 4345786363163990280
+    second: spell geda no deep water__27
+  - first:
+      213: 2297053165143784638
+    second: spell geda no deep water__28
+  - first:
+      213: 7117828708812904682
+    second: spell geda no deep water__29
+  - first:
+      213: -5112670801355755395
+    second: spell geda no deep water__30
+  - first:
+      213: 2587534529413266005
+    second: spell geda no deep water__31
+  - first:
+      213: 8294686754122771574
+    second: spell geda no deep water__32
+  - first:
+      213: -113352102885907177
+    second: spell geda no deep water__33
+  - first:
+      213: -6321264931508131515
+    second: spell geda no deep water__34
+  - first:
+      213: 358258145098845490
+    second: spell geda no deep water__35
+  - first:
+      213: 4753393749826513831
+    second: spell geda no deep water__36
+  - first:
+      213: 8945335143480354818
+    second: spell geda no deep water__37
+  - first:
+      213: 161845903561791858
+    second: spell geda no deep water__38
+  - first:
+      213: -198539089860239654
+    second: spell geda no deep water__39
+  - first:
+      213: 1759243594155476209
+    second: spell geda no deep water__40
+  - first:
+      213: 6490985049296794517
+    second: spell geda no deep water__41
+  - first:
+      213: -4743257347912551367
+    second: spell geda no deep water__42
+  - first:
+      213: -8024199410983507813
+    second: spell geda no deep water__43
+  - first:
+      213: 5398870879044870170
+    second: spell geda no deep water__44
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 110
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: spell geda no deep water__0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 14, y: -6}
+        - {x: 14, y: 9}
+        - {x: 7, y: 14}
+        - {x: -13, y: 14}
+        - {x: -15, y: 8}
+        - {x: -15, y: -5}
+        - {x: -11, y: -8}
+        - {x: -3, y: -9}
+        - {x: 7, y: -9}
+      - - {x: -7, y: 1}
+        - {x: -7, y: 3}
+        - {x: -4, y: 6}
+        - {x: 0, y: 7}
+        - {x: 1, y: 6}
+        - {x: 4, y: 6}
+        - {x: 7, y: 4}
+        - {x: 6, y: 2}
+        - {x: 6, y: -1}
+        - {x: -2, y: -1}
+        - {x: -3, y: -2}
+      physicsShape:
+      - - {x: 12, y: -6}
+        - {x: 12, y: 10}
+        - {x: 7, y: 12}
+        - {x: -10, y: 12}
+        - {x: -13, y: 6}
+        - {x: -13, y: -3}
+        - {x: -11, y: -7}
+        - {x: 6, y: -7}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b426ea6e549123310800000000000000
+      internalID: 1383195823569789515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell geda no deep water__1
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 33, y: -9}
+        - {x: 33, y: 12}
+        - {x: 19, y: 26}
+        - {x: -23, y: 26}
+        - {x: -33, y: 15}
+        - {x: -33, y: -15}
+        - {x: -30, y: -16}
+        - {x: 30, y: -16}
+      - - {x: -8, y: -2}
+        - {x: -6, y: 0}
+        - {x: -6, y: 3}
+        - {x: -7, y: 4}
+        - {x: -7, y: 7}
+        - {x: -2, y: 11}
+        - {x: 7, y: 10}
+        - {x: 12, y: 4}
+        - {x: 13, y: 0}
+        - {x: 10, y: -2}
+        - {x: 8, y: 0}
+        - {x: 7, y: 0}
+        - {x: 1, y: -2}
+        - {x: -2, y: -5}
+        - {x: -3, y: -4}
+      physicsShape:
+      - - {x: 31, y: -4}
+        - {x: 31, y: 5}
+        - {x: 18, y: 24}
+        - {x: 14, y: 24}
+        - {x: 2, y: 23}
+        - {x: -5, y: 23}
+        - {x: -14, y: 24}
+        - {x: -22, y: 24}
+        - {x: -28, y: 20}
+        - {x: -31, y: 16}
+        - {x: -31, y: -5}
+        - {x: -21, y: -14}
+        - {x: 14, y: -14}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1168cfe18b1df2db0800000000000000
+      internalID: -4814398887911717359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell geda no deep water__2
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 37, y: -9}
+        - {x: 37, y: 10}
+        - {x: 29, y: 34}
+        - {x: -26, y: 34}
+        - {x: -37, y: 21}
+        - {x: -37, y: -20}
+        - {x: -33, y: -21}
+        - {x: 31, y: -21}
+      - - {x: 0, y: -6}
+        - {x: -1, y: -5}
+        - {x: -8, y: -5}
+        - {x: -11, y: -3}
+        - {x: -10, y: -3}
+        - {x: -7, y: 0}
+        - {x: -7, y: 1}
+        - {x: -6, y: 0}
+        - {x: -2, y: 0}
+        - {x: 0, y: -2}
+        - {x: 2, y: -2}
+        - {x: 8, y: 3}
+        - {x: 8, y: 6}
+        - {x: 4, y: 12}
+        - {x: 7, y: 12}
+        - {x: 9, y: 10}
+        - {x: 11, y: 10}
+        - {x: 13, y: 8}
+        - {x: 16, y: 4}
+        - {x: 15, y: 3}
+        - {x: 15, y: 1}
+        - {x: 13, y: -1}
+        - {x: 9, y: 0}
+        - {x: 6, y: -2}
+        - {x: 3, y: -3}
+        - {x: 1, y: -6}
+      - - {x: -13.666672, y: 9}
+        - {x: -13.399994, y: 9.399994}
+        - {x: -13, y: 9}
+      - - {x: -9, y: 6}
+        - {x: -10.5, y: 7.125}
+        - {x: -7, y: 8}
+        - {x: -5.6666718, y: 9.333328}
+        - {x: -6, y: 8}
+        - {x: -8.714279, y: 5.285721}
+      physicsShape:
+      - - {x: 35, y: -13}
+        - {x: 35, y: 13}
+        - {x: 29, y: 32}
+        - {x: -26, y: 32}
+        - {x: -35, y: 20}
+        - {x: -35, y: -9}
+        - {x: -24, y: -19}
+        - {x: 15, y: -19}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d09ecf880b2b13e60800000000000000
+      internalID: 7940324089313159437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell geda no deep water__3
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 6, y: -19}
+        - {x: 7, y: -13}
+        - {x: 13, y: -19}
+        - {x: 37, y: -16}
+        - {x: 47, y: -6}
+        - {x: 47, y: 27}
+        - {x: 27, y: 40}
+        - {x: -42, y: 40}
+        - {x: -42, y: -18}
+        - {x: -32, y: -23}
+        - {x: 1, y: -23}
+      physicsShape:
+      - - {x: 17, y: -21}
+        - {x: 31, y: -16}
+        - {x: 45, y: 0}
+        - {x: 45, y: 7}
+        - {x: 32, y: 38}
+        - {x: -31, y: 39}
+        - {x: -43, y: 18}
+        - {x: -40, y: -12}
+        - {x: -25, y: -21}
+        - {x: 2, y: -23}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2626e65557fa0ea90800000000000000
+      internalID: -7286631278606130590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell geda no deep water__4
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -7, y: 26}
+        - {x: -7, y: 29}
+        - {x: -5, y: 25}
+        - {x: 3, y: 25}
+        - {x: 4, y: 26}
+        - {x: 9, y: 30}
+        - {x: 9, y: 35}
+        - {x: 8, y: 39}
+        - {x: -8, y: 39}
+        - {x: -9, y: 38}
+        - {x: -9, y: 35.09091}
+        - {x: -18, y: 40}
+        - {x: -30, y: 40}
+        - {x: -35, y: 33}
+        - {x: -35, y: 29}
+        - {x: -34, y: 25}
+        - {x: -10, y: 25}
+      - - {x: 9, y: 16}
+        - {x: 19, y: 3}
+        - {x: 22, y: 2}
+        - {x: 19, y: -1}
+        - {x: 19, y: -5}
+        - {x: 20, y: -6}
+        - {x: 24, y: -6}
+        - {x: 26, y: -1}
+        - {x: 26, y: 1}
+        - {x: 24, y: 2}
+        - {x: 27, y: 6}
+        - {x: 27, y: 13}
+        - {x: 21.28572, y: 20.61905}
+        - {x: 25, y: 20}
+        - {x: 28, y: 20}
+        - {x: 29, y: 20.600006}
+        - {x: 29, y: 16}
+        - {x: 33, y: 16}
+        - {x: 37, y: 18}
+        - {x: 37, y: 21}
+        - {x: 35, y: 23}
+        - {x: 33, y: 23}
+        - {x: 33, y: 32}
+        - {x: 32, y: 35}
+        - {x: 12, y: 35}
+        - {x: 10, y: 31}
+        - {x: 10, y: 27}
+        - {x: 19, y: 21}
+        - {x: 9, y: 21}
+      - - {x: 4, y: 14}
+        - {x: 4, y: 19}
+        - {x: 2, y: 21}
+        - {x: 0, y: 21}
+        - {x: -2, y: 19}
+        - {x: -2, y: 14}
+        - {x: 0, y: 12}
+        - {x: 2, y: 12}
+      - - {x: -19, y: 1}
+        - {x: -19, y: 12}
+        - {x: -21, y: 13}
+        - {x: -22, y: 13}
+        - {x: -22, y: 19}
+        - {x: -41, y: 19}
+        - {x: -44, y: 14}
+        - {x: -44, y: 7}
+        - {x: -41, y: 6}
+        - {x: -27, y: 6}
+        - {x: -26, y: 7.199997}
+        - {x: -26, y: 3}
+        - {x: -23, y: 0}
+      - - {x: -5, y: 15}
+        - {x: -6, y: 18}
+        - {x: -12, y: 18}
+        - {x: -16, y: 14}
+        - {x: -16, y: 12}
+        - {x: -14, y: 10}
+      - - {x: 18, y: -9}
+        - {x: 17, y: -12}
+        - {x: 17, y: -16}
+        - {x: 24, y: -18}
+        - {x: 31, y: -18}
+        - {x: 31, y: -10}
+        - {x: 29.199997, y: -7.300003}
+        - {x: 32, y: -8}
+        - {x: 39, y: -8}
+        - {x: 39, y: -2}
+        - {x: 38, y: -1}
+        - {x: 46, y: -1}
+        - {x: 47, y: 2}
+        - {x: 47, y: 8}
+        - {x: 42, y: 13}
+        - {x: 39, y: 14}
+        - {x: 33, y: 14}
+        - {x: 30, y: 10}
+        - {x: 30, y: 4}
+        - {x: 33.199997, y: 0}
+        - {x: 31, y: 0}
+        - {x: 28, y: -1}
+        - {x: 28, y: -7}
+        - {x: 23, y: -7}
+      - - {x: -14, y: -12}
+        - {x: -13, y: -10}
+        - {x: -13, y: -2}
+        - {x: -13.142853, y: -1.7142792}
+        - {x: -11, y: -1}
+        - {x: -11, y: 2}
+        - {x: -14, y: 5}
+        - {x: -17, y: 4}
+        - {x: -17, y: 1}
+        - {x: -16, y: 0}
+        - {x: -39, y: 0}
+        - {x: -42, y: -3}
+        - {x: -42, y: -10}
+        - {x: -41, y: -14}
+        - {x: -25, y: -14}
+      - - {x: 13, y: -6}
+        - {x: 12, y: -3}
+        - {x: 9, y: -3}
+        - {x: 6, y: -6}
+        - {x: 6, y: -7}
+        - {x: 8, y: -9}
+        - {x: 10, y: -9}
+      - - {x: 0, y: -24}
+        - {x: 1, y: -22}
+        - {x: 1, y: -15}
+        - {x: -5, y: -12}
+        - {x: -11, y: -12}
+        - {x: -16, y: -15}
+        - {x: -16, y: -21}
+        - {x: -15, y: -25}
+        - {x: -2, y: -25}
+      physicsShape:
+      - - {x: 17, y: -20}
+        - {x: 29, y: -16}
+        - {x: 45, y: 0}
+        - {x: 45, y: 7}
+        - {x: 32, y: 38}
+        - {x: -30, y: 40}
+        - {x: -44, y: 18}
+        - {x: -41, y: -12}
+        - {x: -25, y: -21}
+        - {x: 1, y: -25}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 267d9f597999910f0800000000000000
+      internalID: -1145715753853790366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell geda no deep water__5
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -23, y: 28}
+        - {x: -19, y: 32}
+        - {x: -19, y: 40}
+        - {x: -29, y: 40}
+        - {x: -36, y: 36}
+        - {x: -36, y: 28}
+        - {x: -35, y: 27}
+        - {x: -26, y: 27}
+      - - {x: 37, y: 23}
+        - {x: 37, y: 28}
+        - {x: 35, y: 34}
+        - {x: 24, y: 35}
+        - {x: 16, y: 35}
+        - {x: 14, y: 32}
+        - {x: 14, y: 29}
+        - {x: 24, y: 22}
+        - {x: 33, y: 22}
+      - - {x: -2, y: 28}
+        - {x: -2, y: 33}
+        - {x: -4, y: 35}
+        - {x: -7, y: 35}
+        - {x: -10, y: 32}
+        - {x: -10, y: 30}
+        - {x: -8, y: 27}
+        - {x: -5, y: 27}
+      - - {x: 10, y: 27}
+        - {x: 10, y: 30}
+        - {x: 7, y: 33}
+        - {x: 1, y: 33}
+        - {x: -1, y: 31}
+        - {x: 0, y: 27}
+        - {x: 4, y: 24}
+        - {x: 7, y: 24}
+      - - {x: 20, y: 18}
+        - {x: 17, y: 22}
+        - {x: 11, y: 22}
+        - {x: 9, y: 20}
+        - {x: 10, y: 17}
+        - {x: 13, y: 15}
+        - {x: 20, y: 15}
+      - - {x: 41, y: 17}
+        - {x: 41, y: 19}
+        - {x: 40, y: 22}
+        - {x: 35, y: 22}
+        - {x: 32, y: 20}
+        - {x: 32, y: 18}
+        - {x: 33, y: 16}
+        - {x: 39, y: 16}
+      - - {x: -25, y: 15}
+        - {x: -25, y: 20}
+        - {x: -37, y: 20}
+        - {x: -41, y: 19}
+        - {x: -45, y: 15}
+        - {x: -45, y: 8}
+        - {x: -44, y: 6}
+        - {x: -36, y: 6}
+      - - {x: -9, y: 15}
+        - {x: -10, y: 18}
+        - {x: -13, y: 18}
+        - {x: -16, y: 15}
+        - {x: -16, y: 14}
+        - {x: -14, y: 12}
+        - {x: -12, y: 12}
+      - - {x: 48, y: 1}
+        - {x: 48, y: 5}
+        - {x: 44, y: 12}
+        - {x: 40, y: 14}
+        - {x: 35, y: 14}
+        - {x: 35, y: 3}
+        - {x: 38, y: 0}
+        - {x: 43, y: -2}
+        - {x: 47, y: -2}
+      - - {x: 27, y: 6}
+        - {x: 27, y: 10}
+        - {x: 24, y: 13}
+        - {x: 21, y: 12}
+        - {x: 20, y: 8}
+        - {x: 20, y: 3}
+        - {x: 22, y: 2}
+        - {x: 23, y: 2}
+      - - {x: -20, y: 4}
+        - {x: -20, y: 12}
+        - {x: -23, y: 12}
+        - {x: -26, y: 10}
+        - {x: -26, y: 5}
+        - {x: -25, y: 3}
+        - {x: -23, y: 3}
+      - - {x: -25, y: -14}
+        - {x: -25, y: -9}
+        - {x: -30, y: -1}
+        - {x: -38, y: -1}
+        - {x: -43, y: -4}
+        - {x: -43, y: -11}
+        - {x: -42, y: -15}
+        - {x: -28, y: -15}
+      - - {x: 40, y: -7}
+        - {x: 40, y: -3}
+        - {x: 36, y: -1}
+        - {x: 33, y: -1}
+        - {x: 32, y: -3}
+        - {x: 32, y: -6}
+        - {x: 35, y: -9}
+        - {x: 38, y: -9}
+      - - {x: -15, y: -10}
+        - {x: -15, y: -7}
+        - {x: -17, y: -3}
+        - {x: -21, y: -3}
+        - {x: -23, y: -4}
+        - {x: -23, y: -7}
+        - {x: -21, y: -10}
+        - {x: -18, y: -11}
+      - - {x: 32, y: -17}
+        - {x: 32, y: -13}
+        - {x: 31, y: -10}
+        - {x: 27, y: -10}
+        - {x: 22, y: -12}
+        - {x: 22, y: -17}
+        - {x: 25, y: -20}
+        - {x: 29, y: -20}
+      - - {x: -6, y: -25}
+        - {x: -3, y: -21}
+        - {x: -3, y: -19}
+        - {x: -7, y: -15}
+        - {x: -13, y: -15}
+        - {x: -16, y: -18}
+        - {x: -16, y: -22}
+        - {x: -12, y: -26}
+        - {x: -9, y: -26}
+      physicsShape:
+      - - {x: 18, y: -22}
+        - {x: 32, y: -19}
+        - {x: 47, y: -3}
+        - {x: 48, y: 11}
+        - {x: 32, y: 38}
+        - {x: -30, y: 40}
+        - {x: -44, y: 20}
+        - {x: -43, y: -13}
+        - {x: -25, y: -23}
+        - {x: 1, y: -26}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b3131d15d9aa1ad0800000000000000
+      internalID: -2730683491265866827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell geda no deep water__6
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -25, y: 32}
+        - {x: -25, y: 38}
+        - {x: -26, y: 39}
+        - {x: -31, y: 39}
+        - {x: -36, y: 36}
+        - {x: -36, y: 32}
+        - {x: -33, y: 29}
+        - {x: -26, y: 29}
+      - - {x: 39, y: 28}
+        - {x: 37, y: 31}
+        - {x: 30, y: 31}
+        - {x: 29, y: 29}
+        - {x: 29, y: 25}
+        - {x: 32, y: 22}
+        - {x: 39, y: 22}
+      - - {x: -3, y: 28}
+        - {x: -3, y: 30}
+        - {x: -5, y: 31}
+        - {x: -7, y: 31}
+        - {x: -10, y: 28}
+        - {x: -10, y: 24}
+        - {x: -9, y: 23}
+        - {x: -5, y: 23}
+      - - {x: 11, y: 20}
+        - {x: 11, y: 25}
+        - {x: 10, y: 29}
+        - {x: 5, y: 29}
+        - {x: 3, y: 27}
+        - {x: 3, y: 22}
+        - {x: 6, y: 19}
+        - {x: 8, y: 19}
+      - - {x: 19, y: 18}
+        - {x: 19, y: 19}
+        - {x: 16, y: 22}
+        - {x: 12, y: 22}
+        - {x: 11, y: 19}
+        - {x: 14, y: 16}
+        - {x: 17, y: 16}
+      - - {x: -37, y: 5}
+        - {x: -37, y: 11}
+        - {x: -40, y: 14}
+        - {x: -44, y: 14}
+        - {x: -46, y: 13}
+        - {x: -46, y: 7}
+        - {x: -45, y: 4}
+        - {x: -41, y: 4}
+      - - {x: 27, y: 6}
+        - {x: 27, y: 9}
+        - {x: 25, y: 11}
+        - {x: 22, y: 10}
+        - {x: 21, y: 5}
+        - {x: 23, y: 3}
+        - {x: 24, y: 3}
+      - - {x: 50, y: -1}
+        - {x: 50, y: 5}
+        - {x: 48, y: 6}
+        - {x: 41, y: 6}
+        - {x: 41, y: 0}
+        - {x: 42, y: -3}
+        - {x: 49, y: -3}
+      - - {x: 41, y: -8}
+        - {x: 41, y: -3}
+        - {x: 36, y: -3}
+        - {x: 35, y: -5}
+        - {x: 35, y: -8}
+        - {x: 37, y: -9}
+        - {x: 40, y: -9}
+      - - {x: -32, y: -15}
+        - {x: -32, y: -9}
+        - {x: -37, y: -5}
+        - {x: -41, y: -5}
+        - {x: -43, y: -6}
+        - {x: -43, y: -13}
+        - {x: -42, y: -16}
+        - {x: -37, y: -16}
+      - - {x: 32, y: -20}
+        - {x: 32, y: -15}
+        - {x: 31, y: -13}
+        - {x: 28, y: -13}
+        - {x: 24, y: -14}
+        - {x: 24, y: -18}
+        - {x: 25, y: -21}
+        - {x: 30, y: -21}
+      - - {x: -7, y: -25}
+        - {x: -7, y: -22}
+        - {x: -8, y: -19}
+        - {x: -13, y: -19}
+        - {x: -15, y: -21}
+        - {x: -15, y: -24}
+        - {x: -12, y: -27}
+        - {x: -10, y: -27}
+      physicsShape:
+      - - {x: 18, y: -22}
+        - {x: 32, y: -19}
+        - {x: 50, y: -5}
+        - {x: 48, y: 11}
+        - {x: 32, y: 38}
+        - {x: -30, y: 40}
+        - {x: -46, y: 20}
+        - {x: -44, y: -12}
+        - {x: -25, y: -23}
+        - {x: -1, y: -28}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24dd36c5b17526af0800000000000000
+      internalID: -404665241484141246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell geda no deep water__7
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -29, y: 32}
+        - {x: -29, y: 35}
+        - {x: -31, y: 36}
+        - {x: -35, y: 36}
+        - {x: -36, y: 33}
+        - {x: -36, y: 31}
+        - {x: -34, y: 29}
+        - {x: -32, y: 29}
+      - - {x: 40, y: 22}
+        - {x: 40, y: 27}
+        - {x: 35, y: 27}
+        - {x: 34, y: 25}
+        - {x: 34, y: 22}
+        - {x: 36, y: 21}
+        - {x: 39, y: 21}
+      - - {x: -4, y: 19}
+        - {x: -4, y: 21}
+        - {x: -7, y: 24}
+        - {x: -10, y: 23}
+        - {x: -10, y: 19}
+        - {x: -8, y: 17}
+        - {x: -6, y: 17}
+      - - {x: 12, y: 12}
+        - {x: 12, y: 16}
+        - {x: 8, y: 20}
+        - {x: 5, y: 19}
+        - {x: 5, y: 14}
+        - {x: 6, y: 11}
+        - {x: 10, y: 11}
+      - - {x: -40, y: 7}
+        - {x: -40, y: 9}
+        - {x: -42, y: 11}
+        - {x: -44, y: 11}
+        - {x: -46, y: 9}
+        - {x: -46, y: 7}
+        - {x: -44, y: 5}
+        - {x: -42, y: 5}
+      - - {x: 51, y: 1}
+        - {x: 50, y: 3}
+        - {x: 45, y: 3}
+        - {x: 44, y: 1}
+        - {x: 44, y: -3}
+        - {x: 47, y: -5}
+        - {x: 51, y: -5}
+      - - {x: -35, y: -15}
+        - {x: -35, y: -10}
+        - {x: -39, y: -8}
+        - {x: -41, y: -8}
+        - {x: -43, y: -10}
+        - {x: -43, y: -15}
+        - {x: -40, y: -17}
+        - {x: -36, y: -17}
+      - - {x: -8, y: -26}
+        - {x: -8, y: -24}
+        - {x: -10, y: -22}
+        - {x: -12, y: -22}
+        - {x: -14, y: -24}
+        - {x: -14, y: -26}
+        - {x: -12, y: -28}
+        - {x: -10, y: -28}
+      physicsShape:
+      - - {x: 19, y: -24}
+        - {x: 32, y: -19}
+        - {x: 50, y: -5}
+        - {x: 50, y: 11}
+        - {x: 34, y: 34}
+        - {x: -30, y: 40}
+        - {x: -46, y: 20}
+        - {x: -46, y: -13}
+        - {x: -25, y: -23}
+        - {x: -1, y: -29}
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8f414b8794b1fc40800000000000000
+      internalID: 5544411179239165836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spell geda no deep water__8
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape:
+      - - {x: -16, y: 11}
+        - {x: -6, y: 3}
+        - {x: 17, y: 5}
+        - {x: 10, y: 16}
+        - {x: -11, y: 20}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f274b14c63cc7db0800000000000000
+      internalID: -4792741033702821128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1247d99975ac83c47a8d797fa2e6e467
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":9.0,"y":1.0},"gridSpriteSize":{"x":192.0,"y":192.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      spell geda no deep water__0: 1383195823569789515
+      spell geda no deep water__1: -4814398887911717359
+      spell geda no deep water__2: 7940324089313159437
+      spell geda no deep water__3: -7286631278606130590
+      spell geda no deep water__4: -1145715753853790366
+      spell geda no deep water__5: -2730683491265866827
+      spell geda no deep water__6: -404665241484141246
+      spell geda no deep water__7: 5544411179239165836
+      spell geda no deep water__8: -4792741033702821128
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

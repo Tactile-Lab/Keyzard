@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 7653775034446762932}
   - component: {fileID: 827929588476317997}
   - component: {fileID: 1757038289756552319}
-  m_Layer: 10
+  - component: {fileID: 3401099378725846402}
+  m_Layer: 11
   m_Name: Mannequin
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -29,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 2371617225468375159}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.72, y: -3.41, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalPosition: {x: -0.66255677, y: 0.22993454, z: -1}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8937661706173450587}
@@ -62,7 +63,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 7
 --- !u!212 &7653775034446762932
 SpriteRenderer:
   serializedVersion: 2
@@ -109,10 +110,10 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1746916159
-  m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingLayer: 6
+  m_SortingOrder: -1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 504b7fa4bff01ea449b375dabf536a60, type: 3}
+  m_Sprite: {fileID: 5857943546791225923, guid: f9b455c3040b58949bcc21123a381d0e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -134,9 +135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db96e30a4c58fc644a3e019ba8d19b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Mannequin
+  animator: {fileID: 3401099378725846402}
   projectileEnemy: {fileID: 3470575361217590913, guid: 0da73fa6a3b58494b81a24eafd18cc19, type: 3}
   nameText: {fileID: 682867518064026418}
   ennemyData: {fileID: 0}
+  hitBlinkColor: {r: 1, g: 0.84147394, b: 0, a: 1}
+  hitBlinkDuration: 0.06
   unlockRoomOnHit: 1
   countsForRoomLock: 1
 --- !u!70 &1757038289756552319
@@ -173,9 +177,31 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.020804703, y: -0.0735085}
-  m_Size: {x: 0.93525875, y: 1.2832892}
+  m_Offset: {x: 0.027610859, y: -0.032028258}
+  m_Size: {x: 0.8456048, y: 0.9911569}
   m_Direction: 0
+--- !u!95 &3401099378725846402
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2371617225468375159}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d567d161bbbed6d45b1b1fc343976334, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6569098800399442963
 GameObject:
   m_ObjectHideFlags: 0
@@ -312,7 +338,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0.721}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3439503157989904924

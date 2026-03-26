@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7846088186882273432}
   - component: {fileID: 2101798936150048001}
-  - component: {fileID: 5673709739097317888}
   m_Layer: 0
   m_Name: ==GAMEMANAGER==
   m_TagString: Untagged
@@ -46,36 +45,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   list_enemies: []
---- !u!114 &5673709739097317888
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2756634150438297763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86aad0e21e1ea924493880168c5e61a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GlossaryToggleController
-  glossaryRoot: {fileID: 0}
-  glossaryPanel: {fileID: 0}
-  toggleKey: 55
-  acceptRightCtrl: 1
-  toggleCooldown: 0.2
-  muffleMusicWhenOpen: 1
-  musicMuffleTransition: 0.25
-  openX: 0
-  closedLeftX: -1600
-  closedRightX: 1600
-  slideDuration: 0.35
-  openEase: 27
-  closeEase: 26
-  enablePop: 1
-  popScaleFrom: 0.96
-  popDuration: 0.5
-  popEase: 27
-  backdropTarget: {fileID: 0}
-  backdropTargetAlpha: 1
-  backdropFadeDuration: 0.2
-  manageBackdropActiveState: 1

@@ -4,6 +4,12 @@ using System.Collections.Generic;
 
 public class Sort : MonoBehaviour
 {
+    public enum LaunchTimingMode
+    {
+        Immediate,
+        WaitForAnimationEvent
+    }
+
     public string nomSort;
     public int damage;
     public float vitesse;
@@ -17,10 +23,41 @@ public class Sort : MonoBehaviour
     [Header("Audio")]
     public SpellAudioConfig audioConfig;
 
+    [Header("Launch Timing")]
+    [SerializeField] private LaunchTimingMode launchTiming = LaunchTimingMode.Immediate;
+    [SerializeField] private string launchAnimationTrigger = "LaunchSpell";
+    [SerializeField] private float launchFallbackDelay = 0.2f;
+
+    [Header("Launch VFX")]
+    [SerializeField] private bool overrideLaunchColors;
+    [SerializeField] private Color launchStartColor = Color.white;
+    [SerializeField] private Color launchReleaseColor = Color.white;
+    [SerializeField] private GameObject launchStartVfxPrefab;
+    [SerializeField] private GameObject launchReleaseVfxPrefab;
+
+    [Header("Impact VFX")]
+    [SerializeField] private GameObject impactVfxPrefab;
+    [SerializeField] private float impactVfxLifetime = 0.8f;
+    [SerializeField] private bool attachImpactVfxToTarget;
+    [SerializeField] private Vector3 impactVfxOffset = Vector3.zero;
+
     protected GameObject cible;
     protected AudioSource activeLoopSource;
 
     public Animator aniamtor;
+
+    public LaunchTimingMode LaunchTiming => launchTiming;
+    public string LaunchAnimationTrigger => launchAnimationTrigger;
+    public float LaunchFallbackDelay => launchFallbackDelay;
+    public bool OverrideLaunchColors => overrideLaunchColors;
+    public Color LaunchStartColor => launchStartColor;
+    public Color LaunchReleaseColor => launchReleaseColor;
+    public GameObject LaunchStartVfxPrefab => launchStartVfxPrefab;
+    public GameObject LaunchReleaseVfxPrefab => launchReleaseVfxPrefab;
+    public GameObject ImpactVfxPrefab => impactVfxPrefab;
+    public float ImpactVfxLifetime => impactVfxLifetime;
+    public bool AttachImpactVfxToTarget => attachImpactVfxToTarget;
+    public Vector3 ImpactVfxOffset => impactVfxOffset;
 
     // Lance le sort sur la cible la plus proche
     public virtual void LancerSort()
@@ -47,30 +84,12 @@ public class Sort : MonoBehaviour
         }
     }
 
-    private IEnumerator LancerSortDelayed()
-    {
-        yield return null; // attend 1 frame
-
-        List<GameManager.EnemyEntry> ennemis = GameManager.Instance.list_enemies;
-
-        cible = TrouverCibleProche(ennemis);
-
-        if (cible != null)
-        {
-            LancerSortCible(cible);
-        }
-        else
-        {
-            Debug.LogWarning("[Sort] Toujours aucune cible après délai !");
-        }
-    }
-
     // Lance le sort sur une cible spécifique
     public virtual void LancerSortCible(GameObject cibleRef)
     {
         if (cibleRef == null)
         {
-            DestroySort(gameObject);
+            DestroySort(cibleRef);
         }
 
         cible = cibleRef;
@@ -79,7 +98,7 @@ public class Sort : MonoBehaviour
         if (audioConfig != null)
         {
             audioConfig.Preload();
-            audioConfig.PlayLaunchSFX();
+            audioConfig.PlayLaunchReleaseSFX();
             activeLoopSource = audioConfig.StartActiveLoop();
         }
 
@@ -106,7 +125,7 @@ public class Sort : MonoBehaviour
         }
 
         // La cible a disparu → on détruit le sort
-        DestroySort(gameObject);
+        DestroySort(target);
     }
 
     // Trouver la cible la plus proche
@@ -132,6 +151,8 @@ public class Sort : MonoBehaviour
 
     protected virtual void OnImpact(GameObject target)
     {
+        SpawnImpactVfx(target);
+
         if (audioConfig != null)
         {
             audioConfig.PlayImpactSFX();
@@ -141,6 +162,33 @@ public class Sort : MonoBehaviour
                 activeLoopSource = null;
             }
         }
+    }
+
+    protected virtual void SpawnImpactVfx(GameObject target)
+    {
+        if (impactVfxPrefab == null)
+        {
+            return;
+        }
+
+        Vector3 basePosition = target != null ? target.transform.position : transform.position;
+        Vector3 spawnPosition = basePosition + impactVfxOffset;
+        Transform parent = attachImpactVfxToTarget && target != null ? target.transform : null;
+        Quaternion spawnRotation = impactVfxPrefab.transform.rotation;
+
+        GameObject vfxInstance = Instantiate(impactVfxPrefab, spawnPosition, spawnRotation, parent);
+        if (vfxInstance == null)
+        {
+            return;
+        }
+
+        ImpactVfxAutoDestroy autoDestroy = vfxInstance.GetComponent<ImpactVfxAutoDestroy>();
+        if (autoDestroy == null)
+        {
+            autoDestroy = vfxInstance.AddComponent<ImpactVfxAutoDestroy>();
+        }
+
+        autoDestroy.Initialize(impactVfxLifetime);
     }
 
     public virtual void DestroySort(GameObject cible)

@@ -45,13 +45,37 @@ public class GlossaryToggleController : MonoBehaviour
     private Tween backdropTween;
     private Vector3 basePanelScale = Vector3.one;
     private CanvasGroup backdropGroup;
+    private bool isConfigured;
+
+    private PlayerHealth playerHealth;
 
     private void Awake()
     {
+        playerHealth = FindFirstObjectByType<PlayerHealth>();
+
+        // PlayerHealth peut ne pas exister en Main Menu - c'est normal
+        if (playerHealth == null && gameObject.scene.name != "MainMenu")
+        {
+            Debug.LogWarning("PlayerHealth introuvable dans la scène !");
+        }
+
+        if (glossaryRoot == null && glossaryPanel != null)
+        {
+            glossaryRoot = glossaryPanel.gameObject;
+        }
+
         if (glossaryPanel == null && glossaryRoot != null)
         {
             glossaryPanel = glossaryRoot.GetComponent<RectTransform>();
         }
+
+        if (glossaryRoot == null)
+        {
+            enabled = false;
+            return;
+        }
+
+        isConfigured = true;
 
         if (glossaryPanel != null)
         {
@@ -85,6 +109,16 @@ public class GlossaryToggleController : MonoBehaviour
 
     private void Update()
     {
+        if (!isConfigured)
+        {
+            return;
+        }
+
+        if (PauseMenuController.IsPauseMenuOpen)
+        {
+            return;
+        }
+
         Keyboard keyboard = Keyboard.current;
         if (keyboard == null)
         {
@@ -102,6 +136,17 @@ public class GlossaryToggleController : MonoBehaviour
 
     public void ToggleGlossary()
     {
+        if (PauseMenuController.IsPauseMenuOpen)
+        {
+            return;
+        }
+
+        if (playerHealth != null && playerHealth.IsDead)
+        {
+            // Empêche l'ouverture si le joueur est mort
+            return;
+        }
+        
         if (isTransitioning || Time.unscaledTime < nextToggleAllowedTime)
         {
             return;
