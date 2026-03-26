@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9102886351637130478}
   - component: {fileID: 2533454586397713298}
   - component: {fileID: 7346661071843993438}
+  - component: {fileID: 9131017084559193492}
   m_Layer: 0
   m_Name: Uraw laucnh
   m_TagString: Untagged
@@ -114,3 +115,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9131017084559193492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5113598425464427131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16e3ee2ce621b0547a991f6a6a7c9797, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LaunchVfxAutoDestroy
