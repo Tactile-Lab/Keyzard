@@ -192,8 +192,9 @@ public class Sort : MonoBehaviour
         Vector3 basePosition = target != null ? target.transform.position : transform.position;
         Vector3 spawnPosition = basePosition + impactVfxOffset;
         Transform parent = attachImpactVfxToTarget && target != null ? target.transform : null;
+        Quaternion spawnRotation = impactVfxPrefab.transform.rotation;
 
-        GameObject vfxInstance = Instantiate(impactVfxPrefab, spawnPosition, Quaternion.identity, parent);
+        GameObject vfxInstance = Instantiate(impactVfxPrefab, spawnPosition, spawnRotation, parent);
         if (vfxInstance == null)
         {
             return;
