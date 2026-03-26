@@ -65,6 +65,8 @@ public class GameOverMenuController : MonoBehaviour
 
     public void ShowGameOverMenu()
     {
+        AudioManager.Instance?.PlayMusic(GameMusicState.GameOver);
+
         if (panelRoot != null)
             panelRoot.SetActive(true);
 

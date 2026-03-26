@@ -83,6 +83,8 @@ public class RoomManager : MonoBehaviour
         HandleDoor();
         ActivateEnemies();
 
+        AudioManager.Instance?.PlayMusic(enemies.Count > 0 ? GameMusicState.Combat : GameMusicState.Dungeon);
+
         PrepareReward(); // <--- prépare le sort pour le trigger
 
         AddTutoMannequinsToGameManager();
@@ -96,11 +98,14 @@ public class RoomManager : MonoBehaviour
         if (roomCleared)
         {
             door?.Open();
+            AudioManager.Instance?.PlayMusic(GameMusicState.Dungeon);
         }
         else
         {
             HandleDoor();
             ActivateEnemies();
+
+            AudioManager.Instance?.PlayMusic(enemies.Count > 0 ? GameMusicState.Combat : GameMusicState.Dungeon);
 
             PrepareReward();
 

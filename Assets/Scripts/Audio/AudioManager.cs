@@ -12,7 +12,10 @@ public class AudioManager : MonoBehaviour
     public AudioMixerGroup musicGroup;
     public AudioMixerGroup sfxGroup;
     
-    [Header("Music")]
+    [Header("Music Config")]
+    public MusicAudioConfig musicConfig;
+
+    [Header("Music (Legacy)")]
     public AudioClip backgroundMusic;
     [Range(0f, 1f)] public float musicVolume = 0.7f;
     [Header("Music Muffle")]
@@ -27,6 +30,9 @@ public class AudioManager : MonoBehaviour
     private List<AudioSource> sfxPool = new List<AudioSource>();
     private List<AudioSource> loopPool = new List<AudioSource>();
     private const int INITIAL_POOL_SIZE = 5;
+
+    private GameMusicState _currentMusicState;
+    private readonly Dictionary<GameMusicState, float> _musicTimestamps = new Dictionary<GameMusicState, float>();
     
     void Awake()
     {
@@ -141,6 +147,43 @@ public class AudioManager : MonoBehaviour
             musicSource.clip = backgroundMusic;
             musicSource.Play();
         }
+    }
+
+    public void PlayMusic(GameMusicState state)
+    {
+        if (musicConfig == null) return;
+
+        var entry = musicConfig.GetEntry(state);
+        if (entry == null || entry.clip == null) return;
+
+        // Sauvegarder la position de la piste actuelle si elle doit persister
+        if (musicSource.isPlaying)
+        {
+            var currentEntry = musicConfig.GetEntry(_currentMusicState);
+            if (currentEntry != null && currentEntry.persistInBackground)
+            {
+                _musicTimestamps[_currentMusicState] = musicSource.time;
+            }
+        }
+
+        // Transition propre : stopper l'ancienne
+        musicSource.Stop();
+
+        // Charger la nouvelle
+        musicSource.clip = entry.clip;
+        _currentMusicState = state;
+
+        // Restaurer la position ou repartir du début
+        if (entry.persistInBackground && _musicTimestamps.TryGetValue(state, out float savedTime))
+        {
+            musicSource.time = Mathf.Min(savedTime, entry.clip.length - 0.01f);
+        }
+        else
+        {
+            musicSource.time = 0f;
+        }
+
+        musicSource.Play();
     }
     
     public void PlaySFX(AudioClip clip, float volume = 1f)

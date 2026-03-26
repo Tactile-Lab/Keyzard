@@ -62,6 +62,11 @@ public class MainMenuManager : MonoBehaviour
         RefreshSelectionImmediate();
     }
 
+    private void Start()
+    {
+        AudioManager.Instance?.PlayMusic(GameMusicState.MainMenu);
+    }
+
     private void Update()
     {
         UpdateSelectionScale();
