@@ -51,5 +51,6 @@ MonoBehaviour:
   - {fileID: -1600348183999881970, guid: 05331396e7b9d4245931b17a4f593119, type: 3}
   startingSpells:
   - {fileID: 5863181580237299462, guid: e063a1fed99bc3d46b5a3df4dfc52ff9, type: 3}
+  - {fileID: 6111884763938885358, guid: be80c448a4a43424187dfefa442e6c5a, type: 3}
   initializeOnAwake: 1
   debugUnlockAllSpellsOnStart: 0
