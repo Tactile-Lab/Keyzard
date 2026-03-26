@@ -3911,6 +3911,14 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 960201722325215994, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: imageMenu
+      value: 
+      objectReference: {fileID: 6327162050714892241}
+    - target: {fileID: 960201722325215994, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+      propertyPath: imageRejouer
+      value: 
+      objectReference: {fileID: 6327162050714892242}
     - target: {fileID: 1870261897024595192, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
       propertyPath: m_Name
       value: gameOverText
@@ -4142,12 +4150,24 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 8797811767719125584, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+    - {fileID: 7094379950103374905, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+    - {fileID: 638115568621937839, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3896893375845764595, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1718775274}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+--- !u!224 &6327162050714892241 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8993570024785569879, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+  m_PrefabInstance: {fileID: 6327162050714892240}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &6327162050714892242 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5371000058962160407, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
+  m_PrefabInstance: {fileID: 6327162050714892240}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
