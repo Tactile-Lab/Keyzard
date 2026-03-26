@@ -21,13 +21,6 @@ public class PlayerDeathEffects : MonoBehaviour
     public float zoomAmount = 2f;
     public float zoomDuration = 0.5f;
 
-    [Header("Shake (optionnel)")]
-    public float shakeIntensity = 0.2f;
-    public float shakeDuration = 0.3f;
-
-    [Header("Slow Motion")]
-    public float slowMotionFactor = 0f;
-
     [Header("Delays")]
     public float postFadeDelay = 0.3f;
 
@@ -35,6 +28,8 @@ public class PlayerDeathEffects : MonoBehaviour
     public bool allowEarlyInput = false;
 
     public static bool CanInteract = false;
+
+    public GameOverMenuController gameOverMenuController; // ← Ajoute cette ligne
 
     private void OnEnable()
     {
@@ -52,30 +47,33 @@ public class PlayerDeathEffects : MonoBehaviour
             playerHealth.Died -= OnPlayerDied;
     }
 
-    public void OnPlayerDied()
-    {
-        CanInteract = false; // ❌ bloque les inputs
 
-        Time.timeScale = slowMotionFactor;
+public void OnPlayerDied()
+{
+    CanInteract = false;
+    Time.timeScale = 0f;
 
-        if (staff != null)
-            staff.SetActive(false);
+    if (staff != null)
+        staff.SetActive(false);
 
-        if (animator != null)
-        {
-            animator.updateMode = AnimatorUpdateMode.UnscaledTime;
-            animator.SetTrigger("Die");
-        }
-
+    // Active le Canvas AVANT le menu
+    if (canvas != null)
         canvas.gameObject.SetActive(true);
-        gameOverText.gameObject.SetActive(false);
 
-        SpriteRenderer sr = player.GetComponent<SpriteRenderer>();
-        if (sr != null)
-            sr.sortingOrder = 2;
-
-        StartCoroutine(DeathCinematic());
+    if (animator != null)
+    {
+        animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+        animator.SetTrigger("Die");
     }
+
+    // Active le GameOverMenuController (référence publique)
+    if (gameOverMenuController != null)
+        gameOverMenuController.ShowGameOverMenu();
+    else
+        Debug.LogError("GameOverMenuController non assigné !");
+
+    StartCoroutine(DeathCinematic());
+}
 
     private IEnumerator DeathCinematic()
     {
@@ -94,7 +92,7 @@ public class PlayerDeathEffects : MonoBehaviour
 
         noirImage.rectTransform.localScale = Vector3.one * 5f;
 
-        // 🔥 Zoom + fade noir
+        // Zoom + fade noir
         while (t < fadeDuration)
         {
             t += Time.unscaledDeltaTime;
@@ -119,22 +117,15 @@ public class PlayerDeathEffects : MonoBehaviour
         noirImage.color = noirColor;
         noirImage.rectTransform.localScale = Vector3.one;
 
-        // pause dramatique
         yield return new WaitForSecondsRealtime(postFadeDelay);
 
-        // 🔥 Game Over fade
+        // Game Over text fade
         if (gameOverText != null)
         {
             Color textColor = gameOverText.color;
             textColor.a = 0f;
             gameOverText.color = textColor;
             gameOverText.gameObject.SetActive(true);
-
-            // ✅ autorisation anticipée (DEBUG ONLY)
-            if (allowEarlyInput)
-            {
-                CanInteract = true;
-            }
 
             float t2 = 0f;
             while (t2 < fadeDuration)
@@ -146,7 +137,6 @@ public class PlayerDeathEffects : MonoBehaviour
             }
         }
 
-        // ✅ autorisation normale (fin complète)
         CanInteract = true;
     }
 }

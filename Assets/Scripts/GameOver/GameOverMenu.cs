@@ -8,13 +8,12 @@ public class GameOverMenuController : MonoBehaviour
     public static bool IsGameOverMenuOpen { get; private set; }
 
     [Header("Menu UI")]
+    public GameObject panelRoot; // Panel principal du menu
     public RectTransform imageRejouer;
     public RectTransform imageMenu;
 
-    [Header("Input")]
+    [Header("Input / Animation")] 
     [SerializeField] private float inputCooldown = 0.1f;
-
-    [Header("Animation")]
     [SerializeField] private float buttonScalePop = 1.15f;
     [SerializeField] private float popDuration = 0.15f;
     [SerializeField] private float punchUpDistance = 20f;
@@ -25,7 +24,6 @@ public class GameOverMenuController : MonoBehaviour
     private UIButtonSpriteSwap[] optionSpriteSwaps;
     private Tween[] buttonScaleTweens;
     private Tween[] buttonPunchTweens;
-
     private int selectionIndex;
     private float nextInputTime;
 
@@ -42,19 +40,17 @@ public class GameOverMenuController : MonoBehaviour
                 optionSpriteSwaps[i] = optionTargets[i].GetComponent<UIButtonSpriteSwap>();
         }
 
-        IsGameOverMenuOpen = false;
-        gameObject.SetActive(false); // on commence désactivé
-    }
+        if (panelRoot != null)
+            panelRoot.SetActive(false);
 
-    private void OnEnable()
-    {
-        selectionIndex = 0;
-        RefreshOptionVisualState();
-        IsGameOverMenuOpen = true;
+        IsGameOverMenuOpen = false;
     }
 
     private void Update()
     {
+        if (!IsGameOverMenuOpen || Time.unscaledTime < nextInputTime)
+            return;
+
         var keyboard = Keyboard.current;
         if (keyboard == null) return;
 
@@ -64,6 +60,45 @@ public class GameOverMenuController : MonoBehaviour
             ChangeSelection(1);
         else if (keyboard.spaceKey.wasPressedThisFrame)
             ConfirmSelection();
+    }
+
+    public void ShowGameOverMenu()
+    {
+        if (panelRoot != null)
+            panelRoot.SetActive(true);
+
+        selectionIndex = 0;
+        ResetAllButtons();
+        RefreshOptionVisualState();
+
+        IsGameOverMenuOpen = true;
+        nextInputTime = Time.unscaledTime + inputCooldown;
+    }
+
+    public void HideGameOverMenu()
+    {
+        IsGameOverMenuOpen = false;
+
+        for (int i = 0; i < buttonScaleTweens.Length; i++)
+        {
+            buttonScaleTweens[i]?.Kill();
+            buttonPunchTweens[i]?.Kill();
+        }
+
+        if (panelRoot != null)
+            panelRoot.SetActive(false);
+    }
+
+    private void ResetAllButtons()
+    {
+        for (int i = 0; i < optionSpriteSwaps.Length; i++)
+        {
+            if (optionSpriteSwaps[i] != null)
+            {
+                optionSpriteSwaps[i].SetPressed(false);
+                optionSpriteSwaps[i].SetSelected(false);
+            }
+        }
     }
 
     private void ChangeSelection(int delta)
@@ -142,15 +177,5 @@ public class GameOverMenuController : MonoBehaviour
     {
         SpellInventoryManager.Instance.ResetInventory();
         TransitionManager.Instance.LoadScene(0);
-    }
-
-    private void OnDisable()
-    {
-        IsGameOverMenuOpen = false;
-        for (int i = 0; i < buttonScaleTweens.Length; i++)
-        {
-            buttonScaleTweens[i]?.Kill();
-            buttonPunchTweens[i]?.Kill();
-        }
     }
 }
