@@ -35,6 +35,12 @@ public class Sort : MonoBehaviour
     [SerializeField] private GameObject launchStartVfxPrefab;
     [SerializeField] private GameObject launchReleaseVfxPrefab;
 
+    [Header("Impact VFX")]
+    [SerializeField] private GameObject impactVfxPrefab;
+    [SerializeField] private float impactVfxLifetime = 0.8f;
+    [SerializeField] private bool attachImpactVfxToTarget;
+    [SerializeField] private Vector3 impactVfxOffset = Vector3.zero;
+
     protected GameObject cible;
     protected AudioSource activeLoopSource;
 
@@ -48,6 +54,10 @@ public class Sort : MonoBehaviour
     public Color LaunchReleaseColor => launchReleaseColor;
     public GameObject LaunchStartVfxPrefab => launchStartVfxPrefab;
     public GameObject LaunchReleaseVfxPrefab => launchReleaseVfxPrefab;
+    public GameObject ImpactVfxPrefab => impactVfxPrefab;
+    public float ImpactVfxLifetime => impactVfxLifetime;
+    public bool AttachImpactVfxToTarget => attachImpactVfxToTarget;
+    public Vector3 ImpactVfxOffset => impactVfxOffset;
 
     // Lance le sort sur la cible la plus proche
     public virtual void LancerSort()
@@ -159,6 +169,8 @@ public class Sort : MonoBehaviour
 
     protected virtual void OnImpact(GameObject target)
     {
+        SpawnImpactVfx(target);
+
         if (audioConfig != null)
         {
             audioConfig.PlayImpactSFX();
@@ -168,6 +180,32 @@ public class Sort : MonoBehaviour
                 activeLoopSource = null;
             }
         }
+    }
+
+    protected virtual void SpawnImpactVfx(GameObject target)
+    {
+        if (impactVfxPrefab == null)
+        {
+            return;
+        }
+
+        Vector3 basePosition = target != null ? target.transform.position : transform.position;
+        Vector3 spawnPosition = basePosition + impactVfxOffset;
+        Transform parent = attachImpactVfxToTarget && target != null ? target.transform : null;
+
+        GameObject vfxInstance = Instantiate(impactVfxPrefab, spawnPosition, Quaternion.identity, parent);
+        if (vfxInstance == null)
+        {
+            return;
+        }
+
+        ImpactVfxAutoDestroy autoDestroy = vfxInstance.GetComponent<ImpactVfxAutoDestroy>();
+        if (autoDestroy == null)
+        {
+            autoDestroy = vfxInstance.AddComponent<ImpactVfxAutoDestroy>();
+        }
+
+        autoDestroy.Initialize(impactVfxLifetime);
     }
 
     public virtual void DestroySort(GameObject cible)

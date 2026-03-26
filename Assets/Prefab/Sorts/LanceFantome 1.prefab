@@ -64,6 +64,10 @@ MonoBehaviour:
   launchReleaseColor: {r: 1, g: 1, b: 1, a: 1}
   launchStartVfxPrefab: {fileID: 5113598425464427131, guid: 7b163aa3c74a8d44cbb35adf4e0cd72c, type: 3}
   launchReleaseVfxPrefab: {fileID: 0}
+  impactVfxPrefab: {fileID: 4393532585053843213, guid: 01d219de4bf74e441a098e979cc20d31, type: 3}
+  impactVfxLifetime: 0.8
+  attachImpactVfxToTarget: 1
+  impactVfxOffset: {x: 0, y: 0, z: 0}
   aniamtor: {fileID: 2827876851003180711}
 --- !u!212 &6770589723762905975
 SpriteRenderer:
