@@ -1977,6 +1977,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasGlossairePause
       objectReference: {fileID: 0}
+    - target: {fileID: 591138682574348315, guid: 17bc5633e2db9344ab3f01f59e3657c5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4168647475907672850, guid: 17bc5633e2db9344ab3f01f59e3657c5, type: 3}
       propertyPath: m_Camera
       value: 
@@ -4024,7 +4028,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6999430363653447649, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7034860046395358617, guid: 4c59222b3e1a9b84580ef1027b264339, type: 3}
       propertyPath: m_AnchoredPosition.y
