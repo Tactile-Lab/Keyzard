@@ -47,30 +47,12 @@ public class Sort : MonoBehaviour
         }
     }
 
-    private IEnumerator LancerSortDelayed()
-    {
-        yield return null; // attend 1 frame
-
-        List<GameManager.EnemyEntry> ennemis = GameManager.Instance.list_enemies;
-
-        cible = TrouverCibleProche(ennemis);
-
-        if (cible != null)
-        {
-            LancerSortCible(cible);
-        }
-        else
-        {
-            Debug.LogWarning("[Sort] Toujours aucune cible après délai !");
-        }
-    }
-
     // Lance le sort sur une cible spécifique
     public virtual void LancerSortCible(GameObject cibleRef)
     {
         if (cibleRef == null)
         {
-            DestroySort(gameObject);
+            DestroySort(cibleRef);
         }
 
         cible = cibleRef;
@@ -106,7 +88,7 @@ public class Sort : MonoBehaviour
         }
 
         // La cible a disparu → on détruit le sort
-        DestroySort(gameObject);
+        DestroySort(target);
     }
 
     // Trouver la cible la plus proche

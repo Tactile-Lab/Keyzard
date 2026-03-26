@@ -109,7 +109,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1746916159
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 504b7fa4bff01ea449b375dabf536a60, type: 3}
@@ -137,6 +137,8 @@ MonoBehaviour:
   projectileEnemy: {fileID: 3470575361217590913, guid: 0da73fa6a3b58494b81a24eafd18cc19, type: 3}
   nameText: {fileID: 682867518064026418}
   ennemyData: {fileID: 0}
+  hitBlinkColor: {r: 1, g: 0.84147394, b: 0, a: 1}
+  hitBlinkDuration: 0.06
   unlockRoomOnHit: 1
   countsForRoomLock: 1
 --- !u!70 &1757038289756552319

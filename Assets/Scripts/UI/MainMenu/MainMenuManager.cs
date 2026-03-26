@@ -147,11 +147,30 @@ public class MainMenuManager : MonoBehaviour
 
     private void QuitGame()
     {
-#if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
-#else
-        Application.Quit();
-#endif
+        if (BlackFadeEffect.Instance != null)
+        {
+            // Bloque tout pendant le fade
+            Time.timeScale = 0f;
+
+            BlackFadeEffect.Instance.PlayFadeOut(() =>
+            {
+                // Une fois le fade terminé, on quitte le jeu
+    #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+    #else
+                Application.Quit();
+    #endif
+            });
+        }
+        else
+        {
+            // Si pas de BlackFadeEffect, quitte directement
+    #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+    #else
+            Application.Quit();
+    #endif
+        }
     }
 
     private void RefreshSelectionImmediate()

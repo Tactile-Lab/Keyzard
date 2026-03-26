@@ -6,10 +6,23 @@ public class ShotGunFeu : Sort
     public int nombreProjectiles = 13;
     public float angleTotal = 60f;
 
+    [Header("Dispersion")]
+    public float angleJitter = 2f;
+
+    [Header("Dommages pellets centraux")]
+    public float centralDamageMultiplier = 1.25f;
+    public int centralProjectileCount = 3;
+
     public float delayVie = 0.4f;
+
+    [Header("Impact projectile")]
+    public string triggerImpact = "Impact";
+    public float fallbackDestroyDelay = 1.5f;
 
     public override void LancerSortCible(GameObject cible)
     {
+        int baseDamage = damage;
+
         Vector2 directionBase = (cible.transform.position - transform.position).normalized;
 
         float angleBase = Mathf.Atan2(directionBase.y, directionBase.x) * Mathf.Rad2Deg;
@@ -23,58 +36,67 @@ public class ShotGunFeu : Sort
 
         for (int i = 0; i < nombreProjectiles; i++)
         {
-            float angle = angleDepart + pas * i;
+            float randomSpread = Random.Range(-angleJitter, angleJitter);
+            float angle = angleDepart + pas * i + randomSpread;
 
             Vector2 direction = new Vector2(
                 Mathf.Cos(angle * Mathf.Deg2Rad),
                 Mathf.Sin(angle * Mathf.Deg2Rad)
             );
 
-            GameObject proj = Instantiate(gameObject, transform.position, Quaternion.identity);
+            Vector3 spawnPos = transform.position;
+            spawnPos.z = 0f;
+            GameObject proj = Instantiate(gameObject, spawnPos, Quaternion.identity);
 
-            // Ici on ajoute un petit composant local qui gère le déplacement
-            DeplacementShotgun mover = proj.AddComponent<DeplacementShotgun>();
+            // Réutilise le composant du prefab s'il existe déjà pour éviter les doublons.
+            DeplacementShotgun mover = proj.GetComponent<DeplacementShotgun>();
+            if (mover == null)
+            {
+                mover = proj.AddComponent<DeplacementShotgun>();
+            }
 
-            mover.Initialiser(direction, vitesse, delayVie);
+            ShotGunFeu projSort = proj.GetComponent<ShotGunFeu>();
+            if (projSort != null)
+            {
+                float centerMultiplier = GetCenterDamageMultiplier(i);
+                projSort.damage = Mathf.Max(1, Mathf.RoundToInt(baseDamage * centerMultiplier));
+            }
+
+            mover.Initialiser(direction, vitesse, delayVie, triggerImpact, fallbackDestroyDelay);
         }
 
         Destroy(gameObject);
     }
 
-    // Petite classe interne uniquement utilisée par le shotgun
-    private class DeplacementShotgun : MonoBehaviour
-{
-    private Vector2 direction;
-    private float vitesse;
-    private float delayVie; // Durée de vie du projectile
-
-    private float timer = 0f;
-
-    // Initialise le projectile avec direction, vitesse et durée de vie
-    public void Initialiser(Vector2 dir, float vit, float delay)
+    public override void DestroySort(GameObject cible)
     {
-        direction = dir.normalized;
-        vitesse = vit;
-        delayVie = delay;
-    }
+        DeplacementShotgun mover = GetComponent<DeplacementShotgun>();
 
-    void Update()
-    {
-        // Déplacement
-        transform.position += (Vector3)(direction * vitesse * Time.deltaTime);
-
-        // Rotation du projectile selon sa direction
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(0, 0, angle);
-
-        // Gestion de la durée de vie
-        timer += Time.deltaTime;
-        if (timer >= delayVie)
+        // Les pellets du shotgun jouent une anim d'impact avant destruction.
+        if (mover != null && cible != null && cible != gameObject)
         {
-            Destroy(gameObject);
+            OnImpact(cible);
+            mover.DemarrerImpact(cible);
+            return;
         }
+
+        base.DestroySort(cible);
     }
-}
+
+    private float GetCenterDamageMultiplier(int projectileIndex)
+    {
+        if (centralProjectileCount <= 0 || centralDamageMultiplier <= 1f)
+        {
+            return 1f;
+        }
+
+        int centerIndex = (nombreProjectiles - 1) / 2;
+        int halfWindow = Mathf.Max(0, (centralProjectileCount - 1) / 2);
+
+        return Mathf.Abs(projectileIndex - centerIndex) <= halfWindow
+            ? centralDamageMultiplier
+            : 1f;
+    }
 
 }
 
