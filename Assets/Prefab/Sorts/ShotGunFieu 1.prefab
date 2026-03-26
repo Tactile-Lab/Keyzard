@@ -51,7 +51,8 @@ MonoBehaviour:
   nomSort: nyro
   damage: 3
   vitesse: 5
-  description: "Un barage de boule explosif a faible port\xE9 mais au d\xE9gats d\xE9vastateur"
+  description: "Un barrage de boules explosives \xE0 faible port\xE9e mais aux d\xE9g\xE2ts
+    d\xE9vastateurs"
   icon: {fileID: -2666487209024649070, guid: 37b25eb747a0ca94fabcb31635b50607, type: 3}
   demonstrationIllustration: {fileID: 21300000, guid: c1c156fc0bf61e34496385b23ae22fd9, type: 3}
   audioConfig: {fileID: 0}

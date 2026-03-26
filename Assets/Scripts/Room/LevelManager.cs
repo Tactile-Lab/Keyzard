@@ -6,6 +6,11 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private EndController endController;
 
+    public void Awake()
+    {
+        winImage.gameObject.SetActive(false);
+    }
+
     public void CheckAllRoomsCleared()
     {
         RoomManager[] rooms = FindObjectsByType<RoomManager>(FindObjectsSortMode.None);

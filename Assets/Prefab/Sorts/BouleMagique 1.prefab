@@ -50,7 +50,7 @@ MonoBehaviour:
   nomSort: tya
   damage: 10
   vitesse: 2
-  description: "Une boule magique qui inflige peu de d\xE9gats"
+  description: "Une boule magique qui inflige peu de d\xE9g\xE2ts"
   icon: {fileID: 21300000, guid: 967d4fbad7f543649b3d752f30a065ff, type: 3}
   demonstrationIllustration: {fileID: 21300000, guid: d8389c4a1426f1d4f9e1a1fa9a9dc6fe, type: 3}
   audioConfig: {fileID: 11400000, guid: 01758118f8d09834ba903f2cb2f111f5, type: 2}
@@ -101,7 +101,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -840883905
-  m_SortingLayer: 6
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 21300000, guid: 967d4fbad7f543649b3d752f30a065ff, type: 3}
