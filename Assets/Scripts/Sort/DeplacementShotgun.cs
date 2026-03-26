@@ -9,12 +9,10 @@ public class DeplacementShotgun : MonoBehaviour
     private Vector2 direction;
     private float vitesse;
     private float delayVie;
-    private int initialDamage;
     private string triggerImpact;
     private float fallbackDestroyDelay;
 
     private float timer = 0f;
-    private float travelledDistance;
     private float spinAngle;
     private bool hasImpacted;
     private bool isInitialized;
@@ -22,11 +20,6 @@ public class DeplacementShotgun : MonoBehaviour
 
     private Animator animator;
     private Collider2D projectileCollider;
-    private ShotGunFeu shotgunSort;
-
-    [Header("Damage falloff")]
-    [SerializeField] private float damageFalloffDistance = 3.5f;
-    [SerializeField] private float minDamageRatio = 0.55f;
 
     [Header("Visual polish")]
     [SerializeField] private float spinSpeed = 540f;
@@ -40,9 +33,9 @@ public class DeplacementShotgun : MonoBehaviour
     [SerializeField] private float hitstopScale = 0.05f;
     [SerializeField] private float shakeDuration = 0.08f;
     [SerializeField] private float shakeAmplitude = 0.06f;
-    [SerializeField] private float blinkDuration = 0.06f;
 
     private static bool isHitstopActive;
+    private static bool isShakeActive;
 
     /// <summary>
     /// Initialise le projectile avec direction, vitesse et durée de vie.
@@ -58,8 +51,6 @@ public class DeplacementShotgun : MonoBehaviour
 
         animator = GetComponent<Animator>();
         projectileCollider = GetComponent<Collider2D>();
-        shotgunSort = GetComponent<ShotGunFeu>();
-        initialDamage = shotgunSort != null ? shotgunSort.damage : 1;
 
         ConfigureTrailRenderer();
     }
@@ -79,9 +70,6 @@ public class DeplacementShotgun : MonoBehaviour
         // Déplacement
         Vector3 frameMove = (Vector3)(direction * vitesse * Time.deltaTime);
         transform.position += frameMove;
-        travelledDistance += frameMove.magnitude;
-
-        ApplyDistanceDamageFalloff();
 
         // Rotation du projectile selon sa direction avec une rotation visuelle plus marquée.
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -128,20 +116,6 @@ public class DeplacementShotgun : MonoBehaviour
         Destroy(gameObject);
     }
 
-    private void ApplyDistanceDamageFalloff()
-    {
-        if (shotgunSort == null)
-        {
-            return;
-        }
-
-        float safeDistance = Mathf.Max(0.01f, damageFalloffDistance);
-        float t = Mathf.Clamp01(travelledDistance / safeDistance);
-        float ratio = Mathf.Lerp(1f, Mathf.Clamp(minDamageRatio, 0.05f, 1f), t);
-
-        shotgunSort.damage = Mathf.Max(1, Mathf.RoundToInt(initialDamage * ratio));
-    }
-
     private void ConfigureTrailRenderer()
     {
         if (!autoAddTrail)
@@ -171,6 +145,12 @@ public class DeplacementShotgun : MonoBehaviour
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         Color baseColor = spriteRenderer != null ? spriteRenderer.color : Color.white;
 
+        if (spriteRenderer != null)
+        {
+            trail.sortingLayerID = spriteRenderer.sortingLayerID;
+            trail.sortingOrder = spriteRenderer.sortingOrder - 1;
+        }
+
         Gradient gradient = new Gradient();
         gradient.SetKeys(
             new[]
@@ -180,7 +160,7 @@ public class DeplacementShotgun : MonoBehaviour
             },
             new[]
             {
-                new GradientAlphaKey(0.8f, 0f),
+                new GradientAlphaKey(1f, 0f),
                 new GradientAlphaKey(0f, 1f)
             }
         );
@@ -191,11 +171,6 @@ public class DeplacementShotgun : MonoBehaviour
     {
         yield return StartCoroutine(DoHitstop());
         StartCoroutine(DoCameraShake());
-
-        if (target != null)
-        {
-            StartCoroutine(BlinkTarget(target));
-        }
     }
 
     private System.Collections.IEnumerator DoHitstop()
@@ -223,54 +198,30 @@ public class DeplacementShotgun : MonoBehaviour
     private System.Collections.IEnumerator DoCameraShake()
     {
         Camera cam = Camera.main;
-        if (cam == null || shakeDuration <= 0f || shakeAmplitude <= 0f)
+        if (cam == null || shakeDuration <= 0f || shakeAmplitude <= 0f || isShakeActive)
         {
             yield break;
         }
 
+        isShakeActive = true;
+
         Transform camTransform = cam.transform;
-        Vector3 startPos = camTransform.position;
+        Vector3 previousOffset = Vector3.zero;
 
         float elapsed = 0f;
         while (elapsed < shakeDuration)
         {
             Vector2 jitter = Random.insideUnitCircle * shakeAmplitude;
-            camTransform.position = startPos + new Vector3(jitter.x, jitter.y, 0f);
+            camTransform.position -= previousOffset;
+            previousOffset = new Vector3(jitter.x, jitter.y, 0f);
+            camTransform.position += previousOffset;
 
             elapsed += Time.unscaledDeltaTime;
             yield return null;
         }
 
-        camTransform.position = startPos;
-    }
-
-    private System.Collections.IEnumerator BlinkTarget(GameObject target)
-    {
-        SpriteRenderer[] renderers = target.GetComponentsInChildren<SpriteRenderer>();
-        if (renderers == null || renderers.Length == 0)
-        {
-            yield break;
-        }
-
-        Color[] originalColors = new Color[renderers.Length];
-        for (int i = 0; i < renderers.Length; i++)
-        {
-            if (renderers[i] != null)
-            {
-                originalColors[i] = renderers[i].color;
-                renderers[i].color = Color.white;
-            }
-        }
-
-        yield return new WaitForSecondsRealtime(Mathf.Max(0.01f, blinkDuration));
-
-        for (int i = 0; i < renderers.Length; i++)
-        {
-            if (renderers[i] != null)
-            {
-                renderers[i].color = originalColors[i];
-            }
-        }
+        camTransform.position -= previousOffset;
+        isShakeActive = false;
     }
 
     private System.Collections.IEnumerator EmergencyDestroyFallback()

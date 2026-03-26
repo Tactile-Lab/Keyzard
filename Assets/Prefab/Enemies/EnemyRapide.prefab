@@ -133,6 +133,8 @@ MonoBehaviour:
   projectileEnemy: {fileID: 3470575361217590913, guid: 0da73fa6a3b58494b81a24eafd18cc19, type: 3}
   nameText: {fileID: 682867518064026418}
   ennemyData: {fileID: 11400000, guid: 565219e1cc6f5844abae811fa62935b5, type: 2}
+  hitBlinkColor: {r: 1, g: 0, b: 0, a: 1}
+  hitBlinkDuration: 0.06
 --- !u!212 &7653775034446762932
 SpriteRenderer:
   serializedVersion: 2
@@ -179,7 +181,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 1746916159
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7628897034881489312, guid: 36bdf268387ef9d4d8fac73a442e080c, type: 3}

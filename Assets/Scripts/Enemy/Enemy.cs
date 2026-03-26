@@ -40,6 +40,12 @@ public class Enemy : MonoBehaviour
 
     private bool isAttacking = false;
 
+    [Header("Hit Blink")]
+    [SerializeField] private Color hitBlinkColor = Color.white;
+    [SerializeField] private float hitBlinkDuration = 0.06f;
+    private bool isBlinking;
+    private SpriteRenderer[] blinkRenderers;
+
 
     /// <summary>
     /// Résout les références du joueur une seule fois au Start.
@@ -101,6 +107,7 @@ public class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         mainCollider = GetComponent<Collider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        blinkRenderers = GetComponentsInChildren<SpriteRenderer>();
 
         // Charger les stats depuis le ScriptableObject
         if (ennemyData != null)
@@ -356,12 +363,45 @@ public class Enemy : MonoBehaviour
     {
         animator.SetTrigger("TakeDmg");
         isMoving = false;
+        StartCoroutine(BlinkOnHit());
         Debug.Log(health + " " + damageAmount + " " + (health - damageAmount));
         health -= damageAmount;
         if (health < 0)
         {
             health = 0;
         }
+    }
+
+    private IEnumerator BlinkOnHit()
+    {
+        if (isBlinking || hitBlinkDuration <= 0f || blinkRenderers == null || blinkRenderers.Length == 0)
+        {
+            yield break;
+        }
+
+        isBlinking = true;
+
+        Color[] originalColors = new Color[blinkRenderers.Length];
+        for (int i = 0; i < blinkRenderers.Length; i++)
+        {
+            if (blinkRenderers[i] != null)
+            {
+                originalColors[i] = blinkRenderers[i].color;
+                blinkRenderers[i].color = hitBlinkColor;
+            }
+        }
+
+        yield return new WaitForSecondsRealtime(hitBlinkDuration);
+
+        for (int i = 0; i < blinkRenderers.Length; i++)
+        {
+            if (blinkRenderers[i] != null)
+            {
+                blinkRenderers[i].color = originalColors[i];
+            }
+        }
+
+        isBlinking = false;
     }
 
     public virtual void EndTakeDamage()

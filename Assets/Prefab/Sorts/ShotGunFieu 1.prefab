@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShotGunFeu
   nomSort: nyro
-  damage: 4
+  damage: 3
   vitesse: 5
   description: "Un barage de boule explosif a faible port\xE9 mais au d\xE9gats d\xE9vastateur"
   icon: {fileID: -2666487209024649070, guid: 37b25eb747a0ca94fabcb31635b50607, type: 3}
@@ -193,8 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e5fcf6a7faab0478dbe567c28337dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeplacementShotgun
-  damageFalloffDistance: 3.5
-  minDamageRatio: 0.55
   spinSpeed: 540
   autoAddTrail: 1
   trailTime: 0.08
@@ -204,4 +202,3 @@ MonoBehaviour:
   hitstopScale: 0.05
   shakeDuration: 0.08
   shakeAmplitude: 0.06
-  blinkDuration: 0.06
