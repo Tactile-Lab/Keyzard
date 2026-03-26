@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1443223817452262721}
   - component: {fileID: 7153200724602241448}
   - component: {fileID: 8311732776059161968}
+  - component: {fileID: 1013439600085333402}
   m_Layer: 9
   m_Name: BouleMagique 1
   m_TagString: Projectile
@@ -50,10 +51,22 @@ MonoBehaviour:
   nomSort: tya
   damage: 10
   vitesse: 2
-  description: "Une boule magique qui inflige peu de d\xE9g\xE2ts"
-  icon: {fileID: 21300000, guid: 967d4fbad7f543649b3d752f30a065ff, type: 3}
+  description: "Une boule magique qui inflige peu de d\xE9gats"
+  icon: {fileID: -4403835781501484209, guid: d577914c61106f54a8d959cc2431c73e, type: 3}
   demonstrationIllustration: {fileID: 21300000, guid: d8389c4a1426f1d4f9e1a1fa9a9dc6fe, type: 3}
   audioConfig: {fileID: 11400000, guid: 01758118f8d09834ba903f2cb2f111f5, type: 2}
+  launchTiming: 0
+  launchAnimationTrigger: LaunchSpell
+  launchFallbackDelay: 0.2
+  overrideLaunchColors: 0
+  launchStartColor: {r: 1, g: 1, b: 1, a: 1}
+  launchReleaseColor: {r: 1, g: 1, b: 1, a: 1}
+  launchStartVfxPrefab: {fileID: 6596210822119656536, guid: ef4ba900151c02d40afb1542b6285b08, type: 3}
+  launchReleaseVfxPrefab: {fileID: 0}
+  impactVfxPrefab: {fileID: 5688428697043037668, guid: 7b10c76b28273914db405813b9058284, type: 3}
+  impactVfxLifetime: 0.8
+  attachImpactVfxToTarget: 1
+  impactVfxOffset: {x: 0, y: 0, z: 0}
   aniamtor: {fileID: 0}
 --- !u!212 &1443223817452262721
 SpriteRenderer:
@@ -104,8 +117,8 @@ SpriteRenderer:
   m_SortingLayer: 5
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 21300000, guid: 967d4fbad7f543649b3d752f30a065ff, type: 3}
-  m_Color: {r: 0.81842446, g: 0.34509802, b: 1, a: 0.9607843}
+  m_Sprite: {fileID: 352982167914699015, guid: d577914c61106f54a8d959cc2431c73e, type: 3}
+  m_Color: {r: 0.81960785, g: 0.34509805, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -144,7 +157,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -152,33 +165,22 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 0.32}
+    oldSize: {x: 0.25, y: 0.25}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
-  m_AutoTiling: 1
+  m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.089999996, y: -0.14}
-      - {x: 0.14, y: -0.089999996}
-      - {x: 0.16, y: -0.049999997}
-      - {x: 0.16, y: 0.049999997}
-      - {x: 0.14, y: 0.089999996}
-      - {x: 0.089999996, y: 0.14}
-      - {x: 0.04, y: 0.16}
-      - {x: -0.04, y: 0.16}
-      - {x: -0.049999997, y: 0.14999999}
-      - {x: -0.089999996, y: 0.14}
-      - {x: -0.14, y: 0.089999996}
-      - {x: -0.14999999, y: 0.049999997}
-      - {x: -0.16, y: 0.04}
-      - {x: -0.16, y: -0.04}
-      - {x: -0.14999999, y: -0.049999997}
-      - {x: -0.14, y: -0.089999996}
-      - {x: -0.089999996, y: -0.14}
-      - {x: -0.049999997, y: -0.16}
-      - {x: 0.049999997, y: -0.16}
+    - - {x: 0.046875, y: -0.09375}
+      - {x: 0.109375, y: -0.046875}
+      - {x: 0.09375, y: 0.046875}
+      - {x: 0.046875, y: 0.109375}
+      - {x: -0.03125, y: 0.09375}
+      - {x: -0.09375, y: 0.046875}
+      - {x: -0.078125, y: -0.046875}
+      - {x: -0.03125, y: -0.109375}
   m_UseDelaunayMesh: 1
 --- !u!114 &8311732776059161968
 MonoBehaviour:
@@ -192,3 +194,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cb65c7e37c99a143ab903e9be16202e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ColliderUpdater
+--- !u!95 &1013439600085333402
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5265591303567204689}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6a7d1a0ac51bea145b8940061ad5f7b8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

@@ -17,6 +17,7 @@ public class PlayerControler : MonoBehaviour
     [Header("Staff")]
     [SerializeField] private Transform staffTransform;
     [SerializeField] private Transform staffTip;
+    [SerializeField] private StaffTipLaunchVFX staffTipLaunchVfx;
     [SerializeField] private float staffSmoothSpeed = 12f;
     [SerializeField] private Vector2 staffOrbitRadii = new Vector2(0.28f, 0.4f);
     [SerializeField] private float diagonalReleaseBuffer = 0.12f;
@@ -46,6 +47,8 @@ public class PlayerControler : MonoBehaviour
         {
             spriteRenderer = GetComponent<SpriteRenderer>();
         }
+
+        ResolveStaffTipVfx();
 
         // Empêche les collisions physiques directes joueur <-> ennemis.
         // Le gameplay de contact est géré ailleurs.
@@ -273,5 +276,47 @@ public class PlayerControler : MonoBehaviour
         }
 
         return closest;
+    }
+
+    public bool TriggerSpellLaunchAnimation(string triggerName)
+    {
+        if (animator == null || string.IsNullOrEmpty(triggerName))
+        {
+            return false;
+        }
+
+        animator.SetTrigger(triggerName);
+        return true;
+    }
+
+    public void OnSpellLaunchAnimationEvent()
+    {
+        typingSortManager?.FirePreparedSpellFromAnimationEvent();
+    }
+
+    public void PlayStaffLaunchStartVFX(Sort sortData)
+    {
+        ResolveStaffTipVfx();
+        staffTipLaunchVfx?.PlayLaunchStart(sortData);
+    }
+
+    public void PlayStaffLaunchReleaseVFX(Sort sortData)
+    {
+        ResolveStaffTipVfx();
+        staffTipLaunchVfx?.PlayLaunchRelease(sortData);
+    }
+
+    private void ResolveStaffTipVfx()
+    {
+        if (staffTipLaunchVfx != null)
+        {
+            return;
+        }
+
+        Transform tip = staffTip != null ? staffTip : staffTransform;
+        if (tip != null)
+        {
+            staffTipLaunchVfx = tip.GetComponent<StaffTipLaunchVFX>();
+        }
     }
 }

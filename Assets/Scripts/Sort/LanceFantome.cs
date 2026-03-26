@@ -7,7 +7,7 @@ public class LanceFantom : Sort
     {
         if (this.cible == cible ||cible == null)
         {
-            Destroy(gameObject);
+            base.DestroySort(cible);
         }
         
     
