@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlackFadeEffect
   noirImage: {fileID: 2006108558364986120}
-  fadeDuration: 1.5
+  fadeDuration: 0.75
 --- !u!1 &9170286627697956145
 GameObject:
   m_ObjectHideFlags: 0
