@@ -62,7 +62,7 @@ MonoBehaviour:
   overrideLaunchColors: 0
   launchStartColor: {r: 1, g: 1, b: 1, a: 1}
   launchReleaseColor: {r: 1, g: 1, b: 1, a: 1}
-  launchStartVfxPrefab: {fileID: 0}
+  launchStartVfxPrefab: {fileID: 5113598425464427131, guid: 7b163aa3c74a8d44cbb35adf4e0cd72c, type: 3}
   launchReleaseVfxPrefab: {fileID: 0}
   aniamtor: {fileID: 2827876851003180711}
 --- !u!212 &6770589723762905975

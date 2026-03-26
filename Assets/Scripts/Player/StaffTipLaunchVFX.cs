@@ -26,7 +26,14 @@ public class StaffTipLaunchVFX : MonoBehaviour
     {
         ApplyTint(sortData, isStart: false);
         TriggerAnimation(releaseTrigger);
-        SpawnLaunchPrefab(sortData != null ? sortData.LaunchReleaseVfxPrefab : null, defaultReleaseVfxPrefab);
+
+        GameObject releasePrefab = sortData != null ? sortData.LaunchReleaseVfxPrefab : null;
+        GameObject startPrefab = sortData != null ? sortData.LaunchStartVfxPrefab : null;
+        GameObject fallbackPrefab = defaultReleaseVfxPrefab != null ? defaultReleaseVfxPrefab : defaultStartVfxPrefab;
+
+        // In immediate mode, release is often the only hook called.
+        // If no release prefab is configured, reuse start prefab to avoid silent no-VFX casts.
+        SpawnLaunchPrefab(releasePrefab != null ? releasePrefab : startPrefab, fallbackPrefab);
     }
 
     private void ApplyTint(Sort sortData, bool isStart)
