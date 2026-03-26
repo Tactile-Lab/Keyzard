@@ -1,3 +1,4 @@
+using System.Collections;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -19,7 +20,7 @@ public class GameOverMenuController : MonoBehaviour
     [SerializeField] private float punchUpDistance = 20f;
     [SerializeField] private float punchDownDistance = -20f;
     [SerializeField] private float punchDuration = 0.15f;
-
+    [SerializeField] private float attenteBouton = 1.5f;
     private RectTransform[] optionTargets;
     private UIButtonSpriteSwap[] optionSpriteSwaps;
     private Tween[] buttonScaleTweens;
@@ -71,8 +72,10 @@ public class GameOverMenuController : MonoBehaviour
         ResetAllButtons();
         RefreshOptionVisualState();
 
-        IsGameOverMenuOpen = true;
+        SetButtonsVisible(false);
+
         nextInputTime = Time.unscaledTime + inputCooldown;
+        StartCoroutine(ShowButtonsDelayed());
     }
 
     public void HideGameOverMenu()
@@ -87,6 +90,46 @@ public class GameOverMenuController : MonoBehaviour
 
         if (panelRoot != null)
             panelRoot.SetActive(false);
+    }
+
+    private IEnumerator ShowButtonsDelayed()
+    {
+        yield return new WaitForSecondsRealtime(attenteBouton); // ajuste selon ton fade
+
+        SetButtonsVisible(true);
+        IsGameOverMenuOpen = true;
+    }
+
+    private void SetButtonsVisible(bool visible)
+    {
+        for (int i = 0; i < optionTargets.Length; i++)
+        {
+            RectTransform target = optionTargets[i];
+            if (target == null) continue;
+
+            CanvasGroup cg = target.GetComponent<CanvasGroup>();
+            if (cg == null)
+            {
+                cg = target.gameObject.AddComponent<CanvasGroup>();
+                cg.interactable = false; // on se fout, tu gères au clavier
+                cg.blocksRaycasts = false;
+            }
+
+            if (visible)
+            {
+                cg.alpha = 0f; // start invisible
+                DOTween.To(
+                    () => cg.alpha,
+                    x => cg.alpha = x,
+                    1f,
+                    1f // durée du fade
+                ).SetUpdate(true);
+            }
+            else
+            {
+                cg.alpha = 0f; // completely invisible
+            }
+        }
     }
 
     private void ResetAllButtons()
