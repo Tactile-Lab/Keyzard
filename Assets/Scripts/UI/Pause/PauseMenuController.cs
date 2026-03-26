@@ -135,6 +135,12 @@ public class PauseMenuController : MonoBehaviour
             return;
         }
 
+        // Bloquer le menu si une transition est en cours
+        if (TransitionManager.IsTransitioning)
+        {
+            return;
+        }
+
         if (!isOpen && GlossaryToggleController.IsGlossaryOpen)
         {
             return;
@@ -161,7 +167,6 @@ public class PauseMenuController : MonoBehaviour
 
         if (playerHealth != null && playerHealth.IsDead)
         {
-            // Empêche l'ouverture si le joueur est mort
             return;
         }
 
@@ -219,7 +224,7 @@ public class PauseMenuController : MonoBehaviour
 
         Vector2 centerPos = openAnchoredPositions[selectedIndex];
         float punchDistance = direction > 0 ? punchDownDistance : punchUpDistance;
-        
+
         buttonPunchTweens[selectedIndex] = target
             .DOAnchorPosY(centerPos.y + punchDistance, punchDuration * 0.5f)
             .SetEase(Ease.OutCubic)
@@ -260,7 +265,6 @@ public class PauseMenuController : MonoBehaviour
     private void RestartCurrentScene()
     {
         ApplyPauseState(false);
-        Time.timeScale = 1f;
         SpellInventoryManager.Instance.ResetInventory();
         TransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
@@ -268,14 +272,20 @@ public class PauseMenuController : MonoBehaviour
     private void LoadMainMenu()
     {
         ApplyPauseState(false);
-        Time.timeScale = 1f;
-        SpellInventoryManager.Instance.ResetInventory();;
+        SpellInventoryManager.Instance.ResetInventory();
         TransitionManager.Instance.LoadScene(0);
     }
 
     private void ApplyPauseState(bool paused)
     {
-        Time.timeScale = paused ? 0f : 1f;
+        if (paused)
+        {
+            Time.timeScale = 0f;
+        }
+        else if (!TransitionManager.IsTransitioning)
+        {
+            Time.timeScale = 1f;
+        }
 
         if (AudioManager.Instance != null)
         {
@@ -405,7 +415,6 @@ public class PauseMenuController : MonoBehaviour
             isTransitioning = false;
         }
 
-        // Visual indicator glisse en parallèle avec le bouton 2
         PlayVisualIndicatorOpenAnimation(optionStagger * 2f);
     }
 
@@ -473,7 +482,6 @@ public class PauseMenuController : MonoBehaviour
             isTransitioning = false;
         }
 
-        // Visual indicator glisse en parallèle avec le bouton 0
         PlayVisualIndicatorCloseAnimation(0f);
     }
 
