@@ -4,6 +4,12 @@ using System.Collections.Generic;
 
 public class Sort : MonoBehaviour
 {
+    public enum LaunchTimingMode
+    {
+        Immediate,
+        WaitForAnimationEvent
+    }
+
     public string nomSort;
     public int damage;
     public float vitesse;
@@ -17,10 +23,31 @@ public class Sort : MonoBehaviour
     [Header("Audio")]
     public SpellAudioConfig audioConfig;
 
+    [Header("Launch Timing")]
+    [SerializeField] private LaunchTimingMode launchTiming = LaunchTimingMode.Immediate;
+    [SerializeField] private string launchAnimationTrigger = "LaunchSpell";
+    [SerializeField] private float launchFallbackDelay = 0.2f;
+
+    [Header("Launch VFX")]
+    [SerializeField] private bool overrideLaunchColors;
+    [SerializeField] private Color launchStartColor = Color.white;
+    [SerializeField] private Color launchReleaseColor = Color.white;
+    [SerializeField] private GameObject launchStartVfxPrefab;
+    [SerializeField] private GameObject launchReleaseVfxPrefab;
+
     protected GameObject cible;
     protected AudioSource activeLoopSource;
 
     public Animator aniamtor;
+
+    public LaunchTimingMode LaunchTiming => launchTiming;
+    public string LaunchAnimationTrigger => launchAnimationTrigger;
+    public float LaunchFallbackDelay => launchFallbackDelay;
+    public bool OverrideLaunchColors => overrideLaunchColors;
+    public Color LaunchStartColor => launchStartColor;
+    public Color LaunchReleaseColor => launchReleaseColor;
+    public GameObject LaunchStartVfxPrefab => launchStartVfxPrefab;
+    public GameObject LaunchReleaseVfxPrefab => launchReleaseVfxPrefab;
 
     // Lance le sort sur la cible la plus proche
     public virtual void LancerSort()
@@ -79,7 +106,7 @@ public class Sort : MonoBehaviour
         if (audioConfig != null)
         {
             audioConfig.Preload();
-            audioConfig.PlayLaunchSFX();
+            audioConfig.PlayLaunchReleaseSFX();
             activeLoopSource = audioConfig.StartActiveLoop();
         }
 

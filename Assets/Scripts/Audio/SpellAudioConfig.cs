@@ -5,9 +5,17 @@ public class SpellAudioConfig : ScriptableObject
 {
     public string spellName;
     
-    [Header("Launch SFX")]
+    [Header("Legacy Launch SFX (fallback release)")]
     public AudioClip launchSFX;
     [Range(0f, 1f)] public float launchVolume = 1f;
+
+    [Header("Launch Start SFX")]
+    public AudioClip launchStartSFX;
+    [Range(0f, 1f)] public float launchStartVolume = 1f;
+
+    [Header("Launch Release SFX")]
+    public AudioClip launchReleaseSFX;
+    [Range(0f, 1f)] public float launchReleaseVolume = 1f;
     
     [Header("Impact SFX")]
     public AudioClip impactSFX;
@@ -30,17 +38,42 @@ public class SpellAudioConfig : ScriptableObject
     public void Preload()
     {
         EnsureClipLoaded(launchSFX);
+        EnsureClipLoaded(launchStartSFX);
+        EnsureClipLoaded(launchReleaseSFX);
         EnsureClipLoaded(impactSFX);
         EnsureClipLoaded(activeLoopSFX);
     }
-    
-    public void PlayLaunchSFX()
+
+    public void PlayLaunchStartSFX()
     {
+        if (launchStartSFX != null)
+        {
+            EnsureClipLoaded(launchStartSFX);
+            AudioManager.Instance.PlaySFX(launchStartSFX, launchStartVolume);
+        }
+    }
+
+    public void PlayLaunchReleaseSFX()
+    {
+        if (launchReleaseSFX != null)
+        {
+            EnsureClipLoaded(launchReleaseSFX);
+            AudioManager.Instance.PlaySFX(launchReleaseSFX, launchReleaseVolume);
+            return;
+        }
+
+        // Backward compatibility for existing spell configs.
         if (launchSFX != null)
         {
             EnsureClipLoaded(launchSFX);
             AudioManager.Instance.PlaySFX(launchSFX, launchVolume);
         }
+    }
+    
+    public void PlayLaunchSFX()
+    {
+        // Legacy API maps to release timing.
+        PlayLaunchReleaseSFX();
     }
     
     public void PlayImpactSFX()
