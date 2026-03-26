@@ -44,7 +44,9 @@ public class ShotGunFeu : Sort
                 Mathf.Sin(angle * Mathf.Deg2Rad)
             );
 
-            GameObject proj = Instantiate(gameObject, transform.position, Quaternion.identity);
+            Vector3 spawnPos = transform.position;
+            spawnPos.z = 0f;
+            GameObject proj = Instantiate(gameObject, spawnPos, Quaternion.identity);
 
             // Réutilise le composant du prefab s'il existe déjà pour éviter les doublons.
             DeplacementShotgun mover = proj.GetComponent<DeplacementShotgun>();

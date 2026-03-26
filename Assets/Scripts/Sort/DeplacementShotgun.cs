@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 /// <summary>
 /// Gère le mouvement, la collision et l'impact d'une pellet de shotgun.
@@ -20,13 +21,17 @@ public class DeplacementShotgun : MonoBehaviour
 
     private Animator animator;
     private Collider2D projectileCollider;
+    private TrailRenderer trailRenderer;
+    private bool trailHiddenByOverlayUi;
 
     [Header("Visual polish")]
     [SerializeField] private float spinSpeed = 540f;
     [SerializeField] private bool autoAddTrail = true;
+    [SerializeField] private float trailReenableDelay = 0.08f;
     [SerializeField] private float trailTime = 0.08f;
     [SerializeField] private float trailStartWidth = 0.09f;
     [SerializeField] private float trailEndWidth = 0.01f;
+    [SerializeField] private int trailSortingOrderOffset = -5;
 
     [Header("Hit feedback")]
     [SerializeField] private float hitstopDuration = 0.03f;
@@ -36,6 +41,7 @@ public class DeplacementShotgun : MonoBehaviour
 
     private static bool isHitstopActive;
     private static bool isShakeActive;
+    private Coroutine delayedTrailEnableCoroutine;
 
     /// <summary>
     /// Initialise le projectile avec direction, vitesse et durée de vie.
@@ -52,6 +58,9 @@ public class DeplacementShotgun : MonoBehaviour
         animator = GetComponent<Animator>();
         projectileCollider = GetComponent<Collider2D>();
 
+        Vector3 startPos = transform.position;
+        transform.position = new Vector3(startPos.x, startPos.y, 0f);
+
         ConfigureTrailRenderer();
     }
 
@@ -62,6 +71,8 @@ public class DeplacementShotgun : MonoBehaviour
             return;
         }
 
+        SyncTrailVisibilityWithOverlayUi();
+
         if (hasImpacted)
         {
             return;
@@ -70,6 +81,8 @@ public class DeplacementShotgun : MonoBehaviour
         // Déplacement
         Vector3 frameMove = (Vector3)(direction * vitesse * Time.deltaTime);
         transform.position += frameMove;
+        Vector3 pos = transform.position;
+        transform.position = new Vector3(pos.x, pos.y, 0f);
 
         // Rotation du projectile selon sa direction avec une rotation visuelle plus marquée.
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
@@ -120,26 +133,27 @@ public class DeplacementShotgun : MonoBehaviour
     {
         if (!autoAddTrail)
         {
+            trailRenderer = GetComponent<TrailRenderer>();
             return;
         }
 
-        TrailRenderer trail = GetComponent<TrailRenderer>();
-        if (trail == null)
+        trailRenderer = GetComponent<TrailRenderer>();
+        if (trailRenderer == null)
         {
-            trail = gameObject.AddComponent<TrailRenderer>();
+            trailRenderer = gameObject.AddComponent<TrailRenderer>();
         }
 
-        trail.time = trailTime;
-        trail.startWidth = trailStartWidth;
-        trail.endWidth = trailEndWidth;
-        trail.minVertexDistance = 0.02f;
-        trail.autodestruct = false;
-        trail.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
-        trail.receiveShadows = false;
+        trailRenderer.time = trailTime;
+        trailRenderer.startWidth = trailStartWidth;
+        trailRenderer.endWidth = trailEndWidth;
+        trailRenderer.minVertexDistance = 0.02f;
+        trailRenderer.autodestruct = false;
+        trailRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
+        trailRenderer.receiveShadows = false;
 
-        if (trail.material == null)
+        if (trailRenderer.material == null)
         {
-            trail.material = new Material(Shader.Find("Sprites/Default"));
+            trailRenderer.material = new Material(Shader.Find("Sprites/Default"));
         }
 
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
@@ -147,8 +161,8 @@ public class DeplacementShotgun : MonoBehaviour
 
         if (spriteRenderer != null)
         {
-            trail.sortingLayerID = spriteRenderer.sortingLayerID;
-            trail.sortingOrder = spriteRenderer.sortingOrder - 1;
+            trailRenderer.sortingLayerID = spriteRenderer.sortingLayerID;
+            trailRenderer.sortingOrder = spriteRenderer.sortingOrder + trailSortingOrderOffset;
         }
 
         Gradient gradient = new Gradient();
@@ -164,7 +178,61 @@ public class DeplacementShotgun : MonoBehaviour
                 new GradientAlphaKey(0f, 1f)
             }
         );
-        trail.colorGradient = gradient;
+        trailRenderer.colorGradient = gradient;
+    }
+
+    private void SyncTrailVisibilityWithOverlayUi()
+    {
+        if (trailRenderer == null)
+        {
+            return;
+        }
+
+        bool shouldHideTrail = PauseMenuController.IsPauseMenuOpen || GlossaryToggleController.IsGlossaryOpen;
+        if (trailHiddenByOverlayUi == shouldHideTrail)
+        {
+            return;
+        }
+
+        trailHiddenByOverlayUi = shouldHideTrail;
+
+        if (shouldHideTrail)
+        {
+            if (delayedTrailEnableCoroutine != null)
+            {
+                StopCoroutine(delayedTrailEnableCoroutine);
+                delayedTrailEnableCoroutine = null;
+            }
+
+            trailRenderer.emitting = false;
+            trailRenderer.Clear();
+        }
+        else
+        {
+            if (delayedTrailEnableCoroutine != null)
+            {
+                StopCoroutine(delayedTrailEnableCoroutine);
+            }
+
+            delayedTrailEnableCoroutine = StartCoroutine(EnableTrailWithDelay());
+        }
+    }
+
+    private IEnumerator EnableTrailWithDelay()
+    {
+        float delay = Mathf.Max(0f, trailReenableDelay);
+        if (delay > 0f)
+        {
+            yield return new WaitForSecondsRealtime(delay);
+        }
+
+        bool menuStillOpen = PauseMenuController.IsPauseMenuOpen || GlossaryToggleController.IsGlossaryOpen;
+        if (!menuStillOpen && trailRenderer != null)
+        {
+            trailRenderer.emitting = true;
+        }
+
+        delayedTrailEnableCoroutine = null;
     }
 
     private System.Collections.IEnumerator PlayHitFeedback(GameObject target)

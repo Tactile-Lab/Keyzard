@@ -195,9 +195,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DeplacementShotgun
   spinSpeed: 540
   autoAddTrail: 1
+  trailReenableDelay: 0.5
   trailTime: 0.08
   trailStartWidth: 0.09
   trailEndWidth: 0.01
+  trailSortingOrderOffset: -5
   hitstopDuration: 0.03
   hitstopScale: 0.05
   shakeDuration: 0.08
