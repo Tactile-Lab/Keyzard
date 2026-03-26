@@ -14,6 +14,7 @@ public class StaffTipLaunchVFX : MonoBehaviour
     [SerializeField] private GameObject defaultStartVfxPrefab;
     [SerializeField] private GameObject defaultReleaseVfxPrefab;
     [SerializeField] private float spawnedVfxLifetime = 1.2f;
+    [SerializeField] private bool autoDestroySpawnedVfxAtAnimationEnd = true;
 
     public void PlayLaunchStart(Sort sortData)
     {
@@ -71,9 +72,64 @@ public class StaffTipLaunchVFX : MonoBehaviour
         }
 
         GameObject instance = Instantiate(prefabToSpawn, transform.position, Quaternion.identity, transform);
+
+        if (autoDestroySpawnedVfxAtAnimationEnd)
+        {
+            LaunchVfxAutoDestroy autoDestroy = instance.GetComponent<LaunchVfxAutoDestroy>();
+            if (autoDestroy == null)
+            {
+                autoDestroy = instance.AddComponent<LaunchVfxAutoDestroy>();
+            }
+
+            autoDestroy.Initialize(spawnedVfxLifetime);
+            return;
+        }
+
         if (spawnedVfxLifetime > 0f)
         {
             Destroy(instance, spawnedVfxLifetime);
         }
+    }
+}
+
+public class LaunchVfxAutoDestroy : MonoBehaviour
+{
+    private float fallbackLifetime;
+
+    public void Initialize(float lifetime)
+    {
+        fallbackLifetime = lifetime;
+        StartCoroutine(DestroyRoutine());
+    }
+
+    private System.Collections.IEnumerator DestroyRoutine()
+    {
+        Animator animator = GetComponent<Animator>();
+
+        // Let Animator enter its default state before querying state info.
+        yield return null;
+
+        if (animator != null && animator.runtimeAnimatorController != null)
+        {
+            AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+            float effectiveSpeed = Mathf.Abs(animator.speed * state.speed * state.speedMultiplier);
+
+            if (!state.loop && state.length > 0f && effectiveSpeed > 0.0001f)
+            {
+                float wait = state.length / effectiveSpeed;
+                yield return new WaitForSeconds(wait);
+                Destroy(gameObject);
+                yield break;
+            }
+        }
+
+        if (fallbackLifetime > 0f)
+        {
+            yield return new WaitForSeconds(fallbackLifetime);
+            Destroy(gameObject);
+            yield break;
+        }
+
+        Destroy(gameObject);
     }
 }

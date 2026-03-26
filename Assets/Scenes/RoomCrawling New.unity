@@ -2916,7 +2916,8 @@ MonoBehaviour:
   releaseTrigger: LaunchRelease
   defaultStartVfxPrefab: {fileID: 0}
   defaultReleaseVfxPrefab: {fileID: 0}
-  spawnedVfxLifetime: 1.2
+  spawnedVfxLifetime: 0.4
+  autoDestroySpawnedVfxAtAnimationEnd: 0
 --- !u!212 &1708047146
 SpriteRenderer:
   serializedVersion: 2
@@ -3208,8 +3209,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 275047737351215343, guid: c07a6812003a4514c935b60c25145690, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 91.789
+      objectReference: {fileID: 0}
+    - target: {fileID: 275047737351215343, guid: c07a6812003a4514c935b60c25145690, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 275047737351215343, guid: c07a6812003a4514c935b60c25145690, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 275047737351215343, guid: c07a6812003a4514c935b60c25145690, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 275047737351215343, guid: c07a6812003a4514c935b60c25145690, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -171.43
+      value: -173.54
       objectReference: {fileID: 0}
     - target: {fileID: 2118570019929711657, guid: c07a6812003a4514c935b60c25145690, type: 3}
       propertyPath: m_IsActive
