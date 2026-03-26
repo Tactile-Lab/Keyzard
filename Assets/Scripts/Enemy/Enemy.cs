@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     private EnemyType type;
     private int damage;
     private float speed;
+    
+    [SerializeField]
     protected Animator animator;
 
     [SerializeField]
