@@ -136,8 +136,8 @@ GameObject:
   - component: {fileID: 5406810383231741228}
   - component: {fileID: 2175114571937620227}
   - component: {fileID: 5400396367967198384}
-  - component: {fileID: 6606962051837931564}
   - component: {fileID: 1046325138536106349}
+  - component: {fileID: 8237377803250154054}
   - component: {fileID: 3563613844992985669}
   m_Layer: 7
   m_Name: Avatar
@@ -155,7 +155,7 @@ Transform:
   m_GameObject: {fileID: 5089501067485288850}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.14, y: 0, z: 0}
   m_LocalScale: {x: 1.3799648, y: 1.3799648, z: 1.3799648}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -240,7 +240,7 @@ MonoBehaviour:
   staffTransform: {fileID: 2285118662014706626}
   staffTip: {fileID: 4654411341381960859}
   staffSmoothSpeed: 15
-  staffOrbitRadii: {x: 0.43, y: 0.69}
+  staffOrbitRadii: {x: 0.43, y: 0.6}
   diagonalReleaseBuffer: 0.12
   typingSortManager: {fileID: 0}
 --- !u!114 &2175114571937620227
@@ -288,8 +288,35 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6606962051837931564
-BoxCollider2D:
+--- !u!114 &1046325138536106349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5089501067485288850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ea7f4b0b465bfc49822ab4fe6b60cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
+  canvas: {fileID: 0}
+  noirImage: {fileID: 0}
+  gameOverText: {fileID: 0}
+  fadeDuration: 1
+  animator: {fileID: 3563613844992985669}
+  staff: {fileID: 7450699288470269691}
+  mainCamera: {fileID: 0}
+  player: {fileID: 2958709586020034825}
+  zoomAmount: 2
+  zoomDuration: 0.5
+  shakeIntensity: 0.2
+  shakeDuration: 0.3
+  slowMotionFactor: 0
+  postFadeDelay: 0.3
+  allowEarlyInput: 0
+--- !u!70 &8237377803250154054
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -322,44 +349,9 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.000000044703484, y: -0.0026120543}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5625, y: 0.9375}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.53121114, y: 0.9312339}
-  m_EdgeRadius: 0
---- !u!114 &1046325138536106349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5089501067485288850}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ea7f4b0b465bfc49822ab4fe6b60cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimator
-  canvas: {fileID: 0}
-  noirImage: {fileID: 0}
-  gameOverText: {fileID: 0}
-  fadeDuration: 1
-  animator: {fileID: 3563613844992985669}
-  staff: {fileID: 7450699288470269691}
-  mainCamera: {fileID: 0}
-  player: {fileID: 2958709586020034825}
-  zoomAmount: 2
-  zoomDuration: 0.5
-  shakeIntensity: 0.2
-  shakeDuration: 0.3
-  slowMotionFactor: 0
-  postFadeDelay: 0.3
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5625, y: 0.9375}
+  m_Direction: 0
 --- !u!95 &3563613844992985669
 Animator:
   serializedVersion: 7
@@ -408,7 +400,7 @@ Transform:
   m_GameObject: {fileID: 7450699288470269691}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 1
   m_Children:
