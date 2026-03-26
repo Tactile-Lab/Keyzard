@@ -1,22 +1,13 @@
 fileFormatVersion: 2
-guid: 246370226144aad4b80625f9691339bb
+guid: ee1e321dc909f45478b6ab8ae6236155
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7666235040366950098
-    second: enemies-skeleton1_take_damage_0
+      213: -9166084717782916886
+    second: 1.2_0
   - first:
-      213: 8440171878526134781
-    second: enemies-skeleton1_take_damage_1
-  - first:
-      213: 2823758145083881778
-    second: enemies-skeleton1_take_damage_2
-  - first:
-      213: -3810878733040411979
-    second: enemies-skeleton1_take_damage_3
-  - first:
-      213: -711776192163282291
-    second: enemies-skeleton1_take_damage_4
+      213: -6475228662859671210
+    second: 1.2_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -58,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -112,111 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemies-skeleton1_take_damage_0
+      name: 1.2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 32
-        height: 32
+        y: 2
+        width: 14
+        height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2d679b9d620f36a60800000000000000
-      internalID: 7666235040366950098
+      spriteID: ae0a96f53868bc080800000000000000
+      internalID: -9166084717782916886
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-skeleton1_take_damage_1
+      name: 1.2_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 13
         y: 0
-        width: 32
-        height: 32
+        width: 6
+        height: 11
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df9aac60b93812570800000000000000
-      internalID: 8440171878526134781
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_take_damage_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 23937517211003720800000000000000
-      internalID: 2823758145083881778
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_take_damage_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5ba1903bbf90d1bc0800000000000000
-      internalID: -3810878733040411979
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton1_take_damage_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d82078a03534f16f0800000000000000
-      internalID: -711776192163282291
+      spriteID: 65952de96dd5326a0800000000000000
+      internalID: -6475228662859671210
       vertices: []
       indices: 
       edges: []
@@ -233,15 +158,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      enemies-skeleton1_take_damage_0: 7666235040366950098
-      enemies-skeleton1_take_damage_1: 8440171878526134781
-      enemies-skeleton1_take_damage_2: 2823758145083881778
-      enemies-skeleton1_take_damage_3: -3810878733040411979
-      enemies-skeleton1_take_damage_4: -711776192163282291
+      1.2_0: -9166084717782916886
+      1.2_1: -6475228662859671210
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

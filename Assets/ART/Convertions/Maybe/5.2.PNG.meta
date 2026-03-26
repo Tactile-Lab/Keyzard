@@ -1,25 +1,16 @@
 fileFormatVersion: 2
-guid: 1eb47944ba08e3e45a97f66806f29547
+guid: fc4f1e93df704a64cb9a721709358e9c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7628897034881489312
-    second: enemies-skeleton2_idle_0
+      213: 2668232129599384549
+    second: 5.2_0
   - first:
-      213: -8491562820440888638
-    second: enemies-skeleton2_idle_1
+      213: 2109734077716133985
+    second: 5.2_1
   - first:
-      213: 2686526470064077805
-    second: enemies-skeleton2_idle_2
-  - first:
-      213: -2135807368638690799
-    second: enemies-skeleton2_idle_3
-  - first:
-      213: 2245012447047401249
-    second: enemies-skeleton2_idle_4
-  - first:
-      213: -6896398003092638265
-    second: enemies-skeleton2_idle_5
+      213: 1250084420756183825
+    second: 5.2_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -61,7 +52,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -115,133 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemies-skeleton2_idle_0
+      name: 5.2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 32
+        width: 52
+        height: 8
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a954200f694fd960800000000000000
-      internalID: 7628897034881489312
+      spriteID: 5eb2e072cf6770520800000000000000
+      internalID: 2668232129599384549
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-skeleton2_idle_1
+      name: 5.2_1
       rect:
         serializedVersion: 2
-        x: 32
+        x: 41
         y: 0
-        width: 32
-        height: 32
+        width: 7
+        height: 5
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2cae4b3ea98e72a80800000000000000
-      internalID: -8491562820440888638
+      spriteID: 1687ec047f7474d10800000000000000
+      internalID: 2109734077716133985
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-skeleton2_idle_2
+      name: 5.2_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
+        x: 51
+        y: 2
+        width: 39
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: deb7ad73795784520800000000000000
-      internalID: 2686526470064077805
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton2_idle_3
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 11a01a3a3861c52e0800000000000000
-      internalID: -2135807368638690799
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton2_idle_4
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 12f379e0de2e72f10800000000000000
-      internalID: 2245012447047401249
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: enemies-skeleton2_idle_5
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7c533fb0e821b40a0800000000000000
-      internalID: -6896398003092638265
+      spriteID: 11b1c6e4821395110800000000000000
+      internalID: 1250084420756183825
       vertices: []
       indices: 
       edges: []
@@ -250,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: d9b89efab900be242aba7e138dd38945
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -258,16 +183,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      enemies-skeleton2_idle_0: 7628897034881489312
-      enemies-skeleton2_idle_1: -8491562820440888638
-      enemies-skeleton2_idle_2: 2686526470064077805
-      enemies-skeleton2_idle_3: -2135807368638690799
-      enemies-skeleton2_idle_4: 2245012447047401249
-      enemies-skeleton2_idle_5: -6896398003092638265
+      5.2_0: 2668232129599384549
+      5.2_1: 2109734077716133985
+      5.2_2: 1250084420756183825
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

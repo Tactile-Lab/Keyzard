@@ -1,55 +1,55 @@
 fileFormatVersion: 2
-guid: f9538e3f1522427449882206c264e0c4
+guid: fcf6b2d0aa0ac0b4fae2fd4e9ea7a18f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1504920921590492608
-    second: enemies-vampire_attack_0
+      213: 2986438276184074395
+    second: Index 16x16_0
   - first:
-      213: 6855850799596563317
-    second: enemies-vampire_attack_1
+      213: -5724372581774408661
+    second: Index 16x16_1
   - first:
-      213: -352618880566230290
-    second: enemies-vampire_attack_2
+      213: 5931621659666212
+    second: Index 16x16_2
   - first:
-      213: -841246744002725692
-    second: enemies-vampire_attack_3
+      213: -2610819659652063900
+    second: Index 16x16_3
   - first:
-      213: 3500261410471563590
-    second: enemies-vampire_attack_4
+      213: -8301158690673774645
+    second: Index 16x16_4
   - first:
-      213: 8418569869855122448
-    second: enemies-vampire_attack_5
+      213: -5645951562593572096
+    second: Index 16x16_5
   - first:
-      213: -1062452806172271487
-    second: enemies-vampire_attack_6
+      213: -4020098031198270008
+    second: Index 16x16_6
   - first:
-      213: -5897677253065433615
-    second: enemies-vampire_attack_7
+      213: -4571843643920343375
+    second: Index 16x16_7
   - first:
-      213: -6709773080114916982
-    second: enemies-vampire_attack_8
+      213: 8475191683689675597
+    second: Index 16x16_8
   - first:
-      213: -9214107590161749736
-    second: enemies-vampire_attack_9
+      213: 9162360666341196609
+    second: Index 16x16_9
   - first:
-      213: 4833526267645814463
-    second: enemies-vampire_attack_10
+      213: -1109883466830504123
+    second: Index 16x16_10
   - first:
-      213: -5871181338760522799
-    second: enemies-vampire_attack_11
+      213: -8676363019920199972
+    second: Index 16x16_11
   - first:
-      213: 7034237963876338747
-    second: enemies-vampire_attack_12
+      213: 1663177015056997320
+    second: Index 16x16_12
   - first:
-      213: 419345295281829956
-    second: enemies-vampire_attack_13
+      213: -5280381891537023601
+    second: Index 16x16_13
   - first:
-      213: -514250168565923810
-    second: enemies-vampire_attack_14
+      213: 7404897992071845650
+    second: Index 16x16_14
   - first:
-      213: -4339379894817324602
-    second: enemies-vampire_attack_15
+      213: -1976570405723431317
+    second: Index 16x16_15
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -145,353 +145,353 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: enemies-vampire_attack_0
+      name: Index 16x16_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 32
-        height: 32
+        x: 5
+        y: 51
+        width: 6
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0429b8d25627d1be0800000000000000
-      internalID: -1504920921590492608
+      spriteID: b98e4931ac5f17920800000000000000
+      internalID: 2986438276184074395
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-vampire_attack_1
+      name: Index 16x16_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 21
+        y: 51
+        width: 6
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 57be7077affd42f50800000000000000
-      internalID: 6855850799596563317
+      spriteID: b24c9554771fe80b0800000000000000
+      internalID: -5724372581774408661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-vampire_attack_2
+      name: Index 16x16_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 0
-        width: 32
-        height: 32
+        x: 37
+        y: 51
+        width: 6
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ee201c21ffe3b1bf0800000000000000
-      internalID: -352618880566230290
+      spriteID: 42767f947c2151000800000000000000
+      internalID: 5931621659666212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-vampire_attack_3
+      name: Index 16x16_3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 0
-        width: 32
-        height: 32
+        x: 53
+        y: 51
+        width: 6
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4c8734f1b8a4354f0800000000000000
-      internalID: -841246744002725692
+      spriteID: 46d15dd2a5184cbd0800000000000000
+      internalID: -2610819659652063900
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-vampire_attack_4
+      name: Index 16x16_4
       rect:
         serializedVersion: 2
-        x: 128
-        y: 0
-        width: 32
-        height: 32
+        x: 4
+        y: 37
+        width: 9
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6415a28253d639030800000000000000
-      internalID: 3500261410471563590
+      spriteID: bcf2e3af62c5ccc80800000000000000
+      internalID: -8301158690673774645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-vampire_attack_5
+      name: Index 16x16_5
       rect:
         serializedVersion: 2
-        x: 160
-        y: 0
-        width: 32
-        height: 32
+        x: 20
+        y: 37
+        width: 9
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 014658171b4c4d470800000000000000
-      internalID: 8418569869855122448
+      spriteID: 00b6c84a7fc85a1b0800000000000000
+      internalID: -5645951562593572096
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-vampire_attack_6
+      name: Index 16x16_6
       rect:
         serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
+        x: 36
+        y: 37
+        width: 9
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 18c1c794dc86141f0800000000000000
-      internalID: -1062452806172271487
+      spriteID: 8cd0e28d32eb538c0800000000000000
+      internalID: -4020098031198270008
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-vampire_attack_7
+      name: Index 16x16_7
       rect:
         serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
+        x: 51
+        y: 37
+        width: 9
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1fd122b19cd372ea0800000000000000
-      internalID: -5897677253065433615
+      spriteID: 1be1083bd6c8d80c0800000000000000
+      internalID: -4571843643920343375
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-vampire_attack_8
+      name: Index 16x16_8
       rect:
         serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
+        x: 4
+        y: 20
+        width: 9
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a81954cfee812e2a0800000000000000
-      internalID: -6709773080114916982
+      spriteID: d4bfaadceeded9570800000000000000
+      internalID: 8475191683689675597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-vampire_attack_9
+      name: Index 16x16_9
       rect:
         serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
+        x: 19
+        y: 20
+        width: 9
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 819ad2617f9e02080800000000000000
-      internalID: -9214107590161749736
+      spriteID: 14347455b7e372f70800000000000000
+      internalID: 9162360666341196609
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-vampire_attack_10
+      name: Index 16x16_10
       rect:
         serializedVersion: 2
-        x: 320
-        y: 0
-        width: 32
-        height: 32
+        x: 35
+        y: 20
+        width: 9
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fb66c830882241340800000000000000
-      internalID: 4833526267645814463
+      spriteID: 54f1d790ed6e890f0800000000000000
+      internalID: -1109883466830504123
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-vampire_attack_11
+      name: Index 16x16_11
       rect:
         serializedVersion: 2
-        x: 352
-        y: 0
-        width: 32
-        height: 32
+        x: 51
+        y: 20
+        width: 9
+        height: 6
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1d3d643edaf558ea0800000000000000
-      internalID: -5871181338760522799
+      spriteID: cde225f7dcd579780800000000000000
+      internalID: -8676363019920199972
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-vampire_attack_12
+      name: Index 16x16_12
       rect:
         serializedVersion: 2
-        x: 384
-        y: 0
-        width: 32
-        height: 32
+        x: 5
+        y: 3
+        width: 6
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b3c8a6eb822ae9160800000000000000
-      internalID: 7034237963876338747
+      spriteID: 8cb111deeaac41710800000000000000
+      internalID: 1663177015056997320
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-vampire_attack_13
+      name: Index 16x16_13
       rect:
         serializedVersion: 2
-        x: 416
-        y: 0
-        width: 32
-        height: 32
+        x: 21
+        y: 3
+        width: 6
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 44831830350d1d500800000000000000
-      internalID: 419345295281829956
+      spriteID: f8dc78475a058b6b0800000000000000
+      internalID: -5280381891537023601
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-vampire_attack_14
+      name: Index 16x16_14
       rect:
         serializedVersion: 2
-        x: 448
-        y: 0
-        width: 32
-        height: 32
+        x: 37
+        y: 3
+        width: 6
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e1081f042340dd8f0800000000000000
-      internalID: -514250168565923810
+      spriteID: 217127fad7b73c660800000000000000
+      internalID: 7404897992071845650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: enemies-vampire_attack_15
+      name: Index 16x16_15
       rect:
         serializedVersion: 2
-        x: 480
-        y: 0
-        width: 32
-        height: 32
+        x: 53
+        y: 3
+        width: 6
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6c101f70afc67c3c0800000000000000
-      internalID: -4339379894817324602
+      spriteID: b6e1e4530bfc194e0800000000000000
+      internalID: -1976570405723431317
       vertices: []
       indices: 
       edges: []
@@ -500,7 +500,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 48379431282ebc14493e08e05bdaa13b
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -508,26 +508,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      enemies-vampire_attack_0: -1504920921590492608
-      enemies-vampire_attack_1: 6855850799596563317
-      enemies-vampire_attack_10: 4833526267645814463
-      enemies-vampire_attack_11: -5871181338760522799
-      enemies-vampire_attack_12: 7034237963876338747
-      enemies-vampire_attack_13: 419345295281829956
-      enemies-vampire_attack_14: -514250168565923810
-      enemies-vampire_attack_15: -4339379894817324602
-      enemies-vampire_attack_2: -352618880566230290
-      enemies-vampire_attack_3: -841246744002725692
-      enemies-vampire_attack_4: 3500261410471563590
-      enemies-vampire_attack_5: 8418569869855122448
-      enemies-vampire_attack_6: -1062452806172271487
-      enemies-vampire_attack_7: -5897677253065433615
-      enemies-vampire_attack_8: -6709773080114916982
-      enemies-vampire_attack_9: -9214107590161749736
+      Index 16x16_0: 2986438276184074395
+      Index 16x16_1: -5724372581774408661
+      Index 16x16_10: -1109883466830504123
+      Index 16x16_11: -8676363019920199972
+      Index 16x16_12: 1663177015056997320
+      Index 16x16_13: -5280381891537023601
+      Index 16x16_14: 7404897992071845650
+      Index 16x16_15: -1976570405723431317
+      Index 16x16_2: 5931621659666212
+      Index 16x16_3: -2610819659652063900
+      Index 16x16_4: -8301158690673774645
+      Index 16x16_5: -5645951562593572096
+      Index 16x16_6: -4020098031198270008
+      Index 16x16_7: -4571843643920343375
+      Index 16x16_8: 8475191683689675597
+      Index 16x16_9: 9162360666341196609
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
