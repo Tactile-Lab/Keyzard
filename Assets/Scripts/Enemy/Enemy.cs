@@ -222,12 +222,13 @@ public class Enemy : MonoBehaviour
         if (playerTargetTransform.position.x < transform.position.x)
         {
             projectileToLaunch = Instantiate(projectileEnemy, transform.position + Vector3.left * 0.4f, Quaternion.identity);
+            isAttacking = true;
         }
         else
         {
             projectileToLaunch = Instantiate(projectileEnemy, transform.position + Vector3.right * 0.4f, Quaternion.identity);
+            isAttacking = true;
         }
-        isAttacking = true;
     }
 
     public void BeginAnimationHitOrDeath()
@@ -235,6 +236,7 @@ public class Enemy : MonoBehaviour
         if (isAttacking)
         {
             Destroy(projectileToLaunch.gameObject);
+            isAttacking = false;
         }
     }
 
@@ -245,6 +247,7 @@ public class Enemy : MonoBehaviour
             if (projectileToLaunch != null)
             {
                 Destroy(projectileToLaunch.gameObject);
+                isAttacking = false;
             }
             return; // sortir de la fonction pour éviter d’appeler Launch
         }

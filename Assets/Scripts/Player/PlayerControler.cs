@@ -24,6 +24,19 @@ public class PlayerControler : MonoBehaviour
     [SerializeField] private float diagonalReleaseBuffer = 0.12f;
     [SerializeField] private TypingSortManager typingSortManager;
 
+[Header("Foot Dust Sprite")]
+[SerializeField] private SpriteRenderer footDustSprite;
+[SerializeField] private Transform footDustOrigin;
+[SerializeField] private Sprite[] dustSprites;          // Spritesheet frames
+[SerializeField] private float frameRate = 12f;         // FPS
+[SerializeField] private float footDustOffsetX = -0.4f;
+[SerializeField] private float dustSpawnInterval = 0.15f;
+[SerializeField] private float dustLifetime = 0.4f;
+
+private float lastDustTime = -999f;
+private int currentDustFrame = 0;
+private float dustAnimTime = 0f;
+
     private Rigidbody2D rb;
     private Vector2 input;
     private Vector2 rawInput;
@@ -51,6 +64,7 @@ public class PlayerControler : MonoBehaviour
         }
 
         ResolveStaffTipVfx();
+        footDustSprite.enabled = false;
 
         // Empêche les collisions physiques directes joueur <-> ennemis.
         // Le gameplay de contact est géré ailleurs.
@@ -66,6 +80,7 @@ public class PlayerControler : MonoBehaviour
             // While glossary pause is open, keep player fully idle and avoid buffering movement input.
             ClearMovementState();
             UpdateAnimationAndFacing();
+            UpdateFootDust();
             UpdateStaffRotation();
             return;
         }
@@ -150,6 +165,7 @@ public class PlayerControler : MonoBehaviour
                 lastMoveDir = input;
             }
         }
+        UpdateFootDust(); 
     }
 
     private void UpdateStaffRotation()
@@ -336,4 +352,42 @@ public class PlayerControler : MonoBehaviour
             staffTipLaunchVfx = tip.GetComponent<StaffTipLaunchVFX>();
         }
     }
+
+// Animation Event sur Player Run
+private void UpdateFootDust()
+{
+    if (footDustSprite == null || footDustOrigin == null || dustSprites == null || dustSprites.Length == 0) return;
+
+    bool isMoving = input.sqrMagnitude > MovementSqrEpsilon;
+
+    if (isMoving && Time.time - lastDustTime > dustSpawnInterval)
+    {
+        footDustSprite.enabled = true;
+        footDustSprite.flipX = facingRight;  // TON FLIP
+
+        float offsetSign = facingRight ? 1f : -1f;
+        footDustOrigin.localPosition = new Vector3(footDustOffsetX * offsetSign, 0f, 0f);
+
+        currentDustFrame = 0;
+        dustAnimTime = 0f;
+        footDustSprite.sprite = dustSprites[0];
+        lastDustTime = Time.time;
+    }
+
+    if (footDustSprite.enabled)
+    {
+        dustAnimTime += Time.deltaTime;
+        if (dustAnimTime >= 1f / frameRate)
+        {
+            currentDustFrame = (currentDustFrame + 1) % dustSprites.Length;
+            footDustSprite.sprite = dustSprites[currentDustFrame];
+            dustAnimTime = 0f;
+        }
+
+        if (Time.time - lastDustTime > dustLifetime)
+            footDustSprite.enabled = false;
+    }
+}
+
+
 }
