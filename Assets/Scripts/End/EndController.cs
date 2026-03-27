@@ -13,6 +13,7 @@ public class EndController : MonoBehaviour
     public void EnableReturn()
     {
         IsEndMenuOpen = true;
+        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.EndDemoOpen);
         StartCoroutine(WaitForSpace());
     }
 
@@ -24,6 +25,7 @@ public class EndController : MonoBehaviour
         {
             if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
             {
+                AudioManager.Instance?.PlaySFXEvent(SFXEventKey.EndDemoConfirm);
                 SpellInventoryManager.Instance.ResetInventory();
                 AudioManager.Instance?.ResetMusicRuntime();
                 IsEndMenuOpen = false;

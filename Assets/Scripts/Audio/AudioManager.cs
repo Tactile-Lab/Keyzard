@@ -15,6 +15,9 @@ public class AudioManager : MonoBehaviour
     [Header("Music Config")]
     public MusicAudioConfig musicConfig;
 
+    [Header("SFX Events Config")]
+    public SFXEventAudioConfig sfxEventConfig;
+
     [Header("Music (Legacy)")]
     public AudioClip backgroundMusic;
     [Range(0f, 1f)] public float musicVolume = 0.7f;
@@ -419,6 +422,32 @@ public class AudioManager : MonoBehaviour
         var source = GetAvailableSFXSource();
         source.volume = 1f;
         source.PlayOneShot(clip, volume);
+    }
+
+    public void PlaySFXEvent(SFXEventKey key, float volumeMultiplier = 1f, float pitchOffset = 0f)
+    {
+        if (sfxEventConfig == null || key == SFXEventKey.None)
+        {
+            return;
+        }
+
+        SFXEventAudioEntry entry = sfxEventConfig.GetEntry(key);
+        if (entry == null || entry.clip == null)
+        {
+            return;
+        }
+
+        AudioSource source = GetAvailableSFXSource();
+        source.loop = false;
+        source.clip = entry.clip;
+        source.volume = Mathf.Clamp01(entry.volume) * Mathf.Max(0f, volumeMultiplier);
+
+        float randomVariance = entry.randomPitchVariance > 0f
+            ? Random.Range(-entry.randomPitchVariance, entry.randomPitchVariance)
+            : 0f;
+
+        source.pitch = Mathf.Clamp(entry.pitch + randomVariance + pitchOffset, 0.1f, 3f);
+        source.Play();
     }
     
     public AudioSource StartLoop(AudioClip clip, float volume = 1f)

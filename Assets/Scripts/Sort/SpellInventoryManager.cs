@@ -177,6 +177,7 @@ public class SpellInventoryManager : MonoBehaviour
 
         if (notify)
         {
+            AudioManager.Instance?.PlaySFXEvent(SFXEventKey.NewSpellUnlocked);
             SetBookNotificationState(true);
             InventoryChanged?.Invoke();
         }
@@ -263,6 +264,7 @@ public class SpellInventoryManager : MonoBehaviour
 
     public void OnGlossaryOpened()
     {
+        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.BookPageTurn);
         SetBookNotificationState(false);
     }
 

@@ -40,6 +40,11 @@ public class TypingSortManager : MonoBehaviour
     [Header("Particules")]
     public LetterAndWordParticles particlesManager; // Gestion des particules lettres et mots
 
+    [Header("Audio Typing")]
+    [SerializeField] private float comboResetDelay = 0.9f;
+    [SerializeField] private float comboPitchStep = 0.04f;
+    [SerializeField] private float comboPitchMax = 0.32f;
+
     private string currentInput = "";
     private GameManager.EnemyEntry selectedEnemy = null;
     private bool sortLibreMode = false;
@@ -52,6 +57,8 @@ public class TypingSortManager : MonoBehaviour
     private GameObject preparedTarget;
     private bool preparedHasTarget;
     private Coroutine preparedCastFallbackCoroutine;
+    private int typingComboCount;
+    private float lastTypingHitTime = -999f;
 
     public GameManager.EnemyEntry SelectedEnemy => selectedEnemy;
 
@@ -131,6 +138,7 @@ public class TypingSortManager : MonoBehaviour
                     {
                         selectedEnemy = entry;
                         currentInput = ""; // reset si le mot est complet
+                        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.TypingTargetLock);
                     }
                     break;
                 }
@@ -147,6 +155,11 @@ public class TypingSortManager : MonoBehaviour
                 {
                     matchFound = true;
                     currentInput = tentative; // 🔹 corrige la première lettre
+
+                    if (sortName == tentative)
+                    {
+                        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.TypingSpellReady);
+                    }
                     break;
                 }
             }
@@ -154,15 +167,23 @@ public class TypingSortManager : MonoBehaviour
 
         // ---------------- Animation lettre ----------------
         if (matchFound)
+        {
+            PlayTypingHitSfx();
             PlayLetterAnimation();
+        }
         else
+        {
+            typingComboCount = 0;
+            AudioManager.Instance?.PlaySFXEvent(SFXEventKey.TypingMiss);
             PlayWrongLetterAnimation(letter);
+        }
     }
 
     private void HandleSpace()
     {
         if (string.IsNullOrEmpty(currentInput) && SelectedEnemy == null)
         {
+            AudioManager.Instance?.PlaySFXEvent(SFXEventKey.TypingWordFail);
             FailWordAnimation();
             ResetInput();
             return;
@@ -190,6 +211,7 @@ public class TypingSortManager : MonoBehaviour
         }
         else
         {
+            AudioManager.Instance?.PlaySFXEvent(SFXEventKey.TypingWordFail);
             FailWordAnimation();
         }
 
@@ -322,9 +344,15 @@ public class TypingSortManager : MonoBehaviour
 
     private void ResetInput()
     {
+        if (!string.IsNullOrEmpty(currentInput) || selectedEnemy != null || sortLibreMode)
+        {
+            AudioManager.Instance?.PlaySFXEvent(SFXEventKey.TypingSpellCleared);
+        }
+
         currentInput = "";
         selectedEnemy = null;
         sortLibreMode = false;
+        typingComboCount = 0;
 
         if (nameEnemy != null)
         {
@@ -398,6 +426,20 @@ public class TypingSortManager : MonoBehaviour
 
         // Particule lettre
         particlesManager?.SpawnLetterParticleSafe();
+    }
+
+    private void PlayTypingHitSfx()
+    {
+        if (Time.unscaledTime - lastTypingHitTime > comboResetDelay)
+        {
+            typingComboCount = 0;
+        }
+
+        lastTypingHitTime = Time.unscaledTime;
+        typingComboCount++;
+
+        float pitchOffset = Mathf.Min(comboPitchMax, (typingComboCount - 1) * comboPitchStep);
+        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.TypingHit, 1f, pitchOffset);
     }
 
     private void PlayWordAnimation(string word)

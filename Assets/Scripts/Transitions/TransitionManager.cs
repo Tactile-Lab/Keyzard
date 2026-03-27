@@ -61,6 +61,8 @@ public class TransitionManager : MonoBehaviour
 
     private IEnumerator LoadSceneCoroutine(int buildIndex)
     {
+        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.UISceneTransition);
+
         if (AudioManager.Instance != null)
         {
             float fadeDuration = BlackFadeEffect.Instance != null
@@ -81,6 +83,8 @@ public class TransitionManager : MonoBehaviour
 
     private IEnumerator LoadSceneCoroutine(string sceneName)
     {
+        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.UISceneTransition);
+
         if (AudioManager.Instance != null)
         {
             float fadeDuration = BlackFadeEffect.Instance != null

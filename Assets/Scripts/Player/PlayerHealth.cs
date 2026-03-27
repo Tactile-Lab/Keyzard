@@ -68,6 +68,7 @@ public class PlayerHealth : MonoBehaviour
 
         lastDamageTime = Time.time;
         currentHealth = Mathf.Max(0, currentHealth - amount);
+        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.PlayerHurt);
         RaiseHealthChanged();
 
         if (blinkRoutine != null)
@@ -78,7 +79,10 @@ public class PlayerHealth : MonoBehaviour
         blinkRoutine = StartCoroutine(BlinkDuringInvincibility());
 
         if (currentHealth == 0)
+        {
+            AudioManager.Instance?.PlaySFXEvent(SFXEventKey.PlayerDeath);
             Died?.Invoke();
+        }
 
         return true;
     }

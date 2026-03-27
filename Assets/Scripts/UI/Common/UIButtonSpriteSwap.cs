@@ -16,6 +16,10 @@ public class UIButtonSpriteSwap : MonoBehaviour
     [Header("Behavior")]
     [SerializeField] private bool autoUseImageSpriteAsNormal = true;
 
+    [Header("Audio")]
+    [SerializeField] private SFXEventKey onSelectedSfx = SFXEventKey.UIMenuMove;
+    [SerializeField] private SFXEventKey onPressedSfx = SFXEventKey.UIMenuConfirm;
+
     private bool isSelected;
     private bool isPressed;
     private bool isDisabled;
@@ -37,6 +41,11 @@ public class UIButtonSpriteSwap : MonoBehaviour
 
     public void SetSelected(bool selected)
     {
+        if (isSelected == selected)
+        {
+            return;
+        }
+
         isSelected = selected;
 
         if (!selected)
@@ -44,12 +53,28 @@ public class UIButtonSpriteSwap : MonoBehaviour
             isPressed = false;
         }
 
+        if (selected)
+        {
+            AudioManager.Instance?.PlaySFXEvent(onSelectedSfx);
+        }
+
         RefreshSprite();
     }
 
     public void SetPressed(bool pressed)
     {
+        if (isPressed == pressed)
+        {
+            return;
+        }
+
         isPressed = pressed;
+
+        if (pressed)
+        {
+            AudioManager.Instance?.PlaySFXEvent(onPressedSfx);
+        }
+
         RefreshSprite();
     }
 

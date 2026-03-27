@@ -45,8 +45,11 @@ public class Enemy : MonoBehaviour
     [Header("Hit Blink")]
     [SerializeField] private Color hitBlinkColor = Color.white;
     [SerializeField] private float hitBlinkDuration = 0.06f;
+    [Header("Audio")]
+    [SerializeField] private float footstepInterval = 0.34f;
     private bool isBlinking;
     private SpriteRenderer[] blinkRenderers;
+    private float footstepTimer;
 
 
     /// <summary>
@@ -267,10 +270,17 @@ public class Enemy : MonoBehaviour
         if (isMoving)
         {
             transform.position = Vector2.MoveTowards(transform.position, playerTargetTransform.position, speed * Time.deltaTime);
+            footstepTimer += Time.deltaTime;
+            if (footstepTimer >= Mathf.Max(0.05f, footstepInterval))
+            {
+                footstepTimer = 0f;
+                AudioManager.Instance?.PlaySFXEvent(ResolveEnemyFootstepEvent(type));
+            }
         }
         else
         {
             transform.position = Vector2.MoveTowards(transform.position, playerTargetTransform.position, speed / 4 * Time.deltaTime);
+            footstepTimer = 0f;
         }
     }
 
@@ -279,14 +289,19 @@ public class Enemy : MonoBehaviour
         // Passe en attaque quand le joueur est dans la portée proche
         if (playerTargetTransform != null && Vector2.Distance(transform.position, playerTargetTransform.position) < 1f)
         {
-            isMoving = false;
-            animator.SetTrigger("Attack");
+            if (isMoving)
+            {
+                isMoving = false;
+                AudioManager.Instance?.PlaySFXEvent(ResolveEnemyAttackEvent(type));
+                animator.SetTrigger("Attack");
+            }
         }
     }
 
     public virtual void EndAttack()
     {
         isMoving = true;
+        footstepTimer = 0f;
         animator.SetTrigger("Move");
     }
 
@@ -374,8 +389,10 @@ public class Enemy : MonoBehaviour
 
     public virtual void TakeDamage(float damageAmount)
     {
+        AudioManager.Instance?.PlaySFXEvent(ResolveEnemyHurtEvent(type));
         animator.SetTrigger("TakeDmg");
         isMoving = false;
+        footstepTimer = 0f;
         StartCoroutine(BlinkOnHit());
         Debug.Log(health + " " + damageAmount + " " + (health - damageAmount));
         health -= damageAmount;
@@ -421,6 +438,7 @@ public class Enemy : MonoBehaviour
     {
         if (health == 0)
         {
+            AudioManager.Instance?.PlaySFXEvent(ResolveEnemyDeathEvent(type));
             // Nettoyage de l'ennemi dans la liste du GameManager
             GameManager.Instance.list_enemies.RemoveAll(e => e.enemy == gameObject);
             room.EnemyDied(this);
@@ -442,5 +460,65 @@ public class Enemy : MonoBehaviour
     public void SetRoom(RoomManager r)
     {
         room = r;
+    }
+
+    private static SFXEventKey ResolveEnemyAttackEvent(EnemyType enemyType)
+    {
+        switch (enemyType)
+        {
+            case EnemyType.Rapide:
+                return SFXEventKey.EnemyRapideAttack;
+            case EnemyType.Lourd:
+                return SFXEventKey.EnemyLourdAttack;
+            case EnemyType.Distant:
+                return SFXEventKey.EnemyDistantAttack;
+            default:
+                return SFXEventKey.EnemyAttack;
+        }
+    }
+
+    private static SFXEventKey ResolveEnemyHurtEvent(EnemyType enemyType)
+    {
+        switch (enemyType)
+        {
+            case EnemyType.Rapide:
+                return SFXEventKey.EnemyRapideHurt;
+            case EnemyType.Lourd:
+                return SFXEventKey.EnemyLourdHurt;
+            case EnemyType.Distant:
+                return SFXEventKey.EnemyDistantHurt;
+            default:
+                return SFXEventKey.EnemyHurt;
+        }
+    }
+
+    private static SFXEventKey ResolveEnemyDeathEvent(EnemyType enemyType)
+    {
+        switch (enemyType)
+        {
+            case EnemyType.Rapide:
+                return SFXEventKey.EnemyRapideDeath;
+            case EnemyType.Lourd:
+                return SFXEventKey.EnemyLourdDeath;
+            case EnemyType.Distant:
+                return SFXEventKey.EnemyDistantDeath;
+            default:
+                return SFXEventKey.EnemyDeath;
+        }
+    }
+
+    private static SFXEventKey ResolveEnemyFootstepEvent(EnemyType enemyType)
+    {
+        switch (enemyType)
+        {
+            case EnemyType.Rapide:
+                return SFXEventKey.EnemyRapideFootstep;
+            case EnemyType.Lourd:
+                return SFXEventKey.EnemyLourdFootstep;
+            case EnemyType.Distant:
+                return SFXEventKey.None;
+            default:
+                return SFXEventKey.EnemyFootstep;
+        }
     }
 }

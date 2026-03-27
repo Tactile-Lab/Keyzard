@@ -139,6 +139,7 @@ public class AudioSetup : MonoBehaviour
             "Assets/Audio/Music", 
             "Assets/Audio/UI",
             "Assets/AudioConfigs",
+            "Assets/AudioConfigs/Global",
             "Assets/AudioConfigs/Sorts",
             "Assets/AudioConfigs/Enemies",
             "Assets/AudioConfigs/UI"
@@ -166,6 +167,8 @@ public class AudioSetup : MonoBehaviour
     
     private static void CreateExampleAudioConfigs()
     {
+        CreateGlobalSfxEventConfig();
+
         string configsPath = "Assets/AudioConfigs/Sorts";
         
         // Créer des exemples de configurations pour vos sorts existants
@@ -175,6 +178,38 @@ public class AudioSetup : MonoBehaviour
         CreateSpellAudioConfig(configsPath, "ShotGunFeu");
         
         Debug.Log("🎯 Exemples de configurations créés");
+    }
+
+    private static void CreateGlobalSfxEventConfig()
+    {
+        string configPath = "Assets/AudioConfigs/Global/SFXEventAudioConfig.asset";
+        if (AssetDatabase.LoadAssetAtPath<SFXEventAudioConfig>(configPath) != null)
+        {
+            return;
+        }
+
+        SFXEventAudioConfig config = ScriptableObject.CreateInstance<SFXEventAudioConfig>();
+
+        foreach (SFXEventKey key in System.Enum.GetValues(typeof(SFXEventKey)))
+        {
+            if (key == SFXEventKey.None)
+            {
+                continue;
+            }
+
+            config.entries.Add(new SFXEventAudioEntry
+            {
+                key = key,
+                clip = null,
+                volume = 1f,
+                pitch = 1f,
+                randomPitchVariance = 0f
+            });
+        }
+
+        AssetDatabase.CreateAsset(config, configPath);
+        AssetDatabase.SaveAssets();
+        Debug.Log("🔊 Configuration globale SFX créée: " + configPath);
     }
     
     private static void CreateSpellAudioConfig(string folderPath, string spellName)

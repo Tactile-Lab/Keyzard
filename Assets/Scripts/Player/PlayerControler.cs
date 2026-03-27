@@ -8,6 +8,7 @@ public class PlayerControler : MonoBehaviour
 
     [Header("Movement")]
     [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float footstepInterval = 0.28f;
 
     [Header("Animation")]
     [SerializeField] private Animator animator;
@@ -32,6 +33,7 @@ public class PlayerControler : MonoBehaviour
     private Vector2 lastMoveDir = Vector2.right;
     private float lastReleaseTime = -999f;
     private float staffCurrentAngle = 0f;
+    private float footstepTimer;
 
     public Vector3 StaffTipPosition => staffTip != null ? staffTip.position : (staffTransform != null ? staffTransform.position : transform.position);
 
@@ -83,6 +85,7 @@ public class PlayerControler : MonoBehaviour
         if (IsMovementBlocked())
         {
             rb.linearVelocity = Vector2.zero;
+            footstepTimer = 0f;
             return;
         }
 
@@ -93,6 +96,20 @@ public class PlayerControler : MonoBehaviour
         velocity.y = input.y * moveSpeed;
 
         rb.linearVelocity = velocity;
+
+        if (velocity.sqrMagnitude > MovementSqrEpsilon)
+        {
+            footstepTimer += Time.fixedDeltaTime;
+            if (footstepTimer >= Mathf.Max(0.05f, footstepInterval))
+            {
+                footstepTimer = 0f;
+                AudioManager.Instance?.PlaySFXEvent(SFXEventKey.PlayerFootstep);
+            }
+        }
+        else
+        {
+            footstepTimer = 0f;
+        }
     }
 
     private void UpdateAnimationAndFacing()

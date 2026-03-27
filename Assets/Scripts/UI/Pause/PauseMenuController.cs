@@ -185,6 +185,7 @@ public class PauseMenuController : MonoBehaviour
         IsPauseMenuOpen = true;
         isTransitioning = true;
         selectedIndex = 0;
+        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.UIOpen);
 
         if (pauseRoot != null)
         {
@@ -208,6 +209,7 @@ public class PauseMenuController : MonoBehaviour
         isOpen = false;
         IsPauseMenuOpen = false;
         isTransitioning = true;
+        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.UIClose);
 
         ApplyPauseState(false);
         SetBackdropState(false, true);

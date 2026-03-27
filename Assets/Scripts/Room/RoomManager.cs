@@ -196,6 +196,7 @@ public class RoomManager : MonoBehaviour
         {
             roomCleared = true;
             door?.Open();
+            AudioManager.Instance?.PlaySFXEvent(SFXEventKey.RoomClear);
             Debug.Log($"Room {name} cleared, porte ouverte");
 
             if (levelManager != null) {

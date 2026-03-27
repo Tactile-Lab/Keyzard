@@ -174,6 +174,7 @@ public class GlossaryToggleController : MonoBehaviour
         }
 
         isOpen = open;
+        AudioManager.Instance?.PlaySFXEvent(open ? SFXEventKey.UIGlossaryOpen : SFXEventKey.UIGlossaryClose);
         PlayTransition(open);
     }
 
