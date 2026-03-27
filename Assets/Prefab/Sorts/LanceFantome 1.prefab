@@ -53,7 +53,7 @@ MonoBehaviour:
   vitesse: 1.5
   description: "Une lance fantomatique in\xE9vitable qui touche l\u2019ennemi marqu\xE9,
     bien que lente"
-  icon: {fileID: -530125082, guid: 1459c242765e57445a1eff83b7b9fe57, type: 3}
+  icon: {fileID: 1204236988781962780, guid: 58630f89e44ba67459de93a1a4b39df5, type: 3}
   demonstrationIllustration: {fileID: 21300000, guid: ffe35a25f288f064f8edd99aa45d0e28, type: 3}
   audioConfig: {fileID: 11400000, guid: 7e14ef98387b2c04b840e6bb3a2aefd8, type: 2}
   launchTiming: 0
