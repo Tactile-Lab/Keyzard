@@ -20,12 +20,36 @@ public class AudioSetup : MonoBehaviour
         
         // 4. Créer des exemples de configurations
         CreateExampleAudioConfigs();
+
+        // 5. Assigner les configs SFX a l'AudioManager
+        AssignSfxConfigsToAudioManager();
         
         Debug.Log("✅ Système audio configuré automatiquement !");
         Debug.Log("🎵 AudioManager créé dans la scène");
         Debug.Log("🎚️ AudioMixer créé dans Assets/Audio");
         Debug.Log("📁 Dossiers audio créés");
         Debug.Log("🎯 Exemples de configurations créés");
+    }
+
+    private static void AssignSfxConfigsToAudioManager()
+    {
+        AudioManager audioManager = FindFirstObjectByType<AudioManager>();
+        if (audioManager == null)
+        {
+            Debug.LogWarning("⚠️ AudioManager introuvable pour l'assignation des configs SFX.");
+            return;
+        }
+
+        audioManager.sfxEventConfig = AssetDatabase.LoadAssetAtPath<SFXEventAudioConfig>("Assets/AudioConfigs/Global/SFXEventAudioConfig.asset");
+        audioManager.uiSfxConfig = AssetDatabase.LoadAssetAtPath<UISFXConfig>("Assets/AudioConfigs/UI/UISFXConfig.asset");
+        audioManager.typingSfxConfig = AssetDatabase.LoadAssetAtPath<TypingSFXConfig>("Assets/AudioConfigs/Typing/TypingSFXConfig.asset");
+        audioManager.playerSfxConfig = AssetDatabase.LoadAssetAtPath<PlayerSFXConfig>("Assets/AudioConfigs/Player/PlayerSFXConfig.asset");
+        audioManager.enemySfxConfig = AssetDatabase.LoadAssetAtPath<EnemySFXConfig>("Assets/AudioConfigs/Enemies/EnemySFXConfig.asset");
+
+        EditorUtility.SetDirty(audioManager);
+        AssetDatabase.SaveAssets();
+
+        Debug.Log("✅ Configs SFX assignées automatiquement à AudioManager.");
     }
     
     private static void CreateAudioManager()
@@ -140,6 +164,8 @@ public class AudioSetup : MonoBehaviour
             "Assets/Audio/UI",
             "Assets/AudioConfigs",
             "Assets/AudioConfigs/Global",
+            "Assets/AudioConfigs/Typing",
+            "Assets/AudioConfigs/Player",
             "Assets/AudioConfigs/Sorts",
             "Assets/AudioConfigs/Enemies",
             "Assets/AudioConfigs/UI"
@@ -168,6 +194,7 @@ public class AudioSetup : MonoBehaviour
     private static void CreateExampleAudioConfigs()
     {
         CreateGlobalSfxEventConfig();
+        CreateDomainSfxConfigs();
 
         string configsPath = "Assets/AudioConfigs/Sorts";
         
@@ -197,6 +224,11 @@ public class AudioSetup : MonoBehaviour
                 continue;
             }
 
+            if (!IsMiscKey(key))
+            {
+                continue;
+            }
+
             config.entries.Add(new SFXEventAudioEntry
             {
                 key = key,
@@ -210,6 +242,147 @@ public class AudioSetup : MonoBehaviour
         AssetDatabase.CreateAsset(config, configPath);
         AssetDatabase.SaveAssets();
         Debug.Log("🔊 Configuration globale SFX créée: " + configPath);
+    }
+
+    private static void CreateDomainSfxConfigs()
+    {
+        CreateDomainConfig<UISFXConfig>(
+            "Assets/AudioConfigs/UI/UISFXConfig.asset",
+            key => IsUiKey(key));
+
+        CreateDomainConfig<TypingSFXConfig>(
+            "Assets/AudioConfigs/Typing/TypingSFXConfig.asset",
+            key => IsTypingKey(key));
+
+        CreateDomainConfig<PlayerSFXConfig>(
+            "Assets/AudioConfigs/Player/PlayerSFXConfig.asset",
+            key => IsPlayerKey(key));
+
+        CreateDomainConfig<EnemySFXConfig>(
+            "Assets/AudioConfigs/Enemies/EnemySFXConfig.asset",
+            key => IsEnemyKey(key));
+    }
+
+    private static void CreateDomainConfig<T>(string configPath, System.Func<SFXEventKey, bool> predicate)
+        where T : DomainSFXAudioConfig
+    {
+        if (AssetDatabase.LoadAssetAtPath<T>(configPath) != null)
+        {
+            return;
+        }
+
+        T config = ScriptableObject.CreateInstance<T>();
+        PopulateEntries(config.entries, predicate);
+        AssetDatabase.CreateAsset(config, configPath);
+        AssetDatabase.SaveAssets();
+
+        Debug.Log("🔊 Configuration SFX domaine créée: " + configPath);
+    }
+
+    private static void PopulateEntries(System.Collections.Generic.List<SFXEventAudioEntry> entries, System.Func<SFXEventKey, bool> predicate)
+    {
+        foreach (SFXEventKey key in System.Enum.GetValues(typeof(SFXEventKey)))
+        {
+            if (key == SFXEventKey.None || !predicate(key))
+            {
+                continue;
+            }
+
+            entries.Add(new SFXEventAudioEntry
+            {
+                key = key,
+                clip = null,
+                volume = 1f,
+                pitch = 1f,
+                randomPitchVariance = 0f
+            });
+        }
+    }
+
+    private static bool IsUiKey(SFXEventKey key)
+    {
+        switch (key)
+        {
+            case SFXEventKey.UIMenuMove:
+            case SFXEventKey.UIMenuConfirm:
+            case SFXEventKey.UIOpen:
+            case SFXEventKey.UIClose:
+            case SFXEventKey.UISceneTransition:
+            case SFXEventKey.UIGlossaryOpen:
+            case SFXEventKey.UIGlossaryClose:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    private static bool IsTypingKey(SFXEventKey key)
+    {
+        switch (key)
+        {
+            case SFXEventKey.TypingHit:
+            case SFXEventKey.TypingMiss:
+            case SFXEventKey.TypingWordFail:
+            case SFXEventKey.TypingTargetLock:
+            case SFXEventKey.TypingSpellReady:
+            case SFXEventKey.TypingSpellCleared:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    private static bool IsPlayerKey(SFXEventKey key)
+    {
+        switch (key)
+        {
+            case SFXEventKey.PlayerFootstep:
+            case SFXEventKey.PlayerHurt:
+            case SFXEventKey.PlayerDeath:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    private static bool IsEnemyKey(SFXEventKey key)
+    {
+        switch (key)
+        {
+            case SFXEventKey.EnemyAttack:
+            case SFXEventKey.EnemyHurt:
+            case SFXEventKey.EnemyDeath:
+            case SFXEventKey.EnemyFootstep:
+            case SFXEventKey.EnemyRapideAttack:
+            case SFXEventKey.EnemyRapideHurt:
+            case SFXEventKey.EnemyRapideDeath:
+            case SFXEventKey.EnemyRapideFootstep:
+            case SFXEventKey.EnemyLourdAttack:
+            case SFXEventKey.EnemyLourdHurt:
+            case SFXEventKey.EnemyLourdDeath:
+            case SFXEventKey.EnemyLourdFootstep:
+            case SFXEventKey.EnemyDistantAttack:
+            case SFXEventKey.EnemyDistantHurt:
+            case SFXEventKey.EnemyDistantDeath:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    private static bool IsMiscKey(SFXEventKey key)
+    {
+        switch (key)
+        {
+            case SFXEventKey.RoomClear:
+            case SFXEventKey.NewSpellUnlocked:
+            case SFXEventKey.BookPageTurn:
+            case SFXEventKey.EndDemoOpen:
+            case SFXEventKey.EndDemoConfirm:
+                return true;
+            default:
+                return false;
+        }
     }
     
     private static void CreateSpellAudioConfig(string folderPath, string spellName)

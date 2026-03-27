@@ -48,9 +48,14 @@ MonoBehaviour:
   musicGroup: {fileID: -8164020291509129921, guid: cbcc6024c536b9a4c8247e8fd367913c, type: 2}
   sfxGroup: {fileID: 3186722479702830324, guid: cbcc6024c536b9a4c8247e8fd367913c, type: 2}
   musicConfig: {fileID: 11400000, guid: 2cd82856fee78774d8bf9f632ba36163, type: 2}
+  sfxEventConfig: {fileID: 11400000, guid: 53cf78a3a587a78409e101691564624c, type: 2}
+  uiSfxConfig: {fileID: 11400000, guid: 2c473c94888b7cd44adfee2ddd43619e, type: 2}
+  typingSfxConfig: {fileID: 11400000, guid: 6dec0e51fe303de4bae6aca4a3ffabfd, type: 2}
+  playerSfxConfig: {fileID: 11400000, guid: 8f674ca3b7fa92642a883e13e979036b, type: 2}
+  enemySfxConfig: {fileID: 11400000, guid: 8804c23fe3c1e4d458bb6ff799a7c85b, type: 2}
   backgroundMusic: {fileID: 0}
-  musicVolume: 0.5
+  musicVolume: 0.7
   defaultMusicSwitchFade: 0.2
   sceneTransitionMusicFade: 0.3
   normalMusicCutoff: 22000
-  muffledMusicCutoff: 1200
+  muffledMusicCutoff: 900

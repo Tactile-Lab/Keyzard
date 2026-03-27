@@ -18,6 +18,12 @@ public class AudioManager : MonoBehaviour
     [Header("SFX Events Config")]
     public SFXEventAudioConfig sfxEventConfig;
 
+    [Header("SFX Domain Configs")]
+    public UISFXConfig uiSfxConfig;
+    public TypingSFXConfig typingSfxConfig;
+    public PlayerSFXConfig playerSfxConfig;
+    public EnemySFXConfig enemySfxConfig;
+
     [Header("Music (Legacy)")]
     public AudioClip backgroundMusic;
     [Range(0f, 1f)] public float musicVolume = 0.7f;
@@ -426,12 +432,12 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySFXEvent(SFXEventKey key, float volumeMultiplier = 1f, float pitchOffset = 0f)
     {
-        if (sfxEventConfig == null || key == SFXEventKey.None)
+        if (key == SFXEventKey.None)
         {
             return;
         }
 
-        SFXEventAudioEntry entry = sfxEventConfig.GetEntry(key);
+        SFXEventAudioEntry entry = ResolveSfxEntry(key);
         if (entry == null || entry.clip == null)
         {
             return;
@@ -448,6 +454,46 @@ public class AudioManager : MonoBehaviour
 
         source.pitch = Mathf.Clamp(entry.pitch + randomVariance + pitchOffset, 0.1f, 3f);
         source.Play();
+    }
+
+    private SFXEventAudioEntry ResolveSfxEntry(SFXEventKey key)
+    {
+        DomainSFXAudioConfig domainConfig = ResolveDomainConfigForKey(key);
+        if (domainConfig != null)
+        {
+            SFXEventAudioEntry domainEntry = domainConfig.GetEntry(key);
+            if (domainEntry != null)
+            {
+                return domainEntry;
+            }
+        }
+
+        return sfxEventConfig != null ? sfxEventConfig.GetEntry(key) : null;
+    }
+
+    private DomainSFXAudioConfig ResolveDomainConfigForKey(SFXEventKey key)
+    {
+        if (uiSfxConfig != null && uiSfxConfig.SupportsKey(key))
+        {
+            return uiSfxConfig;
+        }
+
+        if (typingSfxConfig != null && typingSfxConfig.SupportsKey(key))
+        {
+            return typingSfxConfig;
+        }
+
+        if (playerSfxConfig != null && playerSfxConfig.SupportsKey(key))
+        {
+            return playerSfxConfig;
+        }
+
+        if (enemySfxConfig != null && enemySfxConfig.SupportsKey(key))
+        {
+            return enemySfxConfig;
+        }
+
+        return null;
     }
     
     public AudioSource StartLoop(AudioClip clip, float volume = 1f)
