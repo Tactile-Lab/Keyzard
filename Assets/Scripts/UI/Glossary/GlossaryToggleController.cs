@@ -125,6 +125,16 @@ public class GlossaryToggleController : MonoBehaviour
             return;
         }
 
+        if (GameOverMenuController.IsGameOverMenuOpen)
+        {
+            return;
+        }
+
+        if (EndController.IsEndMenuOpen)
+        {
+            return;
+        }
+
         bool leftPressed = IsKeyPressedThisFrame(keyboard, toggleKey);
         bool rightPressed = acceptRightCtrl && keyboard.rightCtrlKey.wasPressedThisFrame;
 

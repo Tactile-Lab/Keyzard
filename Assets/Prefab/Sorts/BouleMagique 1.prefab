@@ -52,8 +52,8 @@ MonoBehaviour:
   damage: 10
   vitesse: 2
   description: "Une boule magique qui inflige peu de d\xE9gats"
-  icon: {fileID: -4403835781501484209, guid: d577914c61106f54a8d959cc2431c73e, type: 3}
-  demonstrationIllustration: {fileID: 21300000, guid: d8389c4a1426f1d4f9e1a1fa9a9dc6fe, type: 3}
+  icon: {fileID: 21300000, guid: 14b624fbe90db2241b2675a1de7825fd, type: 3}
+  demonstrationIllustration: {fileID: 21300000, guid: 99f617f30709f724cb0ddce6f9d962f6, type: 3}
   audioConfig: {fileID: 11400000, guid: 01758118f8d09834ba903f2cb2f111f5, type: 2}
   launchTiming: 0
   launchAnimationTrigger: LaunchSpell
@@ -157,7 +157,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

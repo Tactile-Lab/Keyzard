@@ -54,8 +54,20 @@ MonoBehaviour:
   description: "Un cercle d'eau couvrant une zone importante infligeant peu de d\xE9g\xE2ts
     mais repousse les ennemis"
   icon: {fileID: 21300000, guid: aeef7f6fd3cec6a4ba40058b7f3c8437, type: 3}
-  demonstrationIllustration: {fileID: 21300000, guid: 8efc611e04b0ba643b9f6c4d0f71a12f, type: 3}
-  audioConfig: {fileID: 0}
+  demonstrationIllustration: {fileID: 21300000, guid: 9f92aca713b4a074c80e576a575af69d, type: 3}
+  audioConfig: {fileID: 11400000, guid: 679c885f3f41e4f458b2c86e43d1eba2, type: 2}
+  launchTiming: 0
+  launchAnimationTrigger: LaunchSpell
+  launchFallbackDelay: 0.2
+  overrideLaunchColors: 0
+  launchStartColor: {r: 1, g: 1, b: 1, a: 1}
+  launchReleaseColor: {r: 1, g: 1, b: 1, a: 1}
+  launchStartVfxPrefab: {fileID: 0}
+  launchReleaseVfxPrefab: {fileID: 0}
+  impactVfxPrefab: {fileID: 0}
+  impactVfxLifetime: 0.8
+  attachImpactVfxToTarget: 0
+  impactVfxOffset: {x: 0, y: 0, z: 0}
   aniamtor: {fileID: 0}
   forceKnockback: 5
 --- !u!114 &7794576331350361623
