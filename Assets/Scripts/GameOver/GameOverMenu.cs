@@ -216,6 +216,7 @@ public class GameOverMenuController : MonoBehaviour
     {
         IsGameOverMenuOpen = false;
         SpellInventoryManager.Instance.ResetInventory();
+        AudioManager.Instance?.ResetMusicRuntime();
         TransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -223,6 +224,7 @@ public class GameOverMenuController : MonoBehaviour
     {
         IsGameOverMenuOpen = false;
         SpellInventoryManager.Instance.ResetInventory();
+        AudioManager.Instance?.ResetMusicRuntime();
         TransitionManager.Instance.LoadScene(0);
     }
 }

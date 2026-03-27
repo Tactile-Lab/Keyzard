@@ -10,7 +10,9 @@ using UnityEngine;
 public static class MusicConfigSetup
 {
     private const string AssetPath = "Assets/AudioConfigs/MusicAudioConfig.asset";
-    private const string MusicClipPath = "Assets/Audio/Music/07. Surt R. -- Tower Halls [Lower Floors].mp3";
+    private const string DungeonClipPath = "Assets/Audio/Music/07. Surt R. -- Tower Halls [Lower Floors].mp3";
+    private const string CombatClipPath = "Assets/Audio/Music/07. Surt R. -- Tower Halls [Lower Floors].mp3";
+    private const string EndDemoClipPath = "Assets/Audio/Music/01. Surt R. -- The Devil Tower.mp3";
 
     [MenuItem("Tools/Audio/Create Music Config")]
     public static void CreateMusicConfig()
@@ -29,20 +31,34 @@ public static class MusicConfigSetup
             config = ScriptableObject.CreateInstance<MusicAudioConfig>();
         }
 
-        // Charger le seul clip musique disponible
-        var dungeonClip = AssetDatabase.LoadAssetAtPath<AudioClip>(MusicClipPath);
+        // Charger les clips de base (fallback sur dungeon si un clip manque)
+        var dungeonClip = AssetDatabase.LoadAssetAtPath<AudioClip>(DungeonClipPath);
+        var combatClip = AssetDatabase.LoadAssetAtPath<AudioClip>(CombatClipPath);
+        var endDemoClip = AssetDatabase.LoadAssetAtPath<AudioClip>(EndDemoClipPath);
+
         if (dungeonClip == null)
         {
-            Debug.LogWarning($"[MusicConfigSetup] Clip introuvable : {MusicClipPath}. L'état Dungeon restera sans clip.");
+            Debug.LogWarning($"[MusicConfigSetup] Clip introuvable : {DungeonClipPath}. L'etat Dungeon restera sans clip.");
         }
 
-        // Construire les 5 entrées
-        config.entries.Clear();
-        config.entries.Add(new MusicAudioEntry { state = GameMusicState.MainMenu,  clip = null,       persistInBackground = false });
-        config.entries.Add(new MusicAudioEntry { state = GameMusicState.Dungeon,   clip = dungeonClip, persistInBackground = true  });
-        config.entries.Add(new MusicAudioEntry { state = GameMusicState.Combat,    clip = null,       persistInBackground = true  });
-        config.entries.Add(new MusicAudioEntry { state = GameMusicState.GameOver,  clip = null,       persistInBackground = false });
-        config.entries.Add(new MusicAudioEntry { state = GameMusicState.EndDemo,   clip = null,       persistInBackground = false });
+        if (combatClip == null)
+        {
+            combatClip = dungeonClip;
+            Debug.LogWarning($"[MusicConfigSetup] Clip introuvable : {CombatClipPath}. Combat utilisera Dungeon en fallback.");
+        }
+
+        if (endDemoClip == null)
+        {
+            endDemoClip = dungeonClip;
+            Debug.LogWarning($"[MusicConfigSetup] Clip introuvable : {EndDemoClipPath}. EndDemo utilisera Dungeon en fallback.");
+        }
+
+        // Construire/mettre a jour les 5 entrees sans ecraser les clips deja assignes manuellement.
+        UpsertEntry(config, GameMusicState.MainMenu, null, false, 1f, keepExistingClip: true);
+        UpsertEntry(config, GameMusicState.Dungeon, dungeonClip, true, 1f, keepExistingClip: true);
+        UpsertEntry(config, GameMusicState.Combat, combatClip, true, 1f, keepExistingClip: true);
+        UpsertEntry(config, GameMusicState.GameOver, null, false, 1f, keepExistingClip: true);
+        UpsertEntry(config, GameMusicState.EndDemo, endDemoClip, false, 1f, keepExistingClip: true);
 
         if (isNew)
         {
@@ -68,11 +84,36 @@ public static class MusicConfigSetup
         EditorUtility.DisplayDialog(
             "Music Config créé",
             $"Asset créé : {AssetPath}\n\n" +
-            "• Dungeon → Tower Halls (clip assigné)\n" +
-            "• MainMenu, Combat, GameOver, EndDemo → null (à assigner quand les clips seront prêts)\n\n" +
+            "• Volumes individuels actifs sur chaque etat\n" +
+            "• Dungeon, Combat et EndDemo ont un clip par defaut (avec fallback)\n" +
+            "• MainMenu et GameOver restent personnalisables\n\n" +
             "L'AudioManager dans les scènes ouvertes a été wiré automatiquement.",
             "OK"
         );
+    }
+
+    private static void UpsertEntry(
+        MusicAudioConfig config,
+        GameMusicState state,
+        AudioClip defaultClip,
+        bool persistInBackground,
+        float volume,
+        bool keepExistingClip)
+    {
+        MusicAudioEntry entry = config.GetEntry(state);
+        if (entry == null)
+        {
+            entry = new MusicAudioEntry { state = state };
+            config.entries.Add(entry);
+        }
+
+        if (!keepExistingClip || entry.clip == null)
+        {
+            entry.clip = defaultClip;
+        }
+
+        entry.persistInBackground = persistInBackground;
+        entry.volume = Mathf.Clamp01(volume);
     }
 
     private static void WireAudioManagerInOpenScenes(MusicAudioConfig config)

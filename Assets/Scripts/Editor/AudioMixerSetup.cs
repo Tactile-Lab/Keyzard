@@ -182,5 +182,43 @@ public class AudioMixerSetup : EditorWindow
         {
             Debug.LogError("✗ AudioManager non trouvé dans la scène");
         }
+
+        VerifyMusicConfig();
+    }
+
+    private static void VerifyMusicConfig()
+    {
+        MusicAudioConfig config = AssetDatabase.LoadAssetAtPath<MusicAudioConfig>("Assets/AudioConfigs/MusicAudioConfig.asset");
+        if (config == null)
+        {
+            Debug.LogWarning("✗ MusicAudioConfig.asset introuvable dans Assets/AudioConfigs");
+            return;
+        }
+
+        GameMusicState[] requiredStates =
+        {
+            GameMusicState.MainMenu,
+            GameMusicState.Dungeon,
+            GameMusicState.Combat,
+            GameMusicState.GameOver,
+            GameMusicState.EndDemo
+        };
+
+        foreach (GameMusicState state in requiredStates)
+        {
+            MusicAudioEntry entry = config.GetEntry(state);
+            if (entry == null)
+            {
+                Debug.LogError($"✗ Entree manquante dans MusicAudioConfig pour {state}");
+                continue;
+            }
+
+            Debug.Log($"✓ Etat {state}: volume={entry.volume:F2}, persist={entry.persistInBackground}, clip={(entry.clip != null ? entry.clip.name : "null")}");
+
+            if ((state == GameMusicState.Dungeon || state == GameMusicState.Combat || state == GameMusicState.EndDemo) && entry.clip == null)
+            {
+                Debug.LogWarning($"✗ Clip conseille manquant pour {state}");
+            }
+        }
     }
 }

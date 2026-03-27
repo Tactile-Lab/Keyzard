@@ -83,12 +83,11 @@ public class RoomManager : MonoBehaviour
         HandleDoor();
         ActivateEnemies();
 
-        AudioManager.Instance?.PlayMusic(enemies.Count > 0 ? GameMusicState.Combat : GameMusicState.Dungeon);
-
         PrepareReward(); // <--- prépare le sort pour le trigger
 
         AddTutoMannequinsToGameManager();
         AddNonBlockingMannequinsToGameManager();
+        RefreshWorldMusicState();
     }
 
     public void ForceEnterRoom()
@@ -98,20 +97,19 @@ public class RoomManager : MonoBehaviour
         if (roomCleared)
         {
             door?.Open();
-            AudioManager.Instance?.PlayMusic(GameMusicState.Dungeon);
         }
         else
         {
             HandleDoor();
             ActivateEnemies();
 
-            AudioManager.Instance?.PlayMusic(enemies.Count > 0 ? GameMusicState.Combat : GameMusicState.Dungeon);
-
             PrepareReward();
 
             AddTutoMannequinsToGameManager();
             AddNonBlockingMannequinsToGameManager();
         }
+
+        RefreshWorldMusicState();
     }
 
     public void PlayerExited()
@@ -136,6 +134,8 @@ public class RoomManager : MonoBehaviour
         {
             typingSortManager.ResetInputRoom();
         }
+
+        RefreshWorldMusicState();
     }
 
     private void PrepareReward()
@@ -202,6 +202,8 @@ public class RoomManager : MonoBehaviour
                 levelManager.CheckAllRoomsCleared();
             }
         }
+
+        RefreshWorldMusicState();
     }
 
     private void HandleDoor()
@@ -246,5 +248,71 @@ public class RoomManager : MonoBehaviour
     public bool IsCombatRoomNotCleared()
     {
         return roomType == RoomType.Combat && !roomCleared;
+    }
+
+    private bool ShouldPlayCombatMusic()
+    {
+        if (!playerInside)
+        {
+            return false;
+        }
+
+        if (roomType != RoomType.Combat)
+        {
+            return false;
+        }
+
+        if (roomCleared)
+        {
+            return false;
+        }
+
+        return HasBlockingEnemiesRemaining();
+    }
+
+    private bool HasBlockingEnemiesRemaining()
+    {
+        foreach (Enemy enemy in enemies)
+        {
+            if (enemy == null)
+            {
+                continue;
+            }
+
+            if (enemy is Mannequin mannequin)
+            {
+                if (mannequin.countsForRoomLock)
+                {
+                    return true;
+                }
+
+                continue;
+            }
+
+            return true;
+        }
+
+        return false;
+    }
+
+    private static void RefreshWorldMusicState()
+    {
+        AudioManager audio = AudioManager.Instance;
+        if (audio == null)
+        {
+            return;
+        }
+
+        RoomManager[] rooms = FindObjectsByType<RoomManager>(FindObjectsSortMode.None);
+        foreach (RoomManager room in rooms)
+        {
+            if (room != null && room.ShouldPlayCombatMusic())
+            {
+                audio.PlayMusic(GameMusicState.Combat);
+                return;
+            }
+        }
+
+        audio.PlayMusic(GameMusicState.Dungeon);
     }
 }

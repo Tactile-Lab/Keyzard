@@ -39,10 +39,14 @@ public class TransitionManager : MonoBehaviour
 
             BlackFadeEffect.Instance.PlayFadeIn(() =>
             {
+                AudioManager.Instance?.EndSceneTransitionAudioFadeIn(Mathf.Max(0.05f, BlackFadeEffect.Instance.fadeDuration * 0.5f));
                 Time.timeScale = 1f;
                 IsTransitioning = false;
             });
+            return;
         }
+
+        AudioManager.Instance?.EndSceneTransitionAudioFadeIn(0.1f);
     }
 
     public void LoadScene(int buildIndex)
@@ -57,6 +61,14 @@ public class TransitionManager : MonoBehaviour
 
     private IEnumerator LoadSceneCoroutine(int buildIndex)
     {
+        if (AudioManager.Instance != null)
+        {
+            float fadeDuration = BlackFadeEffect.Instance != null
+                ? Mathf.Max(0.05f, BlackFadeEffect.Instance.fadeDuration * 0.5f)
+                : 0.1f;
+            AudioManager.Instance.BeginSceneTransitionAudioFadeOut(fadeDuration);
+        }
+
         if (BlackFadeEffect.Instance != null)
         {
             IsTransitioning = true;
@@ -69,6 +81,14 @@ public class TransitionManager : MonoBehaviour
 
     private IEnumerator LoadSceneCoroutine(string sceneName)
     {
+        if (AudioManager.Instance != null)
+        {
+            float fadeDuration = BlackFadeEffect.Instance != null
+                ? Mathf.Max(0.05f, BlackFadeEffect.Instance.fadeDuration * 0.5f)
+                : 0.1f;
+            AudioManager.Instance.BeginSceneTransitionAudioFadeOut(fadeDuration);
+        }
+
         if (BlackFadeEffect.Instance != null)
         {
             IsTransitioning = true;

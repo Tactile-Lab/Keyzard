@@ -15,6 +15,7 @@ public class MusicAudioEntry
 {
     public GameMusicState state;
     public AudioClip clip;
+    [Range(0f, 1f)] public float volume = 1f;
     [Tooltip("Si true : reprend là où on s'était arrêté. Si false : repart toujours du début.")]
     public bool persistInBackground;
 }
@@ -31,5 +32,16 @@ public class MusicAudioConfig : ScriptableObject
             if (entry.state == state) return entry;
         }
         return null;
+    }
+
+    public float GetEntryVolume(GameMusicState state)
+    {
+        MusicAudioEntry entry = GetEntry(state);
+        if (entry == null)
+        {
+            return 1f;
+        }
+
+        return Mathf.Clamp01(entry.volume);
     }
 }

@@ -18,6 +18,9 @@ public class AudioManager : MonoBehaviour
     [Header("Music (Legacy)")]
     public AudioClip backgroundMusic;
     [Range(0f, 1f)] public float musicVolume = 0.7f;
+    [Header("Music Transitions")]
+    [SerializeField] private float defaultMusicSwitchFade = 0.2f;
+    [SerializeField] private float sceneTransitionMusicFade = 0.3f;
     [Header("Music Muffle")]
     [Tooltip("Cutoff normal de la musique (Hz).")]
     [Min(10f)] public float normalMusicCutoff = 22000f;
@@ -27,11 +30,14 @@ public class AudioManager : MonoBehaviour
     private AudioSource musicSource;
     private AudioLowPassFilter musicLowPass;
     private Coroutine muffleRoutine;
+    private Coroutine musicSwitchRoutine;
+    private Coroutine transitionMusicFadeRoutine;
     private List<AudioSource> sfxPool = new List<AudioSource>();
     private List<AudioSource> loopPool = new List<AudioSource>();
     private const int INITIAL_POOL_SIZE = 5;
 
     private GameMusicState _currentMusicState;
+    private float _currentStateVolume = 1f;
     private readonly Dictionary<GameMusicState, float> _musicTimestamps = new Dictionary<GameMusicState, float>();
     
     void Awake()
@@ -151,39 +157,212 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusic(GameMusicState state)
     {
-        if (musicConfig == null) return;
+        PlayMusic(state, defaultMusicSwitchFade);
+    }
 
-        var entry = musicConfig.GetEntry(state);
-        if (entry == null || entry.clip == null) return;
+    public void PlayMusic(GameMusicState state, float fadeDuration)
+    {
+        if (musicSource == null || musicConfig == null)
+        {
+            return;
+        }
 
-        // Sauvegarder la position de la piste actuelle si elle doit persister
+        MusicAudioEntry nextEntry = musicConfig.GetEntry(state);
+        if (nextEntry == null || nextEntry.clip == null)
+        {
+            Debug.LogWarning($"[AudioManager] Aucun clip configure pour l'etat {state}.");
+            return;
+        }
+
+        if (musicSource.clip == nextEntry.clip && _currentMusicState == state && musicSource.isPlaying)
+        {
+            _currentStateVolume = Mathf.Clamp01(nextEntry.volume);
+            musicSource.volume = GetEffectiveMusicVolume();
+            return;
+        }
+
+        if (musicSwitchRoutine != null)
+        {
+            StopCoroutine(musicSwitchRoutine);
+        }
+
+        if (transitionMusicFadeRoutine != null)
+        {
+            StopCoroutine(transitionMusicFadeRoutine);
+            transitionMusicFadeRoutine = null;
+        }
+
+        musicSwitchRoutine = StartCoroutine(SwitchMusicRoutine(state, nextEntry, Mathf.Max(0f, fadeDuration)));
+    }
+
+    public void BeginSceneTransitionAudioFadeOut(float duration = -1f)
+    {
+        if (musicSource == null || !musicSource.isPlaying)
+        {
+            return;
+        }
+
+        if (musicSwitchRoutine != null)
+        {
+            StopCoroutine(musicSwitchRoutine);
+            musicSwitchRoutine = null;
+        }
+
+        if (transitionMusicFadeRoutine != null)
+        {
+            StopCoroutine(transitionMusicFadeRoutine);
+        }
+
+        float fade = duration >= 0f ? duration : sceneTransitionMusicFade;
+        transitionMusicFadeRoutine = StartCoroutine(FadeMusicVolumeCoroutine(0f, Mathf.Max(0f, fade), () => transitionMusicFadeRoutine = null));
+    }
+
+    public void EndSceneTransitionAudioFadeIn(float duration = -1f)
+    {
+        if (musicSource == null || musicSource.clip == null)
+        {
+            return;
+        }
+
+        if (!musicSource.isPlaying)
+        {
+            musicSource.Play();
+        }
+
+        if (transitionMusicFadeRoutine != null)
+        {
+            StopCoroutine(transitionMusicFadeRoutine);
+        }
+
+        float fade = duration >= 0f ? duration : sceneTransitionMusicFade;
+        transitionMusicFadeRoutine = StartCoroutine(FadeMusicVolumeCoroutine(GetEffectiveMusicVolume(), Mathf.Max(0f, fade), () => transitionMusicFadeRoutine = null));
+    }
+
+    public void ResetMusicRuntime(bool stopMusic = true)
+    {
+        _musicTimestamps.Clear();
+        _currentStateVolume = 1f;
+
+        if (musicSwitchRoutine != null)
+        {
+            StopCoroutine(musicSwitchRoutine);
+            musicSwitchRoutine = null;
+        }
+
+        if (transitionMusicFadeRoutine != null)
+        {
+            StopCoroutine(transitionMusicFadeRoutine);
+            transitionMusicFadeRoutine = null;
+        }
+
+        if (musicSource == null)
+        {
+            return;
+        }
+
+        if (stopMusic)
+        {
+            musicSource.Stop();
+            musicSource.time = 0f;
+            musicSource.clip = null;
+        }
+
+        musicSource.volume = GetEffectiveMusicVolume();
+    }
+
+    private IEnumerator SwitchMusicRoutine(GameMusicState state, MusicAudioEntry entry, float fadeDuration)
+    {
+        PrewarmClip(entry.clip);
+
         if (musicSource.isPlaying)
         {
-            var currentEntry = musicConfig.GetEntry(_currentMusicState);
+            MusicAudioEntry currentEntry = musicConfig.GetEntry(_currentMusicState);
             if (currentEntry != null && currentEntry.persistInBackground)
             {
                 _musicTimestamps[_currentMusicState] = musicSource.time;
             }
         }
 
-        // Transition propre : stopper l'ancienne
-        musicSource.Stop();
+        float halfFade = fadeDuration * 0.5f;
+        if (musicSource.isPlaying && halfFade > 0f)
+        {
+            yield return StartCoroutine(FadeMusicVolumeCoroutine(0f, halfFade));
+        }
 
-        // Charger la nouvelle
+        musicSource.Stop();
         musicSource.clip = entry.clip;
         _currentMusicState = state;
+        _currentStateVolume = Mathf.Clamp01(entry.volume);
 
-        // Restaurer la position ou repartir du début
         if (entry.persistInBackground && _musicTimestamps.TryGetValue(state, out float savedTime))
         {
-            musicSource.time = Mathf.Min(savedTime, entry.clip.length - 0.01f);
+            musicSource.time = Mathf.Min(savedTime, Mathf.Max(0f, entry.clip.length - 0.01f));
         }
         else
         {
             musicSource.time = 0f;
         }
 
+        musicSource.volume = halfFade > 0f ? 0f : GetEffectiveMusicVolume();
         musicSource.Play();
+
+        if (halfFade > 0f)
+        {
+            yield return StartCoroutine(FadeMusicVolumeCoroutine(GetEffectiveMusicVolume(), halfFade));
+        }
+
+        musicSwitchRoutine = null;
+    }
+
+    private void PrewarmClip(AudioClip clip)
+    {
+        if (clip == null)
+        {
+            return;
+        }
+
+        if (clip.loadState == AudioDataLoadState.Unloaded)
+        {
+            clip.LoadAudioData();
+        }
+    }
+
+    private float GetEffectiveMusicVolume()
+    {
+        return Mathf.Clamp01(musicVolume) * Mathf.Clamp01(_currentStateVolume);
+    }
+
+    private IEnumerator FadeMusicVolumeCoroutine(float targetVolume, float duration, System.Action onComplete = null)
+    {
+        if (musicSource == null)
+        {
+            onComplete?.Invoke();
+            yield break;
+        }
+
+        targetVolume = Mathf.Clamp01(targetVolume);
+        duration = Mathf.Max(0f, duration);
+
+        if (duration <= 0f)
+        {
+            musicSource.volume = targetVolume;
+            onComplete?.Invoke();
+            yield break;
+        }
+
+        float start = musicSource.volume;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            musicSource.volume = Mathf.Lerp(start, targetVolume, t);
+            yield return null;
+        }
+
+        musicSource.volume = targetVolume;
+        onComplete?.Invoke();
     }
     
     public void PlaySFX(AudioClip clip, float volume = 1f)
@@ -225,10 +404,17 @@ public class AudioManager : MonoBehaviour
     
     public void SetMusicVolume(float volume)
     {
+        musicVolume = Mathf.Clamp01(volume);
+
         if (musicGroup != null)
         {
             float dB = volume > 0 ? 20f * Mathf.Log10(volume) : -80f;
             musicGroup.audioMixer.SetFloat("MusicVolume", dB);
+        }
+
+        if (musicSource != null && musicSwitchRoutine == null && transitionMusicFadeRoutine == null)
+        {
+            musicSource.volume = GetEffectiveMusicVolume();
         }
     }
     

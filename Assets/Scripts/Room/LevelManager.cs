@@ -33,6 +33,8 @@ public class LevelManager : MonoBehaviour
             winImage.SetActive(true);
         }
 
+        AudioManager.Instance?.PlayMusic(GameMusicState.EndDemo);
+
         if (endController != null)
         {
             endController.EnableReturn();

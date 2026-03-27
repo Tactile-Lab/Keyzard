@@ -25,6 +25,7 @@ public class EndController : MonoBehaviour
             if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 SpellInventoryManager.Instance.ResetInventory();
+                AudioManager.Instance?.ResetMusicRuntime();
                 IsEndMenuOpen = false;
                 TransitionManager.Instance.LoadScene(0);
                 yield break;

@@ -64,6 +64,7 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.Instance?.ResetMusicRuntime();
         AudioManager.Instance?.PlayMusic(GameMusicState.MainMenu);
     }
 
@@ -144,6 +145,8 @@ public class MainMenuManager : MonoBehaviour
         {
             SpellInventoryManager.Instance.InitializeStartingInventory();
         }
+
+        AudioManager.Instance?.ResetMusicRuntime();
 
         Time.timeScale = 1f;
         //SceneManager.LoadScene(gameplaySceneName);
