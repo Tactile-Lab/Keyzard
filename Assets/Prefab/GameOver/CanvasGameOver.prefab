@@ -355,8 +355,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Menu principale
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: be5181438ba5d2441821936d5487b1ea, type: 2}
-  m_sharedMaterial: {fileID: -335519029427030232, guid: be5181438ba5d2441821936d5487b1ea, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e0a00e16a0e1b174f82a299f1647f610, type: 2}
+  m_sharedMaterial: {fileID: -8254751981930411074, guid: e0a00e16a0e1b174f82a299f1647f610, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -657,6 +657,8 @@ MonoBehaviour:
   pressedSprite: {fileID: 0}
   disabledSprite: {fileID: 0}
   autoUseImageSpriteAsNormal: 1
+  onSelectedSfx: 1
+  onPressedSfx: 2
 --- !u!1 &3848752743800279899
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,6 +1084,7 @@ MonoBehaviour:
   punchDownDistance: -20
   punchDuration: 0.15
   attenteBouton: 1.5
+  playerDeathFadeOutDuration: 0.2
 --- !u!1 &6214511406897084156
 GameObject:
   m_ObjectHideFlags: 0
@@ -1286,8 +1289,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Recommencer
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: be5181438ba5d2441821936d5487b1ea, type: 2}
-  m_sharedMaterial: {fileID: -335519029427030232, guid: be5181438ba5d2441821936d5487b1ea, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e0a00e16a0e1b174f82a299f1647f610, type: 2}
+  m_sharedMaterial: {fileID: -8254751981930411074, guid: e0a00e16a0e1b174f82a299f1647f610, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1832,3 +1835,5 @@ MonoBehaviour:
   pressedSprite: {fileID: 0}
   disabledSprite: {fileID: 0}
   autoUseImageSpriteAsNormal: 1
+  onSelectedSfx: 1
+  onPressedSfx: 2
