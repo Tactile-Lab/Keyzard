@@ -13,6 +13,7 @@ public class EndController : MonoBehaviour
     public void EnableReturn()
     {
         IsEndMenuOpen = true;
+        Time.timeScale = 0f;
         AudioManager.Instance?.PlaySFXEvent(SFXEventKey.EndDemoOpen);
         StartCoroutine(WaitForSpace());
     }
@@ -29,6 +30,7 @@ public class EndController : MonoBehaviour
                 SpellInventoryManager.Instance.ResetInventory();
                 AudioManager.Instance?.ResetMusicRuntime();
                 IsEndMenuOpen = false;
+                Time.timeScale = 1f;
                 TransitionManager.Instance.LoadScene(0);
                 yield break;
             }
