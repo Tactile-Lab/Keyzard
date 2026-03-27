@@ -54,7 +54,7 @@ MonoBehaviour:
   playerSfxConfig: {fileID: 11400000, guid: 8f674ca3b7fa92642a883e13e979036b, type: 2}
   enemySfxConfig: {fileID: 11400000, guid: 8804c23fe3c1e4d458bb6ff799a7c85b, type: 2}
   backgroundMusic: {fileID: 0}
-  musicVolume: 0.7
+  musicVolume: 1
   defaultMusicSwitchFade: 0.2
   sceneTransitionMusicFade: 0.3
   normalMusicCutoff: 22000
