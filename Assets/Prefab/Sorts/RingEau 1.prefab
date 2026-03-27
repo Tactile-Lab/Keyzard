@@ -54,7 +54,7 @@ MonoBehaviour:
   description: "Un cercle d'eau couvrant une zone importante infligeant peu de d\xE9g\xE2ts
     mais repousse les ennemis"
   icon: {fileID: 21300000, guid: aeef7f6fd3cec6a4ba40058b7f3c8437, type: 3}
-  demonstrationIllustration: {fileID: -3624804173432425175, guid: 9f92aca713b4a074c80e576a575af69d, type: 3}
+  demonstrationIllustration: {fileID: 21300000, guid: 9f92aca713b4a074c80e576a575af69d, type: 3}
   audioConfig: {fileID: 11400000, guid: 679c885f3f41e4f458b2c86e43d1eba2, type: 2}
   launchTiming: 0
   launchAnimationTrigger: LaunchSpell

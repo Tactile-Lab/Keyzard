@@ -2081,6 +2081,14 @@ PrefabInstance:
       propertyPath: m_fontSize
       value: 23.65
       objectReference: {fileID: 0}
+    - target: {fileID: 6636716056659427638, guid: 17bc5633e2db9344ab3f01f59e3657c5, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c4d79e9609b0e042b5236590d480e68, type: 2}
+    - target: {fileID: 6636716056659427638, guid: 17bc5633e2db9344ab3f01f59e3657c5, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3670,6 +3678,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 824107974141959836, guid: c07a6812003a4514c935b60c25145690, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 4c4d79e9609b0e042b5236590d480e68, type: 2}
+    - target: {fileID: 824107974141959836, guid: c07a6812003a4514c935b60c25145690, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 949519979625566008, guid: c07a6812003a4514c935b60c25145690, type: 3}
       propertyPath: m_text
       value: "F\xE9licitations !"
