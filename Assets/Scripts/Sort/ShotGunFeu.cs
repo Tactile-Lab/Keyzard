@@ -21,6 +21,19 @@ public class ShotGunFeu : Sort
 
     public override void LancerSortCible(GameObject cible)
     {
+        if (cible == null)
+        {
+            DestroySort(cible);
+            return;
+        }
+
+        // Le shotgun bypass la logique de base de Sort, donc on rejoue explicitement le launch SFX ici.
+        if (audioConfig != null)
+        {
+            audioConfig.Preload();
+            audioConfig.PlayLaunchReleaseSFX();
+        }
+
         int baseDamage = damage;
 
         Vector2 directionBase = (cible.transform.position - transform.position).normalized;
@@ -63,6 +76,12 @@ public class ShotGunFeu : Sort
             }
 
             mover.Initialiser(direction, vitesse, delayVie, triggerImpact, fallbackDestroyDelay);
+        }
+
+        if (activeLoopSource != null)
+        {
+            AudioManager.Instance.StopLoop(activeLoopSource);
+            activeLoopSource = null;
         }
 
         Destroy(gameObject);
