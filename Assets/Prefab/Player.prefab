@@ -442,6 +442,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerControler
   moveSpeed: 5
+  footstepInterval: 0.28
   animator: {fileID: 3563613844992985669}
   spriteRenderer: {fileID: 467548914061453846}
   moveBoolParameter: Move
