@@ -447,6 +447,7 @@ public class AudioManager : MonoBehaviour
         source.loop = false;
         source.clip = entry.clip;
         source.volume = Mathf.Clamp01(entry.volume) * Mathf.Max(0f, volumeMultiplier);
+        source.ignoreListenerPause = IsUiEventKey(key);
 
         float randomVariance = entry.randomPitchVariance > 0f
             ? Random.Range(-entry.randomPitchVariance, entry.randomPitchVariance)
@@ -454,6 +455,23 @@ public class AudioManager : MonoBehaviour
 
         source.pitch = Mathf.Clamp(entry.pitch + randomVariance + pitchOffset, 0.1f, 3f);
         source.Play();
+    }
+
+    private static bool IsUiEventKey(SFXEventKey key)
+    {
+        switch (key)
+        {
+            case SFXEventKey.UIMenuMove:
+            case SFXEventKey.UIMenuConfirm:
+            case SFXEventKey.UIOpen:
+            case SFXEventKey.UIClose:
+            case SFXEventKey.UISceneTransition:
+            case SFXEventKey.UIGlossaryOpen:
+            case SFXEventKey.UIGlossaryClose:
+                return true;
+            default:
+                return false;
+        }
     }
 
     private SFXEventAudioEntry ResolveSfxEntry(SFXEventKey key)

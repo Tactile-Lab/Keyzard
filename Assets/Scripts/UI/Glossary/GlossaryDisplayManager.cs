@@ -20,6 +20,7 @@ public class GlossaryDisplayManager : MonoBehaviour
     [SerializeField] private GridLayoutGroup gridLayout;
     [SerializeField] private int columnCount = 4;
     [SerializeField] private bool wrapHorizontal = true;
+    [SerializeField] private SFXEventKey glossaryNavigationSfx = SFXEventKey.UIMenuMove;
 
     [Header("Slot Binding")]
     [SerializeField] private string slotNamePrefix = "Slot_";
@@ -220,6 +221,8 @@ public class GlossaryDisplayManager : MonoBehaviour
         if (!force && index == currentSelectedIndex)
             return;
 
+        bool shouldPlayNavigationSfx = !force && index != currentSelectedIndex;
+
         // Désactiver la selection du slot précédent
         if (currentSelectedIndex >= 0 && currentSelectedIndex < slots.Count)
         {
@@ -229,6 +232,11 @@ public class GlossaryDisplayManager : MonoBehaviour
         // Activer la selection du nouveau slot
         currentSelectedIndex = index;
         SetSlotSelection(slots[currentSelectedIndex], true);
+
+        if (shouldPlayNavigationSfx)
+        {
+            AudioManager.Instance?.PlaySFXEvent(glossaryNavigationSfx);
+        }
 
         // Mettre à jour l'affichage
         UpdateDisplay();

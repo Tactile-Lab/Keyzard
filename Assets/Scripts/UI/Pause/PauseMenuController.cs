@@ -222,6 +222,12 @@ public class PauseMenuController : MonoBehaviour
         selectedIndex = (selectedIndex + delta + optionCount) % optionCount;
         nextInputTime = Time.unscaledTime + Mathf.Max(0f, inputCooldown);
         RefreshOptionVisualState();
+
+        if (optionSpriteSwaps[selectedIndex] == null)
+        {
+            AudioManager.Instance?.PlaySFXEvent(SFXEventKey.UIMenuMove);
+        }
+
         PlayPunchEffect(delta);
     }
 

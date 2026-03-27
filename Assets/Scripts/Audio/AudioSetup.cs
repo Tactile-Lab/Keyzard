@@ -210,34 +210,19 @@ public class AudioSetup : MonoBehaviour
     private static void CreateGlobalSfxEventConfig()
     {
         string configPath = "Assets/AudioConfigs/Global/SFXEventAudioConfig.asset";
-        if (AssetDatabase.LoadAssetAtPath<SFXEventAudioConfig>(configPath) != null)
+        SFXEventAudioConfig existing = AssetDatabase.LoadAssetAtPath<SFXEventAudioConfig>(configPath);
+        if (existing != null)
         {
+            SanitizeMiscEntries(existing.entries);
+            EditorUtility.SetDirty(existing);
+            AssetDatabase.SaveAssets();
+            Debug.Log("🔊 Configuration globale SFX nettoyée (Divers uniquement): " + configPath);
             return;
         }
 
         SFXEventAudioConfig config = ScriptableObject.CreateInstance<SFXEventAudioConfig>();
 
-        foreach (SFXEventKey key in System.Enum.GetValues(typeof(SFXEventKey)))
-        {
-            if (key == SFXEventKey.None)
-            {
-                continue;
-            }
-
-            if (!IsMiscKey(key))
-            {
-                continue;
-            }
-
-            config.entries.Add(new SFXEventAudioEntry
-            {
-                key = key,
-                clip = null,
-                volume = 1f,
-                pitch = 1f,
-                randomPitchVariance = 0f
-            });
-        }
+        PopulateEntries(config.entries, key => SFXEventAudioConfig.IsMiscKey(key));
 
         AssetDatabase.CreateAsset(config, configPath);
         AssetDatabase.SaveAssets();
@@ -266,8 +251,12 @@ public class AudioSetup : MonoBehaviour
     private static void CreateDomainConfig<T>(string configPath, System.Func<SFXEventKey, bool> predicate)
         where T : DomainSFXAudioConfig
     {
-        if (AssetDatabase.LoadAssetAtPath<T>(configPath) != null)
+        T existing = AssetDatabase.LoadAssetAtPath<T>(configPath);
+        if (existing != null)
         {
+            SanitizeDomainEntries(existing.entries, predicate);
+            EditorUtility.SetDirty(existing);
+            AssetDatabase.SaveAssets();
             return;
         }
 
@@ -372,16 +361,58 @@ public class AudioSetup : MonoBehaviour
 
     private static bool IsMiscKey(SFXEventKey key)
     {
-        switch (key)
+        return SFXEventAudioConfig.IsMiscKey(key);
+    }
+
+    private static void SanitizeMiscEntries(System.Collections.Generic.List<SFXEventAudioEntry> entries)
+    {
+        SanitizeDomainEntries(entries, key => SFXEventAudioConfig.IsMiscKey(key));
+    }
+
+    private static void SanitizeDomainEntries(System.Collections.Generic.List<SFXEventAudioEntry> entries, System.Func<SFXEventKey, bool> predicate)
+    {
+        if (entries == null)
         {
-            case SFXEventKey.RoomClear:
-            case SFXEventKey.NewSpellUnlocked:
-            case SFXEventKey.BookPageTurn:
-            case SFXEventKey.EndDemoOpen:
-            case SFXEventKey.EndDemoConfirm:
-                return true;
-            default:
-                return false;
+            return;
+        }
+
+        for (int i = entries.Count - 1; i >= 0; i--)
+        {
+            SFXEventAudioEntry entry = entries[i];
+            if (entry == null || entry.key == SFXEventKey.None || !predicate(entry.key))
+            {
+                entries.RemoveAt(i);
+            }
+        }
+
+        foreach (SFXEventKey key in System.Enum.GetValues(typeof(SFXEventKey)))
+        {
+            if (key == SFXEventKey.None || !predicate(key))
+            {
+                continue;
+            }
+
+            bool exists = false;
+            for (int i = 0; i < entries.Count; i++)
+            {
+                if (entries[i] != null && entries[i].key == key)
+                {
+                    exists = true;
+                    break;
+                }
+            }
+
+            if (!exists)
+            {
+                entries.Add(new SFXEventAudioEntry
+                {
+                    key = key,
+                    clip = null,
+                    volume = 1f,
+                    pitch = 1f,
+                    randomPitchVariance = 0f
+                });
+            }
         }
     }
     
