@@ -143,6 +143,12 @@ public class DeplacementShotgun : MonoBehaviour
             trailRenderer = gameObject.AddComponent<TrailRenderer>();
         }
 
+        Shader spriteShader = Shader.Find("Sprites/Default");
+        if (spriteShader != null) {
+            trailRenderer.material = new Material(spriteShader);
+            Debug.Log("✅ Sprites/Default assigné");
+        }
+
         trailRenderer.time = trailTime;
         trailRenderer.startWidth = trailStartWidth;
         trailRenderer.endWidth = trailEndWidth;
@@ -151,10 +157,6 @@ public class DeplacementShotgun : MonoBehaviour
         trailRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
         trailRenderer.receiveShadows = false;
 
-        if (trailRenderer.material == null)
-        {
-            trailRenderer.material = new Material(Shader.Find("Sprites/Default"));
-        }
 
         SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
         Color baseColor = spriteRenderer != null ? spriteRenderer.color : Color.white;
