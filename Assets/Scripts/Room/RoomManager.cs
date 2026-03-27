@@ -313,6 +313,18 @@ public class RoomManager : MonoBehaviour
             }
         }
 
-        audio.PlayMusic(GameMusicState.Dungeon);
+        // Vérifie si tous les combats sont clear avant de jouer Dungeon.
+        // Si oui, ne pas forcer Dungeon: laisser EndDemo/LevelManager la gérer.
+        foreach (RoomManager room in rooms)
+        {
+            if (room != null && room.IsCombatRoomNotCleared())
+            {
+                // Il y a encore des combats non clear, donc on est en gameplay normal
+                audio.PlayMusic(GameMusicState.Dungeon);
+                return;
+            }
+        }
+
+        // Niveau complété: ne pas forcer Dungeon, EndDemo prendra le relais
     }
 }

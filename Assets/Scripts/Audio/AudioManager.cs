@@ -57,7 +57,33 @@ public class AudioManager : MonoBehaviour
     
     void Start()
     {
+        PrewarmCriticalClips();
         PlayBackgroundMusic();
+    }
+
+    private void PrewarmCriticalClips()
+    {
+        if (musicConfig == null)
+        {
+            return;
+        }
+
+        GameMusicState[] criticalStates = new GameMusicState[]
+        {
+            GameMusicState.Dungeon,
+            GameMusicState.Combat,
+            GameMusicState.GameOver,
+            GameMusicState.EndDemo
+        };
+
+        foreach (GameMusicState state in criticalStates)
+        {
+            MusicAudioEntry entry = musicConfig.GetEntry(state);
+            if (entry != null && entry.clip != null)
+            {
+                PrewarmClip(entry.clip);
+            }
+        }
     }
     
     private void InitializeAudioSources()
@@ -67,7 +93,7 @@ public class AudioManager : MonoBehaviour
         musicSource.outputAudioMixerGroup = musicGroup;
         musicSource.playOnAwake = false;
         musicSource.loop = true;
-        musicSource.volume = musicVolume;
+        musicSource.volume = 0f;  // Commence à 0 pour éviter les craquements au démarrage
         // La musique continue même si AudioListener.pause = true.
         musicSource.ignoreListenerPause = true;
 
@@ -268,6 +294,20 @@ public class AudioManager : MonoBehaviour
         }
 
         musicSource.volume = GetEffectiveMusicVolume();
+
+        StopAllActiveSFXLoops();
+    }
+
+    private void StopAllActiveSFXLoops()
+    {
+        foreach (AudioSource source in loopPool)
+        {
+            if (source != null && source.isPlaying)
+            {
+                source.Stop();
+                source.clip = null;
+            }
+        }
     }
 
     private IEnumerator SwitchMusicRoutine(GameMusicState state, MusicAudioEntry entry, float fadeDuration)
@@ -284,6 +324,13 @@ public class AudioManager : MonoBehaviour
         }
 
         float halfFade = fadeDuration * 0.5f;
+        
+        // Assurer au moins une fade minimale au démarrage pour éviter les craquements.
+        if (musicSource.clip == null && halfFade <= 0f)
+        {
+            halfFade = 0.05f;
+        }
+
         if (musicSource.isPlaying && halfFade > 0f)
         {
             yield return StartCoroutine(FadeMusicVolumeCoroutine(0f, halfFade));
