@@ -46,6 +46,7 @@ public class TypingSortManager : MonoBehaviour
     [SerializeField] private float comboResetDelay = 0.9f;
     [SerializeField] private float comboPitchStep = 0.04f;
     [SerializeField] private float comboPitchMax = 0.32f;
+    [SerializeField] private float speedblink = 0.25f;
 
     private string currentInput = "";
     private GameManager.EnemyEntry selectedEnemy = null;
@@ -185,7 +186,7 @@ public class TypingSortManager : MonoBehaviour
                                     toggle = !toggle;
                                     affichage.color = toggle ? Color.white : Color.yellow;
                                 })
-                                .AppendInterval(0.5f)
+                                .AppendInterval(speedblink)
                                 .SetLoops(-1);
                         });
                 }
