@@ -130,6 +130,11 @@ public class GlossaryToggleController : MonoBehaviour
             return;
         }
 
+        if (EndController.IsEndMenuOpen)
+        {
+            return;
+        }
+
         bool leftPressed = IsKeyPressedThisFrame(keyboard, toggleKey);
         bool rightPressed = acceptRightCtrl && keyboard.rightCtrlKey.wasPressedThisFrame;
 

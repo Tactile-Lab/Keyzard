@@ -212,12 +212,14 @@ public class GameOverMenuController : MonoBehaviour
 
     private void Rejouer()
     {
+        IsGameOverMenuOpen = false;
         SpellInventoryManager.Instance.ResetInventory();
         TransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     private void RetourMenu()
     {
+        IsGameOverMenuOpen = false;
         SpellInventoryManager.Instance.ResetInventory();
         TransitionManager.Instance.LoadScene(0);
     }

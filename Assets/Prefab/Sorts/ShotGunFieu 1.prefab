@@ -49,13 +49,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShotGunFeu
   nomSort: nyro
-  damage: 3
+  damage: 4
   vitesse: 5
   description: "Un barrage de boules explosives \xE0 faible port\xE9e mais aux d\xE9g\xE2ts
     d\xE9vastateurs"
-  icon: {fileID: -2666487209024649070, guid: 37b25eb747a0ca94fabcb31635b50607, type: 3}
+  icon: {fileID: 21300000, guid: 472805b324e4cea4c826e9f638d89f22, type: 3}
   demonstrationIllustration: {fileID: 21300000, guid: c1c156fc0bf61e34496385b23ae22fd9, type: 3}
-  audioConfig: {fileID: 0}
+  audioConfig: {fileID: 11400000, guid: 5e3805ae8b25381448ae529b5f2c5502, type: 2}
+  launchTiming: 0
+  launchAnimationTrigger: LaunchSpell
+  launchFallbackDelay: 0.2
+  overrideLaunchColors: 0
+  launchStartColor: {r: 1, g: 1, b: 1, a: 1}
+  launchReleaseColor: {r: 1, g: 1, b: 1, a: 1}
+  launchStartVfxPrefab: {fileID: 0}
+  launchReleaseVfxPrefab: {fileID: 0}
+  impactVfxPrefab: {fileID: 0}
+  impactVfxLifetime: 0.8
+  attachImpactVfxToTarget: 0
+  impactVfxOffset: {x: 0, y: 0, z: 0}
   aniamtor: {fileID: 5112532390082264731}
   nombreProjectiles: 9
   angleTotal: 60
