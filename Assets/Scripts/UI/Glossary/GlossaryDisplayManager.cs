@@ -29,7 +29,7 @@ public class GlossaryDisplayManager : MonoBehaviour
 
     [Header("Locked Display")]
     [SerializeField] private string lockedNameLabel = "???";
-    [SerializeField] private string lockedDescriptionLabel = "Ce sort n'est pas encore debloque.";
+    [SerializeField] private string lockedDescriptionLabel = "Ce sort n'est pas encore débloqué.";
     [SerializeField] private float lockedIconAlpha = 0.25f;
 
     private readonly List<GameObject> slots = new List<GameObject>();
