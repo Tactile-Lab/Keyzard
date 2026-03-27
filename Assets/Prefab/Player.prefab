@@ -101,9 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 285732502474611848}
-  - component: {fileID: 4245642263865558517}
   - component: {fileID: 7435967328433189521}
-  - component: {fileID: 6986149172821218513}
   m_Layer: 7
   m_Name: FootDust
   m_TagString: Untagged
@@ -126,28 +124,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 6555731084160258586}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &4245642263865558517
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317469398173053217}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e782dfe1af8a9ad4ea199154375704f9, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &7435967328433189521
 SpriteRenderer:
   serializedVersion: 2
@@ -207,19 +183,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &6986149172821218513
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317469398173053217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f6cd4a253a114d4b98454bdd677cbb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  playerController: {fileID: 5406810383231741228}
 --- !u!1 &3094034500568211146
 GameObject:
   m_ObjectHideFlags: 0
@@ -489,10 +452,13 @@ MonoBehaviour:
   staffOrbitRadii: {x: 0.43, y: 0.6}
   diagonalReleaseBuffer: 0.12
   typingSortManager: {fileID: 0}
-  footDustAnimator: {fileID: 0}
   footDustSprite: {fileID: 0}
   footDustOrigin: {fileID: 0}
+  dustSprites: []
+  frameRate: 12
   footDustOffsetX: 0.2
+  dustSpawnInterval: 0.15
+  dustLifetime: 0.4
 --- !u!114 &2175114571937620227
 MonoBehaviour:
   m_ObjectHideFlags: 0
