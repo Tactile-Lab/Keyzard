@@ -172,6 +172,17 @@ public class Enemy : MonoBehaviour
 
         public void ApplyKnockback(Vector2 direction, float force, float duration = 0.3f)
     {
+        if (rb == null)
+        {
+            rb = GetComponent<Rigidbody2D>();
+        }
+
+        if (rb == null)
+        {
+            // Certains ennemis immobiles (ex: mannequins) n'ont pas de Rigidbody2D.
+            return;
+        }
+
         StartCoroutine(KnockbackRoutine(direction.normalized * force, duration));
     }
 
