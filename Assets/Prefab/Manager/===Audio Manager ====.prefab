@@ -47,6 +47,7 @@ MonoBehaviour:
   masterGroup: {fileID: 24300002, guid: cbcc6024c536b9a4c8247e8fd367913c, type: 2}
   musicGroup: {fileID: -8164020291509129921, guid: cbcc6024c536b9a4c8247e8fd367913c, type: 2}
   sfxGroup: {fileID: 3186722479702830324, guid: cbcc6024c536b9a4c8247e8fd367913c, type: 2}
+  musicConfig: {fileID: 11400000, guid: 2cd82856fee78774d8bf9f632ba36163, type: 2}
   backgroundMusic: {fileID: 8300000, guid: 2440dd21fc233284185657e4558a0745, type: 3}
   musicVolume: 0.5
   normalMusicCutoff: 22000
