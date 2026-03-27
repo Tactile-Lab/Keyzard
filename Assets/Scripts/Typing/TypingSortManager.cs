@@ -21,6 +21,8 @@ public class TypingSortManager : MonoBehaviour
     public GameManager gameManager;
     public PlayerControler playerController;
 
+    
+
     [Header("Animations Lettres")]
     [SerializeField] private float punchScaleAmount = 0.25f;
     [SerializeField] private float punchScaleDuration = 0.15f;
@@ -44,6 +46,7 @@ public class TypingSortManager : MonoBehaviour
     [SerializeField] private float comboResetDelay = 0.9f;
     [SerializeField] private float comboPitchStep = 0.04f;
     [SerializeField] private float comboPitchMax = 0.32f;
+    [SerializeField] private float speedblink = 0.25f;
 
     private string currentInput = "";
     private GameManager.EnemyEntry selectedEnemy = null;
@@ -59,6 +62,9 @@ public class TypingSortManager : MonoBehaviour
     private Coroutine preparedCastFallbackCoroutine;
     private int typingComboCount;
     private float lastTypingHitTime = -999f;
+    private bool isSortReady = false;
+
+    private Tween sortReadyBlinkTween; // Tween pour clignotement du sort prêt
 
     public GameManager.EnemyEntry SelectedEnemy => selectedEnemy;
 
@@ -112,72 +118,97 @@ public class TypingSortManager : MonoBehaviour
     }
 
     private void TypeLetter(char letter)
+{
+    ResolveGameManager();
+    RefreshEnemyList();
+
+    if (!sortLibreMode && (listEnemies == null || listEnemies.Count == 0))
+        return;
+
+    string tentative = currentInput + letter;
+    bool matchFound = false;
+
+    // ---------------- Vérifier les ennemis ----------------
+    if (selectedEnemy == null && !sortLibreMode)
     {
-        // In bootstrap flows, manager instances may be ready slightly after scene objects.
-        ResolveGameManager();
-        RefreshEnemyList();
-
-        if (!sortLibreMode && (listEnemies == null || listEnemies.Count == 0))
-            return;
-
-        string tentative = currentInput + letter;
-        bool matchFound = false;
-
-        // ---------------- Vérifier les ennemis ----------------
-        if (selectedEnemy == null && !sortLibreMode)
+        foreach (var entry in listEnemies)
         {
-            foreach (var entry in listEnemies)
+            string enemyCode = entry.code.ToUpper();
+            if (enemyCode.StartsWith(tentative))
             {
-                string enemyCode = entry.code.ToUpper();
-                if (enemyCode.StartsWith(tentative))
+                matchFound = true;
+                currentInput = tentative;
+
+                if (enemyCode == tentative)
                 {
-                    matchFound = true;
-                    currentInput = tentative; // 🔹 corrige la première lettre
-
-                    if (enemyCode == tentative)
-                    {
-                        selectedEnemy = entry;
-                        currentInput = ""; // reset si le mot est complet
-                        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.TypingTargetLock);
-                    }
-                    break;
+                    selectedEnemy = entry;
+                    currentInput = "";
+                    AudioManager.Instance?.PlaySFXEvent(SFXEventKey.TypingTargetLock);
                 }
+                break;
             }
-        }
-
-        // ---------------- Vérifier les sorts ----------------
-        if (!matchFound)
-        {
-            foreach (var sort in activeSorts)
-            {
-                string sortName = sort.nomSort.ToUpper();
-                if (sortName.StartsWith(tentative))
-                {
-                    matchFound = true;
-                    currentInput = tentative; // 🔹 corrige la première lettre
-
-                    if (sortName == tentative)
-                    {
-                        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.TypingSpellReady);
-                    }
-                    break;
-                }
-            }
-        }
-
-        // ---------------- Animation lettre ----------------
-        if (matchFound)
-        {
-            PlayTypingHitSfx();
-            PlayLetterAnimation();
-        }
-        else
-        {
-            typingComboCount = 0;
-            AudioManager.Instance?.PlaySFXEvent(SFXEventKey.TypingMiss);
-            PlayWrongLetterAnimation(letter);
         }
     }
+
+    // ---------------- Vérifier les sorts ----------------
+    if (!matchFound)
+    {
+        foreach (var sort in activeSorts)
+        {
+            string sortName = sort.nomSort.ToUpper();
+            if (sortName.StartsWith(tentative))
+            {
+                matchFound = true;
+                currentInput = tentative;
+
+                // ---------------- Sort prêt ----------------
+                if (sortName == tentative)
+                {
+                    AudioManager.Instance?.PlaySFXEvent(SFXEventKey.TypingSpellReady);
+                    isSortReady = true;
+
+                    // Stop tout tween précédent
+                    sortReadyBlinkTween?.Kill();
+                    affichage.DOKill();
+
+                    // 🔹 Texte bleu (letterColor) fixe 0.3s avant clignotement
+                    affichage.color = letterColor;
+
+                    // 🔹 Clignotement jaune/blanc après 0.3s
+                    bool toggle = true;
+                    sortReadyBlinkTween = DOTween.Sequence()
+                        .AppendInterval(0.3f)
+                        .AppendCallback(() =>
+                        {
+                            sortReadyBlinkTween = DOTween.Sequence()
+                                .AppendCallback(() =>
+                                {
+                                    toggle = !toggle;
+                                    affichage.color = toggle ? Color.white : Color.yellow;
+                                })
+                                .AppendInterval(speedblink)
+                                .SetLoops(-1);
+                        });
+                }
+
+                break;
+            }
+        }
+    }
+
+    // ---------------- Animation lettre ----------------
+    if (matchFound)
+    {
+        PlayTypingHitSfx();
+        PlayLetterAnimation();
+    }
+    else
+    {
+        typingComboCount = 0;
+        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.TypingMiss);
+        PlayWrongLetterAnimation(letter);
+    }
+}
 
     private void HandleSpace()
     {
@@ -343,27 +374,32 @@ public class TypingSortManager : MonoBehaviour
     }
 
     private void ResetInput()
+{
+    if (!string.IsNullOrEmpty(currentInput) || selectedEnemy != null || sortLibreMode)
+        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.TypingSpellCleared);
+
+    currentInput = "";
+    selectedEnemy = null;
+    sortLibreMode = false;
+    typingComboCount = 0;
+
+    // 🔹 Stop clignotement et reset couleur
+    sortReadyBlinkTween?.Kill();
+    sortReadyBlinkTween = null;
+    isSortReady = false;
+    if (affichage != null)
+        affichage.color = Color.white;
+
+    if (nameEnemy != null)
     {
-        if (!string.IsNullOrEmpty(currentInput) || selectedEnemy != null || sortLibreMode)
-        {
-            AudioManager.Instance?.PlaySFXEvent(SFXEventKey.TypingSpellCleared);
-        }
-
-        currentInput = "";
-        selectedEnemy = null;
-        sortLibreMode = false;
-        typingComboCount = 0;
-
-        if (nameEnemy != null)
-        {
-            enemyNameTween?.Kill();
-            Sequence seq = DOTween.Sequence();
-            seq.Append(nameEnemy.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutCubic));
-            seq.Join(nameEnemy.DOColor(Color.white, 0.5f));
-            enemyNameTween = seq;
-            nameEnemy = null;
-        }
+        enemyNameTween?.Kill();
+        Sequence seq = DOTween.Sequence();
+        seq.Append(nameEnemy.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutCubic));
+        seq.Join(nameEnemy.DOColor(Color.white, 0.5f));
+        enemyNameTween = seq;
+        nameEnemy = null;
     }
+}
 
     public void ResetInputRoom()
     {
@@ -375,58 +411,73 @@ public class TypingSortManager : MonoBehaviour
         UpdateDisplay();
     }
 
-    private void UpdateDisplay()
+private void UpdateDisplay()
+{
+    if (affichage == null) return;
+
+    if (selectedEnemy != null)
     {
-        if (affichage == null) return;
+        string enemyCode = selectedEnemy.code.ToUpper();
+        affichage.text = $"<color=yellow>{enemyCode}</color> - {currentInput}";
 
-        if (selectedEnemy != null)
-        {
-            string enemyCode = selectedEnemy.code.ToUpper();
-            affichage.text = $"<color=yellow>{enemyCode}</color> - {currentInput}";
+        nameEnemy = selectedEnemy.enemy.GetComponent<Enemy>().nameText;
+        nameEnemy.color = Color.yellow;
+
+        enemyNameTween?.Kill();
+        enemyNameTween = nameEnemy.transform.DOScale(Vector3.one * 1.5f, 0.3f).SetEase(Ease.OutCubic);
+    }
+    else
+    {
+        affichage.text = currentInput;
+
+        // 🔹 Ne pas changer la couleur si le sort est prêt
+        if (!isSortReady)
             affichage.color = Color.white;
 
-            nameEnemy = selectedEnemy.enemy.GetComponent<Enemy>().nameText;
-            nameEnemy.color = Color.yellow;
-
+        if (nameEnemy != null)
+        {
             enemyNameTween?.Kill();
-            enemyNameTween = nameEnemy.transform.DOScale(Vector3.one * 1.5f, 0.3f).SetEase(Ease.OutCubic);
-        }
-        else
-        {
-            affichage.text = currentInput;
-            affichage.color = Color.white;
-
-            if (nameEnemy != null)
-            {
-                enemyNameTween?.Kill();
-                Sequence seq = DOTween.Sequence();
-                seq.Append(nameEnemy.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutCubic));
-                seq.Join(nameEnemy.DOColor(Color.white, 0.5f));
-                enemyNameTween = seq;
-                nameEnemy = null;
-            }
+            Sequence seq = DOTween.Sequence();
+            seq.Append(nameEnemy.transform.DOScale(Vector3.one, 0.5f).SetEase(Ease.OutCubic));
+            seq.Join(nameEnemy.DOColor(Color.white, 0.5f));
+            enemyNameTween = seq;
+            nameEnemy = null;
         }
     }
+}
 
-    private void PlayLetterAnimation()
+private void PlayLetterAnimation()
+{
+    // 🔹 Stop toutes les animations en cours
+    affichage.transform.DOKill(true);
+    affichage.transform.localScale = Vector3.one;
+
+    // 🔹 Punch scale et shake
+    affichage.transform.DOPunchScale(Vector3.one * punchScaleAmount, punchScaleDuration, punchScaleVibrato, 1);
+    affichage.transform.DOShakePosition(shakeDuration, shakeStrength, shakeVibrato, shakeRandomness, true);
+
+    // 🔹 Animation couleur seulement si le sort n'est pas prêt
+    if (!isSortReady)
     {
-        affichage.transform.DOKill(true);
-        affichage.transform.localScale = Vector3.one;
-
-        affichage.transform.DOPunchScale(Vector3.one * punchScaleAmount, punchScaleDuration, punchScaleVibrato, 1);
-        affichage.transform.DOShakePosition(shakeDuration, shakeStrength, shakeVibrato, shakeRandomness, true);
-
         affichage.DOColor(letterColor, 0.1f).OnComplete(() =>
         {
-            if (selectedEnemy != null)
-                affichage.text = $"<color=yellow>{selectedEnemy.code.ToUpper()}</color> - {currentInput}";
-            else
-                affichage.color = Color.white;
+            affichage.color = Color.white; // retour au blanc après cyan
         });
-
-        // Particule lettre
-        particlesManager?.SpawnLetterParticleSafe();
     }
+
+    // 🔹 Met à jour le texte de l’ennemi si sélectionné (toujours)
+    if (selectedEnemy != null)
+    {
+        affichage.text = $"<color=yellow>{selectedEnemy.code.ToUpper()}</color> - {currentInput}";
+    }
+    else
+    {
+        affichage.text = currentInput;
+    }
+
+    // 🔹 Particule lettre
+    particlesManager?.SpawnLetterParticleSafe();
+}
 
     private void PlayTypingHitSfx()
     {
