@@ -54,7 +54,7 @@ MonoBehaviour:
   description: "Un barrage de boules explosives \xE0 faible port\xE9e mais aux d\xE9g\xE2ts
     d\xE9vastateurs"
   icon: {fileID: 21300000, guid: 472805b324e4cea4c826e9f638d89f22, type: 3}
-  demonstrationIllustration: {fileID: 21300000, guid: c1c156fc0bf61e34496385b23ae22fd9, type: 3}
+  demonstrationIllustration: {fileID: 2623155047410351019, guid: 78942a614139a314db9bd967ef81bb97, type: 3}
   audioConfig: {fileID: 11400000, guid: 5e3805ae8b25381448ae529b5f2c5502, type: 2}
   launchTiming: 0
   launchAnimationTrigger: LaunchSpell
