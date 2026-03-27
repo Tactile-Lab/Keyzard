@@ -51,7 +51,11 @@ public enum SFXEventKey
 	NewSpellUnlocked = 33,
 	BookPageTurn = 34,
 	EndDemoOpen = 35,
-	EndDemoConfirm = 36
+	EndDemoConfirm = 36,
+
+	// Keep new keys appended at the end to preserve serialized indices.
+	EnemyManequinTakeDamage = 37,
+	EboulementLaunch = 38
 }
 
 [System.Serializable]
@@ -78,6 +82,7 @@ public class SFXEventAudioConfig : ScriptableObject
 			case SFXEventKey.BookPageTurn:
 			case SFXEventKey.EndDemoOpen:
 			case SFXEventKey.EndDemoConfirm:
+			case SFXEventKey.EboulementLaunch:
 				return true;
 			default:
 				return false;

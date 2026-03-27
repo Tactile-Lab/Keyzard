@@ -22,6 +22,7 @@ public class EnemySFXConfig : DomainSFXAudioConfig
             case SFXEventKey.EnemyDistantAttack:
             case SFXEventKey.EnemyDistantHurt:
             case SFXEventKey.EnemyDistantDeath:
+            case SFXEventKey.EnemyManequinTakeDamage:
                 return true;
             default:
                 return false;

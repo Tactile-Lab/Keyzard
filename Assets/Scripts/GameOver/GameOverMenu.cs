@@ -21,6 +21,7 @@ public class GameOverMenuController : MonoBehaviour
     [SerializeField] private float punchDownDistance = -20f;
     [SerializeField] private float punchDuration = 0.15f;
     [SerializeField] private float attenteBouton = 1.5f;
+    [SerializeField] private float playerDeathFadeOutDuration = 0.2f;
     private RectTransform[] optionTargets;
     private UIButtonSpriteSwap[] optionSpriteSwaps;
     private Tween[] buttonScaleTweens;
@@ -181,6 +182,8 @@ public class GameOverMenuController : MonoBehaviour
     {
         nextInputTime = Time.unscaledTime + inputCooldown;
 
+        AudioManager.Instance?.FadeOutSFXEvent(SFXEventKey.PlayerDeath, playerDeathFadeOutDuration);
+
         UIButtonSpriteSwap swap = optionSpriteSwaps[selectionIndex];
         if (swap != null) swap.SetPressed(true);
 
@@ -217,6 +220,7 @@ public class GameOverMenuController : MonoBehaviour
         IsGameOverMenuOpen = false;
         SpellInventoryManager.Instance.ResetInventory();
         AudioManager.Instance?.ResetMusicRuntime();
+        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.EboulementLaunch);
         TransitionManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

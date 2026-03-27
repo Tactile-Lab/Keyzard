@@ -457,6 +457,89 @@ public class AudioManager : MonoBehaviour
         source.Play();
     }
 
+    public void FadeOutSFXEvent(SFXEventKey key, float fadeDuration = 0.2f, bool stopAfterFade = true)
+    {
+        if (key == SFXEventKey.None)
+        {
+            return;
+        }
+
+        SFXEventAudioEntry entry = ResolveSfxEntry(key);
+        if (entry == null || entry.clip == null)
+        {
+            return;
+        }
+
+        for (int i = 0; i < sfxPool.Count; i++)
+        {
+            AudioSource source = sfxPool[i];
+            if (source == null || !source.isPlaying || source.clip != entry.clip)
+            {
+                continue;
+            }
+
+            StartCoroutine(FadeOutSfxSource(source, Mathf.Max(0f, fadeDuration), stopAfterFade));
+        }
+    }
+
+    private IEnumerator FadeOutSfxSource(AudioSource source, float duration, bool stopAfterFade)
+    {
+        if (source == null)
+        {
+            yield break;
+        }
+
+        AudioClip fadingClip = source.clip;
+        float startVolume = source.volume;
+
+        if (duration <= 0f)
+        {
+            if (stopAfterFade)
+            {
+                source.Stop();
+                if (source.clip == fadingClip)
+                {
+                    source.clip = null;
+                }
+            }
+            else
+            {
+                source.volume = 0f;
+            }
+
+            yield break;
+        }
+
+        float elapsed = 0f;
+        while (elapsed < duration)
+        {
+            if (source == null || !source.isPlaying || source.clip != fadingClip)
+            {
+                yield break;
+            }
+
+            elapsed += Time.unscaledDeltaTime;
+            float t = Mathf.Clamp01(elapsed / duration);
+            source.volume = Mathf.Lerp(startVolume, 0f, t);
+            yield return null;
+        }
+
+        if (source == null || source.clip != fadingClip)
+        {
+            yield break;
+        }
+
+        if (stopAfterFade)
+        {
+            source.Stop();
+            source.clip = null;
+        }
+        else
+        {
+            source.volume = 0f;
+        }
+    }
+
     private static bool IsUiEventKey(SFXEventKey key)
     {
         switch (key)

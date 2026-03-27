@@ -23,6 +23,7 @@ public class Mannequin : Enemy
     public override void TakeDamage(float damageAmount)
     {
         Debug.Log("Mannequin touché par un sort !");
+        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.EnemyManequinTakeDamage);
 
         if (animator != null)
         {

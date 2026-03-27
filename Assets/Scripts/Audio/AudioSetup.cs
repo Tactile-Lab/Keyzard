@@ -353,6 +353,7 @@ public class AudioSetup : MonoBehaviour
             case SFXEventKey.EnemyDistantAttack:
             case SFXEventKey.EnemyDistantHurt:
             case SFXEventKey.EnemyDistantDeath:
+            case SFXEventKey.EnemyManequinTakeDamage:
                 return true;
             default:
                 return false;

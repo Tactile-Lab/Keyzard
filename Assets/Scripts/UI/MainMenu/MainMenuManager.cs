@@ -147,6 +147,7 @@ public class MainMenuManager : MonoBehaviour
         }
 
         AudioManager.Instance?.ResetMusicRuntime();
+        AudioManager.Instance?.PlaySFXEvent(SFXEventKey.EboulementLaunch);
 
         Time.timeScale = 1f;
         //SceneManager.LoadScene(gameplaySceneName);
