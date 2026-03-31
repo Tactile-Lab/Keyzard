@@ -20,6 +20,8 @@ public class EndController : MonoBehaviour
     private IEnumerator WaitForSpace()
     {
         yield return new WaitForSeconds(0.2f); // anti double input
+        PlayerControler player = FindFirstObjectByType<PlayerControler>();
+        player.enabled = false;
 
         while (true)
         {
@@ -29,6 +31,7 @@ public class EndController : MonoBehaviour
                 SpellInventoryManager.Instance.ResetInventory();
                 AudioManager.Instance?.ResetMusicRuntime();
                 IsEndMenuOpen = false;
+                 player.enabled = true;
                 TransitionManager.Instance.LoadScene(0);
                 yield break;
             }
